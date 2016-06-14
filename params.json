@@ -1,0 +1,6 @@
+{
+  "name": "utPLSQL",
+  "tagline": "Unit Testing Framework for Oracle PL/SQL",
+  "body": "### Welcome to the utPLSQL Project\r\n\r\nutPLSQL is a unit testing framework for programmers using Oracle's PL/SQL language. Originally developed by [Steven Feuerstein](http://www.stevenfeuerstein.com/), author of many books on the subject, it allows the automated testing of packages, functions and procedures.  \r\n\r\n### Documentation\r\n\r\nThe documentation is available as part of the utPLSQL download, and is also available online.\r\n\r\n## Downloads\r\n\r\n* The latest code is always found in the [utPSQL GitHub Project](https://github.com/utPLSQL/utPLSQL). \r\n* Prior Release are still on [old SourceForge site.](https://sourceforge.net/projects/utplsql/files/)\r\n\r\n## Support\r\n\r\nDiscussions about utPLSQL take place in a couple of places.   \r\n\r\n1. The [issues system](https://github.com/utPLSQL/utPLSQL/issues/) on GitHub.   \r\n2. The developers on the project are commonly on [Slack](http://utplsql-slack-invite.herokuapp.com/) and can often be reached with realtime chat.\r\n\r\nIf your intrested in helping with the project please read the [contributing.md](https://github.com/utPLSQL/utPLSQL/blob/master/CONTRIBUTING.md) in the main repository.\r\n\r\n\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
