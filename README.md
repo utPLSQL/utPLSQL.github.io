@@ -22,6 +22,16 @@ The file will also need a YAML Front Matter section at the top of the file.
 
 Look at an existing post if you want an example.
 
+## How to preview site locally
+
+Jekyll will allow you to preview the site locally doing the following:
+
+1. [Install Jekyll 3](https://jekyllrb.com/docs/installation/)
+2. [Use Jekyll Serve](https://jekyllrb.com/docs/usage/)
+
+
+
+
 
 
 
