@@ -9,4 +9,4 @@ categories: moving
 
 [Issue #4](https://github.com/utPLSQL/utPLSQL/issues/4) to update all URL sourceforge References to GitHub, has also been completed.
 
-You can visit the [Documentation](/Documentation) by using the menu item at the top of the page.
+You can visit the [Documentation](/documentation) by using the menu item at the top of the page.
