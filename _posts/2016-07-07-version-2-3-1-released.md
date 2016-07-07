@@ -9,4 +9,4 @@ categories: moving
 
 This release updates documentation to reflect the move of the project to GitHub.
 
-Current and past releases can be located on our [downloads](/ downloads/) page.
+Current and past releases can be located on our [downloads](/downloads/) page.
