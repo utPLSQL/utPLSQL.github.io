@@ -5,6 +5,8 @@ date:   2016-10-10 11:00:00 -0600
 categories: version3
 ---
 
+Version 3 in pre-alpha state
+
 Work on [version 3](https://github.com/utPLSQL/utPLSQL/tree/version3) of utPLSQL has been moving quickly.  
 Nearly every day version 3 has commits to repository with multiple developers contributing.  
 
