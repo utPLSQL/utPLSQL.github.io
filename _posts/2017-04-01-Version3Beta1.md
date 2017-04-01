@@ -15,4 +15,6 @@ It's being used now in multiple organizations with great success.   The document
 Feel free to join us in our [slack chat room](http://utplsql-slack-invite.herokuapp.com/) where we communicate daily about the project.
 
 We welcome support requests and discussions, feature requests, and bug reports in the [GitHub issues log](https://github.com/utPLSQL/utPLSQL/issues).
+
+This is not an April Fools Day Joke,  we really release it.
  
