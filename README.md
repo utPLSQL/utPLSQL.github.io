@@ -1,13 +1,16 @@
 #utPLSQL Website
 
-The [utPLSQL website](https://utplsql.github.io)  is powered by [Jekyll](https://jekyllrb.com/).  Which generated HTML when you push a commit to the master repository.
+The [utPLSQL website](https://utplsql.github.io)  is powered by [Jekyll](https://jekyllrb.com/).  Which generated HTML when you push a commit to [utplsql.github.io](https://github.com/utPLSQL/utPLSQL.github.io).   
 
-[GitHub](https://github.com/) hosts the site and stores the [source code of the web site](https://github.com/utPLSQL/utPLSQL.github.io)
+This also works in harmony with the gh-pages branches on the various other repository to create a single website.  For example the [utpsql](https://github.com/utPLSQL/utPLSQL) repositories [gh-pages](https://github.com/utPLSQL/utPLSQL/tree/gh-pages) branch, is visible at [https://utplsql.github.io/utPLSQL/](https://utplsql.github.io/utPLSQL/).  
+
+This allows for documentation from each sub repository to host it's own documentation without having to modify the utpsql.github.io repsitory directly.
+
 
 
 ## How to make an announcement post.
 
-Create a File in the `_posts` directory with the file name of `YYYY-MM-DD-Blog-Post-Name.md`
+Create a File in the [_posts](https://github.com/utPLSQL/utPLSQL.github.io/tree/master/_posts) directory with the file name of `YYYY-MM-DD-Blog-Post-Name.md`
 
 This file will be a standard [Markdown file](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) which can be editing with any text editor although there are many offline and online editors for Markdown.
 
