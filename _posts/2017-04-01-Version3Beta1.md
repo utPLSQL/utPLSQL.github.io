@@ -1,3 +1,4 @@
+---
 layout: post
 title:  "Version v3.0.0-beta has been released"
 date:   2017-04-01 12:00:00 -0600
