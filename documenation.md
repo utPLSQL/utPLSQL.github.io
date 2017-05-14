@@ -4,10 +4,7 @@ title: Documentation
 permalink: /documentation/
 ---
 
-We publish the latest version of documentation online.  Each release also contains a "docs" folder which contains the documentation for that release.
+We automatically publish the documentation of utPLSQL development branch with every build.
+Each downloadable release also contains a "docs" folder with complete documentation for that release.
 
-* [Latest Version 2 Documentation.](/docs/index.html)
-* Work is underway on Version 3, and documentation on it's plans can be [found in the wiki](https://github.com/utPLSQL/utPLSQL/wiki).
-
-
- 
+**Latest documentation and documentation for individual versions is available [here](/utPLSQL/)**

@@ -4,7 +4,7 @@ title: Downloads
 permalink: /downloads/
 ---
 
-Latest Release: [version 2.3.1](https://github.com/utPLSQL/utPLSQL/releases/tag/utplsql-2-3-1) 
+Latest Release: [utPLSQL v3.0.0-beta](https://github.com/utPLSQL/utPLSQL/releases/tag/v3.0.0-beta) 
 
 Older releases can be found on our [releases page](https://github.com/utPLSQL/utPLSQL/releases).
 
