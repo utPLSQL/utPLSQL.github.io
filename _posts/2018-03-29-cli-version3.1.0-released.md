@@ -30,12 +30,12 @@ We encourage you to always use the latest version of cli to communicate with a v
 
 *Enhancements*
 - Support for custom reporters. Just call utplsql run user/pass@connstr -f=my_custom_reporter and cli will try to use a database-reporter with the given name
-- Assets necessary for CoverageHTMLReporter are written to $outputFileName-assets folder (utPLSQL/utPLSQL-java-api#39)
-- Realtime-Feedback: Output to screen is immediate, output to files is in bulks (#68)
-- NLS-Support from environment (#56)
+- Assets necessary for CoverageHTMLReporter are written to $outputFileName-assets folder ([https://github.com/utPLSQL/utPLSQL-java-api/issues/39](utPLSQL/utPLSQL-java-api#39))
+- Realtime-Feedback: Output to screen is immediate, output to files is in bulks ([https://github.com/utPLSQL/utPLSQL-cli/issues/68](#68))
+- NLS-Support from environment ([https://github.com/utPLSQL/utPLSQL-cli/issues/56](#56))
 
 *Bugfixes*
-- The correct usage is now stated in help message (#63)
+- The correct usage is now stated in help message ([https://github.com/utPLSQL/utPLSQL-cli/issues/63](#63))
 - Several small improvements
 
 For more info on improvements and fixes, check out the [blog post from Samuel Nitsche](https://cleandatabase.wordpress.com/2018/03/29/open-source-engagement-for-utplsql/)
