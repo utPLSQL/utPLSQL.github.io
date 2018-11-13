@@ -6,7 +6,7 @@ categories: quicktip
 ---
 
 How to easily integrate @utPLSQL into @VisualStudio via External Tools.
+[![Alt text](/path/to/img.jpg)](http://example.net/)
+[![integrate via external tools](https://user-images.githubusercontent.com/8362976/48398860-48bc3b80-e722-11e8-9537-2ee9ee4d156d.png "Integrate via External Tools")](https://user-images.githubusercontent.com/8362976/48398860-48bc3b80-e722-11e8-9537-2ee9ee4d156d.png)
 
-![integrate via external tools](https://user-images.githubusercontent.com/8362976/48398860-48bc3b80-e722-11e8-9537-2ee9ee4d156d.png "Integrate via External Tools")
-
-https://twitter.com/Der_Pesse/status/1062255580805500933
+[Tweet by Der_Pesse](https://twitter.com/Der_Pesse/status/1062255580805500933)
