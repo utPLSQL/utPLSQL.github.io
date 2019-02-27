@@ -4,20 +4,20 @@ title: About
 permalink: /about/
 ---
 
-utPLSQL is a very versatile open source unit testing framework for Oracle PL/SQL.
+utPLSQL is an open-source testing framework for PL/SQL and SQL
 
 It allow for automated testing of:
 
 * Packages
 * Functions
 * Procedures
-* Anything that can be execute or observed in PL/SQL such as:
-	* Table Default Values
-	* Table Triggers
-	* View Triggers
-	* Objects
+* Anything else that can be execute and observed from PL/SQL 
    
 
-utPLSQL was originally developed by [Steven Feuerstein](http://stevenfeuerstein.com/) and is now maintained by active team of developers.
+utPLSQL was originally developed by [Steven Feuerstein](http://stevenfeuerstein.com/).
 
-Feel free to [try it out](/downloads) you won't regret it.   Additional information can be found in the [documentation](/documentation)
+It is currently developed and maintained by a team of passionate developers.
+
+Feel free to [try it out](/downloads), you won't regret it.
+Additional information can be found in the [documentation](/documentation) pages.
+

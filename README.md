@@ -4,7 +4,7 @@ The [utPLSQL website](https://utplsql.github.io)  is powered by [Jekyll](https:/
 
 This also works in harmony with the gh-pages branches on the various other repository to create a single website.  For example the [utpsql](https://github.com/utPLSQL/utPLSQL) repositories [gh-pages](https://github.com/utPLSQL/utPLSQL/tree/gh-pages) branch, is visible at [https://utplsql.github.io/utPLSQL/](https://utplsql.github.io/utPLSQL/).  
 
-This allows for documentation from each sub repository to host it's own documentation without having to modify the utpsql.github.io repsitory directly.
+This allows for documentation from each sub repository to host it's own documentation without having to modify the utplsql.github.io repository directly.
 
 
 
