@@ -18,3 +18,4 @@ github_username:  utplsql
 # Build settings
 markdown: kramdown
 exclude: ["README.md","dl-files"]
+header_image: /images/utPLSQL-testing-framework-transparent - small.png
