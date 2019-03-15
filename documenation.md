@@ -12,5 +12,5 @@ Readme files for sub-projects on github (external links)
  
 - [utPLSQL maven plugin readme](https://github.com/utPLSQL/utPLSQL-maven-plugin/blob/develop/README.md)
 
-- [utPSLQL SQLDeveloper extension](https://github.com/utPLSQL/utPLSQL-SQLDeveloper/blob/develop/README.md)
+- [utPSLQL SQLDeveloper extension](https://github.com/utPLSQL/utPLSQL-SQLDeveloper/blob/master/README.md)
 
