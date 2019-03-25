@@ -5,11 +5,11 @@ date:   2019-03-25 23:10:00 +0000
 categories: cli
 ---
 
-# Compatibility
 
+# Changes in release 3.1.6
+
+## Compatibility
 This version of utPLQL-cli is compatible with all versions of utPLSQL from 3.0.0 to 3.1.6. We encourage you to always use the latest version of cli to communicate with a v3 core.
-
-# Changes in this release
 
 ## New Features
 * CLI now logs some basic information to screen in addition to an eventually configured to-screen-reporter ([#89](https://github.com/utPLSQL/utPLSQL-cli/issues/89), [#76](https://github.com/utPLSQL/utPLSQL-cli/issues/76))
