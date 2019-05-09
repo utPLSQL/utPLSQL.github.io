@@ -12,7 +12,7 @@ Today at [#apexConn19](https://twitter.com/search?q=%23apexConn19&src=typd).
 As a result, something amazing happened. Within an hour or so, Kris created a fully functional auto-runner for utPLSQL tests within Oracle sqlcl.
 
 
-![utPSLQL-sqlcl](../images/sqlcl-utplsql.jpg)
+![utPSLQL-sqlcl](sqlcl-utplsql.jpg)
 
 [See for yourself](https://twitter.com/krisrice/status/1126467712211988480)
 
