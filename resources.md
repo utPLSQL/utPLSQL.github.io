@@ -4,6 +4,8 @@ title: Resources
 permalink: /resources/
 ---
 
+Do you know about videos, articles, blogs or code examples that are missing here? Please let us know! 
+
 ## Framework
 
 - <i class="fas fa-book"></i> [Latest documentation](/utPLSQL/latest/)
