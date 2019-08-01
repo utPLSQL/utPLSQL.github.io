@@ -35,7 +35,8 @@ $on-palm:          600px;
 $small-menu:       840px;
 $on-laptop:        900px;
 
-
+// Font-Awesome
+$fa-font-path:     "../fontawesome/webfonts";
 
 // Use media queries like this:
 // @include media-query($on-palm) {
@@ -56,5 +57,8 @@ $on-laptop:        900px;
 @import
         "base",
         "layout",
-        "syntax-highlighting"
+        "syntax-highlighting",
+        "../fontawesome/scss/fontawesome.scss",
+        "../fontawesome/scss/solid.scss",
+        "../fontawesome/scss/brands.scss"
 ;
