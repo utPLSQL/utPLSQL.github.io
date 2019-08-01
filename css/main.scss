@@ -29,12 +29,14 @@ $header-background: $white-color;
 $header-text:       $grey-color-dark;
 
 // Width of the content area
-$content-width:    800px;
+$content-width:    900px;
 
 $on-palm:          600px;
-$on-laptop:        800px;
+$small-menu:       840px;
+$on-laptop:        900px;
 
-
+// Font-Awesome
+$fa-font-path:     "../fontawesome/webfonts";
 
 // Use media queries like this:
 // @include media-query($on-palm) {
@@ -55,5 +57,8 @@ $on-laptop:        800px;
 @import
         "base",
         "layout",
-        "syntax-highlighting"
+        "syntax-highlighting",
+        "../fontawesome/scss/fontawesome.scss",
+        "../fontawesome/scss/solid.scss",
+        "../fontawesome/scss/brands.scss"
 ;
