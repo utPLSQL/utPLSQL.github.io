@@ -16,6 +16,8 @@ permalink: /resources/
   Complete introduction to utPLSQL 3.0, covering installation, comprehensive example application, transaction challenges and even code coverage
 - <i class="fas fa-file-alt"></i> [Strongholds of Confidence: Self-Testing your Database](https://cleandatabase.wordpress.com/2017/10/26/strongholds-of-confidence-self-testing-your-database/) (by Samuel Nitsche)   
   Plea to start creating meaningful, automated self-tests and why. Finishes with a concrete utPLSQL example
+- <i class="fas fa-file-alt"></i> [Test Driven Development in PLSQL with utPLSQL v3 – intro](http://www.oraclethoughts.com/uncategorized/test-driven-development-in-oracle-database-with-utplsql-v3-intro/) (by Jacek Gebal)  
+  Addresses some major struggles of developers who start with unit-testing and also gives a brief intro into Test-Driven-Development
   
 #### Structuring Tests
 
@@ -28,6 +30,8 @@ permalink: /resources/
      
 #### Cursor Comparison
 
+- <i class="fas fa-file-code"></i> [What is the equivalent of utassert eqtable / eqquery in utPLSQL v3](http://www.oraclethoughts.com/utplsql/what-is-the-equivalent-of-utassert-eqtable-utplsql-v2-v3/) (by Jacek Gebal)  
+  Comparison between utPLSQL v2's `utassert.eqtable` and v3's `ut.expect(sys_refcursor).to_equal(sys_refcursor)` approach.
 - <i class="fas fa-file-code"></i> [Unit-Tests for Primary/Secondary Lookup with Cursor Comparison](https://cleandatabase.wordpress.com/2018/12/06/100codeexamples-unit-tests-for-primary-secondary-lookup-with-cursor-comparison/) (by Samuel Nitsche)  
   Example how to use cursor comparison with `select from dual` expectations
 - <i class="fas fa-file-code"></i> [utPLSQL Cursor Comparison with user-defined Types](https://cleandatabase.wordpress.com/2019/02/03/100codeexamples-utplsql-cursor-comparison-with-user-defined-types/) (by Samuel Nitsche)  
