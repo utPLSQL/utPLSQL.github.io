@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "utPLSQL v3.1.8 released"
+title:  "New Resources section"
 date:   2019-09-04 02:00:00 +0000
 categories: version3
 ---
