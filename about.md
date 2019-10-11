@@ -11,6 +11,7 @@ It allow for automated testing of:
 * Packages
 * Functions
 * Procedures
+* Triggers
 * Views
 * Anything else that can be execute and observed from PL/SQL
 
