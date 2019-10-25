@@ -28,7 +28,9 @@ the community, using the object-oriented capabilities of the Oracle database to 
 *Unit frameworks (e.g. JUnit for Java). 
   
 This had significant impact on the syntax and the way the framework can be used.
-   
+
+--- 
+
 ## Contributors
 
 ### Major Active Maintainers
@@ -39,7 +41,8 @@ This had significant impact on the syntax and the way the framework can be used.
 | [Pavel Kaplya](https://twitter.com/Pazus)             | 
 | [Samuel Nitsche](https://twitter.com/Der_Pesse)       |
 | [Lukasz Wasylow](https://twitter.com/Baalowy)         |
-| [Philipp Salvisberg](https://twitter.com/phsalvisberg)|
+| [Philipp Salvisberg](https://twitter.com/phsalvisberg)|  
+
 
 Many thanks to [all the contributors](https://github.com/utPLSQL/utPLSQL/graphs/contributors).
 
@@ -60,6 +63,7 @@ Many thanks to [all the contributors](https://github.com/utPLSQL/utPLSQL/graphs/
 | Patrick Barel                                     |
 | Paul Walker                                       |
 
+---
 
 ## Supporters
 
@@ -68,7 +72,7 @@ The utPLSQL project is community-driven and is not commercially motivated. Nonet
 <table>
 <tbody>
 <tr>
-<td><a href="https://www.red-gate.com/hub/events/open-source-projects" rel="nofollow"><img src="images/supported_by_redgate_100.png" alt="supported_by_redgate" style="max-width:100%;"></a></td>
+<td><a href="https://www.red-gate.com/hub/events/open-source-projects" rel="nofollow"><img src="/images/supported_by_redgate_100.png" alt="supported_by_redgate" style="max-width:100%;"></a></td>
 <td>utPLSQL has been supported by Redgate in the form of sponsored stickers and t-shirts. Thank you for helping us spreading the word!</td>
 </tr>
 </tbody>
