@@ -29,7 +29,6 @@ the community, using the object-oriented capabilities of the Oracle database to 
   
 This had significant impact on the syntax and the way the framework can be used.
 
---- 
 
 ## Contributors
 
@@ -63,7 +62,6 @@ Many thanks to [all the contributors](https://github.com/utPLSQL/utPLSQL/graphs/
 | Patrick Barel                                     |
 | Paul Walker                                       |
 
----
 
 ## Supporters
 
