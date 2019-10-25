@@ -21,7 +21,7 @@ Feel free to [try it out](/downloads), you won't regret it.
 Additional information can be found in the [documentation](/documentation) pages.
 
 
-## Version 3
+### Version 3
 
 While the framework exists since 1999, the current version 3 got completely rewritten in 2016 by passionate members of 
 the community, using the object-oriented capabilities of the Oracle database to make it more consistent with other
@@ -29,9 +29,9 @@ the community, using the object-oriented capabilities of the Oracle database to 
   
 This had significant impact on the syntax and the way the framework can be used.
    
-# Contributors
+## Contributors
 
-## Major Active Maintainers
+### Major Active Maintainers
 
 | Name                                                  | Comments  
 | ----------------------------------------------------- | --------------
@@ -43,7 +43,7 @@ This had significant impact on the syntax and the way the framework can be used.
 
 Many thanks to [all the contributors](https://github.com/utPLSQL/utPLSQL/graphs/contributors).
 
-## Major Contributors
+### Major Contributors
 
 | Name                                               | Comments  
 | -------------------------------------------------- | --------------
@@ -51,7 +51,7 @@ Many thanks to [all the contributors](https://github.com/utPLSQL/utPLSQL/graphs/
 | David Pyke                                         | 
 | [Vinicius Avellar](https://twitter.com/mrvmoreira) |
 
-## Prior Major Contributors
+### Prior Major Contributors
 
 | Name                                              | Comments  
 | ------------------------------------------------- | --------------
@@ -60,14 +60,15 @@ Many thanks to [all the contributors](https://github.com/utPLSQL/utPLSQL/graphs/
 | Patrick Barel                                     |
 | Paul Walker                                       |
 
-# Supporters
+
+## Supporters
 
 The utPLSQL project is community-driven and is not commercially motivated. Nonetheless, donations and other contributions are always welcome, and are detailed below.
 
 <table>
 <tbody>
 <tr>
-<td><a href="https://www.red-gate.com/hub/events/open-source-projects" rel="nofollow"><img src="docs/images/supported_by_redgate_100.png" alt="supported_by_redgate" style="max-width:100%;"></a></td>
+<td><a href="https://www.red-gate.com/hub/events/open-source-projects" rel="nofollow"><img src="images/supported_by_redgate_100.png" alt="supported_by_redgate" style="max-width:100%;"></a></td>
 <td>utPLSQL has been supported by Redgate in the form of sponsored stickers and t-shirts. Thank you for helping us spreading the word!</td>
 </tr>
 </tbody>
