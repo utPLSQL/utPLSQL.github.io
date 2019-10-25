@@ -277,26 +277,23 @@
 
     table {
         background-color: #FFFFFF;
-        width: 100%;
         text-align: left;
         border-collapse: collapse;
         margin-bottom: 10px;
     }
     table td, table th {
-        border: 1px solid #AAAAAA;
-        padding: 3px 2px;
+        padding: 5px 10px;
     }
     table tbody td {
-        font-size: 13px;
+
     }
-    table tr:nth-child(even) {
+    table tr:nth-child(odd) {
         background: #F3F3F3;
     }
     table thead {
         background: #C3C3C3;
     }
     table thead th {
-        font-size: 15px;
         font-weight: bold;
     }
 }
