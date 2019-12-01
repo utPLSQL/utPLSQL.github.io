@@ -2,6 +2,7 @@
 layout: page
 title: Resources
 permalink: /resources/
+menuInclude: true
 ---
 
 Do you know about videos, articles, blogs or code examples that are missing here? Please let us know! 

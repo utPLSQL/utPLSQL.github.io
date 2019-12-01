@@ -2,6 +2,7 @@
 layout: page
 title: Contributing
 permalink: /contributing/
+menuInclude: true
 ---
 
 utPLSQL project team is always willing to work with the community. 

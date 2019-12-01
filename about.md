@@ -2,6 +2,7 @@
 layout: page
 title: About
 permalink: /about/
+menuInclude: true
 ---
 
 utPLSQL is an open-source testing framework for PL/SQL and SQL

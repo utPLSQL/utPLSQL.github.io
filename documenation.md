@@ -2,6 +2,7 @@
 layout: page
 title: Documentation
 permalink: /documentation/
+menuInclude: true
 ---
 
 [utPLSQL documentation](/utPLSQL/)
