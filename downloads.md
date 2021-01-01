@@ -12,5 +12,7 @@ menuInclude: true
  
 - [utPLSQL maven plugin](https://github.com/utPLSQL/utPLSQL-maven-plugin/releases) to run utPLSQL tests as part of Java maven project build
 
-- [utPSLQL SQLDeveloper extension](https://github.com/utPLSQL/utPLSQL-SQLDeveloper/releases) to create and run utPLSQL tests from [SQLDeveloper](https://www.oracle.com/database/technologies/appdev/sql-developer.html)
+- [utPSLQL - SQLDeveloper extension](https://github.com/utPLSQL/utPLSQL-SQLDeveloper/releases) to create and run utPLSQL tests from [SQLDeveloper](https://www.oracle.com/database/technologies/appdev/sql-developer.html)
+
+- [utPSLQL - PL/SQL Developer extension](https://github.com/utPLSQL/utPLSQL-PLSQL-Developer/releases) to create and run utPLSQL tests from [PLSQL Developer](https://www.allroundautomations.com/products/pl-sql-developer/)
  
