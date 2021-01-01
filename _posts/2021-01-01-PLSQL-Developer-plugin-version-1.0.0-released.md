@@ -24,4 +24,4 @@ See details of plugin usage in [readme file](https://github.com/utPLSQL/utPLSQL-
 ## Downloads
 
 - Download the plugin release from [releases page](https://github.com/utPLSQL/utPLSQL-PLSQL-Developer/releases)
-- Copy PlsqlDeveloperUtPlsqlPlugin.dll or PlsqlDeveloperUtPlsqlPlugin_x86.dll to the PlugIns directory of your PL/SQL Developer installation
+- Copy `PlsqlDeveloperUtPlsqlPlugin.dll` or `PlsqlDeveloperUtPlsqlPlugin_x86.dll` to the PlugIns directory of your PL/SQL Developer installation
