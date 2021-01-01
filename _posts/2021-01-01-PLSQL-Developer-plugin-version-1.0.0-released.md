@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "PLSQL Developer plugin version 1.0.0 released"
+title:  "PL/SQL Developer plugin version 1.0.0 released"
 date:   2021-01-01 13:10:00 +0000
 categories: plugins
 ---
