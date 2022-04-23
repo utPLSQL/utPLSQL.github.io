@@ -1,4 +1,4 @@
-![version](https://img.shields.io/badge/version-v3.1.13.4003--develop-blue.svg)
+![version](https://img.shields.io/badge/version-v3.1.13.4014--develop-blue.svg)
 
 # Qyerying for test suites
 
@@ -37,6 +37,16 @@ select * from table(ut_runner.get_suites_info(USER, 'TEST_STUFF')) where item_ty
 To get a full information about suite `TEST_STUFF` including suite description, all contexts and tests in a suite  
 ```sql
 select * from table(ut_runner.get_suites_info(USER, 'TEST_STUFF')) where item_type = 'UT_TEST';
+```
+
+To get a full information about suites that have a path like  `ut3:tests.test_package_*` including suite description, all contexts and tests in a suite 
+```sql
+select * from table(ut_runner.get_suites_info('ut3:tests.test_package_*') where item_type = 'UT_TEST';
+```
+
+To get a full information about suites that have object name like  `test_package_*` including suite description, all contexts and tests in a suite 
+```sql
+select * from table(ut_runner.get_suites_info('test_package_*'));
 ```
 
 ## Checking if schema contains tests
