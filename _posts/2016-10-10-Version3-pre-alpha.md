@@ -12,7 +12,7 @@ Nearly every day version 3 has commits to repository with multiple developers co
 
 It won't be long until we are in an alpha status.   If your interested in following along or helping out with the project check out the [version 3 readme.md](https://github.com/utPLSQL/utPLSQL/blob/version3/readme.md)
 
-Feel free to join us in our [slack chat room](http://utplsql-slack-invite.herokuapp.com/) where we communicate daily about the project.
+Feel free to join us in our [slack chat room](https://join.slack.com/t/utplsql/shared_invite/zt-xwm68udy-4cF_3PNEyczYEbWr38W5ww) where we communicate daily about the project.
 
 We welcome support requests and discussions, feature requests, and bug reports in the [GitHub issues log](https://github.com/utPLSQL/utPLSQL/issues).
  
