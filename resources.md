@@ -13,7 +13,7 @@ Do you know about videos, articles, blogs or code examples that are missing here
 
 #### Overview
 
-- <i class="fas fa-video"></i> [Unit Testing Oracle PL/SQL](https://vimeo.com/261135676) (by Jacek Gebal)  
+- <i class="fas fa-video"></i> [UKOUG Testing PLSQL APIs with utPLSQL v3 Webinar](https://www.youtube.com/watch?v=3IQXWdKkBP4) (by Jacek Gebal)  
   Comprehensive webinar about utPLSQL by Jacek Gebal. The definitive guide to why and how to test PL/SQL with utPLSQL
 - <i class="fas fa-file-alt"></i> [utPLSQL 3.0 - How to have your cake and eat it](https://mikesmithers.wordpress.com/2018/04/25/utplsql-3-0-how-to-have-your-cake-and-eat-it/) (by Mike Smithers)  
   Complete introduction to utPLSQL 3.0, covering installation, comprehensive example application, transaction challenges and even code coverage
@@ -21,6 +21,21 @@ Do you know about videos, articles, blogs or code examples that are missing here
   Plea to start creating meaningful, automated self-tests and why. Finishes with a concrete utPLSQL example
 - <i class="fas fa-file-alt"></i> [Test Driven Development in PLSQL with utPLSQL v3 – intro](http://www.oraclethoughts.com/uncategorized/test-driven-development-in-oracle-database-with-utplsql-v3-intro/) (by Jacek Gebal)  
   Addresses some major struggles of developers who start with unit-testing and also gives a brief intro into Test-Driven-Development
+- <i class="fas fa-video"></i> [Testing PL/SQL in your Ci/Cd pipeline with utPLSQL](https://www.youtube.com/watch?v=rgbAG8RgR9U) (by Blaine Carter)
+  Blaine demonstrates running utPLSQL unit tests in Oracle Developer Cloud and publishing test results. 
+- <i class="fas fa-video"></i> [Extending Oracle Database DevOps with Automated PL/SQL Unit Testing](https://www.youtube.com/watch?v=zFtUmAe61mg) (by Shay Shmeltzer)
+  Overview of running utPLSQL unit tests within Oracle Developer Cloud
+- <i class="fas fa-video"></i> [DevOps Around Autonomous Data Warehouse](https://www.youtube.com/watch?v=AcWaYWAgOeQ) (Oracle)
+  A short overview of an architecture proposed for Database Software Delivery LifeCycle with automated testing and static code analysis  
+- <i class="fas fa-video"></i> [Oracle Developers Office Hours - Real World Testing of PL/SQL Code](https://www.youtube.com/watch?v=-GkzMV5lUaQ) (hosted by Steven Feuerstein)
+  Panel webinar with: Jasmin Fluri, Deepthi Bandari, Swathi Ambati & Maik Becker, Patrick Barel & Samuel Nitsche
+- <i class="fas fa-video"></i> [Oracle Groundbreakers - Testing with utPLSQL](https://www.youtube.com/watch?v=OxHMaOiPitI) (by Philipp Salvisberg)
+  Presentation on 28th October 2020 at Oracle Groundbreakers APAC Virtual Tour
+- <i class="fas fa-video"></i> [Oracle Developers Office Hours - Testing with utPLSQL](https://www.youtube.com/watch?v=5WGHplRgXzQ) (hosted by Connor McDonald)
+  Live coding and testing session with Samuel Nitsche and Jacek Gebal 
+- <i class="fas fa-video"></i> [Testing in the Imperial Database](https://www.youtube.com/watch?v=sDI8FwKzdok) (by Samuel Nitsche)
+  Talk from SAST Q4 Digital Testing conference  
+- <i class="fas fa-file-code"></i> [Testing With utPLSQL – Made Easy With SQL Developer](https://www.salvis.com/blog/2022/07/31/testing-with-utplsql-made-easy-with-sql-developer/) (by Philipp Salvisberg)
   
 #### Structuring Tests
 
@@ -50,16 +65,25 @@ Do you know about videos, articles, blogs or code examples that are missing here
 
 ## Tools
 
-#### SQLDeveloper Plugin
+#### utPLSQL - SQLDeveloper extension
 
 - <i class="fas fa-file-alt"></i> [Running utPLSQL Tests in SQL Developer](https://www.salvis.com/blog/2019/07/06/running-utplsql-tests-in-sql-developer/) (by Philipp Salvisberg)  
   Detailed explanation how to install and use the utPLSQL-Plugin for SQLDeveloper
-- <i class="fab fa-github"></i> [GitHub page](https://github.com/utPLSQL/utPLSQL-SQLDeveloper)
+- <i class="fas fa-file-alt"></i> [utPLSQL for SQL Developer 1.2 – What’s New?](https://www.salvis.com/blog/2020/06/07/utplsql-for-sql-developer-1-2-whats-new/) (by Philipp Salvisberg)
+- <i class="fas fa-file-alt"></i> [Documentation](https://github.com/utPLSQL/utPLSQL-SQLDeveloper)
+- <i class="fab fa-github"></i> [Downloads](https://github.com/utPLSQL/utPLSQL-SQLDeveloper/releases)
 
-#### Command-line interface
+#### utPLSQL Command-line interface
 
-- <i class="fab fa-github"></i> [GitHub page](https://github.com/utPLSQL/utPLSQL-cli) 
+- <i class="fas fa-file-alt"></i> [Documentation](https://github.com/utPLSQL/utPLSQL-cli) 
+- <i class="fab fa-github"></i> [Downloads](https://github.com/utPLSQL/utPLSQL-cli/releases) 
+
+#### utPLSQL PLSQL-Developer plugin
+
+- <i class="fas fa-file-alt"></i> [Documentation](https://github.com/utPLSQL/utPLSQL-PLSQL-Developer)
+- <i class="fab fa-github"></i>[Download](https://github.com/utPLSQL/utPLSQL-PLSQL-Developer/releases)
 
 #### Maven-Plugin
 
-- <i class="fab fa-github"></i> [GitHub page](https://github.com/utPLSQL/utPLSQL-maven-plugin)
+- <i class="fas fa-file-alt"></i> [Documentation](https://github.com/utPLSQL/utPLSQL-maven-plugin)
+
