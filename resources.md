@@ -36,7 +36,8 @@ Do you know about videos, articles, blogs or code examples that are missing here
 - <i class="fas fa-video"></i> [Testing in the Imperial Database](https://www.youtube.com/watch?v=sDI8FwKzdok) (by Samuel Nitsche)
   Talk from SAST Q4 Digital Testing conference  
 - <i class="fas fa-file-code"></i> [Testing With utPLSQL – Made Easy With SQL Developer](https://www.salvis.com/blog/2022/07/31/testing-with-utplsql-made-easy-with-sql-developer/) (by Philipp Salvisberg)
-  
+- <i class="fas fa-file-code"></i> [Database Development Champions - Programming With utPLSQL – This Is the Way](https://www.youtube.com/watch?v=LtypQEr4-5A) (by Philipp Salvisberg)
+
 #### Structuring Tests
 
 - <i class="fas fa-file-code"></i> [utPLSQL’s Suite Hierarchy in action](https://cleandatabase.wordpress.com/2018/12/16/100codeexamples-utplsqls-suite-hierarchy-in-action/) (by Samuel Nitsche)  
