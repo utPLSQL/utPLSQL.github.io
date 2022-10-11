@@ -1,18 +1,45 @@
-# Maintainging the utPLSQL Website
+# Maintaining the utPLSQL Website
 
-**TODO - needs rewrite**
 
-The [utPLSQL website](https://utplsql.github.io)  is powered by [Jekyll](https://jekyllrb.com/).  Which generated HTML when you push a commit to [utplsql.github.io](https://github.com/utPLSQL/utPLSQL.github.io).   
+The [utPLSQL website](https://utplsql.github.io)  is generated using [MkDocs](https://www.mkdocs.org/) and [material theme](https://squidfunk.github.io/mkdocs-material) 
+[Mike](https://github.com/jimporter/mike) is used for versioning of documentation see also [this page](https://squidfunk.github.io/mkdocs-material/setup/setting-up-versioning/)  
 
-This also works in harmony with the gh-pages branches on the various other repository to create a single website.  For example the [utpsql](https://github.com/utPLSQL/utPLSQL) repositories [gh-pages](https://github.com/utPLSQL/utPLSQL/tree/gh-pages) branch, is visible at [https://utplsql.github.io/utPLSQL/](https://utplsql.github.io/utPLSQL/).  
 
-This allows for documentation from each sub repository to host it's own documentation without having to modify the utplsql.github.io repository directly.
+## Local setup
 
+You will need to have python installed along with pip  (see [this page](https://squidfunk.github.io/mkdocs-material/getting-started/))
+
+Once you have pytin and pip installed you will need to install the three components:
+```
+pip install mkdocs-material
+pip install mike
+
+```
+
+Once installed you can use following commands from command line:
+
+`mkdocs serve` - will stat a local server, so you can see the web page generated locally and tet real-time updates to documentation
+`mkdocs gh-deploy` - will deploy changed documentation into repository (if you have privileges). 
+
+
+The generated web pages are hen visible at [utplsql.org](https://utPLSQL.org).
+
+Individual project documentation pages are deployed separately from the main organization page.
+Each corresponding project repository needs to have its own gh-pages branch.
+  
+
+utPLSQL-framework repository uses `mike` to deploy documentation for specific project version.
+
+Example commands to use are:
+
+- `mike deploy develop` - to deploy documentation for develop branch
+- `mike deploy -p develop` - to deploy and push documentation for develop branch
+- `mike deploy -p -u v3.1.12 latest` - to deploy and push documentation for version v3.1.12 and update the `latest` alias to point to that version
 
 
 ## How to make an announcement post.
 
-Create a File in the [_posts](https://github.com/utPLSQL/utPLSQL.github.io/tree/master/_posts) directory with the file name of `YYYY-MM-DD-Blog-Post-Name.md`
+Create a File in the [docs/_posts](https://github.com/utPLSQL/utPLSQL.github.io/tree/main/docs/_posts) directory with the file name of `YYYY-MM-DD-Blog-Post-Name.md`
 
 This file will be a standard [Markdown file](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) which can be editing with any text editor although there are many offline and online editors for Markdown.
 
@@ -26,6 +53,8 @@ The file will also need a YAML Front Matter section at the top of the file.
     ---
 
 Look at an existing post if you want an example.
+
+Add new entry pointing to new announcement file to the `nav` section in `mkdocs.yml`
 
 ## How to preview site locally
 
