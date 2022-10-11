@@ -1,0 +1,115 @@
+# Format documented here
+# http://www.mkdocs.org/user-guide/configuration/
+
+site_url: http://utPLSQL.org/
+site_name: utPLSQL
+site_description: utPLSQL Ultimate Unit Testing Framework for Oracle PL/SQL
+copyright: Copyright &copy; 2016 - 2022 utPLSQL Team
+#repo_url: https://github.com/utPLSQL/utPLSQL  # disable for offline docs
+theme:
+  name: material
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/lightbulb-outline
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/lightbulb
+        name: Switch to light mode
+  logo: assets/icon-transparent.png
+  favicon: assets/favicon.png
+  features:
+    - navigation.instant  # disable for offline docs
+    - navigation.indexes
+    - navigation.tabs
+    - navigation.tracking
+    - navigation.indexes
+    - toc.follow
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+extra:
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/utPLSQL
+    - icon: fontawesome/brands/slack
+      link: https://join.slack.com/t/utplsql/shared_invite/zt-xwm68udy-4cF_3PNEyczYEbWr38W5ww
+    - icon: fontawesome/brands/github
+      link: https://github.com/utPLSQL
+    - icon: fontawesome/solid/envelope
+      link: mailto:utPLSQL@utPLSQL.org
+  consent:
+    title: Cookie consent
+    description: >- 
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for. With your consent, you're helping us to
+      make our documentation better.
+  version:            # disable for offline docs
+    provider: mike    # disable for offline docs
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - toc:
+      permalink: true
+use_directory_urls: false
+#strict: true
+
+plugins:
+  - search
+  - git-revision-date-localized: # disable for offline docs
+      enable_creation_date: true # disable for offline docs
+      type: datetime             # disable for offline docs
+      
+nav:
+  - Announcements:
+      - index.md
+      - cli version 3.1.9 released: _posts/2022-06-13-cli-version3.1.9-released.md
+      - maven plugin version3.1.10 released: _posts/2022-06-10-maven-plugin-version3.1.10-released.md
+      - version 3.1.12 released: _posts/2022-02-24-version3.1.12-released.md
+      - version 3.1.11 released: _posts/2021-11-18-version3.1.11-released.md
+      - PLSQL Developer plugin version-1.0.0 released: _posts/2021-01-01-PLSQL-Developer-plugin-version-1.0.0-released.md
+      - version 3.1.10 released: _posts/2020-02-23-version3.1.10-released.md
+      - version 3.1.9 released: _posts/2019-11-10-version3.1.9-released.md
+      - version 3.1.8 released: _posts/2019-09-04-version3.1.8-released.md
+      - resources section: _posts/2019-08-01-resources-section.md
+      - java api version 3.1.7 released: _posts/2019-07-12-java-api-version3.1.7-released.md
+      - cli version 3.1.7 released: _posts/2019-07-12-cli-version3.1.7-released.md
+      - version 3.1.7 released: _posts/2019-06-18-version3.1.7-released.md
+      - sqlcl integration for utPLSQL: _posts/2019-05-09-sqlcl-integration-for-utPLSQL.md
+      - utPLSQL tested with 5-DB version: _posts/2019-04-28-utPLSQL-tested-with-5-DB-version.md
+      - cli version 3.1.6 released: _posts/2019-03-25-cli-version3.1.6-released.md
+      - version 3.1.6 released: _posts/2019-03-24-version3.1.6-released.md
+      - version 3.1.5 released: _posts/2019-03-20-version3.1.5-released.md
+      - version 3.1.4 released: _posts/2019-03-19-version3.1.4-released.md
+      - version 3.1.3 released: _posts/2018-11-20-version3.1.3-released.md
+      - how to integrate utplsql in visual studio: _posts/2018-11-13-howto-integrate-utplsql-in-visual-studio.md
+      - cli version 3.1.2 released: _posts/2018-10-24-cli-version3.1.2-released.md
+      - version 3.1.2 released: _posts/2018-07-22-version3.1.2-released.md
+      - version 3.1.1 delayed_announcement: _posts/2018-07-20-version3.1.1-delayed_announcement.md
+      - cli version 3.1.0 released: _posts/2018-03-29-cli-version3.1.0-released.md
+      - cli version 3.0.4 released: _posts/2017-11-23-cli-version3.0.4-released.md
+      - version 3.0.4 released: _posts/2017-11-03-version3.0.4-released.md
+      - version 3.0.3 released: _posts/2017-08-30-version3.0.3-released.md
+      - version 3.0.2 released: _posts/2017-07-18-version3.0.2-released.md
+      - version 3.0.1 released: _posts/2017-06-14-version3.0.1-released.md
+      - version 3.0.0 released: _posts/2017-05-18-version3.0.0-released.md
+      - version 3 Beta1: _posts/2017-04-01-Version3Beta1.md
+      - version 3.0.0.0 Alpha1: _posts/2017-01-17-Version3.0.0.0-Alpha1.md
+      - version 3 pre alpha: _posts/2016-10-10-Version3-pre-alpha.md
+      - version 2.3.1 released: _posts/2016-07-07-version-2-3-1-released.md
+      - documentation now hosted: _posts/2016-06-24-documentation-now-hosted.md
+      - welcome to new website: _posts/2016-06-20-welcome-to-new-website.md
+  - Documentation: documentation.md
+  - Downloads: downloads.md
+  - Resources: resources.md
+  - About: about.md
+  - Contributing: contributing.md
