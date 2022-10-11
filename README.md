@@ -39,22 +39,9 @@ Example commands to use are:
 
 ## How to make an announcement post.
 
-Create a File in the [docs/_posts](https://github.com/utPLSQL/utPLSQL.github.io/tree/main/docs/_posts) directory with the file name of `YYYY-MM-DD-Blog-Post-Name.md`
-
-This file will be a standard [Markdown file](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) which can be editing with any text editor although there are many offline and online editors for Markdown.
-
-The file will also need a YAML Front Matter section at the top of the file.
-
-    ---
-    layout: post
-    title:  "Title of Blog Post"
-    date:   2016-06-20 15:00:00 -0600
-    categories: moving
-    ---
-
-Look at an existing post if you want an example.
-
-Add new entry pointing to new announcement file to the `nav` section in `mkdocs.yml`
+- Create a File in the [docs/_posts](https://github.com/utPLSQL/utPLSQL.github.io/tree/main/docs/_posts) directory with the file name of `YYYY-MM-DD-Blog-Post-Name.md` This file will be a standard [Markdown file](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) which can be editing with any text editor although there are many offline and online editors for Markdown.
+- Add new entry pointing to new announcement file to the start of `nav` section in `mkdocs.yml`
+- Add new entry to the top of  `index.md`
 
 ## How to preview site locally
 

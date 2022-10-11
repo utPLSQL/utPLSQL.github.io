@@ -60,6 +60,7 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+  - pymdownx.caret
   - toc:
       permalink: true
 use_directory_urls: false
@@ -74,7 +75,7 @@ plugins:
 nav:
   - Announcements:
     - index.md
-    - JoelKAllmanDay 2022-10-11-new-website-design.md
+    - New website (#JoelKallmanDay): _posts/2022-10-11-new-website-design.md
     - cli version 3.1.9 released: _posts/2022-06-13-cli-version3.1.9-released.md
     - maven plugin version3.1.10 released: _posts/2022-06-10-maven-plugin-version3.1.10-released.md
     - version 3.1.12 released: _posts/2022-02-24-version3.1.12-released.md
