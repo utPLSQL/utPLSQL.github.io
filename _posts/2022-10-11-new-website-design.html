@@ -10,14 +10,14 @@
       
       
       
-        <link rel="canonical" href="http://utPLSQL.org/_posts/2019-09-04-version3.1.8-released.html">
+        <link rel="canonical" href="http://utPLSQL.org/_posts/2022-10-11-new-website-design.html">
       
       <link rel="icon" href="../assets/favicon.png">
       <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
     
     
       
-        <title>utPLSQL v3.1.8 released - utPLSQL</title>
+        <title>New website design - utPLSQL</title>
       
     
     
@@ -69,11 +69,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#changes-in-release-318" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -106,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              utPLSQL v3.1.8 released
+              New website design
             
           </span>
         </div>
@@ -190,15 +185,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../index.html" class="md-tabs__link md-tabs__link--active">
+      <a href="../index.html" class="md-tabs__link">
         Announcements
       </a>
     </li>
@@ -308,14 +301,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
       
       
       
@@ -536,66 +527,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          version 3.1.8 released
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="2019-09-04-version3.1.8-released.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="2019-09-04-version3.1.8-released.html" class="md-nav__link">
         version 3.1.8 released
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#new-features" class="md-nav__link">
-    New features
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#enhancements" class="md-nav__link">
-    Enhancements
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bug-fixes" class="md-nav__link">
-    Bug fixes
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1206,39 +1142,32 @@
                   
 
 
-<h1 id="changes-in-release-318">Changes in release 3.1.8<a class="headerlink" href="#changes-in-release-318" title="Permanent link">&para;</a></h1>
-<p><a href="https://github.com/utPLSQL/utPLSQL/releases/tag/v3.1.8">Download from GitHub</a></p>
-<h2 id="new-features">New features<a class="headerlink" href="#new-features" title="Permanent link">&para;</a></h2>
+  <h1>New website design</h1>
+
+<p>Today is <a href="https://twitter.com/hashtag/JoelKallmanDay?f=live">#JoelKallmanDay</a>
+As memorandum of Joel Kallman, on this day utPLSQL launched its new website using different engine.</p>
+<p>We have moved away from using <a href="https://jekyllrb.com/">Jekyll</a> with GitHub Pages to host project and organization sites.
+<a href="https://jekyllrb.com/">Jekyll</a> was simply too much hussle and we used <a href="https://www.mkdocs.org/">MkDocs</a> to generate offline documentation for utPLSQL that was packaged into the release zip file.</p>
+<p>So instead of using two different methods, wei will now use only one. <a href="https://www.mkdocs.org/">MkDocs</a> is now used for both utPSLQL offline and for online organization and project pages.</p>
+<p>Thanks to wonderful <a href="https://squidfunk.github.io/mkdocs-material/">material</a> theme and <a href="https://github.com/jimporter/mike">mike</a>(versioning plugin) for MkDocs you may now enjoy the following new features:</p>
 <ul>
-<li>Added support for <a href="https://github.com/utPLSQL/utPLSQL/blob/v3.1.8/docs/userguide/annotations.md#sys_context">session context</a> to provide test and suite information during test run <a href="https://github.com/utPLSQL/utPLSQL/issues/963">#963</a> <a href="https://github.com/utPLSQL/utPLSQL/issues/781">#781</a> </li>
-<li>Added ability to <a href="https://github.com/utPLSQL/utPLSQL/blob/v3.1.8/docs/userguide/expectations.md#running-expectations-outside-utplsql-framework">invoke expectations without running framework</a> <a href="https://github.com/utPLSQL/utPLSQL/issues/956">#956</a> <a href="https://github.com/utPLSQL/utPLSQL/issues/963">#963</a></li>
-<li>Failing expectations are now reported with call stack <a href="https://github.com/utPLSQL/utPLSQL/issues/967">#967</a> <a href="https://github.com/utPLSQL/utPLSQL/issues/963">#963</a></li>
+<li>dark &amp; light theme</li>
+<li>better navigation and menu in utPLSQL documentation</li>
+<li>documentation version dropdown</li>
+<li>powerful and fast search within documentation</li>
 </ul>
-<h2 id="enhancements">Enhancements<a class="headerlink" href="#enhancements" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Improved framework table private data protection <a href="https://github.com/utPLSQL/utPLSQL/issues/922">#922</a> <a href="https://github.com/utPLSQL/utPLSQL/issues/954">#954</a></li>
-<li>Improved install process. It is now unified for installation with both public and private synonyms <a href="https://github.com/utPLSQL/utPLSQL/issues/957">#957</a> <a href="https://github.com/utPLSQL/utPLSQL/issues/954">#954</a></li>
-<li>Improved reporting of warnings for integration with SQLDeveloper <a href="https://github.com/utPLSQL/utPLSQL/issues/964">#964</a></li>
-<li>Improved query to retrieve coverage sources <a href="https://github.com/utPLSQL/utPLSQL/issues/981">#981</a> <a href="https://github.com/utPLSQL/utPLSQL/issues/970">#970</a></li>
-<li>Improved security around malicious utPLSQL owner name <a href="https://github.com/utPLSQL/utPLSQL/issues/920">#920</a></li>
-</ul>
-<h2 id="bug-fixes">Bug fixes<a class="headerlink" href="#bug-fixes" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Fixed cursor comparison on Oracle 11.2 <a href="https://github.com/utPLSQL/utPLSQL/issues/947">#947</a> </li>
-<li>Fixed issue with retrieving suite data <a href="https://github.com/utPLSQL/utPLSQL/issues/977">#977</a> <a href="https://github.com/utPLSQL/utPLSQL/issues/974">#974</a> <a href="https://github.com/utPLSQL/utPLSQL/issues/978">#978</a></li>
-<li>Application context is now reset in session after test run <a href="https://github.com/utPLSQL/utPLSQL/issues/951">#951</a></li>
-</ul>
+<p>Hopefully, you will like the changes and enhancements. All the permanent links to old site should still be working. </p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 07:39:36</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 22:36:54</span>
       
         <br>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">September 4, 2019 05:55:40</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 22:36:54</span>
       
     
   </small>
@@ -1258,42 +1187,6 @@
       </main>
       
         <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="2019-11-10-version3.1.9-released.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: version 3.1.9 released" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              version 3.1.9 released
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="2019-08-01-resources-section.html" class="md-footer__link md-footer__link--next" aria-label="Next: resources section" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              resources section
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
