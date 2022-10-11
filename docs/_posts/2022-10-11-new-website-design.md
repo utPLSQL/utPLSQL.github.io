@@ -5,8 +5,9 @@ date:   2022-10-12 23:50:00 +0000
 ---
 
 
-Today is [#JoelKallmanDay](https://twitter.com/hashtag/JoelKallmanDay?f=live)
-As memorandum of Joel Kallman, on this day utPLSQL launched its new website using different engine.
+Today is [#JoelKallmanDay](https://twitter.com/hashtag/JoelKallmanDay?f=live).
+
+As memorial of Joel Kallman, on this day utPLSQL launched its new website using different engine.
 
 We have moved away from using [Jekyll](https://jekyllrb.com/) with GitHub Pages to host project and organization sites.
 [Jekyll](https://jekyllrb.com/) was simply too much hussle and we used [MkDocs](https://www.mkdocs.org/) to generate offline documentation for utPLSQL that was packaged into the release zip file.
