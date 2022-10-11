@@ -1,5 +1,7 @@
 # Maintainging the utPLSQL Website
 
+**TODO - needs rewrite**
+
 The [utPLSQL website](https://utplsql.github.io)  is powered by [Jekyll](https://jekyllrb.com/).  Which generated HTML when you push a commit to [utplsql.github.io](https://github.com/utPLSQL/utPLSQL.github.io).   
 
 This also works in harmony with the gh-pages branches on the various other repository to create a single website.  For example the [utpsql](https://github.com/utPLSQL/utPLSQL) repositories [gh-pages](https://github.com/utPLSQL/utPLSQL/tree/gh-pages) branch, is visible at [https://utplsql.github.io/utPLSQL/](https://utplsql.github.io/utPLSQL/).  
