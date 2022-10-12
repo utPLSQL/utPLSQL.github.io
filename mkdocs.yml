@@ -7,11 +7,11 @@ remote_branch: mkdocs_site
 remote_name: origin
 site_description: utPLSQL Ultimate Unit Testing Framework for Oracle PL/SQL
 copyright: Copyright &copy; 2016 - 2022 utPLSQL Team
-#repo_url: https://github.com/utPLSQL/utPLSQL  # disable for offline docs
+extra_css:
+  - stylesheets/extra.css
 theme:
   name: material
   palette:
-    # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
       toggle:
