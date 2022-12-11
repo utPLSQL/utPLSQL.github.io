@@ -12,6 +12,7 @@ You will need to have python installed along with pip  (see [this page](https://
 Once you have pytin and pip installed you will need to install the three components:
 ```
 pip install mkdocs-material
+pip install mkdocs-git-revision-date-localized-plugin
 pip install mike
 
 ```
