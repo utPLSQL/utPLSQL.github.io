@@ -78,6 +78,7 @@ plugins:
 nav:
   - Announcements:
     - index.md
+    - utPLSQL 3.1.14 released: _posts/2024-02-19-version3.1.14-released.md
     - version 3.1.13 released: _posts/2022-12-11-version3.1.13-released.md
     - New website (#JoelKallmanDay): _posts/2022-10-11-new-website-design.md
     - cli version 3.1.9 released: _posts/2022-06-13-cli-version3.1.9-released.md
