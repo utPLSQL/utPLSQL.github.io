@@ -1,0 +1,21 @@
+# Based on: https://blog.elmah.io/deploying-a-mkdocs-documentation-site-with-github-actions/
+name: build
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+      - name: Setup MkDocs
+        run: |
+          pip install mkdocs-material
+          pip install mkdocs-git-revision-date-localized-plugin
+          pip install mike
+      - name: Build website
+        run: mkdocs gh-deploy --verbose
