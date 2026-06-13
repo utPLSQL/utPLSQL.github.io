@@ -20,14 +20,14 @@ Write and run tests directly in PL/SQL, integrate with your CI/CD pipeline, and 
 
 ## Core projects
 
-| Repository | Description | You found an issue?                                                     |
-|---|---|-------------------------------------------------------------------------|
-| [utPLSQL](https://github.com/utPLSQL/utPLSQL) | Core PL/SQL testing framework | [report it here](https://github.com/utPLSQL/utPLSQL/issues/new)                 |
-| [utPLSQL-cli](https://github.com/utPLSQL/utPLSQL-cli) | Command-line runner | [report it here](https://github.com/utPLSQL/utPLSQL-cli/issues/new)             |
-| [utPLSQL-maven-plugin](https://github.com/utPLSQL/utPLSQL-maven-plugin) | Maven plugin | [report it here](https://github.com/utPLSQL/utPLSQL-maven-plugin/issues/new)    |
-| [utPLSQL-SQLDeveloper](https://github.com/utPLSQL/utPLSQL-SQLDeveloper) | SQL Developer extension | [report it here](https://github.com/utPLSQL/utPLSQL-SQLDeveloper/issues/new)    |
-| [utPLSQL-PLSQL-Developer](https://github.com/utPLSQL/utPLSQL-PLSQL-Developer) | PL/SQL Developer plugin | [report it here](https://github.com/utPLSQL/utPLSQL-PLSQL-Developer/issues/new) |
-| [utPLSQL-java-api](https://github.com/utPLSQL/utPLSQL-java-api) | Java API | [report it here](https://github.com/utPLSQL/utPLSQL-java-api/issues/new)        |
+| Repository                                                                    | Description                   | What's new?                                                             | Something broken?                                                               |
+|-------------------------------------------------------------------------------|-------------------------------|-------------------------------------------------------------------------|---------------------------------------------------------------------------------|
+| [utPLSQL](https://github.com/utPLSQL/utPLSQL)                                 | Core PL/SQL testing framework | [releases](https://github.com/utPLSQL/utPLSQL/releases)                 | [report it here](https://github.com/utPLSQL/utPLSQL/issues/new)                 |
+| [utPLSQL-cli](https://github.com/utPLSQL/utPLSQL-cli)                         | Command-line runner           | [releases](https://github.com/utPLSQL/utPLSQL-cli/releases)             | [report it here](https://github.com/utPLSQL/utPLSQL-cli/issues/new)             |
+| [utPLSQL-maven-plugin](https://github.com/utPLSQL/utPLSQL-maven-plugin)       | Maven plugin                  | [releases](https://github.com/utPLSQL/utPLSQL-maven-plugin/releases)    | [report it here](https://github.com/utPLSQL/utPLSQL-maven-plugin/issues/new)    |
+| [utPLSQL-SQLDeveloper](https://github.com/utPLSQL/utPLSQL-SQLDeveloper)       | SQL Developer extension       | [releases](https://github.com/utPLSQL/utPLSQL-SQLDeveloper/releases)    | [report it here](https://github.com/utPLSQL/utPLSQL-SQLDeveloper/issues/new)    |
+| [utPLSQL-PLSQL-Developer](https://github.com/utPLSQL/utPLSQL-PLSQL-Developer) | PL/SQL Developer plugin       | [releases](https://github.com/utPLSQL/utPLSQL-PLSQL-Developer/releases) | [report it here](https://github.com/utPLSQL/utPLSQL-PLSQL-Developer/issues/new) |
+| [utPLSQL-java-api](https://github.com/utPLSQL/utPLSQL-java-api)               | Java API                      | [releases](https://github.com/utPLSQL/utPLSQL-java-api/releases)        | [report it here](https://github.com/utPLSQL/utPLSQL-java-api/issues/new)        |
 
 ---
 
