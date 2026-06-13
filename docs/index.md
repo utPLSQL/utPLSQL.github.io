@@ -1,4 +1,4 @@
-<img src="assets/utPLSQL-testing-framework-transparent.png" alt="utPLSQL - Testing Framework for PL/SQL" style="max-height: 10vh; width: auto;">
+<p style="text-align: center;"><img src="assets/utPLSQL-testing-framework-transparent.png" alt="utPLSQL - Testing Framework for PL/SQL" style="max-height: 10vh; width: auto;"></p>
 
 The ultimate unit testing framework for Oracle PL/SQL.
 
@@ -18,7 +18,7 @@ Write and run tests directly in PL/SQL, integrate with your CI/CD pipeline, and 
 
 ---
 
-## Main tools
+## Core projects
 
 | Repository | Description | You found an issue?                                                     |
 |---|---|-------------------------------------------------------------------------|
