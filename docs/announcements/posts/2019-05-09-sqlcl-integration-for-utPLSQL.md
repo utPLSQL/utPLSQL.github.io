@@ -3,7 +3,8 @@ layout: post
 title:  "Auto-run utPLSQL tests with Oracle sqlcl"
 date:
   created: 2019-05-09 23:08:00 +0000
-categories: utPLSQL
+categories:
+  - "utPLSQL"
 ---
 
 Today at [#apexConn19](https://twitter.com/search?q=%23apexConn19&src=typd).

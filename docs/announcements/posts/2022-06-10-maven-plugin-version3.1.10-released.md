@@ -3,7 +3,8 @@ layout: post
 title:  "utPLSQL-maven-plugin v3.1.10 released"
 date:
   created: 2022-06-10 10:31:00 +0000
-categories: maven-plugin
+categories:
+  - "maven-plugin"
 ---
 
 

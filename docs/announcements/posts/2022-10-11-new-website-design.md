@@ -3,6 +3,8 @@ layout: post
 title:  "New website design"
 date:
   created: 2022-10-12 23:50:00 +0000
+categories:
+  - "website"
 ---
 
 

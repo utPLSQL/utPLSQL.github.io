@@ -3,7 +3,8 @@ layout: post
 title:  "utPLSQL is continuously tested on 5 DB versions"
 date:
   created: 2019-04-28 13:38:00 +0000
-categories: utPLSQL
+categories:
+  - "utPLSQL"
 ---
 
 # Oracle 19c DB added to our CI/CD process

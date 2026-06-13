@@ -3,7 +3,8 @@ layout: post
 title:  "We've released utPLSQL-cli"
 date:
   created: 2017-11-22 09:04:00 +0000
-categories: version3
+categories:
+  - "version3"
 ---
 
 
