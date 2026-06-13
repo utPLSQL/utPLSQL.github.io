@@ -75,13 +75,13 @@ plugins:
       enable_creation_date: true # disable for offline docs
       type: datetime             # disable for offline docs
   - blog:
-      blog_dir: _posts              # keep your existing _posts directory
+      blog_dir: announcements
       post_date_format: long        # e.g. "June 10, 2026"
       post_url_format: "{slug}"     # keeps URLs clean
       archive: true
       categories: true
 nav:
-  - Announcements: _posts/index.md
+  - Announcements: announcements/index.md
   - Documentation:
       - documentation.md
       - utPLSQL framework: utPLSQL/latest
