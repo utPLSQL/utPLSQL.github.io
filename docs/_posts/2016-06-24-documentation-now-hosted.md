@@ -1,7 +1,8 @@
 ---
 layout: post
 title:  "Documentation is now hosted."
-date:   2016-06-24 10:00:00 -0600
+date:
+  created: 2016-06-24 10:00:00 -0600
 categories: moving
 ---
 

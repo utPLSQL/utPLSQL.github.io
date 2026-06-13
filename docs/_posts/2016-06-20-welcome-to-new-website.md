@@ -1,7 +1,8 @@
 ---
 layout: post
 title:  "Welcome to new web site"
-date:   2016-06-20 15:00:00 -0600
+date:
+  created: 2016-06-20 15:00:00 -0600
 categories: moving
 ---
 

@@ -1,7 +1,8 @@
 ---
 layout: post
 title:  "Auto-run utPLSQL tests with Oracle sqlcl"
-date:   2019-05-09 23:08:00 +0000
+date:
+  created: 2019-05-09 23:08:00 +0000
 categories: utPLSQL
 ---
 

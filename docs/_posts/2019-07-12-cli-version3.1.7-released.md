@@ -1,7 +1,8 @@
 ---
 layout: post
 title:  "utPLSQL-cli v3.1.7 released"
-date:   2019-07-12 15:00:00 +0000
+date:
+  created: 2019-07-12 15:00:00 +0000
 categories: cli
 ---
 

@@ -1,7 +1,8 @@
 ---
 layout: post
 title:  "Version 3 - pre-alpha"
-date:   2016-10-10 11:00:00 -0600
+date:
+  created: 2016-10-10 11:00:00 -0600
 categories: version3
 ---
 
