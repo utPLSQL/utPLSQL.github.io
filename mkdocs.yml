@@ -81,6 +81,7 @@ plugins:
       archive: true
       categories: true
 nav:
+  - Home: index.md
   - Announcements: announcements/index.md
   - Documentation:
       - documentation.md
