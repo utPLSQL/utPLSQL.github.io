@@ -2,7 +2,7 @@
 layout: post
 title:  "Version v3.0.0-beta has been released"
 date:
-  created: 2017-04-01 12:00:00 -0600
+  created: 2017-04-01
 categories:
   - "releases"
   - "utplsql-core"

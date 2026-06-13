@@ -2,7 +2,7 @@
 layout: post
 title:  "Version 2.3.1 has been released."
 date:
-  created: 2016-07-07 10:00:00 -0600
+  created: 2016-07-07
 categories:
   - "version2-moving"
 ---

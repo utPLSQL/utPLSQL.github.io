@@ -2,7 +2,7 @@
 layout: post
 title:  "utPLSQL-java-api v3.1.7 released"
 date:
-  created: 2019-07-12 09:00 +0000
+  created: 2019-07-12T09:00:00
 categories:
   - "releases"
   - "utplsql-java-api"

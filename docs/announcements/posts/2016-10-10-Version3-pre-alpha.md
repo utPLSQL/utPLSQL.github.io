@@ -2,7 +2,7 @@
 layout: post
 title:  "Version 3 - pre-alpha"
 date:
-  created: 2016-10-10 11:00:00 -0600
+  created: 2016-10-10
 categories:
   - "releases"
   - "utplsql-core"

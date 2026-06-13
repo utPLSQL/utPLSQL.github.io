@@ -2,7 +2,7 @@
 layout: post
 title:  "PL/SQL Developer plugin version 1.0.0 released"
 date:
-  created: 2021-01-01 13:10:00 +0000
+  created: 2021-01-01
 categories:
   - "releases"
   - "utplsql-plsql-developer-plugins"

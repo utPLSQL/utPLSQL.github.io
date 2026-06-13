@@ -2,7 +2,7 @@
 layout: post
 title:  "Auto-run utPLSQL tests with Oracle sqlcl"
 date:
-  created: 2019-05-09 23:08:00 +0000
+  created: 2019-05-09
 categories:
   - "tips-n-tricks"
 ---

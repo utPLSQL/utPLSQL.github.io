@@ -2,7 +2,7 @@
 layout: post
 title:  "Welcome to new web site"
 date:
-  created: 2016-06-20 15:00:00 -0600
+  created: 2016-06-20
 categories:
   - "version2-moving"
 ---
