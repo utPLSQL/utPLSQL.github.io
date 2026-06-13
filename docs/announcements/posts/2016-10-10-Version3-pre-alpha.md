@@ -4,7 +4,8 @@ title:  "Version 3 - pre-alpha"
 date:
   created: 2016-10-10 11:00:00 -0600
 categories:
-  - "version3"
+  - "releases"
+  - "utplsql-core"
 ---
 
 Version 3 in pre-alpha state

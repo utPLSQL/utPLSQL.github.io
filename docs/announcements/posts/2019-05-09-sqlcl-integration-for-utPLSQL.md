@@ -4,7 +4,7 @@ title:  "Auto-run utPLSQL tests with Oracle sqlcl"
 date:
   created: 2019-05-09 23:08:00 +0000
 categories:
-  - "utPLSQL"
+  - "tips-n-tricks"
 ---
 
 Today at [#apexConn19](https://twitter.com/search?q=%23apexConn19&src=typd).
@@ -14,7 +14,7 @@ Today at [#apexConn19](https://twitter.com/search?q=%23apexConn19&src=typd).
 As a result, something amazing happened. Within an hour or so, Kris created a fully functional auto-runner for utPLSQL tests within Oracle sqlcl.
 
 
-![utPSLQL-sqlcl](../assets/images/sqlcl-utplsql.jpg)
+![utPSLQL-sqlcl](../../assets/images/sqlcl-utplsql.jpg)
 
 [See for yourself](https://twitter.com/krisrice/status/1126467712211988480)
 

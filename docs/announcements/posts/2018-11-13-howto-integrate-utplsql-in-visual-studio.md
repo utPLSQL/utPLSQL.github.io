@@ -4,7 +4,7 @@ title:  "How to integrate utPLSQL into Visual Studio"
 date:
   created: 2018-11-13 09:30:00 +0100
 categories:
-  - "quicktip"
+  - "tips-n-tricks"
 ---
 
 How to easily integrate @utPLSQL into @VisualStudio via External Tools.

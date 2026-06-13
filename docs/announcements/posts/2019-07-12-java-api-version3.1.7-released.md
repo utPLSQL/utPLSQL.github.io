@@ -4,7 +4,8 @@ title:  "utPLSQL-java-api v3.1.7 released"
 date:
   created: 2019-07-12 09:00 +0000
 categories:
-  - "java-api"
+  - "releases"
+  - "utplsql-java-api"
 ---
 
 

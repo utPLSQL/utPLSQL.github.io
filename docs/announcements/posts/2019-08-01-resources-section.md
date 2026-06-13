@@ -4,7 +4,7 @@ title:  "New Resources section"
 date:
   created: 2019-09-04 02:00:00 +0000
 categories:
-  - "version3"
+  - "website"
 ---
 
 # New Resources section

@@ -4,7 +4,7 @@ title:  "Documentation is now hosted."
 date:
   created: 2016-06-24 10:00:00 -0600
 categories:
-  - "moving"
+  - "version2-moving"
 ---
 
 [Issue #19](https://github.com/utPLSQL/utPLSQL/issues/19) to link documentation to the website has been completed. 

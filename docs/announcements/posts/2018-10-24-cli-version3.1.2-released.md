@@ -4,7 +4,8 @@ title:  "utPLSQL-cli v3.1.2 released"
 date:
   created: 2018-10-24 10:55:00 +0000
 categories:
-  - "cli"
+  - "releases"
+  - "utplsql-cli"
 ---
 
 
