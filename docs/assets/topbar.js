@@ -98,4 +98,9 @@
   } else {
     inject();
   }
+  //This is Material's own API for instant navigation lifecycle — it fires after each page swap.
+  if (typeof document$ !== 'undefined') {
+    document$.subscribe(inject);
+  }
+
 })();
