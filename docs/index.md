@@ -1,3 +1,5 @@
+<h1 hidden>utPLSQL - Testing Framework for PL/SQL</h1>
+
 <p style="text-align: center;"><img src="assets/utPLSQL-testing-framework-transparent.png" alt="utPLSQL - Testing Framework for PL/SQL" style="max-height: 10vh; width: auto;"></p>
 
 The ultimate unit testing framework for Oracle PL/SQL.
