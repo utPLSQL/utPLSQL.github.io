@@ -9,6 +9,7 @@ remote_name: origin
 site_description: utPLSQL Ultimate Unit Testing Framework for Oracle PL/SQL
 copyright: Copyright &copy; 2016 - 2022 utPLSQL Team
 extra_css:
+  - assets/topbar.css
   - stylesheets/extra.css
 theme:
   name: material

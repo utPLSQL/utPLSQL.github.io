@@ -1,0 +1,152 @@
+#utplsql-topbar {
+  background: #1565c0;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  height: 2rem;
+  font-size: 0.7rem;
+  font-family: var(--md-text-font, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+  letter-spacing: 0.03em;
+}
+
+#utplsql-topbar a {
+  color: rgba(255,255,255,0.72);
+  text-decoration: none;
+  padding: 0 0.5rem;
+  line-height: 2rem;
+  white-space: nowrap;
+  transition: color 0.15s;
+}
+
+#utplsql-topbar a:hover,
+#utplsql-topbar a.utplsql-active {
+  color: #fff;
+}
+
+#utplsql-topbar .utplsql-brand {
+  font-weight: 700;
+  color: #fff;
+  padding-right: 0.75rem;
+  margin-right: 0.25rem;
+  border-right: 1px solid rgba(255,255,255,0.25);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+#utplsql-topbar .utplsql-brand img {
+  height: 1.3rem;
+  width: auto;
+  display: block;
+}
+
+#utplsql-topbar .utplsql-controls {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+}
+
+#utplsql-topbar .utplsql-controls button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: rgba(255,255,255,0.72);
+  padding: 0 0.4rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  transition: color 0.15s;
+  border-radius: 0.2rem;
+}
+
+#utplsql-topbar .utplsql-controls button:hover {
+  color: #fff;
+}
+
+#utplsql-topbar .utplsql-controls button svg {
+  width: 1rem;
+  height: 1rem;
+  fill: currentColor;
+  display: block;
+}
+
+/* Material header sits below the topbar */
+.md-header,
+.md-header--shadow {
+  top: 2rem !important;
+}
+
+/* Hide drawer hamburger and logo — our topbar has both.
+   Leave the search icon button intact so mobile search still works. */
+.md-header__button:not([for="__search"]) {
+  display: none !important;
+}
+
+/* Move palette toggle off-screen — our topbar handles theme switching */
+.md-header__option {
+  position: absolute !important;
+  left: -9999px !important;
+}
+
+/* Hide Material's logo/title — brand lives in the topbar */
+.md-header__title {
+  display: none !important;
+}
+
+/* Sidebars sit below the topbar + Material header (~2rem + 2.4rem) */
+.md-sidebar {
+  top: 4.4rem !important;
+}
+
+/* Hide the tab bar — the topbar handles top-level navigation */
+.md-tabs {
+  display: none !important;
+}
+
+/* Hamburger button — hidden by default, shown via media query on mobile */
+#utplsql-topbar .utplsql-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: rgba(255,255,255,0.72);
+  padding: 0 0.4rem;
+  height: 2rem;
+  align-items: center;
+  flex-shrink: 0;
+  transition: color 0.15s;
+}
+
+#utplsql-topbar .utplsql-hamburger:hover {
+  color: #fff;
+}
+
+#utplsql-topbar .utplsql-hamburger svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  fill: currentColor;
+  display: block;
+}
+
+@media screen and (max-width: 76.1875em) {
+  /* Hide nav links on mobile — sidebar drawer handles navigation */
+  #utplsql-topbar a:not(.utplsql-brand) {
+    display: none;
+  }
+
+  /* Show hamburger */
+  #utplsql-topbar .utplsql-hamburger {
+    display: flex;
+  }
+
+  /* Material's mobile search overlay is position:fixed from top:0.
+     Shift the whole search container (form + output together) below our topbar. */
+  .md-search__inner {
+    padding-top: 2rem !important;
+  }
+}
