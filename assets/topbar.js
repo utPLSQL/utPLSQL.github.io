@@ -133,9 +133,9 @@
     brand.className = 'utplsql-brand';
     brand.href = BASE + '/';
 
-    var icon = document.createElement('img');
-    icon.src = BASE + '/assets/icon-transparent.png';
-    icon.alt = 'utPLSQL';
+    var icon = document.createElement('span');
+    icon.className = 'utplsql-brand-icon';
+    icon.setAttribute('aria-hidden', 'true');
     brand.appendChild(icon);
 
     var brandText = document.createElement('span');

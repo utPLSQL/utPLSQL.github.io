@@ -38,10 +38,15 @@
   gap: 0.4rem;
 }
 
-#utplsql-topbar .utplsql-brand img {
-  height: 1.3rem;
-  width: auto;
+#utplsql-topbar .utplsql-brand-icon {
   display: block;
+  width: 1.3rem;
+  height: 1.3rem;
+  flex-shrink: 0;
+  background-image: url('icon-transparent.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 
 #utplsql-topbar .utplsql-controls {
