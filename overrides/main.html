@@ -1,6 +1,25 @@
 {% extends "base.html" %}
 {#
   Org-site template override (utPLSQL.github.io).
-  The topbar is not loaded here — this site IS the source of the topbar.
-  Add org-site-specific template customisations below as needed.
+  Loads the same shared topbar as all sub-sites — single source of truth in topbar.js.
 #}
+
+{% block extrahead %}
+  {{ super() }}
+  <script>window.utplsqlBaseUrl = "{{ config.site_url }}";</script>
+  {%- set palette = config.theme.palette %}
+  {%- if palette %}
+    {%- set entries = [palette] if palette is mapping else palette %}
+    {%- set ns = namespace(icons=[]) %}
+    {%- for entry in entries %}
+      {%- if entry.toggle is defined %}
+        {%- set svg %}{% include ".icons/" ~ entry.toggle.icon ~ ".svg" %}{%- endset %}
+        {%- set ns.icons = ns.icons + [{"scheme": entry.scheme | default("default"), "icon": svg, "name": entry.toggle.name}] %}
+      {%- endif %}
+    {%- endfor %}
+    {%- if ns.icons %}
+  <script>window.utplsqlPaletteIcons = {{ ns.icons | tojson }};</script>
+    {%- endif %}
+  {%- endif %}
+  <script src="{{ base_url }}/assets/topbar.js" defer></script>
+{% endblock %}
