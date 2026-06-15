@@ -116,6 +116,32 @@
   }
 
   /* Updates the active class on nav links based on the current URL. */
+  function injectDrawerNav() {
+    /* Already injected and still in the DOM — nothing to do. */
+    if (document.getElementById('utplsql-drawer-nav')) return;
+
+    var inner = document.querySelector('.md-sidebar--primary .md-sidebar__inner');
+    if (!inner) return;
+
+    var section = document.createElement('nav');
+    section.id = 'utplsql-drawer-nav';
+    section.setAttribute('aria-label', 'utPLSQL.org site navigation');
+
+    var heading = document.createElement('div');
+    heading.className = 'utplsql-drawer-heading';
+    heading.textContent = 'utPLSQL.org';
+    section.appendChild(heading);
+
+    NAV.forEach(function (item) {
+      var a = document.createElement('a');
+      a.href = item.url;
+      a.textContent = item.label;
+      section.appendChild(a);
+    });
+
+    inner.insertBefore(section, inner.firstChild);
+  }
+
   function updateActiveLink() {
     var bar = document.getElementById('utplsql-topbar');
     if (!bar) return;
@@ -131,6 +157,7 @@
     if (document.getElementById('utplsql-topbar')) {
       updateActiveLink();
       applyStoredScheme();
+      injectDrawerNav();
       return;
     }
 
@@ -140,6 +167,7 @@
       document.body.insertBefore(savedBar, document.body.firstChild);
       updateActiveLink();
       applyStoredScheme();
+      injectDrawerNav();
       return;
     }
 
@@ -212,6 +240,7 @@
     savedBar = bar;
     document.body.insertBefore(bar, document.body.firstChild);
     updateActiveLink();
+    injectDrawerNav();
 
     /* When auto mode is active, re-apply if the OS theme changes live. */
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function () {

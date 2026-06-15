@@ -155,6 +155,11 @@
   display: block;
 }
 
+/* Org site links injected into Material's sidebar drawer — desktop: hidden */
+#utplsql-drawer-nav {
+  display: none;
+}
+
 @media screen and (max-width: 76.1875em) {
   /* Hide nav links on mobile — sidebar drawer handles navigation */
   #utplsql-topbar a:not(.utplsql-brand) {
@@ -170,5 +175,34 @@
      Shift the whole search container (form + output together) below our topbar. */
   .md-search__inner {
     padding-top: 2rem !important;
+  }
+
+  /* Org site nav section at the top of the drawer */
+  #utplsql-drawer-nav {
+    display: block;
+    padding: 0.6rem 0.8rem 0.4rem;
+    border-bottom: 1px solid var(--md-default-fg-color--lightest, rgba(0,0,0,.12));
+    margin-bottom: 0.4rem;
+  }
+
+  #utplsql-drawer-nav .utplsql-drawer-heading {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--md-default-fg-color--light);
+    padding-bottom: 0.3rem;
+  }
+
+  #utplsql-drawer-nav a {
+    display: block;
+    padding: 0.25rem 0;
+    color: var(--md-typeset-a-color);
+    text-decoration: none;
+    font-size: 0.75rem;
+  }
+
+  #utplsql-drawer-nav a:hover {
+    color: var(--md-accent-fg-color);
   }
 }
