@@ -10,19 +10,5 @@
     window.utplsqlBaseUrl = "{{ config.site_url }}";
     document.documentElement.setAttribute('data-utplsql-site', 'org');
   </script>
-  {%- set palette = config.theme.palette %}
-  {%- if palette %}
-    {%- set entries = [palette] if palette is mapping else palette %}
-    {%- set ns = namespace(icons=[]) %}
-    {%- for entry in entries %}
-      {%- if entry.toggle is defined %}
-        {%- set svg %}{% include ".icons/" ~ entry.toggle.icon ~ ".svg" %}{%- endset %}
-        {%- set ns.icons = ns.icons + [{"scheme": entry.scheme | default("default"), "icon": svg, "name": entry.toggle.name}] %}
-      {%- endif %}
-    {%- endfor %}
-    {%- if ns.icons %}
-  <script>window.utplsqlPaletteIcons = {{ ns.icons | tojson }};</script>
-    {%- endif %}
-  {%- endif %}
   <script src="{{ base_url }}/assets/topbar.js" defer></script>
 {% endblock %}

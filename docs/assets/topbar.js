@@ -31,60 +31,91 @@
     '<path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>' +
     '</svg>';
 
-  var SVG_SUN =
-    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">' +
-    '<path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>' +
+  /* Icons from Material for MkDocs icon set, matching the org's mkdocs.yml palette config.
+     Cycle order: auto → light → dark → auto
+       auto  → material/lightbulb-auto-outline  (following OS preference)
+       light → material/lightbulb-outline        (forced light, click for dark)
+       dark  → material/lightbulb                (forced dark, click for auto) */
+  var SVG_AUTO =
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">' +
+    '<path d="M9 2c3.87 0 7 3.13 7 7 0 2.38-1.19 4.47-3 5.74V17c0 .55-.45 1-1 1H6c-.55 0-1-.45-1-1v-2.26C3.19 13.47 2 11.38 2 9c0-3.87 3.13-7 7-7M6 21v-1h6v1c0 .55-.45 1-1 1H7c-.55 0-1-.45-1-1M9 4C6.24 4 4 6.24 4 9c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58 0-2.76-2.24-5-5-5m10 9h-2l-3.2 9h1.9l.7-2h3.2l.7 2h1.9zm-2.15 5.65L18 15l1.15 3.65z"/>' +
     '</svg>';
 
-  var SVG_MOON =
-    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">' +
-    '<path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/>' +
+  var SVG_LIGHT =
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">' +
+    '<path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5"/>' +
+    '</svg>';
+
+  var SVG_DARK =
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">' +
+    '<path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9z"/>' +
     '</svg>';
 
   /* Module-level references so the built bar can be re-inserted on instant
-     navigation without recreating it (prevents the logo img from reloading). */
+     navigation without recreating it (prevents the logo from reloading). */
   var themeBtn = null;
   var savedBar = null;
 
-  function getScheme() {
-    /* Prefer our own stored key — avoids Material overwriting it on navigation */
+  /* ── Theme state ─────────────────────────────────────────────────────────
+     'utplsql-scheme' in localStorage holds one of three values:
+       'auto'    — follow the OS prefers-color-scheme  (default when unset)
+       'default' — forced light mode
+       'slate'   — forced dark mode
+     ─────────────────────────────────────────────────────────────────────── */
+
+  function getPreference() {
+    try { return localStorage.getItem('utplsql-scheme') || 'auto'; } catch (e) {}
+    return 'auto';
+  }
+
+  function osPrefersDark() {
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+
+  /* Returns the effective Material colour scheme for the current preference. */
+  function effectiveScheme(pref) {
+    if (pref === 'slate' || pref === 'default') return pref;
+    return osPrefersDark() ? 'slate' : 'default'; /* auto */
+  }
+
+  function applyScheme(scheme) {
+    document.body.setAttribute('data-md-color-scheme', scheme);
+    /* Keep Material's own __palette in sync so its JS doesn't fight us. */
     try {
-      var own = localStorage.getItem('utplsql-scheme');
-      if (own) return own;
+      var stored = JSON.parse(localStorage.getItem('__palette') || 'null');
+      if (stored && stored.color) {
+        stored.color.scheme = scheme;
+        stored.index = scheme === 'slate' ? 1 : 0;
+      } else {
+        stored = { index: scheme === 'slate' ? 1 : 0, color: { scheme: scheme } };
+      }
+      localStorage.setItem('__palette', JSON.stringify(stored));
     } catch (e) {}
-    return document.body.getAttribute('data-md-color-scheme') || 'default';
   }
 
   function updateThemeIcon() {
     if (!themeBtn) return;
-    var scheme = getScheme();
-    var icons = window.utplsqlPaletteIcons;
-    if (icons) {
-      var entry = icons.filter(function (e) { return e.scheme === scheme; })[0];
-      if (entry) {
-        themeBtn.innerHTML = entry.icon;
-        themeBtn.setAttribute('aria-label', entry.name);
-        return;
-      }
+    var pref = getPreference();
+    if (pref === 'auto') {
+      themeBtn.innerHTML = SVG_AUTO;
+      themeBtn.setAttribute('aria-label', 'Theme: auto (following OS) — click for light');
+    } else if (pref === 'default') {
+      themeBtn.innerHTML = SVG_LIGHT;
+      themeBtn.setAttribute('aria-label', 'Theme: light — click for dark');
+    } else {
+      themeBtn.innerHTML = SVG_DARK;
+      themeBtn.setAttribute('aria-label', 'Theme: dark — click for auto');
     }
-    themeBtn.innerHTML = scheme === 'slate' ? SVG_SUN : SVG_MOON;
-    themeBtn.setAttribute('aria-label', 'Toggle light / dark mode');
   }
 
-  /* Re-applies our stored colour scheme to <body> after Material may have
-     overwritten it during instant-navigation re-initialisation. */
+  /* Re-applies our stored preference after Material's navigation re-init. */
   function applyStoredScheme() {
-    try {
-      var scheme = localStorage.getItem('utplsql-scheme');
-      if (scheme) {
-        document.body.setAttribute('data-md-color-scheme', scheme);
-        updateThemeIcon();
-      }
-    } catch (e) {}
+    var pref = getPreference();
+    applyScheme(effectiveScheme(pref));
+    updateThemeIcon();
   }
 
-  /* Updates the active class on nav links based on the current URL.
-     Called on first inject and on every instant-navigation page swap. */
+  /* Updates the active class on nav links based on the current URL. */
   function updateActiveLink() {
     var bar = document.getElementById('utplsql-topbar');
     if (!bar) return;
@@ -104,7 +135,7 @@
     }
 
     /* Material's instant navigation removed the topbar — re-insert the same
-       DOM node so the logo <img> is not recreated and doesn't flash/reload. */
+       DOM node so the CSS background-image icon doesn't flash. */
     if (savedBar) {
       document.body.insertBefore(savedBar, document.body.firstChild);
       updateActiveLink();
@@ -155,26 +186,13 @@
     var controls = document.createElement('div');
     controls.className = 'utplsql-controls';
 
-    /* Theme toggle — assigned to module-level themeBtn so updateThemeIcon
-       can be called from the navigation callback without re-injecting. */
+    /* Theme toggle — cycles: auto → light → dark → auto */
     themeBtn = document.createElement('button');
-
     themeBtn.addEventListener('click', function () {
-      var next = getScheme() === 'slate' ? 'default' : 'slate';
-      document.body.setAttribute('data-md-color-scheme', next);
-      /* Store under our own key so we can reliably restore after navigation */
+      var current = getPreference();
+      var next = current === 'auto' ? 'default' : current === 'default' ? 'slate' : 'auto';
       try { localStorage.setItem('utplsql-scheme', next); } catch (e) {}
-      /* Also update Material's __palette so its own JS stays in sync */
-      try {
-        var stored = JSON.parse(localStorage.getItem('__palette') || 'null');
-        if (stored && stored.color) {
-          stored.color.scheme = next;
-          stored.index = next === 'slate' ? 1 : 0;
-        } else {
-          stored = { index: next === 'slate' ? 1 : 0, color: { scheme: next } };
-        }
-        localStorage.setItem('__palette', JSON.stringify(stored));
-      } catch (e) {}
+      applyScheme(effectiveScheme(next));
       updateThemeIcon();
     });
 
@@ -185,7 +203,17 @@
     savedBar = bar;
     document.body.insertBefore(bar, document.body.firstChild);
     updateActiveLink();
+
+    /* When auto mode is active, re-apply if the OS theme changes live. */
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function () {
+      if (getPreference() === 'auto') {
+        applyScheme(effectiveScheme('auto'));
+      }
+    });
   }
+
+  /* Apply initial scheme as early as possible to avoid flash. */
+  applyScheme(effectiveScheme(getPreference()));
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', inject);
@@ -193,9 +221,7 @@
     inject();
   }
 
-  /* Material instant navigation — fires after each page swap.
-     inject() returns early (topbar exists) and re-applies our stored scheme
-     to override anything Material changed during its re-initialisation. */
+  /* Material instant navigation — fires after each page swap. */
   if (typeof document$ !== 'undefined') {
     document$.subscribe(inject);
   }
