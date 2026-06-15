@@ -230,21 +230,6 @@
     controls.appendChild(themeBtn);
     bar.appendChild(controls);
 
-    /* Injected only after the topbar is successfully built so that a JS failure
-       leaves Material's original header navigation intact as a fallback. */
-    if (!document.getElementById('utplsql-topbar-style')) {
-      var style = document.createElement('style');
-      style.id = 'utplsql-topbar-style';
-      style.textContent =
-        /* Hide Material's hamburger/logo — our topbar has both */
-        '.md-header__button:not([for="__search"]) { display: none !important; }' +
-        /* Move palette toggle off-screen — our topbar handles theme switching */
-        '.md-header__option { position: absolute !important; left: -9999px !important; }' +
-        /* Back-to-top button: clear topbar + header */
-        '.md-top { top: 4.4rem !important; z-index: 11; }';
-      document.head.appendChild(style);
-    }
-
     savedBar = bar;
     document.body.insertBefore(bar, document.body.firstChild);
     updateActiveLink();
@@ -256,6 +241,27 @@
         applyScheme(effectiveScheme('auto'));
       }
     });
+  }
+
+  /* Hide Material's built-in header controls immediately — same pattern as
+     applyScheme — to prevent a flash where logo/palette appear before the
+     topbar is painted. A fallback timeout removes the style if the topbar
+     never gets built (e.g. script error), restoring Material's navigation. */
+  if (!document.getElementById('utplsql-topbar-style')) {
+    var _style = document.createElement('style');
+    _style.id = 'utplsql-topbar-style';
+    _style.textContent =
+      '.md-header__button:not([for="__search"]) { display: none !important; }' +
+      '.md-header__option { position: absolute !important; left: -9999px !important; }' +
+      '.md-top { top: 4.4rem !important; z-index: 11; }';
+    document.head.appendChild(_style);
+    /* Fallback: if topbar not in DOM after 4 s, restore Material's navigation */
+    setTimeout(function () {
+      if (!document.getElementById('utplsql-topbar')) {
+        var s = document.getElementById('utplsql-topbar-style');
+        if (s) s.parentNode.removeChild(s);
+      }
+    }, 4000);
   }
 
   /* Apply initial scheme as early as possible to avoid flash. */
