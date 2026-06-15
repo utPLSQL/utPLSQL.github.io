@@ -93,19 +93,31 @@
   left: -9999px !important;
 }
 
-/* Hide Material's logo/title — brand lives in the topbar */
-.md-header__title {
+/* ── Org-site only ────────────────────────────────────────────────────────
+   The org site sets data-utplsql-site="org" on <html> in its template.
+   Sub-sites keep Material's title (version selector lives there) and tabs
+   (the only way to navigate between top-level sections like User Guide /
+   Reporting / About).
+   ─────────────────────────────────────────────────────────────────────── */
+
+/* Hide Material's logo/title on the org site — brand lives in the topbar */
+[data-utplsql-site="org"] .md-header__title {
   display: none !important;
 }
 
-/* Sidebars sit below the topbar + Material header (~2rem + 2.4rem) */
-.md-sidebar {
+/* Hide tab bar on the org site — the shared topbar handles section nav */
+[data-utplsql-site="org"] .md-tabs {
+  display: none !important;
+}
+
+/* Sidebar offset: org site has topbar + header (~2 + 2.4 = 4.4rem), no tabs.
+   Sub-sites have topbar + header + tabs (~2 + 2.4 + 2.4 = 6.8rem). */
+[data-utplsql-site="org"] .md-sidebar {
   top: 4.4rem !important;
 }
 
-/* Hide the tab bar — the topbar handles top-level navigation */
-.md-tabs {
-  display: none !important;
+.md-sidebar {
+  top: 6.8rem !important;
 }
 
 /* Hamburger button — hidden by default, shown via media query on mobile */

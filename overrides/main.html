@@ -6,7 +6,10 @@
 
 {% block extrahead %}
   {{ super() }}
-  <script>window.utplsqlBaseUrl = "{{ config.site_url }}";</script>
+  <script>
+    window.utplsqlBaseUrl = "{{ config.site_url }}";
+    document.documentElement.setAttribute('data-utplsql-site', 'org');
+  </script>
   {%- set palette = config.theme.palette %}
   {%- if palette %}
     {%- set entries = [palette] if palette is mapping else palette %}
