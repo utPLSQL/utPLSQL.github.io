@@ -200,6 +200,15 @@
     controls.appendChild(themeBtn);
     bar.appendChild(controls);
 
+    /* Inject back-to-top button offset so it clears the topbar + header.
+       topbar.css covers the org site; this covers sub-sites that only load the JS. */
+    if (!document.getElementById('utplsql-topbar-style')) {
+      var style = document.createElement('style');
+      style.id = 'utplsql-topbar-style';
+      style.textContent = '.md-top { top: 4.4rem !important; }';
+      document.head.appendChild(style);
+    }
+
     savedBar = bar;
     document.body.insertBefore(bar, document.body.firstChild);
     updateActiveLink();
