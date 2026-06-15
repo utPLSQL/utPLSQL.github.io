@@ -2,7 +2,7 @@
 # http://www.mkdocs.org/user-guide/configuration/
 # https://squidfunk.github.io/mkdocs-material/getting-started/
 
-site_url: https://utplsql.org/
+site_url: https://www.utplsql.org/
 site_name: utPLSQL
 remote_branch: mkdocs_site
 remote_name: origin
