@@ -14,7 +14,7 @@
   /* Base URL comes from the MkDocs site_url injected by the template.
      Sub-sites that load this script from utplsql.org don't set the variable,
      so they fall back to the hardcoded production URL. */
-  var BASE = (window.utplsqlBaseUrl || 'https://utplsql.org/').replace(/\/+$/, '');
+  var BASE = (window.utplsqlBaseUrl || 'https://www.utplsql.org/').replace(/\/+$/, '');
 
   var NAV = [
     { label: 'Home',          url: BASE + '/' },
@@ -117,6 +117,9 @@
 
   /* Updates the active class on nav links based on the current URL. */
   function injectDrawerNav() {
+    /* Only needed on mobile — desktop shows links in the topbar itself. */
+    if (!window.matchMedia('(max-width: 76.1875em)').matches) return;
+
     /* Already injected and still in the DOM — nothing to do. */
     if (document.getElementById('utplsql-drawer-nav')) return;
 
