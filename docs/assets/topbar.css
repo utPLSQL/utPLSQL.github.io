@@ -115,6 +115,11 @@
   display: none !important;
 }
 
+/* Back-to-top button: push below topbar + header so it isn't hidden behind them */
+.md-top {
+  top: 4.4rem !important;
+}
+
 /* Sidebar offset: org site has topbar + header (~2 + 2.4 = 4.4rem), no tabs.
    Sub-sites have topbar + header + tabs (~2 + 2.4 + 2.4 = 6.8rem). */
 [data-utplsql-site="org"] .md-sidebar {

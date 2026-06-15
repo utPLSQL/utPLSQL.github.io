@@ -34,10 +34,14 @@ theme:
     - navigation.indexes
     - navigation.tabs
     - navigation.tracking
+    - navigation.expand
+    - navigation.top
     - toc.follow
     - toc.integrate
     - search.suggest
     - search.highlight
+    - content.code.copy
+    - content.code.annotate
 extra:
   social:
     - icon: fontawesome/brands/twitter
@@ -81,11 +85,12 @@ plugins:
       blog_dir: announcements
       post_date_format: long        # e.g. "June 10, 2026"
       post_url_format: "{slug}"     # keeps URLs clean
-      archive: true
+      archive: false
       categories: true
 nav:
   - Home: index.md
-  - Announcements: announcements/index.md
+  - Announcements:
+      - announcements/index.md
   - Documentation:
       - documentation.md
       - utPLSQL framework: utPLSQL/latest
