@@ -205,7 +205,7 @@
     if (!document.getElementById('utplsql-topbar-style')) {
       var style = document.createElement('style');
       style.id = 'utplsql-topbar-style';
-      style.textContent = '.md-top { top: 4.4rem !important; }';
+      style.textContent = '.md-top { top: 4.4rem !important; z-index: 11; }';
       document.head.appendChild(style);
     }
 
