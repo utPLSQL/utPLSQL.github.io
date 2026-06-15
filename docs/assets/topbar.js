@@ -154,7 +154,22 @@
     });
   }
 
+  function ensureStyle() {
+    /* Re-inject the hiding style if Material's instant navigation removed it. */
+    if (!document.getElementById('utplsql-topbar-style')) {
+      var s = document.createElement('style');
+      s.id = 'utplsql-topbar-style';
+      s.textContent =
+        '.md-header__button:not([for="__search"]) { display: none !important; }' +
+        '.md-header__option { position: absolute !important; left: -9999px !important; }' +
+        '.md-top { top: 4.4rem !important; z-index: 11; }';
+      document.head.appendChild(s);
+    }
+  }
+
   function inject() {
+    ensureStyle();
+
     /* Topbar already in DOM — just sync state. */
     if (document.getElementById('utplsql-topbar')) {
       updateActiveLink();
@@ -243,26 +258,16 @@
     });
   }
 
-  /* Hide Material's built-in header controls immediately — same pattern as
-     applyScheme — to prevent a flash where logo/palette appear before the
-     topbar is painted. A fallback timeout removes the style if the topbar
-     never gets built (e.g. script error), restoring Material's navigation. */
-  if (!document.getElementById('utplsql-topbar-style')) {
-    var _style = document.createElement('style');
-    _style.id = 'utplsql-topbar-style';
-    _style.textContent =
-      '.md-header__button:not([for="__search"]) { display: none !important; }' +
-      '.md-header__option { position: absolute !important; left: -9999px !important; }' +
-      '.md-top { top: 4.4rem !important; z-index: 11; }';
-    document.head.appendChild(_style);
-    /* Fallback: if topbar not in DOM after 4 s, restore Material's navigation */
-    setTimeout(function () {
-      if (!document.getElementById('utplsql-topbar')) {
-        var s = document.getElementById('utplsql-topbar-style');
-        if (s) s.parentNode.removeChild(s);
-      }
-    }, 4000);
-  }
+  /* Hide Material's built-in header controls immediately to prevent a flash
+     where logo/palette appear before the topbar is painted. */
+  ensureStyle();
+  /* Fallback: if topbar not in DOM after 4 s, restore Material's navigation. */
+  setTimeout(function () {
+    if (!document.getElementById('utplsql-topbar')) {
+      var s = document.getElementById('utplsql-topbar-style');
+      if (s) s.parentNode.removeChild(s);
+    }
+  }, 4000);
 
   /* Apply initial scheme as early as possible to avoid flash. */
   applyScheme(effectiveScheme(getPreference()));
