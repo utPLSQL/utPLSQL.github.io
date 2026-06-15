@@ -31,11 +31,6 @@
     '<path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>' +
     '</svg>';
 
-  var SVG_SEARCH =
-    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">' +
-    '<path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/>' +
-    '</svg>';
-
   var SVG_SUN =
     '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">' +
     '<path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>' +
@@ -46,9 +41,10 @@
     '<path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/>' +
     '</svg>';
 
-  /* Module-level reference so updateThemeIcon can be called from anywhere,
-     including the instant-navigation callback after the topbar is already built. */
+  /* Module-level references so the built bar can be re-inserted on instant
+     navigation without recreating it (prevents the logo img from reloading). */
   var themeBtn = null;
+  var savedBar = null;
 
   function getScheme() {
     /* Prefer our own stored key — avoids Material overwriting it on navigation */
@@ -100,15 +96,23 @@
   }
 
   function inject() {
-    /* On instant navigation the topbar persists — sync state and exit. */
+    /* Topbar already in DOM — just sync state. */
     if (document.getElementById('utplsql-topbar')) {
       updateActiveLink();
-      /* Re-apply our scheme AFTER Material's navigation hook may have changed it */
       applyStoredScheme();
       return;
     }
 
-    /* ── Bar ── */
+    /* Material's instant navigation removed the topbar — re-insert the same
+       DOM node so the logo <img> is not recreated and doesn't flash/reload. */
+    if (savedBar) {
+      document.body.insertBefore(savedBar, document.body.firstChild);
+      updateActiveLink();
+      applyStoredScheme();
+      return;
+    }
+
+    /* ── First load: build the bar ── */
     var bar = document.createElement('nav');
     bar.id = 'utplsql-topbar';
     bar.setAttribute('aria-label', 'utPLSQL.org site navigation');
@@ -151,23 +155,6 @@
     var controls = document.createElement('div');
     controls.className = 'utplsql-controls';
 
-    /* Search button — on mobile triggers Material's search overlay via its
-       own label (the form is hidden until that label is clicked); on desktop
-       the form is already visible so focusing the input is enough. */
-    var searchBtn = document.createElement('button');
-    searchBtn.setAttribute('aria-label', 'Search');
-    searchBtn.innerHTML = SVG_SEARCH;
-    searchBtn.addEventListener('click', function () {
-      var searchLabel = document.querySelector('label[for="__search"]');
-      if (searchLabel) {
-        searchLabel.click();
-      } else {
-        var input = document.querySelector('.md-search__input');
-        if (input) input.focus();
-      }
-    });
-    controls.appendChild(searchBtn);
-
     /* Theme toggle — assigned to module-level themeBtn so updateThemeIcon
        can be called from the navigation callback without re-injecting. */
     themeBtn = document.createElement('button');
@@ -195,6 +182,7 @@
     controls.appendChild(themeBtn);
     bar.appendChild(controls);
 
+    savedBar = bar;
     document.body.insertBefore(bar, document.body.firstChild);
     updateActiveLink();
   }
