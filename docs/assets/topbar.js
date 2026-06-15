@@ -115,7 +115,6 @@
     updateThemeIcon();
   }
 
-  /* Updates the active class on nav links based on the current URL. */
   function injectDrawerNav() {
     /* Only needed on mobile — desktop shows links in the topbar itself. */
     if (!window.matchMedia('(max-width: 76.1875em)').matches) return;
@@ -231,12 +230,18 @@
     controls.appendChild(themeBtn);
     bar.appendChild(controls);
 
-    /* Inject back-to-top button offset so it clears the topbar + header.
-       topbar.css covers the org site; this covers sub-sites that only load the JS. */
+    /* Injected only after the topbar is successfully built so that a JS failure
+       leaves Material's original header navigation intact as a fallback. */
     if (!document.getElementById('utplsql-topbar-style')) {
       var style = document.createElement('style');
       style.id = 'utplsql-topbar-style';
-      style.textContent = '.md-top { top: 4.4rem !important; z-index: 11; }';
+      style.textContent =
+        /* Hide Material's hamburger/logo — our topbar has both */
+        '.md-header__button:not([for="__search"]) { display: none !important; }' +
+        /* Move palette toggle off-screen — our topbar handles theme switching */
+        '.md-header__option { position: absolute !important; left: -9999px !important; }' +
+        /* Back-to-top button: clear topbar + header */
+        '.md-top { top: 4.4rem !important; z-index: 11; }';
       document.head.appendChild(style);
     }
 

@@ -86,17 +86,9 @@
   top: 2rem !important;
 }
 
-/* Hide drawer hamburger and logo — our topbar has both.
-   Leave the search icon button intact so mobile search still works. */
-.md-header__button:not([for="__search"]) {
-  display: none !important;
-}
-
-/* Move palette toggle off-screen — our topbar handles theme switching */
-.md-header__option {
-  position: absolute !important;
-  left: -9999px !important;
-}
+/* NOTE: .md-header__button and .md-header__option hiding is intentionally
+   NOT here — it is injected by topbar.js only after the topbar is built,
+   so that a JS failure leaves Material's original navigation intact. */
 
 /* ── Org-site only ────────────────────────────────────────────────────────
    The org site sets data-utplsql-site="org" on <html> in its template.
