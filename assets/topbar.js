@@ -297,9 +297,26 @@
      all versioned subdirectories. Without this the browser scopes it to the
      current version path (e.g. /v3.1.14/) and the banner reappears on every
      other version. Runs immediately so it beats Material's consent check. */
-  var consentMatch = document.cookie.match(/(?:^|;\s*)__md_consent=([^;]*)/);
-  if (consentMatch) {
-    document.cookie = '__md_consent=' + consentMatch[1] + '; path=/; SameSite=Lax';
+  /* Propagate mkdocs-material consent across versioned subdirectories.
+     Each version stores consent in localStorage under its own base-path key
+     (e.g. /utPLSQL/develop/.__consent). Copy a non-empty consent from any
+     other version into the current version's key before Material checks it. */
+  var baseEl = document.querySelector('base');
+  if (baseEl) {
+    var CONSENT_SUFFIX = '.__consent';
+    var currentConsentKey = new URL(baseEl.href).pathname + CONSENT_SUFFIX;
+    if (!localStorage.getItem(currentConsentKey)) {
+      for (var i = 0; i < localStorage.length; i++) {
+        var k = localStorage.key(i);
+        if (k && k !== currentConsentKey && k.endsWith(CONSENT_SUFFIX)) {
+          var val = localStorage.getItem(k);
+          if (val && val !== '{}') {
+            localStorage.setItem(currentConsentKey, val);
+            break;
+          }
+        }
+      }
+    }
   }
 
   /* Hide Material's built-in header controls immediately to prevent a flash
