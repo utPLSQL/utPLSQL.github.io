@@ -7,7 +7,9 @@ site_name: utPLSQL
 remote_branch: mkdocs_site
 remote_name: origin
 site_description: utPLSQL Ultimate Unit Testing Framework for Oracle PL/SQL
-copyright: Copyright &copy; 2016 - 2022 utPLSQL Team
+copyright: > 
+  Copyright &copy; 2016 - 2026 utPLSQL Team
+  <a href="#__consent">Change cookie settings</a>
 extra_css:
   - assets/topbar.css
   - stylesheets/extra.css
@@ -43,6 +45,9 @@ theme:
     - content.code.copy
     - content.code.annotate
 extra:
+  analytics:
+    provider: google
+    property: G-WMFVR98J0Q
   social:
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/utPLSQL
