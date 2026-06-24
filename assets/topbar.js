@@ -258,6 +258,14 @@
     });
   }
 
+  function rewriteFeedbackLink() {
+    var title = encodeURIComponent('Doc feedback: ' + document.title);
+    var body = encodeURIComponent('Page: ' + location.href + '\n\nWhat could be improved:\n');
+    document.querySelectorAll('.md-feedback a[href*="discussions/new"]').forEach(function (a) {
+      a.href = 'https://github.com/utPLSQL/utPLSQL/discussions/new?category=documentation-feedback&title=' + title + '&body=' + body;
+    });
+  }
+
   /* Hide Material's built-in header controls immediately to prevent a flash
      where logo/palette appear before the topbar is painted. */
   ensureStyle();
@@ -273,14 +281,16 @@
   applyScheme(effectiveScheme(getPreference()));
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', inject);
+    document.addEventListener('DOMContentLoaded', function () { inject(); rewriteFeedbackLink(); });
   } else {
     inject();
+    rewriteFeedbackLink();
   }
 
   /* Material instant navigation — fires after each page swap. */
   if (typeof document$ !== 'undefined') {
     document$.subscribe(inject);
+    document$.subscribe(rewriteFeedbackLink);
   }
   /* Fallback: browser history navigation */
   window.addEventListener('popstate', updateActiveLink);
