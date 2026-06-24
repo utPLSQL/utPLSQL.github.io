@@ -266,6 +266,32 @@
     });
   }
 
+  function initFeedbackForm() {
+    var feedback = document.forms.feedback;
+    if (typeof feedback === 'undefined') return;
+
+    feedback.hidden = false;
+    feedback.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+
+      var page = document.location.pathname;
+      var data = ev.submitter.getAttribute('data-md-value');
+
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'feedback', { page: page, data: data });
+      }
+
+      feedback.firstElementChild.disabled = true;
+
+      var note = feedback.querySelector(".md-feedback__note [data-md-value='" + data + "']");
+      if (note) note.hidden = false;
+
+      rewriteFeedbackLink();
+    });
+
+    rewriteFeedbackLink();
+  }
+
   /* Hide Material's built-in header controls immediately to prevent a flash
      where logo/palette appear before the topbar is painted. */
   ensureStyle();
@@ -281,16 +307,16 @@
   applyScheme(effectiveScheme(getPreference()));
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function () { inject(); rewriteFeedbackLink(); });
+    document.addEventListener('DOMContentLoaded', function () { inject(); initFeedbackForm(); });
   } else {
     inject();
-    rewriteFeedbackLink();
+    initFeedbackForm();
   }
 
   /* Material instant navigation — fires after each page swap. */
   if (typeof document$ !== 'undefined') {
     document$.subscribe(inject);
-    document$.subscribe(rewriteFeedbackLink);
+    document$.subscribe(initFeedbackForm);
   }
   /* Fallback: browser history navigation */
   window.addEventListener('popstate', updateActiveLink);
