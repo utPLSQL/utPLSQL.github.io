@@ -78,6 +78,8 @@ extra:
       as to measure the effectiveness of our documentation and whether users
       find what they're searching for. With your consent, you're helping us to
       make our documentation better.
+    # the cookie: utplsql-consent allows for shred cookie across all documentation versions and the global site
+    cookie: utplsql-consent
   version:            # disable for offline docs
     provider: mike    # disable for offline docs
 markdown_extensions:
