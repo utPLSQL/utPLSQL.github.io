@@ -154,6 +154,7 @@
     });
   }
 
+
   function ensureStyle() {
     /* Re-inject the hiding style if Material's instant navigation removed it. */
     if (!document.getElementById('utplsql-topbar-style')) {
@@ -290,6 +291,15 @@
     });
 
     rewriteFeedbackLink();
+  }
+
+  /* Re-set the mkdocs-material consent cookie at path=/ so it is shared across
+     all versioned subdirectories. Without this the browser scopes it to the
+     current version path (e.g. /v3.1.14/) and the banner reappears on every
+     other version. Runs immediately so it beats Material's consent check. */
+  var consentMatch = document.cookie.match(/(?:^|;\s*)__md_consent=([^;]*)/);
+  if (consentMatch) {
+    document.cookie = '__md_consent=' + consentMatch[1] + '; path=/; SameSite=Lax';
   }
 
   /* Hide Material's built-in header controls immediately to prevent a flash
