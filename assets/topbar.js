@@ -293,28 +293,21 @@
     rewriteFeedbackLink();
   }
 
-  /* Re-set the mkdocs-material consent cookie at path=/ so it is shared across
-     all versioned subdirectories. Without this the browser scopes it to the
-     current version path (e.g. /v3.1.14/) and the banner reappears on every
-     other version. Runs immediately so it beats Material's consent check. */
-  /* Propagate mkdocs-material consent across versioned subdirectories.
-     Each version stores consent in localStorage under its own base-path key
-     (e.g. /utPLSQL/develop/.__consent). Copy a non-empty consent from any
-     other version into the current version's key before Material checks it. */
-  var CONSENT_SUFFIX = '.__consent';
-  var currentConsentKey = location.pathname + CONSENT_SUFFIX;
-  if (!localStorage.getItem(currentConsentKey)) {
-    for (var i = 0; i < localStorage.length; i++) {
-      var k = localStorage.key(i);
-      if (k && k !== currentConsentKey && k.endsWith(CONSENT_SUFFIX)) {
-        var val = localStorage.getItem(k);
-        if (val && val !== '{}') {
-          localStorage.setItem(currentConsentKey, val);
-          break;
-        }
-      }
-    }
-  }
+  /*This intercepts every localStorage.getItem/setItem call — no matter which version path Material constructs as the key,
+   it always reads and writes /__consent. One consent covers all versions. */
+  var _get = Storage.prototype.getItem;
+  var _set = Storage.prototype.setItem;
+  var SHARED_KEY = '/__consent';
+
+  Storage.prototype.getItem = function (key) {
+    if (key && key.endsWith('.__consent')) return _get.call(this, SHARED_KEY);
+    return _get.call(this, key);
+  };
+
+  Storage.prototype.setItem = function (key, value) {
+    if (key && key.endsWith('.__consent')) { _set.call(this, SHARED_KEY, value); return; }
+    _set.call(this, key, value);
+  };
 
   /* Hide Material's built-in header controls immediately to prevent a flash
      where logo/palette appear before the topbar is painted. */
