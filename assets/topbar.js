@@ -293,22 +293,6 @@
     rewriteFeedbackLink();
   }
 
-  /*This intercepts every localStorage.getItem/setItem call — no matter which version path Material constructs as the key,
-   it always reads and writes /__consent. One consent covers all versions. */
-  var _get = Storage.prototype.getItem;
-  var _set = Storage.prototype.setItem;
-  var SHARED_KEY = '/__consent';
-
-  Storage.prototype.getItem = function (key) {
-    if (key && key.endsWith('.__consent')) return _get.call(this, SHARED_KEY);
-    return _get.call(this, key);
-  };
-
-  Storage.prototype.setItem = function (key, value) {
-    if (key && key.endsWith('.__consent')) { _set.call(this, SHARED_KEY, value); return; }
-    _set.call(this, key, value);
-  };
-
   /* Hide Material's built-in header controls immediately to prevent a flash
      where logo/palette appear before the topbar is painted. */
   ensureStyle();

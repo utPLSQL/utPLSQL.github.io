@@ -75,6 +75,19 @@
     
   
   <script>
+    (function () {
+      var _get = Storage.prototype.getItem;
+      var _set = Storage.prototype.setItem;
+      var SHARED_KEY = '/__consent';
+      Storage.prototype.getItem = function (key) {
+        if (key && key.endsWith('.__consent')) return _get.call(this, SHARED_KEY);
+        return _get.call(this, key);
+      };
+      Storage.prototype.setItem = function (key, value) {
+        if (key && key.endsWith('.__consent')) { _set.call(this, SHARED_KEY, value); return; }
+        _set.call(this, key, value);
+      };
+    })();
     window.utplsqlBaseUrl = "https://www.utplsql.org/";
     document.documentElement.setAttribute('data-utplsql-site', 'org');
   </script>
