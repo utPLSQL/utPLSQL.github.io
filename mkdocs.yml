@@ -46,6 +46,7 @@ theme:
     - content.code.annotate
 extra:
   # sets scope of cookies to use a common path (root)
+#  scope: "/"
   analytics:
     provider: google
     property: G-WMFVR98J0Q
