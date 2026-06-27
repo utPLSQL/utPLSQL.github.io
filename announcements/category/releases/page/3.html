@@ -549,6 +549,8 @@
       
         
       
+        
+      
     
     
     
@@ -829,6 +831,36 @@
     
   
     utplsql-plsql-developer-plugins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utplsql-sql-developer.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    utplsql-sql-developer
   
 
     
@@ -1280,6 +1312,70 @@
       <header class="md-typeset">
         <h1 id="releases">releases<a class="headerlink" href="#releases" title="Permanent link">&para;</a></h1>
       </header>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2018-11-20 00:00:00+00:00">November 20, 2018</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../releases.html" class="md-meta__link">releases</a>, 
+              <a href="../../utplsql-core.html" class="md-meta__link">utplsql-core</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              1 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="changes-in-release-313"><a class="toclink" href="../../../utplsql-v313-released.html">Changes in release 3.1.3</a></h2>
+<h3 id="new-features"><a class="toclink" href="../../../utplsql-v313-released.html#new-features">New features</a></h3>
+<ul>
+<li>added function  <code>ut_runner.is_test</code> #788</li>
+<li>added function  <code>ut_runner.is_suite</code> #787</li>
+<li>added function  <code>ut_runner.has_suites</code> #786</li>
+<li>added ability to disable automatic rollback for a test-run #784</li>
+<li>when invoked with package name, utPLSQL will now run only tests from specified package even if package has child packages by suitepath #776</li>
+</ul>
+<h3 id="enhancements"><a class="toclink" href="../../../utplsql-v313-released.html#enhancements">Enhancements</a></h3>
+<ul>
+<li>Improved performance of schema-scanning and utPLSQL startup #778</li>
+<li>Improved performance of output-buffer #777</li>
+<li>Improved documentation to mention ability to pass client encoding for HTML &amp; XML reports #775 </li>
+<li>Improved documentation for cursor comparison to mention challenges with TIMESTAMP bind variables </li>
+</ul>
+<h3 id="bug-fixes"><a class="toclink" href="../../../utplsql-v313-released.html#bug-fixes">Bug-fixes</a></h3>
+<ul>
+<li>utPLSQL code coverage will now work properly with long object names #716</li>
+<li>utPLSQL installation will now also work properly, when user performing the install has <code>ANY</code> grants #737 </li>
+<li>fixed documentation bug for <code>--%context</code> with <code>--%displayname</code> #726</li>
+<li>fixed Teamcity reporter issues with missing escape for some characters and long messages #747 </li>
+<li>fixed issue with sonar test results reporter when contexts are used #749</li>
+<li>fixed issue with ORA-07455 getting thrown on cursor comparison #752 </li>
+<li>fixed issue with wrong failure message for unordered data #764</li>
+<li>fixed missing privilege issue for unordered/join-by cursor data comparison #765 #770</li>
+</ul>
+<h3 id="internal-enhancements"><a class="toclink" href="../../../utplsql-v313-released.html#internal-enhancements">Internal enhancements</a></h3>
+<ul>
+<li>added suite-level cache to allow for faster retrieval of suite contents and enable implementation of additional features #783 </li>
+</ul>
+    
+    
+  </div>
+</article>
       
         <article class="md-post md-post--excerpt">
   <header class="md-post__header">
@@ -1865,56 +1961,6 @@ We encourage you to always use the latest version of cli to communicate with a v
 <li>Add MD5 checksum to releases</li>
 <li>Fix deployment to gh-pages branch on TAG bug</li>
 <li>Small issues in the documentation</li>
-</ul>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2017-05-18 00:00:00+00:00">May 18, 2017</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../releases.html" class="md-meta__link">releases</a>, 
-              <a href="../../utplsql-core.html" class="md-meta__link">utplsql-core</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              1 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="utplsql-v300-released"><a class="toclink" href="../../../utplsql-v300---released.html">utPLSQL v3.0.0 - released!</a></h2>
-<h3 id="first-official-release-of-fully-rewritten-utplsql"><a class="toclink" href="../../../utplsql-v300---released.html#first-official-release-of-fully-rewritten-utplsql">First official release of fully rewritten utPLSQL.</a></h3>
-<p>Key features</p>
-<ul>
-<li>Compatible with and tested on Oracle 11.2, 12.1 and 12.2</li>
-<li>multiple ways to compare data with matchers</li>
-<li>native comparison of complex types (objects/collections/cursors)</li>
-<li>in-depth and consistent reporting of failures and errors for tests</li>
-<li>tests identified and configured by annotations</li>
-<li>hierarchies of test suites configured controlled by annotations</li>
-<li>automatic (configurable) transaction control using annotations</li>
-<li>Build-in <a href="https://utplsql.github.io/utPLSQL-coverage-html/">coverage</a> reporting</li>
-<li>Integration with <a href="https://sonarqube.com/dashboard?id=utPLSQL%3AutPLSQL%3Adevelop">SonarQube</a>, <a href="https://coveralls.io/github/utPLSQL/utPLSQL">Coveralls</a>, <a href="https://jenkins.io/">Jenkins</a> and <a href="https://www.jetbrains.com/teamcity">Teamcity</a> using reporters</li>
-<li>plugin architecture for reporters and matchers</li>
-<li>flexible and simple test invocation</li>
-<li>multi-reporting and test real-time progress test-run from using <a href="https://github.com/utPLSQL/utPLSQL-sql-cli/">utPLSQL-sql-cli</a></li>
 </ul>
     
     

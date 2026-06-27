@@ -549,6 +549,8 @@
       
         
       
+        
+      
     
     
     
@@ -829,6 +831,36 @@
     
   
     utplsql-plsql-developer-plugins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utplsql-sql-developer.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    utplsql-sql-developer
   
 
     
@@ -1280,6 +1312,59 @@
       <header class="md-typeset">
         <h1 id="releases">releases<a class="headerlink" href="#releases" title="Permanent link">&para;</a></h1>
       </header>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2020-02-23 00:00:00+00:00">February 23, 2020</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../releases.html" class="md-meta__link">releases</a>, 
+              <a href="../../utplsql-core.html" class="md-meta__link">utplsql-core</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              1 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="changes-in-release-3110"><a class="toclink" href="../../../utplsql-v3110-released.html">Changes in release 3.1.10</a></h2>
+<h3 id="enhancements"><a class="toclink" href="../../../utplsql-v3110-released.html#enhancements">Enhancements</a></h3>
+<ul>
+<li>utPLSQL test runner is now validating arguments of <code>--%throws</code> annotations at runtime <a href="https://github.com/utPLSQL/utPLSQL/issues/721">#721</a> <a href="https://github.com/utPLSQL/utPLSQL/issues/1033">#1033</a></li>
+<li>Documented limitations of insignificant spaces comparison in compound data <a href="https://github.com/utPLSQL/utPLSQL/issues/880">#880</a></li>
+<li>utPLSQL will now detect empty annotation cache for schema even with DLL trigger enabled <a href="https://github.com/utPLSQL/utPLSQL/issues/975">#975</a></li>
+<li>Order of procedures and annotation now determines default order of tests in suite <a href="https://github.com/utPLSQL/utPLSQL/issues/1036">#1036</a>    </li>
+</ul>
+<h3 id="bug-fixes"><a class="toclink" href="../../../utplsql-v3110-released.html#bug-fixes">Bug fixes</a></h3>
+<ul>
+<li>Nested contexts are now properly identified <a href="https://github.com/utPLSQL/utPLSQL/issues/1034">#1034</a></li>
+<li>TeamCity test reporter is now including error message <a href="https://github.com/utPLSQL/utPLSQL/issues/1045">#1045</a></li>
+</ul>
+<h3 id="internal-improvements"><a class="toclink" href="../../../utplsql-v3110-released.html#internal-improvements">Internal improvements</a></h3>
+<ul>
+<li>All self-tests for utPLSQL framework can now be executed using test-owner schema <a href="https://github.com/utPLSQL/utPLSQL/issues/969">#969</a></li>
+<li>Misleading rollback warning is no longer showing when running self-tests for utPLSQL <a href="https://github.com/utPLSQL/utPLSQL/issues/982">#982</a></li>
+</ul>
+<h2 id="downloads"><a class="toclink" href="../../../utplsql-v3110-released.html#downloads">Downloads</a></h2>
+<p>Download <code>v3.1.10</code> release version <a href="https://github.com/utPLSQL/utPLSQL/releases/tag/v3.1.10">here</a></p>
+    
+    
+  </div>
+</article>
       
         <article class="md-post md-post--excerpt">
   <header class="md-post__header">
@@ -1813,70 +1898,6 @@ With this change, the <code>--%context</code> annotation is now aligned with <co
 <li>Added <code>code_of_conduct</code> <a href="https://github.com/utPLSQL/utPLSQL/issues/836">#836</a></li>
 <li>Added issue tempates <a href="https://github.com/utPLSQL/utPLSQL/issues/842">#842</a></li>
 <li>Added utPLSQL logo <a href="https://github.com/utPLSQL/utPLSQL/issues/845">#845</a> </li>
-</ul>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2018-11-20 00:00:00+00:00">November 20, 2018</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../releases.html" class="md-meta__link">releases</a>, 
-              <a href="../../utplsql-core.html" class="md-meta__link">utplsql-core</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              1 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="changes-in-release-313"><a class="toclink" href="../../../utplsql-v313-released.html">Changes in release 3.1.3</a></h2>
-<h3 id="new-features"><a class="toclink" href="../../../utplsql-v313-released.html#new-features">New features</a></h3>
-<ul>
-<li>added function  <code>ut_runner.is_test</code> #788</li>
-<li>added function  <code>ut_runner.is_suite</code> #787</li>
-<li>added function  <code>ut_runner.has_suites</code> #786</li>
-<li>added ability to disable automatic rollback for a test-run #784</li>
-<li>when invoked with package name, utPLSQL will now run only tests from specified package even if package has child packages by suitepath #776</li>
-</ul>
-<h3 id="enhancements"><a class="toclink" href="../../../utplsql-v313-released.html#enhancements">Enhancements</a></h3>
-<ul>
-<li>Improved performance of schema-scanning and utPLSQL startup #778</li>
-<li>Improved performance of output-buffer #777</li>
-<li>Improved documentation to mention ability to pass client encoding for HTML &amp; XML reports #775 </li>
-<li>Improved documentation for cursor comparison to mention challenges with TIMESTAMP bind variables </li>
-</ul>
-<h3 id="bug-fixes"><a class="toclink" href="../../../utplsql-v313-released.html#bug-fixes">Bug-fixes</a></h3>
-<ul>
-<li>utPLSQL code coverage will now work properly with long object names #716</li>
-<li>utPLSQL installation will now also work properly, when user performing the install has <code>ANY</code> grants #737 </li>
-<li>fixed documentation bug for <code>--%context</code> with <code>--%displayname</code> #726</li>
-<li>fixed Teamcity reporter issues with missing escape for some characters and long messages #747 </li>
-<li>fixed issue with sonar test results reporter when contexts are used #749</li>
-<li>fixed issue with ORA-07455 getting thrown on cursor comparison #752 </li>
-<li>fixed issue with wrong failure message for unordered data #764</li>
-<li>fixed missing privilege issue for unordered/join-by cursor data comparison #765 #770</li>
-</ul>
-<h3 id="internal-enhancements"><a class="toclink" href="../../../utplsql-v313-released.html#internal-enhancements">Internal enhancements</a></h3>
-<ul>
-<li>added suite-level cache to allow for faster retrieval of suite contents and enable implementation of additional features #783 </li>
 </ul>
     
     

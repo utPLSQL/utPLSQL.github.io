@@ -547,6 +547,8 @@
       
         
       
+        
+      
     
     
     
@@ -819,6 +821,36 @@
     
   
     utplsql-plsql-developer-plugins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../category/utplsql-sql-developer.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    utplsql-sql-developer
   
 
     
@@ -1270,6 +1302,63 @@
       <header class="md-typeset">
         <h1 id="announcements">Announcements<a class="headerlink" href="#announcements" title="Permanent link">&para;</a></h1>
       </header>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2018-03-29 00:00:00+00:00">March 29, 2018</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../category/releases.html" class="md-meta__link">releases</a>, 
+              <a href="../../category/utplsql-core.html" class="md-meta__link">utplsql-core</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              1 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="utplsql-cli-v310-released"><a class="toclink" href="../../utplsql-cli-v310-released.html">utPLSQL-cli v3.1.0 released</a></h2>
+<h3 id="utplsql-cli-v310-released_1"><a class="toclink" href="../../utplsql-cli-v310-released.html#utplsql-cli-v310-released_1">utPLSQL-cli v3.1.0 released</a></h3>
+<p><a href="https://github.com/utPLSQL/utPLSQL-cli/releases/tag/v3.1.0">Release download page</a>
+<a href="https://github.com/utPLSQL/utPLSQL-cli/blob/v3.1.0/README.md">Readme</a></p>
+<h4 id="requirements"><a class="toclink" href="../../utplsql-cli-v310-released.html#requirements">Requirements</a></h4>
+<ul>
+<li><a href="http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html">Java8</a></li>
+<li>Oracle JDBC driver file (ojdbc8.jar) is required    </li>
+<li>Oracle i18n driver file (orai18n.jar) is required for national character-set support</li>
+</ul>
+<p>Both driver files need to be <a href="http://www.oracle.com/technetwork/database/features/jdbc/jdbc-ucp-122-3110062.html">downloaded</a> and placed in <code>utPLSQL-cli/lib</code> folder</p>
+<h4 id="compatibility"><a class="toclink" href="../../utplsql-cli-v310-released.html#compatibility">Compatibility</a></h4>
+<p>This version of java-api is compatible with all versions of utPLSQL from 3.0.0 to 3.1.0. 
+We encourage you to always use the latest version of cli to communicate with a v3 core.</p>
+<h4 id="changes-in-this-release"><a class="toclink" href="../../utplsql-cli-v310-released.html#changes-in-this-release">Changes in this release</a></h4>
+<p><em>Enhancements</em>
+- Support for custom reporters. Just call utplsql run user/pass@connstr -f=my_custom_reporter and cli will try to use a database-reporter with the given name
+- Assets necessary for CoverageHTMLReporter are written to $outputFileName-assets folder (<a href="https://github.com/utPLSQL/utPLSQL-java-api/issues/39">utPLSQL/utPLSQL-java-api#39</a>)
+- Realtime-Feedback: Output to screen is immediate, output to files is in bulks (<a href="https://github.com/utPLSQL/utPLSQL-cli/issues/68">#68</a>)
+- NLS-Support from environment (<a href="https://github.com/utPLSQL/utPLSQL-cli/issues/56">#56</a>)</p>
+<p><em>Bugfixes</em>
+- The correct usage is now stated in help message (<a href="https://github.com/utPLSQL/utPLSQL-cli/issues/63">#63</a>)
+- Several small improvements</p>
+<p>For more info on improvements and fixes, check out the <a href="https://cleandatabase.wordpress.com/2018/03/29/open-source-engagement-for-utplsql/">blog post from Samuel Nitsche</a></p>
+    
+    
+  </div>
+</article>
       
         <article class="md-post md-post--excerpt">
   <header class="md-post__header">
@@ -1731,42 +1820,6 @@
 Nearly every day version 3 has commits to repository with multiple developers contributing.  </p>
 <p>It won't be long until we are in an alpha status.   If your interested in following along or helping out with the project check out the <a href="https://github.com/utPLSQL/utPLSQL/blob/version3/readme.md">version 3 readme.md</a></p>
 <p>We welcome support requests and discussions, feature requests, and bug reports in the <a href="https://github.com/utPLSQL/utPLSQL/issues">GitHub issues log</a>.</p>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2016-07-07 00:00:00+00:00">July 7, 2016</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/version2-moving.html" class="md-meta__link">version2-moving</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              1 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="version-231-has-been-released"><a class="toclink" href="../../version-231-has-been-released.html">Version 2.3.1 has been released.</a></h2>
-<p><a href="https://github.com/utPLSQL/utPLSQL/releases/tag/utplsql-2-3-1">Version 2.3.1</a> has been released.</p>
-<p>This release updates documentation to reflect the move of the project to GitHub.</p>
-<p>Current and past releases can be located on our <a href="/downloads/">downloads</a> page.</p>
     
     
   </div>

@@ -547,6 +547,8 @@
       
         
       
+        
+      
     
     
     
@@ -819,6 +821,36 @@
     
   
     utplsql-plsql-developer-plugins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../category/utplsql-sql-developer.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    utplsql-sql-developer
   
 
     
@@ -1270,6 +1302,61 @@
       <header class="md-typeset">
         <h1 id="announcements">Announcements<a class="headerlink" href="#announcements" title="Permanent link">&para;</a></h1>
       </header>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2019-04-28 00:00:00+00:00">April 28, 2019</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../category/news.html" class="md-meta__link">news</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              1 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="oracle-19c-db-added-to-our-cicd-process"><a class="toclink" href="../../utplsql-is-continuously-tested-on-5-db-versions.html">Oracle 19c DB added to our CI/CD process</a></h2>
+<p>We take all the possible effort to assure utPLSQL can be tested against t all supported Oracle database versions.</p>
+<p>Today, our automation got enriched with Oracle 19c database testing.</p>
+<p>Pavel Kaplya has prepared a new <strong>small Docker Image</strong> for Oracle 19c.</p>
+<p><strong>Note:</strong></p>
+<blockquote>
+<p>You can take advantage of our efforts and build your own small Docker images (non-PDB) using our <a href="https://github.com/utPLSQL/docker-scripts">docker-scripts</a>.     </p>
+</blockquote>
+<h2 id="continuous-testing-of-utplsql"><a class="toclink" href="../../utplsql-is-continuously-tested-on-5-db-versions.html#continuous-testing-of-utplsql">Continuous testing of utPLSQL</a></h2>
+<p>utPLSQL is now getting tested against <em>five</em> database versions:
+- Oracle 11g XE
+- Oracle 12c R1
+- Oracle 12c R2
+- Oracle 18c
+- Oracle 19c</p>
+<p>You can see our build process &amp; test results on <a href="https://travis-ci.org/utPLSQL">travis-ci.org/utPLSQL</a></p>
+<p>All of our deliverable projects use set of tools that are free to sue for Open-Source:
+- static code analysis using <a href="https://sonarcloud.io/organizations/utplsql/projects">sonarcloud</a>
+- publishing code coverage using <a href="https://coveralls.io/github/utPLSQL/utPLSQL">coveralls</a>
+- deploying java-api artifacts to <a href="https://packagecloud.io/utPLSQL/utPLSQL-java-api">packagecloud</a>
+- deploying utPLSQL-cli artifacts to <a href="https://bintray.com/utplsql/utPLSQL-cli/utPLSQL-cli-develop">bintray</a>
+- maven plugin publishing into <a href="https://mvnrepository.com/artifact/org.utplsql/utplsql-maven-plugin">maven repository</a></p>
+<p>All of our builds must pass quality gates (code quality/tests/code coverage) before we approve and merge pull requests.</p>
+    
+    
+  </div>
+</article>
       
         <article class="md-post md-post--excerpt">
   <header class="md-post__header">
@@ -1817,63 +1904,6 @@
 <li>Fixed issue with wrong exception getting thrown when suite failed and there was a pending distributed transaction (<a href="https://github.com/utPLSQL/utPLSQL/issues/601">#601</a>)</li>
 <li>Fixed file-mapper issue where two files were mapped into the same object and caused <code>ORA-00001: unique constraint (UTP3.UT_COVERAGE_SOURCES_TMP_PK) violated</code> (<a href="https://github.com/utPLSQL/utPLSQL/issues/568">#568</a>)</li>
 </ul>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2018-03-29 00:00:00+00:00">March 29, 2018</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/releases.html" class="md-meta__link">releases</a>, 
-              <a href="../../category/utplsql-core.html" class="md-meta__link">utplsql-core</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              1 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="utplsql-cli-v310-released"><a class="toclink" href="../../utplsql-cli-v310-released.html">utPLSQL-cli v3.1.0 released</a></h2>
-<h3 id="utplsql-cli-v310-released_1"><a class="toclink" href="../../utplsql-cli-v310-released.html#utplsql-cli-v310-released_1">utPLSQL-cli v3.1.0 released</a></h3>
-<p><a href="https://github.com/utPLSQL/utPLSQL-cli/releases/tag/v3.1.0">Release download page</a>
-<a href="https://github.com/utPLSQL/utPLSQL-cli/blob/v3.1.0/README.md">Readme</a></p>
-<h4 id="requirements"><a class="toclink" href="../../utplsql-cli-v310-released.html#requirements">Requirements</a></h4>
-<ul>
-<li><a href="http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html">Java8</a></li>
-<li>Oracle JDBC driver file (ojdbc8.jar) is required    </li>
-<li>Oracle i18n driver file (orai18n.jar) is required for national character-set support</li>
-</ul>
-<p>Both driver files need to be <a href="http://www.oracle.com/technetwork/database/features/jdbc/jdbc-ucp-122-3110062.html">downloaded</a> and placed in <code>utPLSQL-cli/lib</code> folder</p>
-<h4 id="compatibility"><a class="toclink" href="../../utplsql-cli-v310-released.html#compatibility">Compatibility</a></h4>
-<p>This version of java-api is compatible with all versions of utPLSQL from 3.0.0 to 3.1.0. 
-We encourage you to always use the latest version of cli to communicate with a v3 core.</p>
-<h4 id="changes-in-this-release"><a class="toclink" href="../../utplsql-cli-v310-released.html#changes-in-this-release">Changes in this release</a></h4>
-<p><em>Enhancements</em>
-- Support for custom reporters. Just call utplsql run user/pass@connstr -f=my_custom_reporter and cli will try to use a database-reporter with the given name
-- Assets necessary for CoverageHTMLReporter are written to $outputFileName-assets folder (<a href="https://github.com/utPLSQL/utPLSQL-java-api/issues/39">utPLSQL/utPLSQL-java-api#39</a>)
-- Realtime-Feedback: Output to screen is immediate, output to files is in bulks (<a href="https://github.com/utPLSQL/utPLSQL-cli/issues/68">#68</a>)
-- NLS-Support from environment (<a href="https://github.com/utPLSQL/utPLSQL-cli/issues/56">#56</a>)</p>
-<p><em>Bugfixes</em>
-- The correct usage is now stated in help message (<a href="https://github.com/utPLSQL/utPLSQL-cli/issues/63">#63</a>)
-- Several small improvements</p>
-<p>For more info on improvements and fixes, check out the <a href="https://cleandatabase.wordpress.com/2018/03/29/open-source-engagement-for-utplsql/">blog post from Samuel Nitsche</a></p>
     
     
   </div>

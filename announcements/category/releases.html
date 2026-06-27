@@ -549,6 +549,8 @@
       
         
       
+        
+      
     
     
     
@@ -831,6 +833,36 @@
     
   
     utplsql-plsql-developer-plugins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="utplsql-sql-developer.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    utplsql-sql-developer
   
 
     
@@ -1289,6 +1321,49 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2026-06-17 00:00:00+00:00">June 17, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="releases.html" class="md-meta__link">releases</a>, 
+              <a href="utplsql-sql-developer.html" class="md-meta__link">utplsql-sql-developer</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              1 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="utplsql-for-sql-developer-v200-and-v201"><a class="toclink" href="../utplsql-for-sql-developer-v200-and-v201.html">utPLSQL for SQL Developer v2.0.0 and v2.0.1</a></h2>
+<p>This is a maintenance release all dependencies and changes by @PhilippSalvisberg</p>
+<h3 id="whats-changed"><a class="toclink" href="../utplsql-for-sql-developer-v200-and-v201.html#whats-changed">What's Changed</a></h3>
+<ul>
+<li>Enforces SQL Developer version 24.3.1.347.1826 with JDK 17 </li>
+<li>Bumps all dependencies</li>
+</ul>
+<p><strong>Full Changelog</strong>: <a href="https://github.com/utPLSQL/utPLSQL-SQLDeveloper/compare/v1.4.1...v2.0.1">v1.4.1...v2.0.1</a></p>
+<hr />
+<p><a href="https://github.com/utPLSQL/utPLSQL-SQLDeveloper/releases/tag/v2.0.1">Download utPLSQL for SQL Developer v2.0.1 here</a></p>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2026-05-24 00:00:00+00:00">May 24, 2026</time></li>
         
           <li class="md-meta__item">
@@ -1738,59 +1813,6 @@
 <li>Download the plugin release from <a href="https://github.com/utPLSQL/utPLSQL-PLSQL-Developer/releases">releases page</a></li>
 <li>Copy <code>PlsqlDeveloperUtPlsqlPlugin.dll</code> or <code>PlsqlDeveloperUtPlsqlPlugin_x86.dll</code> to the PlugIns directory of your PL/SQL Developer installation</li>
 </ul>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2020-02-23 00:00:00+00:00">February 23, 2020</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="releases.html" class="md-meta__link">releases</a>, 
-              <a href="utplsql-core.html" class="md-meta__link">utplsql-core</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              1 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="changes-in-release-3110"><a class="toclink" href="../utplsql-v3110-released.html">Changes in release 3.1.10</a></h2>
-<h3 id="enhancements"><a class="toclink" href="../utplsql-v3110-released.html#enhancements">Enhancements</a></h3>
-<ul>
-<li>utPLSQL test runner is now validating arguments of <code>--%throws</code> annotations at runtime <a href="https://github.com/utPLSQL/utPLSQL/issues/721">#721</a> <a href="https://github.com/utPLSQL/utPLSQL/issues/1033">#1033</a></li>
-<li>Documented limitations of insignificant spaces comparison in compound data <a href="https://github.com/utPLSQL/utPLSQL/issues/880">#880</a></li>
-<li>utPLSQL will now detect empty annotation cache for schema even with DLL trigger enabled <a href="https://github.com/utPLSQL/utPLSQL/issues/975">#975</a></li>
-<li>Order of procedures and annotation now determines default order of tests in suite <a href="https://github.com/utPLSQL/utPLSQL/issues/1036">#1036</a>    </li>
-</ul>
-<h3 id="bug-fixes"><a class="toclink" href="../utplsql-v3110-released.html#bug-fixes">Bug fixes</a></h3>
-<ul>
-<li>Nested contexts are now properly identified <a href="https://github.com/utPLSQL/utPLSQL/issues/1034">#1034</a></li>
-<li>TeamCity test reporter is now including error message <a href="https://github.com/utPLSQL/utPLSQL/issues/1045">#1045</a></li>
-</ul>
-<h3 id="internal-improvements"><a class="toclink" href="../utplsql-v3110-released.html#internal-improvements">Internal improvements</a></h3>
-<ul>
-<li>All self-tests for utPLSQL framework can now be executed using test-owner schema <a href="https://github.com/utPLSQL/utPLSQL/issues/969">#969</a></li>
-<li>Misleading rollback warning is no longer showing when running self-tests for utPLSQL <a href="https://github.com/utPLSQL/utPLSQL/issues/982">#982</a></li>
-</ul>
-<h2 id="downloads"><a class="toclink" href="../utplsql-v3110-released.html#downloads">Downloads</a></h2>
-<p>Download <code>v3.1.10</code> release version <a href="https://github.com/utPLSQL/utPLSQL/releases/tag/v3.1.10">here</a></p>
     
     
   </div>
