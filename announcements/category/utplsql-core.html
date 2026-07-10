@@ -1321,6 +1321,53 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2026-07-10 00:00:00+00:00">July 10, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="releases.html" class="md-meta__link">releases</a>, 
+              <a href="utplsql-core.html" class="md-meta__link">utplsql-core</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              1 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="utplsql-v323-released"><a class="toclink" href="../utplsql-v323-released.html">utPLSQL v3.2.3 released</a></h2>
+<h3 id="whats-changed"><a class="toclink" href="../utplsql-v323-released.html#whats-changed">What's Changed</a></h3>
+<ul>
+<li>Fix issue with <code>UT_TAP_REPORTER</code> on Oracle 23.26 by @jgebal in <a href="https://github.com/utPLSQL/utPLSQL/pull/1359">#1359</a></li>
+<li>Fixed support for camelCase in context <code>--%name</code> annotation. by @jgebal in <a href="https://github.com/utPLSQL/utPLSQL/pull/1361">#1361</a></li>
+<li>utPLSQL can be installed in editioned schema. by @jgebal in <a href="https://github.com/utPLSQL/utPLSQL/pull/1362">#1362</a></li>
+<li>Removed coveralls reporter by @jgebal in <a href="https://github.com/utPLSQL/utPLSQL/pull/1363">#1363</a></li>
+<li>Clarify behavior of before/after procedures in suitepath by @jgebal in <a href="https://github.com/utPLSQL/utPLSQL/pull/1364">#1364</a></li>
+<li><code>throws</code> can reference exception without schema or package name by @jgebal in <a href="https://github.com/utPLSQL/utPLSQL/pull/1365">#1365</a></li>
+<li><code>throws</code> works with uninitialized exception variables by @jgebal in <a href="https://github.com/utPLSQL/utPLSQL/pull/1366">#1366</a></li>
+</ul>
+<p><strong>Full Changelog</strong>: <a href="https://github.com/utPLSQL/utPLSQL/compare/v3.2.2...v.3.2.3">v3.2.2...v.3.2.3</a></p>
+<hr />
+<p><a href="https://github.com/utPLSQL/utPLSQL/releases/tag/v3.2.3">Download utPLSQL release v3.2.3 here</a></p>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2026-05-24 00:00:00+00:00">May 24, 2026</time></li>
         
           <li class="md-meta__item">
@@ -1811,85 +1858,6 @@ With this change, the <code>--%context</code> annotation is now aligned with <co
 <li>Fixed cursor comparison on Oracle 11.2 <a href="https://github.com/utPLSQL/utPLSQL/issues/947">#947</a> </li>
 <li>Fixed issue with retrieving suite data <a href="https://github.com/utPLSQL/utPLSQL/issues/977">#977</a> <a href="https://github.com/utPLSQL/utPLSQL/issues/974">#974</a> <a href="https://github.com/utPLSQL/utPLSQL/issues/978">#978</a></li>
 <li>Application context is now reset in session after test run <a href="https://github.com/utPLSQL/utPLSQL/issues/951">#951</a></li>
-</ul>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2019-06-18 00:00:00+00:00">June 18, 2019</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="releases.html" class="md-meta__link">releases</a>, 
-              <a href="utplsql-core.html" class="md-meta__link">utplsql-core</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              2 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="utplsql-v317-released"><a class="toclink" href="../utplsql-v317-released.html">utPLSQL v3.1.7 released</a></h2>
-<ul>
-<li>
-<h2 id="changes-in-release-317"><a class="toclink" href="../utplsql-v317-released.html#changes-in-release-317">Changes in release 3.1.7</a></h2>
-</li>
-</ul>
-<p>## New features</p>
-<ul>
-<li>Added support for <a href="https://github.com/utPLSQL/utPLSQL/blob/v3.1.7/docs/userguide/expectations.md#comparing-json-objects">comparing <code>json</code></a> in Oracle 12.2 and above <a href="https://github.com/utPLSQL/utPLSQL/issues/924">#924</a></li>
-<li>Introduced <a href="https://github.com/utPLSQL/utPLSQL/blob/v3.1.7/docs/userguide/annotations.md#tags"><code>tag</code> annotation</a> to enable tagging of tests and suites <a href="https://github.com/utPLSQL/utPLSQL/issues/66">#66</a></li>
-<li>Added support for <a href="https://github.com/utPLSQL/utPLSQL/blob/v3.1.7/docs/userguide/running-unit-tests.md#random-order">random order</a> of test execution <a href="https://github.com/utPLSQL/utPLSQL/issues/422">#422</a></li>
-</ul>
-<p>## Enhancements</p>
-<ul>
-<li>Added optional <a href="https://github.com/utPLSQL/utPLSQL/blob/v3.1.7/docs/userguide/install.md#installation-with-ddl-trigger">install with DDL trigger</a> to speed up framework start <a href="https://github.com/utPLSQL/utPLSQL/issues/901">#901</a></li>
-<li>Removed dependency on <code>dbms_utility.name_resolve</code> <a href="https://github.com/utPLSQL/utPLSQL/issues/569">#569</a> <a href="https://github.com/utPLSQL/utPLSQL/issues/885">#885</a></li>
-<li>New output buffer table structures improving performance and addressing timeout issues <a href="https://github.com/utPLSQL/utPLSQL/issues/915">#915</a></li>
-</ul>
-<p>## Bug fixes</p>
-<ul>
-<li>Fixed <code>ut_realtime_reporter</code> missing warnings in test and suite output structures <a href="https://github.com/utPLSQL/utPLSQL/issues/936">#936</a></li>
-<li>Fixed output_buffer purging error <a href="https://github.com/utPLSQL/utPLSQL/issues/934">#934</a></li>
-<li>Fixed <code>join_by / exclude / include</code> invalid syntax on collection in anydata compare <a href="https://github.com/utPLSQL/utPLSQL/issues/912">#912</a></li>
-<li>Fixed <code>ut_junit_reporter</code>  producing invalid output on failing tests with long failure message <a href="https://github.com/utPLSQL/utPLSQL/issues/927">#927</a></li>
-<li>Fixed <code>ut_sonar_test_reporter</code>  producing invalid output on failing tests with long failure message <a href="https://github.com/utPLSQL/utPLSQL/issues/925">#925</a></li>
-<li>Fixed <code>ut_coverage_cobertura_reporter</code> producing wrong line breaks which breaks the xml validation against DTD <a href="https://github.com/utPLSQL/utPLSQL/issues/917">#917</a></li>
-<li>Fixed <code>exclude</code> option for ref cursor where column order was not resolved correctly <a href="https://github.com/utPLSQL/utPLSQL/issues/911">#911</a></li>
-<li>Fixed <code>unordered</code> option for ref cursor with null values <a href="https://github.com/utPLSQL/utPLSQL/issues/914">#914</a></li>
-<li>Fixed number precision when selecting from dual <a href="https://github.com/utPLSQL/utPLSQL/issues/907">#907</a></li>
-<li>Fixed ref cursor errors with generated column names <a href="https://github.com/utPLSQL/utPLSQL/issues/902">#902</a></li>
-<li>Fixed <code>ORA-00907</code> when comparing ref cursors with BINARY_ columns <a href="https://github.com/utPLSQL/utPLSQL/issues/899">#899</a></li>
-<li>Fixed wrong results when comparing CLOBs with <code>to_be_like</code> in Oracle Database 11.2.0.4 due to Oracle Bug 14402514 <a href="https://github.com/utPLSQL/utPLSQL/issues/891">#891</a></li>
-<li>Fixed performance issue with code coverage report on huge PL/SQL code base <a href="https://github.com/utPLSQL/utPLSQL/issues/882">#882</a></li>
-</ul>
-<p>## Documentation improvements</p>
-<ul>
-<li>Added install instructions for DDL trigger <a href="https://github.com/utPLSQL/utPLSQL/issues/874">#874</a></li>
-</ul>
-<p>## Internal enhancements</p>
-<ul>
-<li>Fixed SQL vulnerability on all input parameters used in dynamic SQL and PL/SQL <a href="https://github.com/utPLSQL/utPLSQL/issues/921">#921</a></li>
-<li>Fixed message id in output buffer <a href="https://github.com/utPLSQL/utPLSQL/issues/916">#916</a></li>
-<li>Included 19c database in self testing <a href="https://github.com/utPLSQL/utPLSQL/issues/909">#909</a></li>
-<li>Introduced testing with multiple schemas and different grants <a href="https://github.com/utPLSQL/utPLSQL/issues/893">#893</a></li>
-<li>Fixed installation script warnings <a href="https://github.com/utPLSQL/utPLSQL/issues/879">#879</a></li>
 </ul>
     
     

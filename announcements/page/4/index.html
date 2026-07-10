@@ -1309,6 +1309,108 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2018-07-20 00:00:00+00:00">July 20, 2018</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../category/releases.html" class="md-meta__link">releases</a>, 
+              <a href="../../category/utplsql-core.html" class="md-meta__link">utplsql-core</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              3 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="announcing-utplsql-310-and-311"><a class="toclink" href="../../better-late-than-never.html">Announcing utPLSQL 3.1.0 and 3.1.1</a></h2>
+<p>On April 25th, a major release 3.1.0 of utPLSQL was published on github and the information was not published on our site.</p>
+<p>Right after the release two issues were found resulting in bug fixes and release 3.1.1</p>
+<h3 id="version-311-bug-fixes"><a class="toclink" href="../../better-late-than-never.html#version-311-bug-fixes">Version 3.1.1 bug-fixes</a></h3>
+<ul>
+<li>Block coverage reporting doesn't work on schema other than framework owner (<a href="../../better-late-than-never.html#653">https://github.com/utPLSQL/utPLSQL/issues/653</a>)</li>
+<li>Reporter threads timeout and do not produce outputs when running with <code>utplsql-cli</code> and idle time exceeds 1 minute (<a href="../../better-late-than-never.html#652">https://github.com/utPLSQL/utPLSQL/issues/652</a>)</li>
+</ul>
+<p><a href="https://github.com/utPLSQL/utPLSQL/releases/tag/v3.1.1">Release 3.1.1 download page</a></p>
+<h3 id="version-310-release-notes"><a class="toclink" href="../../better-late-than-never.html#version-310-release-notes">Version 3.1.0 release notes</a></h3>
+<p><strong>Important Notice</strong></p>
+<blockquote>
+<p><strong>Starting with this release, <code>utPLSQL-sql-cli</code> is no longer supported.</strong>
+<strong>Use <a href="https://github.com/utPLSQL/utPLSQL-cli/releases"><code>utPLSQL-cli</code> release 3.1.0</a> or above to interact with this and upcoming versions of utPLSQL.</strong></p>
+</blockquote>
+<h4 id="enhancements"><a class="toclink" href="../../better-late-than-never.html#enhancements">Enhancements</a></h4>
+<h5 id="reporting"><a class="toclink" href="../../better-late-than-never.html#reporting">Reporting</a></h5>
+<ul>
+<li>Added support for extended block coverage on Oracle 12.2 and above. Coverage reporters will now indicate partly covered lines (where applicable by coverage format).</li>
+<li>Added new <code>ut_tfs_junit_reporter</code> for MS Team Foundation Server to support old JUnit xml format</li>
+<li>Added new <a href="https://github.com/utPLSQL/utPLSQL/blob/develop/docs/userguide/coverage.md">coverage reporter</a> <code>ut_coverage_cobertura_reporter</code></li>
+<li>Fixed compatibility issues with <code>ut_xunit_reporter</code>. The reporter now conforms to the format specification.</li>
+<li>Added <code>ut_junit_reporter</code> as a base for <code>ut_xunit_reporter</code>. The <code>ut_xunit_reporter</code> remains active for backward compatibility but is considered depreciated</li>
+<li>Added reporting of differences when comparing cursors, oracle object and table types</li>
+<li>Aligned <code>ut_documentation_reporter</code> to display tests annotated<code>--%disabled</code> as <code>DISABLED</code></li>
+<li>Added support for reporters that don't provide output to the API (reporters saving data to DB)</li>
+<li>Improved API so that it's possible to support custom reporters from <code>utPLSQL-java-api</code> without code changes</li>
+</ul>
+<h5 id="annotations"><a class="toclink" href="../../better-late-than-never.html#annotations">Annotations</a></h5>
+<ul>
+<li>added <a href="https://github.com/utPLSQL/utPLSQL/blob/develop/docs/userguide/annotations.md#throws"><code>throws</code> annotation</a> to simplify writing tests for code that throws an exception</li>
+<li>added <a href="https://github.com/utPLSQL/utPLSQL/blob/develop/docs/userguide/annotations.md#context"><code>context</code></a> to enable grouping of tests into sub-suite in a test suite package</li>
+<li>added warnings on invalid/misplaced annotations</li>
+<li>added support for multiple declarations of before/after procedures</li>
+<li>added propagation of rollback type defined on parent suite within suitepath</li>
+</ul>
+<h5 id="expectations"><a class="toclink" href="../../better-late-than-never.html#expectations">Expectations</a></h5>
+<ul>
+<li>Added <a href="https://github.com/utPLSQL/utPLSQL/blob/develop/docs/userguide/expectations.md#have_count"><code>have_count</code> matcher</a> for checking cursor rows/collection elements count</li>
+<li>Added <a href="https://github.com/utPLSQL/utPLSQL/blob/develop/docs/userguide/advanced_data_comparison.md#excluding-elements-from-data-comparison"><code>include()</code> and <code>exclude()</code> extensions</a> to cursor and object/collection data comparison</li>
+<li>Added <a href="https://github.com/utPLSQL/utPLSQL/blob/develop/docs/userguide/expectations.md#diff-functionality-for-compound-data-types"><code>diff</code> functionality</a> for cursor, object and collection data </li>
+<li>When comparing cursors, column data-type is now also checked for equality</li>
+<li>Changed behavior of execution of <code>ut.expect()</code> on closed cursor (<a href="https://github.com/utPLSQL/utPLSQL/issues/548">#548</a>)</li>
+<li>Added support for cursors with implicitly named columns</li>
+</ul>
+<h5 id="general-improvements"><a class="toclink" href="../../better-late-than-never.html#general-improvements">General improvements</a></h5>
+<ul>
+<li>Output buffer for reporting is now reporter-agnostic.</li>
+<li>cli is no longer not interacting with output buffer but uses reporters to retrieve data instead.</li>
+<li>Added ability to mark expectation syntax as deprecated and report warnings on deprecation</li>
+<li>Added ability to get a list of annotations for a schema</li>
+<li>Refactoring of annotation parsing </li>
+<li>Refactoring of suite building</li>
+<li>Migrated part of old script-based tests to new utPLSQL v3 tests</li>
+<li>Documentation fixes and improvements</li>
+<li>Reporters now provide a method to get description</li>
+<li>Test execution continues even when encountered <code>Existing state of packages was discarded/invalidated</code> exceptions (<code>ORA-04068</code>/<code>ORA-04061</code>). The whole suite will execute, test result reports will be available and the exception will be re-thrown to the user after the run was finished. (<a href="https://github.com/utPLSQL/utPLSQL/issues/504">#504</a>)</li>
+</ul>
+<h4 id="bug-fixes"><a class="toclink" href="../../better-late-than-never.html#bug-fixes">Bug-fixes</a></h4>
+<ul>
+<li>Coverage schema had to be explicitly provided, even when using <code>a_include_objects</code> (<a href="https://github.com/utPLSQL/utPLSQL/issues/511">#511</a>)</li>
+<li>utPLSQL fails to run, when one of suite packages has no newline between <code>--%suite</code> and procedure-specific annotations. (<a href="https://github.com/utPLSQL/utPLSQL/issues/514">#514</a> / <a href="https://github.com/utPLSQL/utPLSQL/issues/516">#516</a>)</li>
+<li>Fixed false-negative code coverage reporting on labelled <code>end loop</code> elements (<a href="https://github.com/utPLSQL/utPLSQL/issues/539">#539</a>)</li>
+<li>Fixed issue with invalid suite grouping when running <code>xunit_reporter</code> (<a href="https://github.com/utPLSQL/utPLSQL/issues/547">#547</a>)</li>
+<li>Code coverage was always showing first report gathered in a session (<a href="https://github.com/utPLSQL/utPLSQL/issues/562">#562</a>)</li>
+<li>Wrong format of time in XUnit_reporter when running on German locale (using comma as decimal separator) (<a href="https://github.com/utPLSQL/utPLSQL/issues/572">#572</a>)</li>
+<li>Fixed issue with wrong exception getting thrown when suite failed and there was a pending distributed transaction (<a href="https://github.com/utPLSQL/utPLSQL/issues/601">#601</a>)</li>
+<li>Fixed file-mapper issue where two files were mapped into the same object and caused <code>ORA-00001: unique constraint (UTP3.UT_COVERAGE_SOURCES_TMP_PK) violated</code> (<a href="https://github.com/utPLSQL/utPLSQL/issues/568">#568</a>)</li>
+</ul>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2018-03-29 00:00:00+00:00">March 29, 2018</time></li>
         
           <li class="md-meta__item">
@@ -1780,45 +1882,6 @@ We encourage you to always use the latest version of cli to communicate with a v
 <p>Version 3 has reached alpha state.</p>
 <p>It can be downloaded from the <a href="https://github.com/utPLSQL/utPLSQL/releases">releases page.</a></p>
 <p>It's being used now in multiple organizations with great success.   The documentation work is progressing.  However, we realize that quite a bit of work needs to be done in this area. </p>
-<p>We welcome support requests and discussions, feature requests, and bug reports in the <a href="https://github.com/utPLSQL/utPLSQL/issues">GitHub issues log</a>.</p>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2016-10-10 00:00:00+00:00">October 10, 2016</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/releases.html" class="md-meta__link">releases</a>, 
-              <a href="../../category/utplsql-core.html" class="md-meta__link">utplsql-core</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              1 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="version-3-pre-alpha"><a class="toclink" href="../../version-3---pre-alpha.html">Version 3 - pre-alpha</a></h2>
-<p>Version 3 in pre-alpha state</p>
-<p>Work on <a href="https://github.com/utPLSQL/utPLSQL/tree/version3">version 3</a> of utPLSQL has been moving quickly.<br />
-Nearly every day version 3 has commits to repository with multiple developers contributing.  </p>
-<p>It won't be long until we are in an alpha status.   If your interested in following along or helping out with the project check out the <a href="https://github.com/utPLSQL/utPLSQL/blob/version3/readme.md">version 3 readme.md</a></p>
 <p>We welcome support requests and discussions, feature requests, and bug reports in the <a href="https://github.com/utPLSQL/utPLSQL/issues">GitHub issues log</a>.</p>
     
     

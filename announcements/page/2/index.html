@@ -1309,6 +1309,64 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2022-02-24 00:00:00+00:00">February 24, 2022</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../category/releases.html" class="md-meta__link">releases</a>, 
+              <a href="../../category/utplsql-core.html" class="md-meta__link">utplsql-core</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              1 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="changes-in-release-3112"><a class="toclink" href="../../utplsql-v3112-released.html">Changes in release 3.1.12</a></h2>
+<h3 id="new-features"><a class="toclink" href="../../utplsql-v3112-released.html#new-features">New features</a></h3>
+<ul>
+<li>Added support for description in the <code>--%disabled</code> annotation. See <a href="https://github.com/utPLSQL/utPLSQL/blob/4515e0b5a3b4b0de0c2198db3235ef8614bff4d8/docs/userguide/annotations.md#disabled">documentation</a>. Implemented in: <a href="https://github.com/utPLSQL/utPLSQL/pull/1183">#1183</a>, resolves <a href="https://github.com/utPLSQL/utPLSQL/issues/610">#610</a>.</li>
+<li>Added support for native <code>JSON</code> datatype on Oracle <code>21c</code>. Implemented in <a href="https://github.com/utPLSQL/utPLSQL/pull/1181">#1181</a>, resolves <a href="https://github.com/utPLSQL/utPLSQL/issues/1114">#1114</a>.</li>
+<li>Added new mather <code>to_be_within( distance|pct ).of_(expoected)</code>. See <a href="https://github.com/utPLSQL/utPLSQL/blob/fd7ef9c14111a48e03fff7851f990c7192539170/docs/userguide/expectations.md#to_be_within-of">documentation</a>. Implemented in <a href="https://github.com/utPLSQL/utPLSQL/pull/1076">#1076</a>, resolves <a href="https://github.com/utPLSQL/utPLSQL/issues/77">#77</a>.</li>
+</ul>
+<h3 id="enhancements"><a class="toclink" href="../../utplsql-v3112-released.html#enhancements">Enhancements</a></h3>
+<ul>
+<li>Improved performance of SQL used to retrieve Coverage sources. Implemented in <a href="https://github.com/utPLSQL/utPLSQL/pull/1187">#1187</a>, resolves <a href="https://github.com/utPLSQL/utPLSQL/issues/1169">#1169</a>.</li>
+<li>Added ability for utPLSQL to gather coverage on code invoking DBMS_STATS package. Implemented in <a href="https://github.com/utPLSQL/utPLSQL/pull/1184">#1184</a>, resolves <a href="https://github.com/utPLSQL/utPLSQL/issues/1097">#1097</a>, <a href="https://github.com/utPLSQL/utPLSQL/issues/1094">#1094</a>.</li>
+<li>Fixed typos and improved documentation. Implemented in <a href="https://github.com/utPLSQL/utPLSQL/pull/1173">#1173</a>, <a href="https://github.com/utPLSQL/utPLSQL/pull/1171">#1171</a></li>
+</ul>
+<h3 id="bug-fixes"><a class="toclink" href="../../utplsql-v3112-released.html#bug-fixes">Bug fixes</a></h3>
+<ul>
+<li>Actual and Expected are now correctly reported when comparing <code>JSON</code> data. Implemented in <a href="https://github.com/utPLSQL/utPLSQL/pull/1181">#1181</a>, resolves <a href="https://github.com/utPLSQL/utPLSQL/issues/1113">#1113</a>.</li>
+<li>Packages with removed annotations are now correctly recognized as non-utPLSQL packages. Implemented in <a href="https://github.com/utPLSQL/utPLSQL/pull/1180">#1180</a>, resolves <a href="https://github.com/utPLSQL/utPLSQL/issues/1177">#1177</a>.</li>
+<li>Fixed issues with comparison of nested object structures. Implemented in <a href="https://github.com/utPLSQL/utPLSQL/pull/1179">#1179</a>, resolves <a href="https://github.com/utPLSQL/utPLSQL/issues/1082">#1082</a>, <a href="https://github.com/utPLSQL/utPLSQL/issues/1083">#1083</a>, <a href="https://github.com/utPLSQL/utPLSQL/issues/1098">#1098</a>.</li>
+</ul>
+<h3 id="internal-improvements"><a class="toclink" href="../../utplsql-v3112-released.html#internal-improvements">Internal improvements</a></h3>
+<ul>
+<li>Moved build and test process for utPLSQL from Travis to GithubActions. Implemented in <a href="https://github.com/utPLSQL/utPLSQL/pull/1175">#1175</a></li>
+</ul>
+<h2 id="downloads"><a class="toclink" href="../../utplsql-v3112-released.html#downloads">Downloads</a></h2>
+<p>Download <code>v3.1.12</code> release version <a href="https://github.com/utPLSQL/utPLSQL/releases/tag/v3.1.12">here</a></p>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2021-11-18 00:00:00+00:00">November 18, 2021</time></li>
         
           <li class="md-meta__item">
@@ -1821,49 +1879,6 @@ yourself, <strong>please let us know!</strong></p>
 <li>Introduced testing with multiple schemas and different grants <a href="https://github.com/utPLSQL/utPLSQL/issues/893">#893</a></li>
 <li>Fixed installation script warnings <a href="https://github.com/utPLSQL/utPLSQL/issues/879">#879</a></li>
 </ul>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2019-05-09 00:00:00+00:00">May 9, 2019</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/tips-n-tricks.html" class="md-meta__link">tips-n-tricks</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              1 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="auto-run-utplsql-tests-with-oracle-sqlcl"><a class="toclink" href="../../auto-run-utplsql-tests-with-oracle-sqlcl.html">Auto-run utPLSQL tests with Oracle sqlcl</a></h2>
-<p>Today at <a href="https://twitter.com/search?q=%23apexConn19&amp;src=typd">#apexConn19</a>.</p>
-<p><a href="https://twitter.com/Der_Pesse">Sam Nitsche</a> (blogger, presenter, testing &amp; compassionate-coding advocate, utPLSQL-cli &amp; utPLSQL-api developer) met with <a href="https://twitter.com/krisrice">Kris Rice</a> (Oracle SQLDeveloper, sqlcl, ORDS rock-star, developer, advocate, presenter, mentor) </p>
-<p>As a result, something amazing happened. Within an hour or so, Kris created a fully functional auto-runner for utPLSQL tests within Oracle sqlcl.</p>
-<p><img alt="utPSLQL-sqlcl" src="../../../assets/images/sqlcl-utplsql.jpg" /></p>
-<p><a href="https://twitter.com/krisrice/status/1126467712211988480">See for yourself</a></p>
-<p>If you want to use sqlcl to run your tests, each time you compile a package, have a look at <a href="https://github.com/krisrice/sqlcl-utplsql">this script</a> for sqlcl.</p>
-<p><strong>Huge thank you to Kris and Sam!</strong> </p>
-<blockquote>
-<p><em>Amazing things can happen when right people meet at right time in right place.</em>    </p>
-</blockquote>
     
     
   </div>

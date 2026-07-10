@@ -1309,6 +1309,53 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2026-07-10 00:00:00+00:00">July 10, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="category/releases.html" class="md-meta__link">releases</a>, 
+              <a href="category/utplsql-core.html" class="md-meta__link">utplsql-core</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              1 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="utplsql-v323-released"><a class="toclink" href="utplsql-v323-released.html">utPLSQL v3.2.3 released</a></h2>
+<h3 id="whats-changed"><a class="toclink" href="utplsql-v323-released.html#whats-changed">What's Changed</a></h3>
+<ul>
+<li>Fix issue with <code>UT_TAP_REPORTER</code> on Oracle 23.26 by @jgebal in <a href="https://github.com/utPLSQL/utPLSQL/pull/1359">#1359</a></li>
+<li>Fixed support for camelCase in context <code>--%name</code> annotation. by @jgebal in <a href="https://github.com/utPLSQL/utPLSQL/pull/1361">#1361</a></li>
+<li>utPLSQL can be installed in editioned schema. by @jgebal in <a href="https://github.com/utPLSQL/utPLSQL/pull/1362">#1362</a></li>
+<li>Removed coveralls reporter by @jgebal in <a href="https://github.com/utPLSQL/utPLSQL/pull/1363">#1363</a></li>
+<li>Clarify behavior of before/after procedures in suitepath by @jgebal in <a href="https://github.com/utPLSQL/utPLSQL/pull/1364">#1364</a></li>
+<li><code>throws</code> can reference exception without schema or package name by @jgebal in <a href="https://github.com/utPLSQL/utPLSQL/pull/1365">#1365</a></li>
+<li><code>throws</code> works with uninitialized exception variables by @jgebal in <a href="https://github.com/utPLSQL/utPLSQL/pull/1366">#1366</a></li>
+</ul>
+<p><strong>Full Changelog</strong>: <a href="https://github.com/utPLSQL/utPLSQL/compare/v3.2.2...v.3.2.3">v3.2.2...v.3.2.3</a></p>
+<hr />
+<p><a href="https://github.com/utPLSQL/utPLSQL/releases/tag/v3.2.3">Download utPLSQL release v3.2.3 here</a></p>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2026-06-17 00:00:00+00:00">June 17, 2026</time></li>
         
           <li class="md-meta__item">
@@ -1719,64 +1766,6 @@
 <ul>
 <li>Add new <code>&lt;ora-stuck-timeout&gt;</code> parameter - resolves <a href="https://github.com/utPLSQL/utPLSQL-maven-plugin/issues/70">#70</a></li>
 </ul>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2022-02-24 00:00:00+00:00">February 24, 2022</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="category/releases.html" class="md-meta__link">releases</a>, 
-              <a href="category/utplsql-core.html" class="md-meta__link">utplsql-core</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              1 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="changes-in-release-3112"><a class="toclink" href="utplsql-v3112-released.html">Changes in release 3.1.12</a></h2>
-<h3 id="new-features"><a class="toclink" href="utplsql-v3112-released.html#new-features">New features</a></h3>
-<ul>
-<li>Added support for description in the <code>--%disabled</code> annotation. See <a href="https://github.com/utPLSQL/utPLSQL/blob/4515e0b5a3b4b0de0c2198db3235ef8614bff4d8/docs/userguide/annotations.md#disabled">documentation</a>. Implemented in: <a href="https://github.com/utPLSQL/utPLSQL/pull/1183">#1183</a>, resolves <a href="https://github.com/utPLSQL/utPLSQL/issues/610">#610</a>.</li>
-<li>Added support for native <code>JSON</code> datatype on Oracle <code>21c</code>. Implemented in <a href="https://github.com/utPLSQL/utPLSQL/pull/1181">#1181</a>, resolves <a href="https://github.com/utPLSQL/utPLSQL/issues/1114">#1114</a>.</li>
-<li>Added new mather <code>to_be_within( distance|pct ).of_(expoected)</code>. See <a href="https://github.com/utPLSQL/utPLSQL/blob/fd7ef9c14111a48e03fff7851f990c7192539170/docs/userguide/expectations.md#to_be_within-of">documentation</a>. Implemented in <a href="https://github.com/utPLSQL/utPLSQL/pull/1076">#1076</a>, resolves <a href="https://github.com/utPLSQL/utPLSQL/issues/77">#77</a>.</li>
-</ul>
-<h3 id="enhancements"><a class="toclink" href="utplsql-v3112-released.html#enhancements">Enhancements</a></h3>
-<ul>
-<li>Improved performance of SQL used to retrieve Coverage sources. Implemented in <a href="https://github.com/utPLSQL/utPLSQL/pull/1187">#1187</a>, resolves <a href="https://github.com/utPLSQL/utPLSQL/issues/1169">#1169</a>.</li>
-<li>Added ability for utPLSQL to gather coverage on code invoking DBMS_STATS package. Implemented in <a href="https://github.com/utPLSQL/utPLSQL/pull/1184">#1184</a>, resolves <a href="https://github.com/utPLSQL/utPLSQL/issues/1097">#1097</a>, <a href="https://github.com/utPLSQL/utPLSQL/issues/1094">#1094</a>.</li>
-<li>Fixed typos and improved documentation. Implemented in <a href="https://github.com/utPLSQL/utPLSQL/pull/1173">#1173</a>, <a href="https://github.com/utPLSQL/utPLSQL/pull/1171">#1171</a></li>
-</ul>
-<h3 id="bug-fixes"><a class="toclink" href="utplsql-v3112-released.html#bug-fixes">Bug fixes</a></h3>
-<ul>
-<li>Actual and Expected are now correctly reported when comparing <code>JSON</code> data. Implemented in <a href="https://github.com/utPLSQL/utPLSQL/pull/1181">#1181</a>, resolves <a href="https://github.com/utPLSQL/utPLSQL/issues/1113">#1113</a>.</li>
-<li>Packages with removed annotations are now correctly recognized as non-utPLSQL packages. Implemented in <a href="https://github.com/utPLSQL/utPLSQL/pull/1180">#1180</a>, resolves <a href="https://github.com/utPLSQL/utPLSQL/issues/1177">#1177</a>.</li>
-<li>Fixed issues with comparison of nested object structures. Implemented in <a href="https://github.com/utPLSQL/utPLSQL/pull/1179">#1179</a>, resolves <a href="https://github.com/utPLSQL/utPLSQL/issues/1082">#1082</a>, <a href="https://github.com/utPLSQL/utPLSQL/issues/1083">#1083</a>, <a href="https://github.com/utPLSQL/utPLSQL/issues/1098">#1098</a>.</li>
-</ul>
-<h3 id="internal-improvements"><a class="toclink" href="utplsql-v3112-released.html#internal-improvements">Internal improvements</a></h3>
-<ul>
-<li>Moved build and test process for utPLSQL from Travis to GithubActions. Implemented in <a href="https://github.com/utPLSQL/utPLSQL/pull/1175">#1175</a></li>
-</ul>
-<h2 id="downloads"><a class="toclink" href="utplsql-v3112-released.html#downloads">Downloads</a></h2>
-<p>Download <code>v3.1.12</code> release version <a href="https://github.com/utPLSQL/utPLSQL/releases/tag/v3.1.12">here</a></p>
     
     
   </div>
