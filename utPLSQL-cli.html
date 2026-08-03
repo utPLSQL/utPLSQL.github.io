@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://www.utplsql.org/documentation.html">
+        <link rel="canonical" href="https://www.utplsql.org/utPLSQL-cli.html">
       
       
-        <link rel="prev" href="announcements/category/website.html">
+        <link rel="prev" href="documentation.html">
       
       
-        <link rel="next" href="utPLSQL-cli.html">
+        <link rel="next" href="utPLSQL-maven-plugin.html">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Documentation - utPLSQL</title>
+        <title>utPLSQL-cli - utPLSQL</title>
       
     
     
@@ -111,6 +111,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#downloading" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -144,7 +149,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Documentation
+              utPLSQL-cli
             
           </span>
         </div>
@@ -1004,17 +1009,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="documentation.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="documentation.html" class="md-nav__link">
         
   
   
@@ -1030,7 +1028,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1068,10 +1065,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="utPLSQL-cli.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    utPLSQL-cli
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="utPLSQL-cli.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1087,6 +1109,235 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#downloading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Downloading
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requirements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compatibility
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#localization-and-nls-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Localization and NLS settings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Charset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connectionurl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ConnectionURL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        run
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="run">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#info" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        info
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="info">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examples_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reporters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        reporters
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="reporters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examples_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-utplsql-cli-as-sysdba" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using utPLSQL-cli as sysdba
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enabling-color-outputs-on-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enabling Color Outputs on Windows
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-reporters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom Reporters
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1308,15 +1559,255 @@
 
 
 
-  <h1>Documentation</h1>
+  <h1>utPLSQL-cli</h1>
 
+<p>Java command-line client for <a href="https://github.com/utPLSQL/utPLSQL/">utPLSQL v3</a>.</p>
+<p>Provides an easy way of invoking utPLSQL from command-line. Main features:</p>
 <ul>
-<li><a href="/utPLSQL/latest">utPLSQL framework</a></li>
-<li><a href="/utPLSQL-cli.md">utPLSQL-cli</a></li>
-<li><a href="/utPLSQL-maven-plugin.md">utPLSQL-maven plugin</a></li>
-<li><a href="/utPLSQL-SQLDeveloper.md">SQLDeveloper extension</a></li>
-<li><a href="/utPLSQL-PLSQL-Developer.md">PL/SQL Developer plugin</a></li>
+<li>Ability to run tests with multiple reporters simultaneously.</li>
+<li>Realtime reporting during test-run</li>
+<li>Ability to save output from every individual reporter to a separate output file.</li>
+<li>Allows execution of selected suites, subset of suite.</li>
+<li>Maps project and test files to database objects for reporting purposes.</li>
 </ul>
+<h2 id="downloading">Downloading<a class="headerlink" href="#downloading" title="Permanent link">&para;</a></h2>
+<p>Published releases are available for download on the <a href="https://github.com/utPLSQL/utPLSQL-cli/releases">utPLSQL-cli GitHub Releases Page.</a></p>
+<p>Development (<code>develop</code> branch) builds are not published as downloadable artifacts. To use the latest development version, build it from source:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git clone https://github.com/utPLSQL/utPLSQL-cli.git
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>cd utPLSQL-cli
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>mvn package appassembler:assemble
+</code></pre></div></p>
+<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://www.oracle.com/java/technologies/downloads/">Java SE Runtime Environment 17</a> or newer</li>
+<li>When using reporters for Sonar, client needs to be invoked from project's root directory.</li>
+</ul>
+<h2 id="compatibility">Compatibility<a class="headerlink" href="#compatibility" title="Permanent link">&para;</a></h2>
+<p>The latest CLI is compatible with database frameworks of the same <strong>minor</strong> version.
+For example CLI-3.2.0 is compatible with database framework 3.2.<em> but not necessarily with framework 3.1.</em> or 3.3.*</p>
+<h2 id="localization-and-nls-settings">Localization and NLS settings<a class="headerlink" href="#localization-and-nls-settings" title="Permanent link">&para;</a></h2>
+<p>utPLSQL-cli will use the environment variables "LC_ALL" or "LANG" to change the locale and therefore the client NLS settings.
+If neither environment variable is available, it will use the JVM default locale.</p>
+<p>Example: to change the NLS-settings to English American, you can do the following:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>export LC_ALL=en_US.utf-8
+</code></pre></div></p>
+<p>The charset-part of LC_ALL is ignored.</p>
+<p>In addition, utPLSQL-cli will use an existing "NLS_LANG" environment variable to create corresponding 
+<code>ALTER SESSION</code>-statements during initialization of the connection.</p>
+<p>The variable is parsed according to the <a href="https://www.oracle.com/technetwork/database/database-technologies/globalization/nls-lang-099431.html#_Toc110410543">Oracle globalization documentation</a></p>
+<p>Example: "NLS_LANG" of <code>AMERICAN_AMERICA.UTF8</code> will lead to the following statements:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">ALTER</span><span class="w"> </span><span class="k">SESSION</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">NLS_LANGUAGE</span><span class="o">=</span><span class="s1">&#39;AMERICAN&#39;</span><span class="p">;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">ALTER</span><span class="w"> </span><span class="k">SESSION</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">NLS_TERRITORY</span><span class="o">=</span><span class="s1">&#39;AMERICA&#39;</span><span class="p">;</span>
+</code></pre></div></p>
+<h2 id="charset">Charset<a class="headerlink" href="#charset" title="Permanent link">&para;</a></h2>
+<p>Java will use the default charset of your system for any string output.<br />
+You can change this by passing the <code>-Dfile.encoding</code> property to the JVM when running a java-application.<br />
+To avoid changing the utPLSQL-cli shell- or batchscript, you can define <code>-Dfile.encoding</code> in the environment variable <code>JAVA_TOOL_OPTIONS</code>. 
+This environment variable will be picked up and interpreted by the JVM:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>export JAVA_TOOL_OPTIONS=&#39;-Dfile.encoding=utf8&#39;
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>utplsql run user/pw@connecstring
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>&gt; Picked up JAVA_TOOL_OPTIONS: -Dfile.encoding=utf8
+</code></pre></div>
+<p>Make sure that the defined charset matches with the codepage your console is using.</p>
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
+<p>Currently, utPLSQL-cli supports the following sub-commands:
+- run
+- info
+- reporters
+- help</p>
+<p>To get more info about a command, use 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>utplsql &lt;sub-command&gt; -h
+</code></pre></div>
+Example:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>utplsql run -h
+</code></pre></div></p>
+<h4 id="connectionurl">ConnectionURL<a class="headerlink" href="#connectionurl" title="Permanent link">&para;</a></h4>
+<p>This is used in all commands as first parameter (though it's optional for <code>info</code>).</p>
+<p>Accepted formats:</p>
+<ul>
+<li><code>&lt;user&gt;/&lt;password&gt;@//&lt;host&gt;[:&lt;port&gt;]/&lt;service&gt;</code></li>
+<li><code>&lt;user&gt;/&lt;password&gt;@&lt;host&gt;:&lt;port&gt;:&lt;SID&gt;</code> </li>
+<li><code>&lt;user&gt;/&lt;password&gt;@&lt;TNSName&gt;</code></li>
+</ul>
+<p>To connect using TNS, you need to have the ORACLE_HOME environment variable set.
+The file tnsnames.ora must exist in path %ORACLE_HOME%/network/admin
+The file tnsnames.ora must contain valid TNS entries. </p>
+<p>In case you use a username containing <code>/</code> or a password containing <code>@</code> you should encapsulate it with double quotes <code>"</code>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>utplsql run &quot;my/Username&quot;/&quot;myP@ssword&quot;@connectstring
+</code></pre></div></p>
+<h3 id="run">run<a class="headerlink" href="#run" title="Permanent link">&para;</a></h3>
+<p><code>utplsql run &lt;ConnectionURL&gt; [&lt;options&gt;]</code></p>
+<h4 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>-p=suite_path(s)    - A suite path or a comma separated list of suite paths for unit test to be executed.     
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>(--path)              The path(s) can be in one of the following formats:
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>                          schema[.package[.procedure]]
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>                          schema:suite[.suite[.suite][...]][.procedure]
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>                      Both formats can be mixed in the list.
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>                      If only schema is provided, then all suites owner by that schema are executed.
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>                      If -p is omitted, the current schema is used.
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>--tags=tags         - A comma separated list of tags to include or exclude in the run. 
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>                      The excluded tags must be preceeded by a `-` (minus) sign and the entire expression must be surrounded by escaped doubleqotes in command line.
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>                      Format: --tags=tag1[,tag2,...,tagN]
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>                      or
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>                      Format: --tags=\&quot;-tag1\&quot;[,\&quot;-tag2\&quot;,...,tagN]
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>-f=format           - A reporter to be used for reporting.
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>(--format)            If no -f option is provided, the default ut_documentation_reporter is used.
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>                      See reporters command for possible values
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>  -o=output         - Defines file name to save the output from the specified reporter.
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>                      If defined, the output is not displayed on screen by default. This can be changed with the -s parameter.
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>                      If not defined, then output will be displayed on screen, even if the parameter -s is not specified.
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>                      If more than one -o parameter is specified for one -f parameter, the last one is taken into consideration.
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>  -s                - Forces putting output to to screen for a given -f parameter.
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>-source_path=source - path to project source files, use the following options to enable custom type mappings:
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>  -owner=&quot;app&quot;
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>  -regex_expression=&quot;pattern&quot;
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a>  -type_mapping=&quot;matched_string=TYPE[/matched_string=TYPE]*&quot;
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a>  -owner_subexpression=subexpression_number
+<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a>  -type_subexpression=subexpression_number
+<a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a>  -name_subexpression=subexpression_number
+<a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a>
+<a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a>-test_path=test     - path to project test files, use the following options to enable custom type mappings:
+<a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a>  -owner=&quot;app&quot;
+<a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a>  -regex_expression=&quot;pattern&quot;
+<a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a>  -type_mapping=&quot;matched_string=TYPE[/matched_string=TYPE]*&quot;
+<a id="__codelineno-7-35" name="__codelineno-7-35" href="#__codelineno-7-35"></a>  -owner_subexpression=subexpression_number
+<a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a>  -type_subexpression=subexpression_number
+<a id="__codelineno-7-37" name="__codelineno-7-37" href="#__codelineno-7-37"></a>  -name_subexpression=subexpression_number
+<a id="__codelineno-7-38" name="__codelineno-7-38" href="#__codelineno-7-38"></a>
+<a id="__codelineno-7-39" name="__codelineno-7-39" href="#__codelineno-7-39"></a>-c                  - If specified, enables printing of test results in colors as defined by ANSICONSOLE standards. 
+<a id="__codelineno-7-40" name="__codelineno-7-40" href="#__codelineno-7-40"></a>(--color)             Works only on reporeters that support colors (ut_documentation_reporter).
+<a id="__codelineno-7-41" name="__codelineno-7-41" href="#__codelineno-7-41"></a>
+<a id="__codelineno-7-42" name="__codelineno-7-42" href="#__codelineno-7-42"></a>--failure-exit-code=code - Override the exit code on failure, defaults to 1. You can set it to 0 to always exit with a success status.
+<a id="__codelineno-7-43" name="__codelineno-7-43" href="#__codelineno-7-43"></a>
+<a id="__codelineno-7-44" name="__codelineno-7-44" href="#__codelineno-7-44"></a>-scc                - If specified, skips the compatibility-check with the version of the database framework.
+<a id="__codelineno-7-45" name="__codelineno-7-45" href="#__codelineno-7-45"></a>(--skip-              If you skip compatibility-check, CLI will expect the most actual framework version
+<a id="__codelineno-7-46" name="__codelineno-7-46" href="#__codelineno-7-46"></a> compatibility-check) 
+<a id="__codelineno-7-47" name="__codelineno-7-47" href="#__codelineno-7-47"></a>
+<a id="__codelineno-7-48" name="__codelineno-7-48" href="#__codelineno-7-48"></a>-include=pckg_list  - Comma-separated object list to include in the coverage report.
+<a id="__codelineno-7-49" name="__codelineno-7-49" href="#__codelineno-7-49"></a>                      Format: [schema.]package[,[schema.]package ...].
+<a id="__codelineno-7-50" name="__codelineno-7-50" href="#__codelineno-7-50"></a>                      See coverage reporting options in framework documentation.
+<a id="__codelineno-7-51" name="__codelineno-7-51" href="#__codelineno-7-51"></a>
+<a id="__codelineno-7-52" name="__codelineno-7-52" href="#__codelineno-7-52"></a>-exclude=pckg_list  - Comma-separated object list to exclude from the coverage report.
+<a id="__codelineno-7-53" name="__codelineno-7-53" href="#__codelineno-7-53"></a>                      Format: [schema.]package[,[schema.]package ...].
+<a id="__codelineno-7-54" name="__codelineno-7-54" href="#__codelineno-7-54"></a>                      See coverage reporting options in framework documentation.
+<a id="__codelineno-7-55" name="__codelineno-7-55" href="#__codelineno-7-55"></a>
+<a id="__codelineno-7-56" name="__codelineno-7-56" href="#__codelineno-7-56"></a>-q                  - Does not output the informational messages normally printed to console.
+<a id="__codelineno-7-57" name="__codelineno-7-57" href="#__codelineno-7-57"></a>(--quiet)             Default: false
+<a id="__codelineno-7-58" name="__codelineno-7-58" href="#__codelineno-7-58"></a>
+<a id="__codelineno-7-59" name="__codelineno-7-59" href="#__codelineno-7-59"></a>-d                  - Outputs a load of debug information to console
+<a id="__codelineno-7-60" name="__codelineno-7-60" href="#__codelineno-7-60"></a>(--debug)             Default: false
+<a id="__codelineno-7-61" name="__codelineno-7-61" href="#__codelineno-7-61"></a>
+<a id="__codelineno-7-62" name="__codelineno-7-62" href="#__codelineno-7-62"></a>-t=timeInMinutes   - Sets the timeout in minutes after which the cli will abort. 
+<a id="__codelineno-7-63" name="__codelineno-7-63" href="#__codelineno-7-63"></a>(--timeout)          Default 60
+<a id="__codelineno-7-64" name="__codelineno-7-64" href="#__codelineno-7-64"></a>
+<a id="__codelineno-7-65" name="__codelineno-7-65" href="#__codelineno-7-65"></a>-D                 - Enables DBMS_OUTPUT in the TestRunner-Session
+<a id="__codelineno-7-66" name="__codelineno-7-66" href="#__codelineno-7-66"></a>(--dbms_output)      Default: false
+<a id="__codelineno-7-67" name="__codelineno-7-67" href="#__codelineno-7-67"></a>
+<a id="__codelineno-7-68" name="__codelineno-7-68" href="#__codelineno-7-68"></a>-r                 - Enables random order of test executions
+<a id="__codelineno-7-69" name="__codelineno-7-69" href="#__codelineno-7-69"></a>(--random-test-order) Default: false
+<a id="__codelineno-7-70" name="__codelineno-7-70" href="#__codelineno-7-70"></a>
+<a id="__codelineno-7-71" name="__codelineno-7-71" href="#__codelineno-7-71"></a>-seed              - Sets the seed to use for random test execution order. If set, it sets -random to true
+<a id="__codelineno-7-72" name="__codelineno-7-72" href="#__codelineno-7-72"></a>(--random-test-order-seed)
+<a id="__codelineno-7-73" name="__codelineno-7-73" href="#__codelineno-7-73"></a>
+<a id="__codelineno-7-74" name="__codelineno-7-74" href="#__codelineno-7-74"></a>--coverage-schemes - A comma separated list of schemas on which coverage should be gathered
+<a id="__codelineno-7-75" name="__codelineno-7-75" href="#__codelineno-7-75"></a>                     Format: --coverage-schemes=schema1[,schema2[,schema3]]
+<a id="__codelineno-7-76" name="__codelineno-7-76" href="#__codelineno-7-76"></a>
+<a id="__codelineno-7-77" name="__codelineno-7-77" href="#__codelineno-7-77"></a>--ora-stuck-timeout - Sets a timeout around Reporter creation and retries when not ready after a while. 0 = no timeout.
+</code></pre></div>
+<p>Parameters -f, -o, -s are correlated. That is parameters -o and -s are controlling outputs for reporter specified by the preceding -f parameter.</p>
+<p>Sonar reporter will only provide valid reports, when source_path and/or test_path are provided, and ut_run is executed from your project's root path.</p>
+<h4 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>&gt; utplsql run hr/hr@xe -p=hr_test -f=ut_documentation_reporter -o=run.log -s -f=ut_coverage_html_reporter -o=coverage.html -source_path=source
+</code></pre></div>
+<p>Invokes all Unit tests from schema/package "hr_test" with two reporters:</p>
+<ul>
+<li>ut_documentation_reporter - will output to screen and save output to file "run.log"</li>
+<li>ut_coverage_html_reporter - will report only on database objects that are mapping to file structure from "source" folder and save output to file "coverage.html"</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>&gt; utplsql run hr/hr@xe
+</code></pre></div>
+<p>Invokes all unit test suites from schema "hr". Results are displayed to screen using default ut_documentation_reporter.</p>
+<h3 id="info">info<a class="headerlink" href="#info" title="Permanent link">&para;</a></h3>
+<p><code>utplsql info [&lt;ConnectionURL&gt;]</code></p>
+<h4 id="examples_1">Examples<a class="headerlink" href="#examples_1" title="Permanent link">&para;</a></h4>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>&gt; utplsql info
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>cli 3.1.1-SNAPSHOT.local
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>utPLSQL-java-api 3.1.1-SNAPSHOT.123
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>&gt; utplsql info app/app@localhost:1521/ORCLPDB1
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>cli 3.1.1-SNAPSHOT.local
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>utPLSQL-java-api 3.1.1-SNAPSHOT.123
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>utPLSQL 3.1.2.1913
+</code></pre></div></p>
+<h3 id="reporters">reporters<a class="headerlink" href="#reporters" title="Permanent link">&para;</a></h3>
+<p><code>utplsql reporters &lt;ConnectionURL&gt;</code></p>
+<h4 id="examples_2">Examples<a class="headerlink" href="#examples_2" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>&gt; utplsql reporters app/app@localhost:1521/ORCLPDB1
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>UT_COVERAGE_COBERTURA_REPORTER:
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>    Generates a Cobertura coverage report providing information on code coverage with line numbers.
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>    Designed for Jenkins and TFS to report coverage.
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>    Cobertura Document Type Definition can be found: http://cobertura.sourceforge.net/xml/coverage-04.dtd.
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>    Sample file: https://github.com/leobalter/testing-examples/blob/master/solutions/3/report/cobertura-coverage.xml.
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>UT_COVERAGE_HTML_REPORTER:
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>    Generates a HTML coverage report with summary and line by line information on code coverage.
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>    Based on open-source simplecov-html coverage reporter for Ruby.
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>    Includes source code in the report.
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>    Will copy all necessary assets to a folder named after the Output-File
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>
+<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>UT_COVERAGE_SONAR_REPORTER:
+<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>    Generates a JSON coverage report providing information on code coverage with line numbers.
+<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>    Designed for [SonarQube](https://about.sonarqube.com/) to report coverage.
+<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>    JSON format returned conforms with the Sonar specification: https://docs.sonarqube.org/display/SONAR/Generic+Test+Data
+<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>
+<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>UT_DEBUG_REPORTER:
+<a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a>    No description available
+<a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a>
+<a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a>UT_DOCUMENTATION_REPORTER:
+<a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a>    A textual pretty-print of unit test results (usually use for console output)
+<a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a>    Provides additional properties lvl and failed
+<a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a>
+<a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a>UT_JUNIT_REPORTER:
+<a id="__codelineno-12-28" name="__codelineno-12-28" href="#__codelineno-12-28"></a>    Provides outcomes in a format conforming with JUnit 4 and above as defined in: https://gist.github.com/kuzuha/232902acab1344d6b578
+<a id="__codelineno-12-29" name="__codelineno-12-29" href="#__codelineno-12-29"></a>
+<a id="__codelineno-12-30" name="__codelineno-12-30" href="#__codelineno-12-30"></a>UT_REALTIME_REPORTER:
+<a id="__codelineno-12-31" name="__codelineno-12-31" href="#__codelineno-12-31"></a>    Provides test results in a XML format, for clients such as SQL Developer interested in showing progressing details.
+<a id="__codelineno-12-32" name="__codelineno-12-32" href="#__codelineno-12-32"></a>
+<a id="__codelineno-12-33" name="__codelineno-12-33" href="#__codelineno-12-33"></a>UT_SONAR_TEST_REPORTER:
+<a id="__codelineno-12-34" name="__codelineno-12-34" href="#__codelineno-12-34"></a>    Generates a JSON report providing detailed information on test execution.
+<a id="__codelineno-12-35" name="__codelineno-12-35" href="#__codelineno-12-35"></a>    Designed for [SonarQube](https://about.sonarqube.com/) to report test execution.
+<a id="__codelineno-12-36" name="__codelineno-12-36" href="#__codelineno-12-36"></a>    JSON format returned conforms with the Sonar specification: https://docs.sonarqube.org/display/SONAR/Generic+Test+Data
+<a id="__codelineno-12-37" name="__codelineno-12-37" href="#__codelineno-12-37"></a>
+<a id="__codelineno-12-38" name="__codelineno-12-38" href="#__codelineno-12-38"></a>UT_TEAMCITY_REPORTER:
+<a id="__codelineno-12-39" name="__codelineno-12-39" href="#__codelineno-12-39"></a>    Provides the TeamCity (a CI server by jetbrains) reporting-format that allows tracking of progress of a CI step/task as it executes.
+<a id="__codelineno-12-40" name="__codelineno-12-40" href="#__codelineno-12-40"></a>    https://confluence.jetbrains.com/display/TCD9/Build+Script+Interaction+with+TeamCity
+<a id="__codelineno-12-41" name="__codelineno-12-41" href="#__codelineno-12-41"></a>
+<a id="__codelineno-12-42" name="__codelineno-12-42" href="#__codelineno-12-42"></a>UT_TFS_JUNIT_REPORTER:
+<a id="__codelineno-12-43" name="__codelineno-12-43" href="#__codelineno-12-43"></a>    Provides outcomes in a format conforming with JUnit version for TFS / VSTS.
+<a id="__codelineno-12-44" name="__codelineno-12-44" href="#__codelineno-12-44"></a>    As defined by specs :https://docs.microsoft.com/en-us/vsts/build-release/tasks/test/publish-test-results?view=vsts
+<a id="__codelineno-12-45" name="__codelineno-12-45" href="#__codelineno-12-45"></a>    Version is based on windy road junit https://github.com/windyroad/JUnit-Schema/blob/master/JUnit.xsd.
+<a id="__codelineno-12-46" name="__codelineno-12-46" href="#__codelineno-12-46"></a>
+<a id="__codelineno-12-47" name="__codelineno-12-47" href="#__codelineno-12-47"></a>UT_XUNIT_REPORTER:
+<a id="__codelineno-12-48" name="__codelineno-12-48" href="#__codelineno-12-48"></a>    Depracated reporter. Please use Junit.
+<a id="__codelineno-12-49" name="__codelineno-12-49" href="#__codelineno-12-49"></a>    Provides outcomes in a format conforming with JUnit 4 and above as defined in: https://gist.github.com/kuzuha/232902acab1344d6b578
+</code></pre></div>
+<h2 id="using-utplsql-cli-as-sysdba">Using utPLSQL-cli as sysdba<a class="headerlink" href="#using-utplsql-cli-as-sysdba" title="Permanent link">&para;</a></h2>
+<p>Since 3.1.6 it is possible to run utPLSQL-cli as sysdba by running</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>utplsql run &quot;sys as sysdba&quot;/pw@connectstring
+</code></pre></div>
+<p>It is, however, <strong>not recommended</strong> to run utPLSQL with sysdba privileges.</p>
+<h2 id="enabling-color-outputs-on-windows">Enabling Color Outputs on Windows<a class="headerlink" href="#enabling-color-outputs-on-windows" title="Permanent link">&para;</a></h2>
+<p>To enable color outputs on Windows cmd you need to install an open-source utility called <a href="http://adoxa.altervista.org/ansicon/">ANSICON</a>.</p>
+<h2 id="custom-reporters">Custom Reporters<a class="headerlink" href="#custom-reporters" title="Permanent link">&para;</a></h2>
+<p>Since v3.1.0 you can call custom reporters (PL/SQL) via cli, too. Just call the name of the custom reporter as you would do for the core reporters.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>utplsql run hr/hr@xe -p=hr_test -f=my_custom_reporter -o=run.log -s
+</code></pre></div>
 
 
 
@@ -1349,7 +1840,7 @@
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="October 11, 2022 07:39:36 UTC">October 11, 2022 07:39:36</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="August 3, 2026 11:21:48 UTC">August 3, 2026 11:21:48</span>
   </span>
 
     

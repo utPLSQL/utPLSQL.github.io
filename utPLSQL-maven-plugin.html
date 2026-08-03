@@ -1,0 +1,2091 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="utPLSQL Ultimate Testing Framework for Oracle PL/SQL">
+      
+      
+      
+        <link rel="canonical" href="https://www.utplsql.org/utPLSQL-maven-plugin.html">
+      
+      
+        <link rel="prev" href="utPLSQL-cli.html">
+      
+      
+        <link rel="next" href="utPLSQL-SQLDeveloper.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>utPLSQL-maven plugin - utPLSQL</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="assets/topbar.css">
+    
+      <link rel="stylesheet" href="stylesheets/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-WMFVR98J0Q"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-WMFVR98J0Q",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-WMFVR98J0Q",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>if("undefined"!=typeof __md_analytics){var consent=__md_get("__consent");consent&&consent.analytics&&__md_analytics()}</script>
+  
+
+    
+    
+  
+  <script>
+    (function () {
+      var _get = Storage.prototype.getItem;
+      var _set = Storage.prototype.setItem;
+      var SHARED_KEY = '/__consent';
+      Storage.prototype.getItem = function (key) {
+        if (key && key.endsWith('.__consent')) return _get.call(this, SHARED_KEY);
+        return _get.call(this, key);
+      };
+      Storage.prototype.setItem = function (key, value) {
+        if (key && key.endsWith('.__consent')) { _set.call(this, SHARED_KEY, value); return; }
+        _set.call(this, key, value);
+      };
+    })();
+    window.utplsqlBaseUrl = "https://www.utplsql.org/";
+    document.documentElement.setAttribute('data-utplsql-site', 'org');
+  </script>
+  <script src="./assets/topbar.js" defer></script>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#compatibility" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="utPLSQL" class="md-header__button md-logo" aria-label="utPLSQL" data-md-component="logo">
+      
+  <img src="assets/icon-transparent.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            utPLSQL
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              utPLSQL-maven plugin
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="announcements/index.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Announcements
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="documentation.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Documentation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="downloads.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Downloads
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="resources.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Resources
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="about.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  About
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="contributing.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Contributing
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="utPLSQL" class="md-nav__button md-logo" aria-label="utPLSQL" data-md-component="logo">
+      
+  <img src="assets/icon-transparent.png" alt="logo">
+
+    </a>
+    utPLSQL
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="announcements/index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Announcements
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Announcements
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Categories
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Categories
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="announcements/category/news.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    news
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="announcements/category/releases.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    releases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="announcements/category/tips-n-tricks.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    tips-n-tricks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="announcements/category/utplsql-cli.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    utplsql-cli
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="announcements/category/utplsql-core.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    utplsql-core
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="announcements/category/utplsql-java-api.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    utplsql-java-api
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="announcements/category/utplsql-maven-plugin.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    utplsql-maven-plugin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="announcements/category/utplsql-plsql-developer-plugins.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    utplsql-plsql-developer-plugins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="announcements/category/utplsql-sql-developer.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    utplsql-sql-developer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="announcements/category/version2-moving.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    version2-moving
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="announcements/category/website.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    website
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Documentation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="documentation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="utPLSQL/latest" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    utPLSQL framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="utPLSQL-cli.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    utPLSQL-cli
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    utPLSQL-maven plugin
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="utPLSQL-maven-plugin.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    utPLSQL-maven plugin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compatibility
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#skipping-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Skipping Tests
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Skipping Tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#skipping-by-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Skipping by Default
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison-with-utplsql-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparison with utPLSQL CLI
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="utPLSQL-SQLDeveloper.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SQLDeveloper extension
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="utPLSQL-PLSQL-Developer.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PL/SQL Developer plugin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="downloads.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Downloads
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="resources.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="about.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="contributing.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>utPLSQL-maven plugin</h1>
+
+<p>A maven plugin for running Unit Tests with utPLSQL v3+.</p>
+<h2 id="compatibility">Compatibility<a class="headerlink" href="#compatibility" title="Permanent link">&para;</a></h2>
+<p>This plugin is compatible with utPLSQL 3.1.0+.</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Java SE Runtime Environment 17</li>
+<li>Maven Version 3.9.9+</li>
+</ul>
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
+<h3 id="skipping-tests">Skipping Tests<a class="headerlink" href="#skipping-tests" title="Permanent link">&para;</a></h3>
+<p>To skip running the tests for a particular project, set the <strong>skipUtplsqlTests</strong> property to true.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&lt;configuration&gt;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">&lt;skipUtplsqlTests&gt;</span>true<span class="nt">&lt;/skipUtplsqlTests&gt;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nt">&lt;/configuration&gt;</span>
+</code></pre></div>
+<p>You can also skip the tests via the command line by executing the following command:</p>
+<div class="highlight"><pre><span></span><code>mvn install -DskipTests
+</code></pre></div>
+<h4 id="skipping-by-default">Skipping by Default<a class="headerlink" href="#skipping-by-default" title="Permanent link">&para;</a></h4>
+<p>If you want to skip tests by default but want the ability to re-enable tests from the command line, you need to go via a
+properties section in the pom:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">&lt;configuration&gt;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nt">&lt;skipUtplsqlTests&gt;</span>true<span class="nt">&lt;/skipUtplsqlTests&gt;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nt">&lt;/configuration&gt;</span>
+</code></pre></div>
+<p>This will allow you to run with all tests disabled by default and to run them with this command:</p>
+<div class="highlight"><pre><span></span><code>mvn install -DskipUtplsqlTests=false
+</code></pre></div>
+<h3 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h3>
+<p>Please refer to the following usage example for the parameters descriptions:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">&lt;project</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://maven.apache.org/POM/4.0.0&quot;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">         </span><span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">         </span><span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="nt">&lt;groupId&gt;</span>org.my_org<span class="nt">&lt;/groupId&gt;</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="nt">&lt;artifactId&gt;</span>my-artifact-name<span class="nt">&lt;/artifactId&gt;</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="nt">&lt;version&gt;</span>1.0.0<span class="nt">&lt;/version&gt;</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="nt">&lt;properties&gt;</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">        </span><span class="cm">&lt;!-- URL of the connection to the database. --&gt;</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">        </span><span class="cm">&lt;!-- Can also be passed as execution parameters. --&gt;</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">        </span><span class="cm">&lt;!-- -DdbUrl=&quot;jdbc:oracle:thin:@127.0.0.1:1521:xe&quot; --&gt;</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">        </span><span class="nt">&lt;dbUrl&gt;</span>url_of_connection<span class="nt">&lt;/dbUrl&gt;</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">        </span><span class="cm">&lt;!-- Database connection user. --&gt;</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">        </span><span class="cm">&lt;!-- -DdbUser=&quot;user&quot; --&gt;</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">        </span><span class="nt">&lt;dbUser&gt;</span>user<span class="nt">&lt;/dbUser&gt;</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">        </span><span class="cm">&lt;!-- Database connection password. --&gt;</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">        </span><span class="cm">&lt;!-- -DdbPassword=&quot;password&quot; --&gt;</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">        </span><span class="nt">&lt;dbPass&gt;</span>password<span class="nt">&lt;/dbPass&gt;</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">    </span><span class="nt">&lt;/properties&gt;</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">    </span><span class="nt">&lt;build&gt;</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">        </span><span class="nt">&lt;plugins&gt;</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">            </span><span class="nt">&lt;plugin&gt;</span>
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="w">                </span><span class="nt">&lt;groupId&gt;</span>org.utplsql<span class="nt">&lt;/groupId&gt;</span>
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="w">                </span><span class="nt">&lt;artifactId&gt;</span>utplsql-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="w">                </span><span class="nt">&lt;version&gt;</span>3.1.11<span class="nt">&lt;/version&gt;</span>
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="w">                </span><span class="nt">&lt;executions&gt;</span>
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="w">                    </span><span class="nt">&lt;execution&gt;</span>
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="w">                        </span><span class="nt">&lt;goals&gt;</span>
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="w">                            </span><span class="nt">&lt;goal&gt;</span>test<span class="nt">&lt;/goal&gt;</span>
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a><span class="w">                        </span><span class="nt">&lt;/goals&gt;</span>
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="w">                        </span><span class="nt">&lt;configuration&gt;</span>
+<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a><span class="w">                            </span><span class="cm">&lt;!-- REQUIRED PARAMETERS --&gt;</span>
+<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>
+<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a><span class="w">                            </span><span class="cm">&lt;!-- A list of tests suite paths. --&gt;</span>
+<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a>
+<a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a><span class="w">                            </span><span class="cm">&lt;!-- The path(s) can be in one of the following formats: --&gt;</span>
+<a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a><span class="w">                            </span><span class="cm">&lt;!--     schema[.package[.procedure]] --&gt;</span>
+<a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a><span class="w">                            </span><span class="cm">&lt;!--     schema:suite[.suite[.suite][...]][.procedure] --&gt;</span>
+<a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a><span class="w">                            </span><span class="cm">&lt;!-- Both formats can be mixed in the list. --&gt;</span>
+<a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a><span class="w">                            </span><span class="cm">&lt;!-- If only schema is provided, then all suites --&gt;</span>
+<a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a><span class="w">                            </span><span class="cm">&lt;!-- owned by that schema are executed. --&gt;</span>
+<a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a><span class="w">                            </span><span class="nt">&lt;paths&gt;</span>
+<a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a><span class="w">                                </span><span class="nt">&lt;path&gt;</span>schema_name<span class="nt">&lt;/path&gt;</span>
+<a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a><span class="w">                            </span><span class="nt">&lt;/paths&gt;</span>
+<a id="__codelineno-2-48" name="__codelineno-2-48" href="#__codelineno-2-48"></a>
+<a id="__codelineno-2-49" name="__codelineno-2-49" href="#__codelineno-2-49"></a><span class="w">                            </span><span class="nt">&lt;sources&gt;</span>
+<a id="__codelineno-2-50" name="__codelineno-2-50" href="#__codelineno-2-50"></a><span class="w">                                </span><span class="nt">&lt;source&gt;</span>
+<a id="__codelineno-2-51" name="__codelineno-2-51" href="#__codelineno-2-51"></a><span class="w">                                    </span><span class="cm">&lt;!-- Path to project source files. --&gt;</span>
+<a id="__codelineno-2-52" name="__codelineno-2-52" href="#__codelineno-2-52"></a><span class="w">                                    </span><span class="nt">&lt;directory&gt;</span>src/test/resources/scripts/sources<span class="nt">&lt;/directory&gt;</span>
+<a id="__codelineno-2-53" name="__codelineno-2-53" href="#__codelineno-2-53"></a><span class="w">                                    </span><span class="cm">&lt;!-- File patterns to include. --&gt;</span>
+<a id="__codelineno-2-54" name="__codelineno-2-54" href="#__codelineno-2-54"></a><span class="w">                                    </span><span class="nt">&lt;includes&gt;</span>
+<a id="__codelineno-2-55" name="__codelineno-2-55" href="#__codelineno-2-55"></a><span class="w">                                        </span><span class="nt">&lt;include&gt;</span>**/*pkg<span class="nt">&lt;/include&gt;</span>
+<a id="__codelineno-2-56" name="__codelineno-2-56" href="#__codelineno-2-56"></a><span class="w">                                        </span><span class="nt">&lt;include&gt;</span>**/*pkb<span class="nt">&lt;/include&gt;</span>
+<a id="__codelineno-2-57" name="__codelineno-2-57" href="#__codelineno-2-57"></a><span class="w">                                    </span><span class="nt">&lt;/includes&gt;</span>
+<a id="__codelineno-2-58" name="__codelineno-2-58" href="#__codelineno-2-58"></a><span class="w">                                </span><span class="nt">&lt;/source&gt;</span>
+<a id="__codelineno-2-59" name="__codelineno-2-59" href="#__codelineno-2-59"></a><span class="w">                            </span><span class="nt">&lt;/sources&gt;</span>
+<a id="__codelineno-2-60" name="__codelineno-2-60" href="#__codelineno-2-60"></a>
+<a id="__codelineno-2-61" name="__codelineno-2-61" href="#__codelineno-2-61"></a><span class="w">                            </span><span class="nt">&lt;tests&gt;</span>
+<a id="__codelineno-2-62" name="__codelineno-2-62" href="#__codelineno-2-62"></a><span class="w">                                </span><span class="nt">&lt;test&gt;</span>
+<a id="__codelineno-2-63" name="__codelineno-2-63" href="#__codelineno-2-63"></a><span class="w">                                    </span><span class="cm">&lt;!-- Path to project test files. --&gt;</span>
+<a id="__codelineno-2-64" name="__codelineno-2-64" href="#__codelineno-2-64"></a><span class="w">                                    </span><span class="nt">&lt;directory&gt;</span>src/test/resources/scripts/test<span class="nt">&lt;/directory&gt;</span>
+<a id="__codelineno-2-65" name="__codelineno-2-65" href="#__codelineno-2-65"></a><span class="w">                                    </span><span class="cm">&lt;!-- File patterns to include. --&gt;</span>
+<a id="__codelineno-2-66" name="__codelineno-2-66" href="#__codelineno-2-66"></a><span class="w">                                    </span><span class="nt">&lt;includes&gt;</span>
+<a id="__codelineno-2-67" name="__codelineno-2-67" href="#__codelineno-2-67"></a><span class="w">                                        </span><span class="nt">&lt;include&gt;</span>**/*pkg<span class="nt">&lt;/include&gt;</span>
+<a id="__codelineno-2-68" name="__codelineno-2-68" href="#__codelineno-2-68"></a><span class="w">                                        </span><span class="nt">&lt;include&gt;</span>**/*pkb<span class="nt">&lt;/include&gt;</span>
+<a id="__codelineno-2-69" name="__codelineno-2-69" href="#__codelineno-2-69"></a><span class="w">                                    </span><span class="nt">&lt;/includes&gt;</span>
+<a id="__codelineno-2-70" name="__codelineno-2-70" href="#__codelineno-2-70"></a><span class="w">                                </span><span class="nt">&lt;/test&gt;</span>
+<a id="__codelineno-2-71" name="__codelineno-2-71" href="#__codelineno-2-71"></a><span class="w">                            </span><span class="nt">&lt;/tests&gt;</span>
+<a id="__codelineno-2-72" name="__codelineno-2-72" href="#__codelineno-2-72"></a>
+<a id="__codelineno-2-73" name="__codelineno-2-73" href="#__codelineno-2-73"></a><span class="w">                            </span><span class="cm">&lt;!-- OPTIONAL PARAMETERS --&gt;</span>
+<a id="__codelineno-2-74" name="__codelineno-2-74" href="#__codelineno-2-74"></a>
+<a id="__codelineno-2-75" name="__codelineno-2-75" href="#__codelineno-2-75"></a><span class="w">                            </span><span class="cm">&lt;!-- Continue in case of failure. --&gt;</span>
+<a id="__codelineno-2-76" name="__codelineno-2-76" href="#__codelineno-2-76"></a><span class="w">                            </span><span class="cm">&lt;!-- Defaults to: ${maven.test.failure.ignore} --&gt;</span>
+<a id="__codelineno-2-77" name="__codelineno-2-77" href="#__codelineno-2-77"></a><span class="w">                            </span><span class="nt">&lt;ignoreFailure&gt;</span>false<span class="nt">&lt;/ignoreFailure&gt;</span>
+<a id="__codelineno-2-78" name="__codelineno-2-78" href="#__codelineno-2-78"></a>
+<a id="__codelineno-2-79" name="__codelineno-2-79" href="#__codelineno-2-79"></a><span class="w">                            </span><span class="cm">&lt;!-- Skip the utPLSQL version compatibility check. --&gt;</span>
+<a id="__codelineno-2-80" name="__codelineno-2-80" href="#__codelineno-2-80"></a><span class="w">                            </span><span class="cm">&lt;!-- Defaults to: false --&gt;</span>
+<a id="__codelineno-2-81" name="__codelineno-2-81" href="#__codelineno-2-81"></a><span class="w">                            </span><span class="nt">&lt;skipCompatibilityCheck&gt;</span>false<span class="nt">&lt;/skipCompatibilityCheck&gt;</span>
+<a id="__codelineno-2-82" name="__codelineno-2-82" href="#__codelineno-2-82"></a>
+<a id="__codelineno-2-83" name="__codelineno-2-83" href="#__codelineno-2-83"></a><span class="w">                            </span><span class="cm">&lt;!-- Skip the tests --&gt;</span>
+<a id="__codelineno-2-84" name="__codelineno-2-84" href="#__codelineno-2-84"></a><span class="w">                            </span><span class="cm">&lt;!-- Defaults to: false --&gt;</span>
+<a id="__codelineno-2-85" name="__codelineno-2-85" href="#__codelineno-2-85"></a><span class="w">                            </span><span class="nt">&lt;skipUtplsqlTests&gt;</span>false<span class="nt">&lt;/skipUtplsqlTests&gt;</span>
+<a id="__codelineno-2-86" name="__codelineno-2-86" href="#__codelineno-2-86"></a>
+<a id="__codelineno-2-87" name="__codelineno-2-87" href="#__codelineno-2-87"></a><span class="w">                            </span><span class="cm">&lt;!-- Enables DBMS_OUTPUT --&gt;</span>
+<a id="__codelineno-2-88" name="__codelineno-2-88" href="#__codelineno-2-88"></a><span class="w">                            </span><span class="cm">&lt;!-- Defaults to: false --&gt;</span>
+<a id="__codelineno-2-89" name="__codelineno-2-89" href="#__codelineno-2-89"></a><span class="w">                            </span><span class="nt">&lt;dbmsOutput&gt;</span>false<span class="nt">&lt;/dbmsOutput&gt;</span>
+<a id="__codelineno-2-90" name="__codelineno-2-90" href="#__codelineno-2-90"></a>
+<a id="__codelineno-2-91" name="__codelineno-2-91" href="#__codelineno-2-91"></a><span class="w">                            </span><span class="cm">&lt;!-- Sets a timeout around Reporter creation and retries when not ready after a while. --&gt;</span>
+<a id="__codelineno-2-92" name="__codelineno-2-92" href="#__codelineno-2-92"></a><span class="w">                            </span><span class="cm">&lt;!-- 0 = no timeout. --&gt;</span>
+<a id="__codelineno-2-93" name="__codelineno-2-93" href="#__codelineno-2-93"></a><span class="w">                            </span><span class="nt">&lt;oraStuckTimeout&gt;</span>0<span class="nt">&lt;/oraStuckTimeout&gt;</span>
+<a id="__codelineno-2-94" name="__codelineno-2-94" href="#__codelineno-2-94"></a>
+<a id="__codelineno-2-95" name="__codelineno-2-95" href="#__codelineno-2-95"></a><span class="w">                            </span><span class="cm">&lt;!-- A list of tags to run. --&gt;</span>
+<a id="__codelineno-2-96" name="__codelineno-2-96" href="#__codelineno-2-96"></a><span class="w">                            </span><span class="nt">&lt;tags&gt;</span>
+<a id="__codelineno-2-97" name="__codelineno-2-97" href="#__codelineno-2-97"></a><span class="w">                                </span><span class="nt">&lt;tag&gt;</span>test_tag<span class="nt">&lt;/tag&gt;</span>
+<a id="__codelineno-2-98" name="__codelineno-2-98" href="#__codelineno-2-98"></a><span class="w">                            </span><span class="nt">&lt;/tags&gt;</span>
+<a id="__codelineno-2-99" name="__codelineno-2-99" href="#__codelineno-2-99"></a>
+<a id="__codelineno-2-100" name="__codelineno-2-100" href="#__codelineno-2-100"></a><span class="w">                            </span><span class="cm">&lt;!-- Enables random order of test executions. --&gt;</span>
+<a id="__codelineno-2-101" name="__codelineno-2-101" href="#__codelineno-2-101"></a><span class="w">                            </span><span class="nt">&lt;randomTestOrder&gt;</span>true<span class="nt">&lt;/randomTestOrder&gt;</span>
+<a id="__codelineno-2-102" name="__codelineno-2-102" href="#__codelineno-2-102"></a><span class="w">                            </span><span class="cm">&lt;!-- Sets the seed to use for random test execution order. If set, it sets -random to true. --&gt;</span>
+<a id="__codelineno-2-103" name="__codelineno-2-103" href="#__codelineno-2-103"></a><span class="w">                            </span><span class="nt">&lt;randomTestOrderSeed&gt;</span>5<span class="nt">&lt;/randomTestOrderSeed&gt;</span>
+<a id="__codelineno-2-104" name="__codelineno-2-104" href="#__codelineno-2-104"></a>
+<a id="__codelineno-2-105" name="__codelineno-2-105" href="#__codelineno-2-105"></a><span class="w">                            </span><span class="cm">&lt;!-- Comma-separated object list to include in the coverage report. --&gt;</span>
+<a id="__codelineno-2-106" name="__codelineno-2-106" href="#__codelineno-2-106"></a><span class="w">                            </span><span class="cm">&lt;!-- Format: [schema.]package[,[schema.]package ...]. --&gt;</span>
+<a id="__codelineno-2-107" name="__codelineno-2-107" href="#__codelineno-2-107"></a><span class="w">                            </span><span class="cm">&lt;!-- See coverage reporting options in framework documentation. --&gt;</span>
+<a id="__codelineno-2-108" name="__codelineno-2-108" href="#__codelineno-2-108"></a><span class="w">                            </span><span class="nt">&lt;includeObject&gt;</span>app.test1,app.test2<span class="nt">&lt;/includeObject&gt;</span>
+<a id="__codelineno-2-109" name="__codelineno-2-109" href="#__codelineno-2-109"></a>
+<a id="__codelineno-2-110" name="__codelineno-2-110" href="#__codelineno-2-110"></a><span class="w">                            </span><span class="cm">&lt;!-- Comma-separated object list to exclude from the coverage report. --&gt;</span>
+<a id="__codelineno-2-111" name="__codelineno-2-111" href="#__codelineno-2-111"></a><span class="w">                            </span><span class="cm">&lt;!-- Format: [schema.]package[,[schema.]package ...]. --&gt;</span>
+<a id="__codelineno-2-112" name="__codelineno-2-112" href="#__codelineno-2-112"></a><span class="w">                            </span><span class="cm">&lt;!-- See coverage reporting options in framework documentation. --&gt;</span>
+<a id="__codelineno-2-113" name="__codelineno-2-113" href="#__codelineno-2-113"></a><span class="w">                            </span><span class="nt">&lt;excludeObject&gt;</span>app.test1,app.test2<span class="nt">&lt;/excludeObject&gt;</span>
+<a id="__codelineno-2-114" name="__codelineno-2-114" href="#__codelineno-2-114"></a>
+<a id="__codelineno-2-115" name="__codelineno-2-115" href="#__codelineno-2-115"></a><span class="w">                            </span><span class="cm">&lt;!-- Regular expression to match against schema name to include in coverage --&gt;</span>
+<a id="__codelineno-2-116" name="__codelineno-2-116" href="#__codelineno-2-116"></a><span class="w">                            </span><span class="nt">&lt;includeSchemaExpr&gt;</span>app.test1,app.test2<span class="nt">&lt;/includeSchemaExpr&gt;</span>
+<a id="__codelineno-2-117" name="__codelineno-2-117" href="#__codelineno-2-117"></a>
+<a id="__codelineno-2-118" name="__codelineno-2-118" href="#__codelineno-2-118"></a><span class="w">                            </span><span class="cm">&lt;!-- Regular expression to match against schema name to exclude in coverage --&gt;</span>
+<a id="__codelineno-2-119" name="__codelineno-2-119" href="#__codelineno-2-119"></a><span class="w">                            </span><span class="nt">&lt;excludeSchemaExpr&gt;</span>app.test1,app.test2<span class="nt">&lt;/excludeSchemaExpr&gt;</span>
+<a id="__codelineno-2-120" name="__codelineno-2-120" href="#__codelineno-2-120"></a>
+<a id="__codelineno-2-121" name="__codelineno-2-121" href="#__codelineno-2-121"></a><span class="w">                            </span><span class="cm">&lt;!-- Regular expression to match against schema name to include in coverage --&gt;</span>
+<a id="__codelineno-2-122" name="__codelineno-2-122" href="#__codelineno-2-122"></a><span class="w">                            </span><span class="nt">&lt;includeObjectExpr&gt;</span>app.test1,app.test2<span class="nt">&lt;/includeObjectExpr&gt;</span>
+<a id="__codelineno-2-123" name="__codelineno-2-123" href="#__codelineno-2-123"></a>
+<a id="__codelineno-2-124" name="__codelineno-2-124" href="#__codelineno-2-124"></a><span class="w">                            </span><span class="cm">&lt;!-- Regular expression to match against object name to exclude in coverage --&gt;</span>
+<a id="__codelineno-2-125" name="__codelineno-2-125" href="#__codelineno-2-125"></a><span class="w">                            </span><span class="nt">&lt;excludeObjectExpr&gt;</span>app.test1,app.test2<span class="nt">&lt;/excludeObjectExpr&gt;</span>
+<a id="__codelineno-2-126" name="__codelineno-2-126" href="#__codelineno-2-126"></a>
+<a id="__codelineno-2-127" name="__codelineno-2-127" href="#__codelineno-2-127"></a><span class="w">                            </span><span class="cm">&lt;!-- List of reporters. --&gt;</span>
+<a id="__codelineno-2-128" name="__codelineno-2-128" href="#__codelineno-2-128"></a><span class="w">                            </span><span class="cm">&lt;!-- You can pass the name of the reporter and/or the output file --&gt;</span>
+<a id="__codelineno-2-129" name="__codelineno-2-129" href="#__codelineno-2-129"></a><span class="w">                            </span><span class="cm">&lt;!-- of the reporter and/or if the report is logged to the console. --&gt;</span>
+<a id="__codelineno-2-130" name="__codelineno-2-130" href="#__codelineno-2-130"></a><span class="w">                            </span><span class="cm">&lt;!-- If you don&#39;t pass any reporter, UT_DOCUMENTATION_REPORTER will be used. --&gt;</span>
+<a id="__codelineno-2-131" name="__codelineno-2-131" href="#__codelineno-2-131"></a><span class="w">                            </span><span class="cm">&lt;!-- This is a current list of the names of the reporters, --&gt;</span>
+<a id="__codelineno-2-132" name="__codelineno-2-132" href="#__codelineno-2-132"></a><span class="w">                            </span><span class="cm">&lt;!-- see UtPLSQL documentation in order to check the final list: --&gt;</span>
+<a id="__codelineno-2-133" name="__codelineno-2-133" href="#__codelineno-2-133"></a><span class="w">                            </span><span class="cm">&lt;!--     UT_DOCUMENTATION_REPORTER --&gt;</span>
+<a id="__codelineno-2-134" name="__codelineno-2-134" href="#__codelineno-2-134"></a><span class="w">                            </span><span class="cm">&lt;!--     UT_COVERAGE_HTML_REPORTER --&gt;</span>
+<a id="__codelineno-2-135" name="__codelineno-2-135" href="#__codelineno-2-135"></a><span class="w">                            </span><span class="cm">&lt;!--     UT_TEAMCITY_REPORTER --&gt;</span>
+<a id="__codelineno-2-136" name="__codelineno-2-136" href="#__codelineno-2-136"></a><span class="w">                            </span><span class="cm">&lt;!--     UT_XUNIT_REPORTER --&gt;</span>
+<a id="__codelineno-2-137" name="__codelineno-2-137" href="#__codelineno-2-137"></a><span class="w">                            </span><span class="cm">&lt;!--     UT_COVERAGE_SONAR_REPORTER --&gt;</span>
+<a id="__codelineno-2-138" name="__codelineno-2-138" href="#__codelineno-2-138"></a><span class="w">                            </span><span class="cm">&lt;!--     UT_SONAR_TEST_REPORTER --&gt;</span>
+<a id="__codelineno-2-139" name="__codelineno-2-139" href="#__codelineno-2-139"></a><span class="w">                            </span><span class="nt">&lt;reporters&gt;</span>
+<a id="__codelineno-2-140" name="__codelineno-2-140" href="#__codelineno-2-140"></a><span class="w">                                </span><span class="nt">&lt;reporter&gt;</span>
+<a id="__codelineno-2-141" name="__codelineno-2-141" href="#__codelineno-2-141"></a><span class="w">                                    </span><span class="nt">&lt;name&gt;</span>UT_COVERAGE_SONAR_REPORTER<span class="nt">&lt;/name&gt;</span>
+<a id="__codelineno-2-142" name="__codelineno-2-142" href="#__codelineno-2-142"></a><span class="w">                                    </span><span class="cm">&lt;!-- The file output path. --&gt;</span>
+<a id="__codelineno-2-143" name="__codelineno-2-143" href="#__codelineno-2-143"></a><span class="w">                                    </span><span class="nt">&lt;fileOutput&gt;</span>utplsql/coverage-sonar-reporter.xml<span class="nt">&lt;/fileOutput&gt;</span>
+<a id="__codelineno-2-144" name="__codelineno-2-144" href="#__codelineno-2-144"></a><span class="w">                                    </span><span class="cm">&lt;!-- Indicates if should write to console. --&gt;</span>
+<a id="__codelineno-2-145" name="__codelineno-2-145" href="#__codelineno-2-145"></a><span class="w">                                    </span><span class="nt">&lt;consoleOutput&gt;</span>true<span class="nt">&lt;/consoleOutput&gt;</span>
+<a id="__codelineno-2-146" name="__codelineno-2-146" href="#__codelineno-2-146"></a><span class="w">                                </span><span class="nt">&lt;/reporter&gt;</span>
+<a id="__codelineno-2-147" name="__codelineno-2-147" href="#__codelineno-2-147"></a><span class="w">                                </span><span class="nt">&lt;reporter&gt;</span>
+<a id="__codelineno-2-148" name="__codelineno-2-148" href="#__codelineno-2-148"></a><span class="w">                                    </span><span class="nt">&lt;name&gt;</span>UT_SONAR_TEST_REPORTER<span class="nt">&lt;/name&gt;</span>
+<a id="__codelineno-2-149" name="__codelineno-2-149" href="#__codelineno-2-149"></a><span class="w">                                    </span><span class="nt">&lt;fileOutput&gt;</span>utplsql/sonar-test-reporter.xml<span class="nt">&lt;/fileOutput&gt;</span>
+<a id="__codelineno-2-150" name="__codelineno-2-150" href="#__codelineno-2-150"></a><span class="w">                                    </span><span class="nt">&lt;consoleOutput&gt;</span>false<span class="nt">&lt;/consoleOutput&gt;</span>
+<a id="__codelineno-2-151" name="__codelineno-2-151" href="#__codelineno-2-151"></a><span class="w">                                </span><span class="nt">&lt;/reporter&gt;</span>
+<a id="__codelineno-2-152" name="__codelineno-2-152" href="#__codelineno-2-152"></a><span class="w">                                </span><span class="nt">&lt;reporter&gt;</span>
+<a id="__codelineno-2-153" name="__codelineno-2-153" href="#__codelineno-2-153"></a><span class="w">                                    </span><span class="nt">&lt;name&gt;</span>UT_TEAMCITY_REPORTER<span class="nt">&lt;/name&gt;</span>
+<a id="__codelineno-2-154" name="__codelineno-2-154" href="#__codelineno-2-154"></a><span class="w">                                </span><span class="nt">&lt;/reporter&gt;</span>
+<a id="__codelineno-2-155" name="__codelineno-2-155" href="#__codelineno-2-155"></a><span class="w">                            </span><span class="nt">&lt;/reporters&gt;</span>
+<a id="__codelineno-2-156" name="__codelineno-2-156" href="#__codelineno-2-156"></a>
+<a id="__codelineno-2-157" name="__codelineno-2-157" href="#__codelineno-2-157"></a><span class="w">                            </span><span class="cm">&lt;!-- Custom source code mapping options. --&gt;</span>
+<a id="__codelineno-2-158" name="__codelineno-2-158" href="#__codelineno-2-158"></a><span class="w">                            </span><span class="cm">&lt;!-- See coverage reporting options in framework documentation. --&gt;</span>
+<a id="__codelineno-2-159" name="__codelineno-2-159" href="#__codelineno-2-159"></a><span class="w">                            </span><span class="nt">&lt;sourcesOwner&gt;</span>code_owner<span class="nt">&lt;/sourcesOwner&gt;</span>
+<a id="__codelineno-2-160" name="__codelineno-2-160" href="#__codelineno-2-160"></a><span class="w">                            </span><span class="nt">&lt;sourcesRegexExpression&gt;</span>.*/\w+/(\w+)/(\w+)\.\w{3}<span class="nt">&lt;/sourcesRegexExpression&gt;</span>
+<a id="__codelineno-2-161" name="__codelineno-2-161" href="#__codelineno-2-161"></a><span class="w">                            </span><span class="nt">&lt;sourcesOwnerSubexpression&gt;</span>app<span class="nt">&lt;/sourcesOwnerSubexpression&gt;</span>
+<a id="__codelineno-2-162" name="__codelineno-2-162" href="#__codelineno-2-162"></a><span class="w">                            </span><span class="nt">&lt;sourcesNameSubexpression&gt;</span>2<span class="nt">&lt;/sourcesNameSubexpression&gt;</span>
+<a id="__codelineno-2-163" name="__codelineno-2-163" href="#__codelineno-2-163"></a><span class="w">                            </span><span class="nt">&lt;sourcesTypeSubexpression&gt;</span>1<span class="nt">&lt;/sourcesTypeSubexpression&gt;</span>
+<a id="__codelineno-2-164" name="__codelineno-2-164" href="#__codelineno-2-164"></a><span class="w">                            </span><span class="nt">&lt;sourcesCustomTypeMapping&gt;</span>
+<a id="__codelineno-2-165" name="__codelineno-2-165" href="#__codelineno-2-165"></a><span class="w">                                </span><span class="nt">&lt;customTypeMapping&gt;</span>
+<a id="__codelineno-2-166" name="__codelineno-2-166" href="#__codelineno-2-166"></a><span class="w">                                    </span><span class="nt">&lt;type&gt;</span>package<span class="w"> </span>body<span class="nt">&lt;/type&gt;</span>
+<a id="__codelineno-2-167" name="__codelineno-2-167" href="#__codelineno-2-167"></a><span class="w">                                    </span><span class="nt">&lt;customMapping&gt;</span>package_bodies<span class="nt">&lt;/customMapping&gt;</span>
+<a id="__codelineno-2-168" name="__codelineno-2-168" href="#__codelineno-2-168"></a><span class="w">                                </span><span class="nt">&lt;/customTypeMapping&gt;</span>
+<a id="__codelineno-2-169" name="__codelineno-2-169" href="#__codelineno-2-169"></a><span class="w">                            </span><span class="nt">&lt;/sourcesCustomTypeMapping&gt;</span>
+<a id="__codelineno-2-170" name="__codelineno-2-170" href="#__codelineno-2-170"></a>
+<a id="__codelineno-2-171" name="__codelineno-2-171" href="#__codelineno-2-171"></a><span class="w">                            </span><span class="cm">&lt;!-- Custom test code mapping options. --&gt;</span>
+<a id="__codelineno-2-172" name="__codelineno-2-172" href="#__codelineno-2-172"></a><span class="w">                            </span><span class="cm">&lt;!-- See coverage reporting options in framework documentation. --&gt;</span>
+<a id="__codelineno-2-173" name="__codelineno-2-173" href="#__codelineno-2-173"></a><span class="w">                            </span><span class="nt">&lt;testsOwner&gt;</span>tests_owner<span class="nt">&lt;/testsOwner&gt;</span>
+<a id="__codelineno-2-174" name="__codelineno-2-174" href="#__codelineno-2-174"></a><span class="w">                            </span><span class="nt">&lt;testsRegexExpression&gt;</span>.*/\w+/(\w+)/(\w+)\.\w{3}<span class="nt">&lt;/testsRegexExpression&gt;</span>
+<a id="__codelineno-2-175" name="__codelineno-2-175" href="#__codelineno-2-175"></a><span class="w">                            </span><span class="nt">&lt;testsOwnerSubexpression&gt;</span>test<span class="nt">&lt;/testsOwnerSubexpression&gt;</span>
+<a id="__codelineno-2-176" name="__codelineno-2-176" href="#__codelineno-2-176"></a><span class="w">                            </span><span class="nt">&lt;testsNameSubexpression&gt;</span>2<span class="nt">&lt;/testsNameSubexpression&gt;</span>
+<a id="__codelineno-2-177" name="__codelineno-2-177" href="#__codelineno-2-177"></a><span class="w">                            </span><span class="nt">&lt;testsTypeSubexpression&gt;</span>1<span class="nt">&lt;/testsTypeSubexpression&gt;</span>
+<a id="__codelineno-2-178" name="__codelineno-2-178" href="#__codelineno-2-178"></a><span class="w">                            </span><span class="nt">&lt;testsCustomTypeMapping&gt;</span>
+<a id="__codelineno-2-179" name="__codelineno-2-179" href="#__codelineno-2-179"></a><span class="w">                                </span><span class="nt">&lt;customTypeMapping&gt;</span>
+<a id="__codelineno-2-180" name="__codelineno-2-180" href="#__codelineno-2-180"></a><span class="w">                                    </span><span class="nt">&lt;type&gt;</span>package<span class="w"> </span>body<span class="nt">&lt;/type&gt;</span>
+<a id="__codelineno-2-181" name="__codelineno-2-181" href="#__codelineno-2-181"></a><span class="w">                                    </span><span class="nt">&lt;customMapping&gt;</span>package_bodies<span class="nt">&lt;/customMapping&gt;</span>
+<a id="__codelineno-2-182" name="__codelineno-2-182" href="#__codelineno-2-182"></a><span class="w">                                </span><span class="nt">&lt;/customTypeMapping&gt;</span>
+<a id="__codelineno-2-183" name="__codelineno-2-183" href="#__codelineno-2-183"></a><span class="w">                            </span><span class="nt">&lt;/testsCustomTypeMapping&gt;</span>
+<a id="__codelineno-2-184" name="__codelineno-2-184" href="#__codelineno-2-184"></a><span class="w">                        </span><span class="nt">&lt;/configuration&gt;</span>
+<a id="__codelineno-2-185" name="__codelineno-2-185" href="#__codelineno-2-185"></a><span class="w">                    </span><span class="nt">&lt;/execution&gt;</span>
+<a id="__codelineno-2-186" name="__codelineno-2-186" href="#__codelineno-2-186"></a><span class="w">                </span><span class="nt">&lt;/executions&gt;</span>
+<a id="__codelineno-2-187" name="__codelineno-2-187" href="#__codelineno-2-187"></a><span class="w">            </span><span class="nt">&lt;/plugin&gt;</span>
+<a id="__codelineno-2-188" name="__codelineno-2-188" href="#__codelineno-2-188"></a><span class="w">        </span><span class="nt">&lt;/plugins&gt;</span>
+<a id="__codelineno-2-189" name="__codelineno-2-189" href="#__codelineno-2-189"></a><span class="w">    </span><span class="nt">&lt;/build&gt;</span>
+<a id="__codelineno-2-190" name="__codelineno-2-190" href="#__codelineno-2-190"></a><span class="nt">&lt;/project&gt;</span>
+</code></pre></div>
+<p>More project samples are available in the <code>src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT</code>
+directory:</p>
+<ul>
+<li><strong>simple-project:</strong> Minimalist test project with standard project directory structure.</li>
+<li><strong>regex-project:</strong> Overrides project directory structure and use additional parameters (sourcesRegexExpression,
+  testsRegexExpression, ...), to tell utPLSQL how project files should be mapped into database objects.</li>
+<li><strong>type-mapping-project:</strong> Example how to use regex and custom type parameters together.</li>
+<li><strong>owner-param-project:</strong> Demonstrates how to use sourcesOwner and testsOwner parameters.</li>
+</ul>
+<h2 id="comparison-with-utplsql-cli">Comparison with utPLSQL CLI<a class="headerlink" href="#comparison-with-utplsql-cli" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>CLI short parameter</th>
+<th>CLI long parameter</th>
+<th>Maven XML path</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-c</td>
+<td>--color</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>--failure-exit-code</td>
+<td></td>
+</tr>
+<tr>
+<td>-p</td>
+<td>--path</td>
+<td>paths.path</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>--format</td>
+<td>reporters.reporter.name</td>
+</tr>
+<tr>
+<td>-o</td>
+<td></td>
+<td>reporters.reporter.fileOutput</td>
+</tr>
+<tr>
+<td>-s</td>
+<td></td>
+<td>reporters.reporter.consoleOutput</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>ignoreFailure</td>
+</tr>
+<tr>
+<td>-scc</td>
+<td>--skip-compatibility-check</td>
+<td>skipCompatibilityCheck</td>
+</tr>
+<tr>
+<td></td>
+<td>--tags</td>
+<td>tags.tag</td>
+</tr>
+<tr>
+<td>-D</td>
+<td>--dbms_output</td>
+<td>dbmsOutput</td>
+</tr>
+<tr>
+<td>-r</td>
+<td>--random-test-order</td>
+<td>randomTestOrder</td>
+</tr>
+<tr>
+<td>-seed</td>
+<td>--random-test-order-seed</td>
+<td>randomTestOrderSeed</td>
+</tr>
+<tr>
+<td>-exclude</td>
+<td></td>
+<td>excludeObject</td>
+</tr>
+<tr>
+<td>-include</td>
+<td></td>
+<td>includeObject</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>-source_path</td>
+<td></td>
+<td>sources.source.directory</td>
+</tr>
+<tr>
+<td>-owner</td>
+<td></td>
+<td>sourcesOwner</td>
+</tr>
+<tr>
+<td>-regex_expression</td>
+<td></td>
+<td>sourcesRegexExpression</td>
+</tr>
+<tr>
+<td>-type_mapping</td>
+<td></td>
+<td>list of testsCustomTypeMapping.customTypeMapping</td>
+</tr>
+<tr>
+<td>-owner_subexpression</td>
+<td></td>
+<td>sourcesOwnerSubexpression</td>
+</tr>
+<tr>
+<td>-type_subexpression</td>
+<td></td>
+<td>sourcesTypeSubexpression</td>
+</tr>
+<tr>
+<td>-name_subexpression</td>
+<td></td>
+<td>sourcesNameSubexpression</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>-test_path</td>
+<td></td>
+<td>tests.test.directory</td>
+</tr>
+<tr>
+<td>-owner</td>
+<td></td>
+<td>testsOwner</td>
+</tr>
+<tr>
+<td>-regex_expression</td>
+<td></td>
+<td>testsRegexExpression</td>
+</tr>
+<tr>
+<td>-type_mapping</td>
+<td></td>
+<td>list of testsCustomTypeMapping.customTypeMapping</td>
+</tr>
+<tr>
+<td>-owner_subexpression</td>
+<td></td>
+<td>testsOwnerSubexpression</td>
+</tr>
+<tr>
+<td>-type_subexpression</td>
+<td></td>
+<td>testsTypeSubexpression</td>
+</tr>
+<tr>
+<td>-name_subexpression</td>
+<td></td>
+<td>testsNameSubexpression</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="August 3, 2026 11:21:48 UTC">August 3, 2026 11:21:48</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Created">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="August 3, 2026 11:21:48 UTC">August 3, 2026 11:21:48</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Was this page helpful?
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              Thanks for your feedback!
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              Thanks for your feedback! Help us improve this page by using our <a href="https://github.com/utPLSQL/utPLSQL/discussions/new?category=documentation-feedback" target="_blank" rel="noopener noreferrer">GitHub Discussions</a>.
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2016 - 2026 utPLSQL Team <a href="#__consent">Change cookie settings</a>
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/utPLSQL" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M459.4 151.7c.3 4.5.3 9.1.3 13.6 0 138.7-105.6 298.6-298.6 298.6-59.5 0-114.7-17.2-161.1-47.1 8.4 1 16.6 1.3 25.3 1.3 49.1 0 94.2-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8 6.5 1 13 1.6 19.8 1.6 9.4 0 18.8-1.3 27.6-3.6-48.1-9.7-84.1-52-84.1-103v-1.3c14 7.8 30.2 12.7 47.4 13.3-28.3-18.8-46.8-51-46.8-87.4 0-19.5 5.2-37.4 14.3-53C87.4 130.8 165 172.4 252.1 176.9c-1.6-7.8-2.6-15.9-2.6-24C249.5 95.1 296.3 48 354.4 48c30.2 0 57.5 12.7 76.7 33.1 23.7-4.5 46.5-13.3 66.6-25.3-7.8 24.4-24.4 44.8-46.1 57.8 21.1-2.3 41.6-8.1 60.4-16.2-14.3 20.8-32.2 39.3-52.6 54.3"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/utPLSQL/utPLSQL/discussions" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M51.9 384.9C19.3 344.6 0 294.4 0 240 0 107.5 114.6 0 256 0s256 107.5 256 240-114.6 240-256 240c-36.5 0-71.2-7.2-102.6-20L37 509.9c-3.7 1.6-7.5 2.1-11.5 2.1C11.4 512 0 500.6 0 486.5c0-4.3 1.1-8.5 3.1-12.2zm37.3-30.2c12.2 15.1 14.1 36.1 4.8 53.2L76 441l58.5-25.1c11.8-5.1 25.2-5.2 37.1-.3 25.7 10.5 54.2 16.4 84.3 16.4 117.8 0 208-88.8 208-192S373.8 48 256 48 48 136.8 48 240c0 42.8 15.1 82.4 41.2 114.7"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/utPLSQL" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:utPLSQL@utPLSQL.org" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4l208 156a48 48 0 0 0 57.6 0l208-156c12.1-9.1 19.2-23.3 19.2-38.4 0-26.5-21.5-48-48-48zM0 196v188c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V196L313.6 344.8c-34.1 25.6-81.1 25.6-115.2 0z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+  
+
+
+<h4>Cookie consent</h4>
+<p>We use cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+    
+      
+        
+  
+  
+    
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="analytics" checked>
+      <span class="task-list-indicator"></span>
+      Google Analytics
+    </label>
+  </li>
+
+      
+    
+    
+      
+    
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Accept</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Manage settings</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.instant", "navigation.indexes", "navigation.tabs", "navigation.tracking", "navigation.expand", "navigation.top", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
