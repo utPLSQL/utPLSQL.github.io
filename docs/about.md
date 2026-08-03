@@ -16,20 +16,39 @@ It allows for automated testing of:
 * Views
 * Anything else that can be executed and observed from PL/SQL
 
-utPLSQL is developed 100% voluntarily and embraces a [Code of Conduct](https://github.com/utPLSQL/utPLSQL/blob/develop/CODE_OF_CONDUCT.md).
+Around the core framework, the community also maintains a set of companion tools:
 
-Additional information can be found in the [documentation](/documentation) pages.
+* [utPLSQL-cli](https://github.com/utPLSQL/utPLSQL-cli) &mdash; command-line interface
+* [utPLSQL-maven-plugin](https://github.com/utPLSQL/utPLSQL-maven-plugin) &mdash; Maven integration
+* [utPLSQL for SQL Developer](https://github.com/utPLSQL/utPLSQL-SQLDeveloper) &mdash; SQL Developer extension
+* [utPLSQL for PL/SQL Developer](https://github.com/utPLSQL/utPLSQL-PLSQL-Developer) &mdash; PL/SQL Developer plugin
 
-[![issues](http://img.shields.io/badge/GitHub_Project-Active-blue.svg)](https://github.com/utPLSQL/utPLSQL/issues)
-[![license](http://img.shields.io/badge/license-apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
-[![GitHub Discussions](https://img.shields.io/github/discussions/utPLSQL/utPLSQL)](https://github.com/utPLSQL/utPLSQL/discussions)
-[![twitter](https://img.shields.io/twitter/follow/utPLSQL.svg?style=social&label=Follow)](https://twitter.com/utPLSQL)
-[![linkedIn](https://img.shields.io/badge/LinkedIn-Follow-blue?logo=linkedin)](https://www.linkedin.com/company/utplsql/)
+Additional information can be found in the [documentation](/documentation) pages, and further articles, videos and
+code examples are listed on the [resources](/resources) page.
 
-utPLSQL and its companion tools are open source, [hosted on GitHub](https://github.com/utPLSQL). Contributions, help
-and constructive feedback are always appreciated &mdash; read the [contributing guide](https://github.com/utPLSQL/utPLSQL/blob/develop/CONTRIBUTING.md)
-if you'd like to get involved.
 
+## Project Details
+
+utPLSQL framework and its related tools are all open source, actively maintained, and hosted on
+[GitHub](https://github.com/utPLSQL).
+
+The framework and its companion tools are licensed under [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
+Follow the project on [Twitter](https://twitter.com/utPLSQL), [Bluesky](https://bsky.app/profile/utplsql.bsky.social)
+and [LinkedIn](https://www.linkedin.com/company/utplsql/) for news and announcements.
+
+
+## Community
+
+utPLSQL is developed 100% voluntarily by an open community, which embraces a
+[Code of Conduct](https://github.com/utPLSQL/utPLSQL/blob/develop/CODE_OF_CONDUCT.md).
+
+* Search or start a topic on [GitHub Discussions](https://github.com/utPLSQL/utPLSQL/discussions) to ask questions, find support and share ideas
+* Open a new [issue on GitHub](https://github.com/utPLSQL/utPLSQL/issues) for bugs or feature requests
+* Read the [contributing guide](https://github.com/utPLSQL/utPLSQL/blob/develop/CONTRIBUTING.md) if you'd like to get involved
+
+
+## History
 
 ### Framework history
 
@@ -61,18 +80,12 @@ Many thanks to [all contributors](https://github.com/utPLSQL/utPLSQL/graphs/cont
 
 ### Prior versions creators
 
-| Name                                              | Comments  
-| ------------------------------------------------- | --------------
-| [Steven Feuerstein](http://stevenfeuerstein.com/) | Original Author  
-| Chris Rimmer                                      | 
-| Patrick Barel                                     |
-| Paul Walker                                       |
-
-
-## Getting Support
-
-* Search or start a topic on [GitHub Discussions](https://github.com/utPLSQL/utPLSQL/discussions) to ask questions, find support and share ideas
-* Open a new [issue on GitHub](https://github.com/utPLSQL/utPLSQL/issues) for bugs or feature requests
+| Name                                               | Comments         |
+| -------------------------------------------------- | ---------------- |
+| [Steven Feuerstein](http://stevenfeuerstein.com/)  | Original Author  |
+| Chris Rimmer                                       |                  |
+| Patrick Barel                                      |                  |
+| Paul Walker                                        |                  |
 
 
 ## Licensing
@@ -93,10 +106,8 @@ The utPLSQL project is community-driven and is not commercially motivated. Nonet
 
 ### Active supporters
 
-
-| Supporter | Details |
-|-----------|---------|
-|           |         | 
+There are currently no active supporters. If your company would like to support the project, please reach out on
+[GitHub Discussions](https://github.com/utPLSQL/utPLSQL/discussions).
 
 ### Past supporters
 
