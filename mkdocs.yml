@@ -101,6 +101,10 @@ use_directory_urls: false
 
 plugins:
   - search
+  - git-committers:
+      repository: utPLSQL/utPLSQL.github.io
+      branch: main
+      token: !ENV ["API_TOKEN_GITHUB"]
   - git-revision-date-localized: # disable for offline docs
       enable_creation_date: true # disable for offline docs
       type: datetime             # disable for offline docs
