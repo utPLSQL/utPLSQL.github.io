@@ -1309,6 +1309,77 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2018-07-21 00:00:00+00:00">July 21, 2018</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../category/releases.html" class="md-meta__link">releases</a>, 
+              <a href="../../category/utplsql-core.html" class="md-meta__link">utplsql-core</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              2 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="changes-in-release-312"><a class="toclink" href="../../utplsql-v312-released.html">Changes in release 3.1.2</a></h2>
+<h3 id="new-features"><a class="toclink" href="../../utplsql-v312-released.html#new-features">New features</a></h3>
+<ul>
+<li>Added ability to join and compare cursor content by specific columns (PK/UK) (<a href="https://github.com/utPLSQL/utPLSQL/issues/453">#453</a>)</li>
+<li>Added support for comma separated list of suite paths/packages when calling <code>ut.run</code> (<a href="https://github.com/utPLSQL/utPLSQL/issues/479">#479</a>)</li>
+<li>Added ability to run a test package that got invalidated due to dependency invalidation (<a href="https://github.com/utPLSQL/utPLSQL/issues/489">#489</a>)</li>
+<li>Added support for package level constants and predefined exceptions in <code>--%throws</code> annotation (<a href="https://github.com/utPLSQL/utPLSQL/issues/685">#685</a>)</li>
+<li>Added support for standalone <code>--%beforeall</code>, <code>--%beforeeach</code>, <code>--%afterall</code>, <code>--%aftereach</code> annotations with list of procedures to execute (<a href="https://github.com/utPLSQL/utPLSQL/issues/649">#649</a>)</li>
+<li>Added support for list of procedure names in before/after annotations (<a href="https://github.com/utPLSQL/utPLSQL/issues/649">#649</a>)</li>
+<li>Added support for BLOB/CLOB in <code>is_empty()</code> matcher (<a href="https://github.com/utPLSQL/utPLSQL/issues/707">#707</a>)</li>
+</ul>
+<h3 id="enchancements"><a class="toclink" href="../../utplsql-v312-released.html#enchancements">Enchancements</a></h3>
+<ul>
+<li>utPLSQL will now provide additional warnings, when unsupported annotations are found in a unit test suite package (<a href="https://github.com/utPLSQL/utPLSQL/issues/624">#624</a>)</li>
+<li>utPLSQL will now produce valid XML in UT_JUNIT_REPORTER when dbms_output or test results contain <code>&lt;![CDATA[</code> text (<a href="https://github.com/utPLSQL/utPLSQL/issues/643">#643</a>)</li>
+<li>improved installation process for non-DBA users (<a href="https://github.com/utPLSQL/utPLSQL/issues/658">#658</a>)</li>
+<li>added <code>uninstall_all.sql</code> script that completely removes utPLSQL objects (<a href="https://github.com/utPLSQL/utPLSQL/issues/673">#673</a>)</li>
+<li>Changed the way contexts are named (<a href="https://github.com/utPLSQL/utPLSQL/issues/674">#674</a>)</li>
+<li>Added ability to pass client encoding information for XML/HTML reporting (requires utPLSQL-cli 3.1.1) (<a href="https://github.com/utPLSQL/utPLSQL/issues/676">#676</a>)</li>
+<li>Exposed base objects for expectations, so that IDE like DataGrip can provide auto-complete (<a href="https://github.com/utPLSQL/utPLSQL/issues/675">#675</a>)</li>
+<li>Both context-name as well as procedure inside context can now be passed as parameter to <code>ut.run()</code> (<a href="https://github.com/utPLSQL/utPLSQL/issues/679">#679</a>)</li>
+<li>Added validation of privileges before installation of utPLSQL (<a href="https://github.com/utPLSQL/utPLSQL/issues/693">#693</a>)</li>
+</ul>
+<h3 id="bug-fixes"><a class="toclink" href="../../utplsql-v312-released.html#bug-fixes">Bug-fixes</a></h3>
+<ul>
+<li>UT_JUNIT_REPORTER does not report tests when procedure names are not all lower-case (<a href="https://github.com/utPLSQL/utPLSQL/issues/659">#659</a>) (<a href="https://github.com/utPLSQL/utPLSQL/issues/696">#696</a>)</li>
+<li>Fixed utPLSQL installation order to avoid warnings/failures on install (<a href="https://github.com/utPLSQL/utPLSQL/issues/657">#657</a>)</li>
+<li>Fixed uninstall process for utPLSQL (<a href="https://github.com/utPLSQL/utPLSQL/issues/673">#673</a>)</li>
+<li>Fixed syntax errors in HTML coverage report (<a href="https://github.com/utPLSQL/utPLSQL/issues/681">#681</a>) (<a href="https://github.com/utPLSQL/utPLSQL/issues/682">#682</a>)</li>
+<li>Fixed install requirements documentation (<a href="https://github.com/utPLSQL/utPLSQL/issues/687">#687</a>)</li>
+<li>Fixed capturing of DBMS_OUTPUT buffer at the start of test run (<a href="https://github.com/utPLSQL/utPLSQL/issues/686">#686</a>)</li>
+</ul>
+<h3 id="internal-enhancements"><a class="toclink" href="../../utplsql-v312-released.html#internal-enhancements">Internal enhancements</a></h3>
+<ul>
+<li>Added continuous testing of XML/HTML reports format (<a href="https://github.com/utPLSQL/utPLSQL/issues/684">#684</a>)</li>
+<li>Added sonarcloud branch-based and PR code analysis (<a href="https://github.com/utPLSQL/utPLSQL/issues/708">#708</a>)</li>
+<li>Added ability to trigger builds on sub-projects (<a href="https://github.com/utPLSQL/utPLSQL/issues/501">#501</a>)</li>
+</ul>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2018-07-20 00:00:00+00:00">July 20, 2018</time></li>
         
           <li class="md-meta__item">
@@ -1845,44 +1916,6 @@ We encourage you to always use the latest version of cli to communicate with a v
 <p>It's being used now in multiple organizations with great success.   The documentation work is progressing.  However, we realize that quite a bit of work needs to be done in this area. </p>
 <p>We welcome support requests and discussions, feature requests, and bug reports in the <a href="https://github.com/utPLSQL/utPLSQL/issues">GitHub issues log</a>.</p>
 <p>This is not an April Fools Day Joke,  we really release it.</p>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2017-01-17 00:00:00+00:00">January 17, 2017</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/releases.html" class="md-meta__link">releases</a>, 
-              <a href="../../category/utplsql-core.html" class="md-meta__link">utplsql-core</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              1 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="version-3000-alpha1-released"><a class="toclink" href="../../version-3000-alpha1-released.html">Version 3.0.0.0-Alpha1 released</a></h2>
-<p>Version 3 has reached alpha state.</p>
-<p>It can be downloaded from the <a href="https://github.com/utPLSQL/utPLSQL/releases">releases page.</a></p>
-<p>It's being used now in multiple organizations with great success.   The documentation work is progressing.  However, we realize that quite a bit of work needs to be done in this area. </p>
-<p>We welcome support requests and discussions, feature requests, and bug reports in the <a href="https://github.com/utPLSQL/utPLSQL/issues">GitHub issues log</a>.</p>
     
     
   </div>
