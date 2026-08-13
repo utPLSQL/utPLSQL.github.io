@@ -70,8 +70,10 @@ Over the last decade, this project has been a significant part of my life as an 
 
 I am currently working on opening utPLSQL for sponsorship, and I'll share the tiers and details in a follow-up post once everything is in place. 
 
-If you or your company would benefit from active development of utPLSQL and want to be notified when sponsorship opens, contact [me directly](https://www.linkedin.com/in/jacek-gebal-6678301/) or [utPLSQL.org on LinkedIn](https://www.linkedin.com/company/utplsql/posts/).
-You can also drop a comment or open a new discussion on [GitHub](https://github.com/orgs/utPLSQL/discussions/categories/sponsorship-sustainability).
+If you or your company would benefit from active development of utPLSQL and want to be notified when sponsorship opens then please:
+- comment on [this GitHub discussion](https://github.com/orgs/utPLSQL/discussions/22)
+- or contact me directly on [LinkedIn](https://www.linkedin.com/in/jacek-gebal-6678301/) [X](https://x.com/GebalJacek), [BlueSky](https://bsky.app/profile/jacek-gebal.bsky.social)
+- or contact utPLSQL.org on [LinkedIn](https://www.linkedin.com/company/utplsql/posts/), [X](https://x.com/utPLSQL), [BlueSky](https://bsky.app/profile/utplsql.bsky.social)
 
 Your responses will help me gauge interest as I finalize the preparations. 
 
