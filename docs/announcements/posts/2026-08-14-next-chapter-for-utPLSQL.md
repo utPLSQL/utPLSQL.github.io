@@ -7,14 +7,14 @@ categories:
   - "news"
 ---
 
-## The past of utPLSQL
+## Looking back
 utPLSQL v3 has come a long way since it was first released in 2017. 
 It has already been over 10 years since the first discussions about starting the project began. 
 However, development slowed after 2019, and by 2024 the project had become inactive. 
 Life took me in a different direction for a few years, and the after-hours project understandably took a back seat.
 
 <!-- more -->
-## The now
+## The current state
 In the last year, a few people reached out to me asking whether the project is still alive. 
 Regulated companies often can't use software that isn't under active maintenance, 
 and others simply treat it as a security risk.
