@@ -22,7 +22,7 @@ and others simply treat it as a security risk.
 In recent months I have invested time in bringing the project back to life, 
 refreshing all libraries and dependencies, fixing build processes and pipelines, 
 and releasing new versions for the main project and tools. 
-The documentation was restructured and updated, and discussions were moved from Slack to [GitHub](https://github.com/orgs/utPLSQL/discussions).
+The documentation was restructured and updated, and discussions were moved to [GitHub](https://github.com/orgs/utPLSQL/discussions).
 
 ## The future roadmap
 
@@ -71,6 +71,7 @@ Over the last decade, this project has been a significant part of my life as an 
 I am currently working on opening utPLSQL for sponsorship, and I'll share the tiers and details in a follow-up post once everything is in place. 
 
 If you or your company would benefit from active development of utPLSQL and want to be notified when sponsorship opens then please:
+
 - comment on [this GitHub discussion](https://github.com/orgs/utPLSQL/discussions/22)
 - or contact me directly on [LinkedIn](https://www.linkedin.com/in/jacek-gebal-6678301/) [X](https://x.com/GebalJacek), [BlueSky](https://bsky.app/profile/jacek-gebal.bsky.social)
 - or contact utPLSQL.org on [LinkedIn](https://www.linkedin.com/company/utplsql/), [X](https://x.com/utPLSQL), [BlueSky](https://bsky.app/profile/utplsql.bsky.social)
