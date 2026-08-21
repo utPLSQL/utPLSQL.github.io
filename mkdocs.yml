@@ -44,6 +44,8 @@ theme:
     - search.highlight
     - content.code.copy
     - content.code.annotate
+    - content.code.select
+
 extra:
   # sets scope of cookies to use a common path (root)
 #  scope: "/"
@@ -88,6 +90,8 @@ markdown_extensions:
   - admonition
   - pymdownx.highlight:
       anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
