@@ -74,7 +74,7 @@ If you or your company would benefit from active development of utPLSQL and want
 
 - comment on [this GitHub discussion](https://github.com/orgs/utPLSQL/discussions/22)
 - or contact me directly on [LinkedIn](https://www.linkedin.com/in/jacek-gebal-6678301/) [X](https://x.com/GebalJacek), [BlueSky](https://bsky.app/profile/jacek-gebal.bsky.social)
-- or contact utPLSQL.org on [LinkedIn](https://www.linkedin.com/company/utplsql/), [X](https://x.com/utPLSQL), [BlueSky](https://bsky.app/profile/utplsql.bsky.social)
+- or contact utPLSQL.org on [LinkedIn](https://www.linkedin.com/company/utplsql/), [X](https://x.com/utPLSQL), [BlueSky](https://bsky.app/profile/utplsql.org)
 
 Your responses will help me gauge interest as I finalize the preparations. 
 
