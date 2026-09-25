@@ -1309,6 +1309,49 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2022-06-13 00:00:00+00:00">June 13, 2022</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../category/releases.html" class="md-meta__link">releases</a>, 
+              <a href="../../category/utplsql-cli.html" class="md-meta__link">utplsql-cli</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              1 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="changes-in-release-319"><a class="toclink" href="../../utplsql-cli-v319-released.html">Changes in release 3.1.9</a></h2>
+<h3 id="whats-changed"><a class="toclink" href="../../utplsql-cli-v319-released.html#whats-changed">What's Changed</a></h3>
+<ul>
+<li>Bugfix/Locale-Info and Nullpointer by <a href="https://github.com/pesse">@pesse</a> in <a href="https://github.com/utPLSQL/utPLSQL-cli/pull/171">#171</a></li>
+<li>Feature/cleanup maven jdbc by <a href="https://github.com/jgebal">@jgebal</a> in <a href="https://github.com/utPLSQL/utPLSQL-cli/pull/176">#176</a></li>
+<li>Support <code>a_coverage_schemes</code> option of utPLSQL by <a href="https://github.com/pesse">@pesse</a> in <a href="https://github.com/utPLSQL/utPLSQL-cli/pull/180">#180</a></li>
+<li>Feature/GitHub actions by <a href="https://github.com/jgebal">@jgebal</a> in <a href="https://github.com/utPLSQL/utPLSQL-cli/pull/202">#202</a></li>
+<li>Add new --ora-stuck-timeout parameter by <a href="https://github.com/pesse">@pesse</a> in <a href="https://github.com/utPLSQL/utPLSQL-cli/pull/198">#198</a></li>
+<li>Update dependencies by <a href="https://github.com/pesse">@pesse</a> in <a href="https://github.com/utPLSQL/utPLSQL-cli/pull/204">#204</a></li>
+</ul>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2022-06-10 00:00:00+00:00">June 10, 2022</time></li>
         
           <li class="md-meta__item">
@@ -1771,73 +1814,6 @@ yourself, <strong>please let us know!</strong></p>
 <li>Refactoring towards immutability</li>
 <li>Added some more debug information</li>
 </ul>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2019-07-12 09:00:00+00:00">July 12, 2019</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/releases.html" class="md-meta__link">releases</a>, 
-              <a href="../../category/utplsql-java-api.html" class="md-meta__link">utplsql-java-api</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              1 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="changes-in-release-317"><a class="toclink" href="../../utplsql-java-api-v317-released.html">Changes in release 3.1.7</a></h2>
-<h3 id="highlights"><a class="toclink" href="../../utplsql-java-api-v317-released.html#highlights">Highlights</a></h3>
-<ul>
-<li>utPLSQL java-api now supports JDK 8-12</li>
-<li>Support to call <a href="https://github.com/utPLSQL/utPLSQL/blob/v3.1.7/docs/userguide/annotations.md#tags">Tags</a></li>
-<li>Support for <a href="https://github.com/utPLSQL/utPLSQL/blob/v3.1.7/docs/userguide/running-unit-tests.md#random-order">random order</a> of test execution</li>
-</ul>
-<h3 id="changes-in-public-api"><a class="toclink" href="../../utplsql-java-api-v317-released.html#changes-in-public-api">Changes in public API</a></h3>
-<ul>
-<li><code>CompatibilityProxy</code></li>
-<li>It's possible to instantiate it with an optional <code>assumedUtPlsql</code> version. This replaces the former <code>skipCompatibilityCheck</code> parameter</li>
-<li>Method <code>getDatabaseVersion</code> is now deprecated in favor of <code>getUtPlsqlVersion</code> and <code>getRealDbPlsqlVersion</code></li>
-<li><code>TestRunner</code></li>
-<li><code>getOptions</code> returns the current <code>TestRunnerOptions</code> now</li>
-</ul>
-<h3 id="internal-changes"><a class="toclink" href="../../utplsql-java-api-v317-released.html#internal-changes">Internal changes</a></h3>
-<ul>
-<li>Added several new tests</li>
-<li>Several small refactorings</li>
-<li>Additional logging</li>
-<li>Preparations to completely rewrite the api</li>
-</ul>
-<h2 id="download"><a class="toclink" href="../../utplsql-java-api-v317-released.html#download">Download</a></h2>
-<p>https://packagecloud.io/utPLSQL/utPLSQL-java-api/packages/java/org.utplsql/java-api-3.1.7.jar</p>
-<h3 id="maven"><a class="toclink" href="../../utplsql-java-api-v317-released.html#maven">Maven</a></h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>&lt;dependency&gt;
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>  &lt;groupId&gt;org.utplsql&lt;/groupId&gt;
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>  &lt;artifactId&gt;java-api&lt;/artifactId&gt;
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>  &lt;version&gt;3.1.7&lt;/version&gt;
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>&lt;/dependency&gt;
-</span></code></pre></div>
-<h3 id="gradle"><a class="toclink" href="../../utplsql-java-api-v317-released.html#gradle">Gradle</a></h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>compile 'org.utplsql:java-api:3.1.7'
-</span></code></pre></div>
     
     
   </div>

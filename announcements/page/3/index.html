@@ -1309,6 +1309,73 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2019-07-12 09:00:00+00:00">July 12, 2019</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../category/releases.html" class="md-meta__link">releases</a>, 
+              <a href="../../category/utplsql-java-api.html" class="md-meta__link">utplsql-java-api</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              1 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="changes-in-release-317"><a class="toclink" href="../../utplsql-java-api-v317-released.html">Changes in release 3.1.7</a></h2>
+<h3 id="highlights"><a class="toclink" href="../../utplsql-java-api-v317-released.html#highlights">Highlights</a></h3>
+<ul>
+<li>utPLSQL java-api now supports JDK 8-12</li>
+<li>Support to call <a href="https://github.com/utPLSQL/utPLSQL/blob/v3.1.7/docs/userguide/annotations.md#tags">Tags</a></li>
+<li>Support for <a href="https://github.com/utPLSQL/utPLSQL/blob/v3.1.7/docs/userguide/running-unit-tests.md#random-order">random order</a> of test execution</li>
+</ul>
+<h3 id="changes-in-public-api"><a class="toclink" href="../../utplsql-java-api-v317-released.html#changes-in-public-api">Changes in public API</a></h3>
+<ul>
+<li><code>CompatibilityProxy</code></li>
+<li>It's possible to instantiate it with an optional <code>assumedUtPlsql</code> version. This replaces the former <code>skipCompatibilityCheck</code> parameter</li>
+<li>Method <code>getDatabaseVersion</code> is now deprecated in favor of <code>getUtPlsqlVersion</code> and <code>getRealDbPlsqlVersion</code></li>
+<li><code>TestRunner</code></li>
+<li><code>getOptions</code> returns the current <code>TestRunnerOptions</code> now</li>
+</ul>
+<h3 id="internal-changes"><a class="toclink" href="../../utplsql-java-api-v317-released.html#internal-changes">Internal changes</a></h3>
+<ul>
+<li>Added several new tests</li>
+<li>Several small refactorings</li>
+<li>Additional logging</li>
+<li>Preparations to completely rewrite the api</li>
+</ul>
+<h2 id="download"><a class="toclink" href="../../utplsql-java-api-v317-released.html#download">Download</a></h2>
+<p>https://packagecloud.io/utPLSQL/utPLSQL-java-api/packages/java/org.utplsql/java-api-3.1.7.jar</p>
+<h3 id="maven"><a class="toclink" href="../../utplsql-java-api-v317-released.html#maven">Maven</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>&lt;dependency&gt;
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>  &lt;groupId&gt;org.utplsql&lt;/groupId&gt;
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>  &lt;artifactId&gt;java-api&lt;/artifactId&gt;
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>  &lt;version&gt;3.1.7&lt;/version&gt;
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>&lt;/dependency&gt;
+</span></code></pre></div>
+<h3 id="gradle"><a class="toclink" href="../../utplsql-java-api-v317-released.html#gradle">Gradle</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>compile 'org.utplsql:java-api:3.1.7'
+</span></code></pre></div>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2019-06-18 00:00:00+00:00">June 18, 2019</time></li>
         
           <li class="md-meta__item">
@@ -1792,67 +1859,6 @@
 <p>How to easily integrate @utPLSQL into @VisualStudio via External Tools.</p>
 <p><a href="https://user-images.githubusercontent.com/8362976/48398860-48bc3b80-e722-11e8-9537-2ee9ee4d156d.png"><img alt="integrate via external tools" src="https://user-images.githubusercontent.com/8362976/48398860-48bc3b80-e722-11e8-9537-2ee9ee4d156d.png" title="Integrate via External Tools" /></a></p>
 <p><a href="https://twitter.com/Der_Pesse/status/1062255580805500933">Tweet by Der_Pesse</a></p>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2018-10-24 00:00:00+00:00">October 24, 2018</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/releases.html" class="md-meta__link">releases</a>, 
-              <a href="../../category/utplsql-cli.html" class="md-meta__link">utplsql-cli</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              1 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="changes-in-release-312"><a class="toclink" href="../../utplsql-cli-v312-released.html">Changes in release 3.1.2</a></h2>
-<h3 id="compatibility"><a class="toclink" href="../../utplsql-cli-v312-released.html#compatibility">Compatibility</a></h3>
-<p>This version of utPLQL-cli is compatible with all versions of utPLSQL from 3.0.0 to 3.1.3. We encourage you to always use the latest version of cli to communicate with a v3 core.</p>
-<h3 id="new-features"><a class="toclink" href="../../utplsql-cli-v312-released.html#new-features">New Features</a></h3>
-<ul>
-<li>New command <code>utplsql info [user/password@connectstring]</code> <a href="https://github.com/utPLSQL/utPLSQL-cli/issues/77">#77</a> </li>
-<li>New command <code>utplsql reporters user/password@connecstring</code> </li>
-<li>Cli tries to connect to oracle via thick-driver first and use thin-driver as fallback <a href="https://github.com/utPLSQL/utPLSQL-cli/issues/88">#88</a> <a href="https://github.com/utPLSQL/utPLSQL-cli/issues/90">#90</a> <a href="https://github.com/utPLSQL/utPLSQL-cli/issues/91">#91</a> </li>
-</ul>
-<h3 id="enhancements"><a class="toclink" href="../../utplsql-cli-v312-released.html#enhancements">Enhancements</a></h3>
-<ul>
-<li>Limit number of connections to number of reporters+1 <a href="https://github.com/utPLSQL/utPLSQL-cli/issues/85">#85</a></li>
-<li>Include JAXB library so utPLSQL-cli can be run on java 9+10 <a href="https://github.com/utPLSQL/utPLSQL-cli/issues/82">#82</a> </li>
-<li>There is however still a problem when using HTMLCoverageReporter and Java 9/10</li>
-<li>Improved documentation and help-command <a href="https://github.com/utPLSQL/utPLSQL-cli/issues/31">#31</a> </li>
-<li>An existant NLS_LANG-variable will now lead to corresponding <code>ALTER SESSION</code> statements when connecting <a href="https://github.com/utPLSQL/utPLSQL-cli/issues/101">#101</a> </li>
-</ul>
-<h3 id="bugfixes"><a class="toclink" href="../../utplsql-cli-v312-released.html#bugfixes">Bugfixes</a></h3>
-<ul>
-<li>HTML Coverage assets are placed and referenced correctly when using output file in subdirectory <a href="https://github.com/utPLSQL/utPLSQL-cli/issues/94">#94</a> </li>
-<li>Java-locale is now correctly derived from LC_ALL or LANG environment variable, not from NLS_LANG <a href="https://github.com/utPLSQL/utPLSQL-cli/issues/101">#101</a> </li>
-</ul>
-<h3 id="internal-enhancements"><a class="toclink" href="../../utplsql-cli-v312-released.html#internal-enhancements">Internal enhancements</a></h3>
-<ul>
-<li>Refactoring of Command architecture</li>
-<li>Refactoring of Connection handling</li>
-<li>Improved Error handling</li>
-</ul>
     
     
   </div>
