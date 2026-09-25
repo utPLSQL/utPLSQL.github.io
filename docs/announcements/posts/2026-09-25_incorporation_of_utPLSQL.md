@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Next chapter for utPLSQL"
+title:  "Incorporation of utPLSQL Development Labs Ltd"
 date:
   created: 2026-09-25
 categories:
