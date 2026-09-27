@@ -1309,6 +1309,63 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2019-07-12 15:00:00+00:00">July 12, 2019</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../category/releases.html" class="md-meta__link">releases</a>, 
+              <a href="../../category/utplsql-cli.html" class="md-meta__link">utplsql-cli</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              1 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="changes-in-release-317"><a class="toclink" href="../../utplsql-cli-v317-released.html">Changes in release 3.1.7</a></h2>
+<h3 id="new-features"><a class="toclink" href="../../utplsql-cli-v317-released.html#new-features">New Features</a></h3>
+<ul>
+<li>CLI is now runnable from Java 8-12 (and probably also upcoming versions)</li>
+<li>CLI now uses Picocli instead of JCommander. <strong>This might have some impact on how parameters are interpreted</strong>, for example on windows machines when you define <code>-f=ut_documentation_reporter -o="output.txt"</code> you will have to enclose the "output.txt" part as shown</li>
+<li>Support for <a href="https://github.com/utPLSQL/utPLSQL/blob/v3.1.7/docs/userguide/annotations.md#tags">Tags</a> via <code>--tags=tag1[,tag2[,tag3]]</code>parameter (<a href="https://github.com/utPLSQL/utPLSQL-cli/issues/157">#157</a>)</li>
+<li>Support for <a href="https://github.com/utPLSQL/utPLSQL/blob/v3.1.7/docs/userguide/running-unit-tests.md#random-order">random order</a> of test execution via <code>-r</code>/<code>--random-test-order</code> and <code>-seed</code>/<code>--random-test-order-seed</code> (<a href="https://github.com/utPLSQL/utPLSQL-cli/issues/139">#139</a>)</li>
+<li>Ability to enable DBMS_OUTPUT from cli via <code>-D</code>/<code>--dbms_output</code> (<a href="https://github.com/utPLSQL/utPLSQL-cli/issues/137">#137</a>)</li>
+</ul>
+<h3 id="enhancements"><a class="toclink" href="../../utplsql-cli-v317-released.html#enhancements">Enhancements</a></h3>
+<ul>
+<li>Completely removed HikariCP (<a href="https://github.com/utPLSQL/utPLSQL-cli/issues/158">#158</a>)</li>
+<li>A warning is shown if <code>orai18n.jar</code> is not on the classpath. This is highly recommended due to some strange behaviour of the jdbc-driver otherwise (<a href="https://github.com/utPLSQL/utPLSQL-cli/issues/146">#146</a>, <a href="https://github.com/utPLSQL/utPLSQL-cli/issues/153">#153</a>)</li>
+</ul>
+<h3 id="bugfixes"><a class="toclink" href="../../utplsql-cli-v317-released.html#bugfixes">Bugfixes</a></h3>
+<ul>
+<li>Type mapping (<code>-type_mapping</code>) parameter is now interpreted correctly (<a href="https://github.com/utPLSQL/utPLSQL-cli/issues/143">#143</a>)</li>
+</ul>
+<h3 id="internal-enhancements"><a class="toclink" href="../../utplsql-cli-v317-released.html#internal-enhancements">Internal enhancements</a></h3>
+<ul>
+<li>Improvement of tests</li>
+<li>Refactoring towards immutability</li>
+<li>Added some more debug information</li>
+</ul>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2019-07-12 09:00:00+00:00">July 12, 2019</time></li>
         
           <li class="md-meta__item">
@@ -1823,42 +1880,6 @@
 <ul>
 <li>added suite-level cache to allow for faster retrieval of suite contents and enable implementation of additional features #783 </li>
 </ul>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2018-11-13 00:00:00+00:00">November 13, 2018</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/tips-n-tricks.html" class="md-meta__link">tips-n-tricks</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              1 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="how-to-integrate-utplsql-into-visual-studio"><a class="toclink" href="../../how-to-integrate-utplsql-into-visual-studio.html">How to integrate utPLSQL into Visual Studio</a></h2>
-<p>How to easily integrate @utPLSQL into @VisualStudio via External Tools.</p>
-<p><a href="https://user-images.githubusercontent.com/8362976/48398860-48bc3b80-e722-11e8-9537-2ee9ee4d156d.png"><img alt="integrate via external tools" src="https://user-images.githubusercontent.com/8362976/48398860-48bc3b80-e722-11e8-9537-2ee9ee4d156d.png" title="Integrate via External Tools" /></a></p>
-<p><a href="https://twitter.com/Der_Pesse/status/1062255580805500933">Tweet by Der_Pesse</a></p>
     
     
   </div>

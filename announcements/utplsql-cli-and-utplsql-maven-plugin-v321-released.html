@@ -10,13 +10,11 @@
       
       
       
-        <link rel="canonical" href="https://www.utplsql.org/announcements/utplsql-v318-released.html">
+        <link rel="canonical" href="https://www.utplsql.org/announcements/utplsql-cli-and-utplsql-maven-plugin-v321-released.html">
       
       
-        <link rel="prev" href="utplsql-cli-v317-released.html">
+        <link rel="prev" href="incorporation-of-utplsql-development-labs-ltd.html">
       
-      
-        <link rel="next" href="new-resources-section.html">
       
       
         
@@ -27,7 +25,7 @@
     
     
       
-        <title>utPLSQL v3.1.8 released - utPLSQL</title>
+        <title>utPLSQL-cli and utPLSQL-maven-plugin v3.2.1 released - utPLSQL</title>
       
     
     
@@ -112,7 +110,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#changes-in-release-318" class="md-skip">
+        <a href="#utplsql-cli-v321" class="md-skip">
           Skip to content
         </a>
       
@@ -149,7 +147,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              utPLSQL v3.1.8 released
+              utPLSQL-cli and utPLSQL-maven-plugin v3.2.1 released
             
           </span>
         </div>
@@ -1327,7 +1325,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
-                        <time datetime="2019-09-04 00:00:00+00:00" class="md-ellipsis">September 4, 2019</time>
+                        <time datetime="2026-09-27 00:00:00+00:00" class="md-ellipsis">September 27, 2026</time>
                       </div>
                     </li>
                     
@@ -1339,7 +1337,8 @@
                             in
                             
                               <a href="category/releases.html">releases</a>, 
-                              <a href="category/utplsql-core.html">utplsql-core</a></span>
+                              <a href="category/utplsql-cli.html">utplsql-cli</a>, 
+                              <a href="category/utplsql-maven-plugin.html">utplsql-maven-plugin</a></span>
                         </div>
                       </li>
                     
@@ -1369,8 +1368,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1379,35 +1376,58 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#new-features" class="md-nav__link">
+  <a href="#utplsql-cli-v321" class="md-nav__link">
     <span class="md-ellipsis">
       
-        New features
+        utPLSQL-cli v3.2.1
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="utPLSQL-cli v3.2.1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#whats-changed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What's Changed
       
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#enhancements" class="md-nav__link">
+  <a href="#utplsql-maven-plugin-v321" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Enhancements
+        utPLSQL-maven-plugin v3.2.1
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="utPLSQL-maven-plugin v3.2.1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#whats-changed_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What's Changed
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#bug-fixes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Bug fixes
-      
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1426,28 +1446,26 @@
 
 
 
-<h1 id="changes-in-release-318">Changes in release 3.1.8<a class="headerlink" href="#changes-in-release-318" title="Permanent link">&para;</a></h1>
-<p><a href="https://github.com/utPLSQL/utPLSQL/releases/tag/v3.1.8">Download from GitHub</a></p>
-<h2 id="new-features">New features<a class="headerlink" href="#new-features" title="Permanent link">&para;</a></h2>
+  <h1>utPLSQL-cli and utPLSQL-maven-plugin v3.2.1 released</h1>
+
+<p>Both utPLSQL-cli and utPLSQL-maven-plugin v3.2.1 are now available, adding support for Oracle Wallet (Secure External Password Store) connections.</p>
+<h2 id="utplsql-cli-v321">utPLSQL-cli v3.2.1<a class="headerlink" href="#utplsql-cli-v321" title="Permanent link">&para;</a></h2>
+<h3 id="whats-changed">What's Changed<a class="headerlink" href="#whats-changed" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Added support for <a href="https://github.com/utPLSQL/utPLSQL/blob/v3.1.8/docs/userguide/annotations.md#sys_context">session context</a> to provide test and suite information during test run <a href="https://github.com/utPLSQL/utPLSQL/issues/963">#963</a> <a href="https://github.com/utPLSQL/utPLSQL/issues/781">#781</a> </li>
-<li>Added ability to <a href="https://github.com/utPLSQL/utPLSQL/blob/v3.1.8/docs/userguide/expectations.md#running-expectations-outside-utplsql-framework">invoke expectations without running framework</a> <a href="https://github.com/utPLSQL/utPLSQL/issues/956">#956</a> <a href="https://github.com/utPLSQL/utPLSQL/issues/963">#963</a></li>
-<li>Failing expectations are now reported with call stack <a href="https://github.com/utPLSQL/utPLSQL/issues/967">#967</a> <a href="https://github.com/utPLSQL/utPLSQL/issues/963">#963</a></li>
+<li>Allow <code>/@TNS</code> connections using Oracle Wallet (Secure External Password Store) by @jgebal in <a href="https://github.com/utPLSQL/utPLSQL-cli/pull/230">#230</a></li>
+<li>Update of java-api-version dependency by @jgebal in <a href="https://github.com/utPLSQL/utPLSQL-cli/pull/231">#231</a></li>
+<li>Don't reveal credentials in log and error output by @jgebal in <a href="https://github.com/utPLSQL/utPLSQL-cli/pull/232">#232</a></li>
 </ul>
-<h2 id="enhancements">Enhancements<a class="headerlink" href="#enhancements" title="Permanent link">&para;</a></h2>
+<p><strong>Full Changelog</strong>: <a href="https://github.com/utPLSQL/utPLSQL-cli/compare/v3.2.0...v3.2.1">v3.2.0...v3.2.1</a></p>
+<p><a href="https://github.com/utPLSQL/utPLSQL-cli/releases/tag/v3.2.1">Download utPLSQL-cli v3.2.1 here</a></p>
+<h2 id="utplsql-maven-plugin-v321">utPLSQL-maven-plugin v3.2.1<a class="headerlink" href="#utplsql-maven-plugin-v321" title="Permanent link">&para;</a></h2>
+<h3 id="whats-changed_1">What's Changed<a class="headerlink" href="#whats-changed_1" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Improved framework table private data protection <a href="https://github.com/utPLSQL/utPLSQL/issues/922">#922</a> <a href="https://github.com/utPLSQL/utPLSQL/issues/954">#954</a></li>
-<li>Improved install process. It is now unified for installation with both public and private synonyms <a href="https://github.com/utPLSQL/utPLSQL/issues/957">#957</a> <a href="https://github.com/utPLSQL/utPLSQL/issues/954">#954</a></li>
-<li>Improved reporting of warnings for integration with SQLDeveloper <a href="https://github.com/utPLSQL/utPLSQL/issues/964">#964</a></li>
-<li>Improved query to retrieve coverage sources <a href="https://github.com/utPLSQL/utPLSQL/issues/981">#981</a> <a href="https://github.com/utPLSQL/utPLSQL/issues/970">#970</a></li>
-<li>Improved security around malicious utPLSQL owner name <a href="https://github.com/utPLSQL/utPLSQL/issues/920">#920</a></li>
+<li>Added support for Oracle Wallet (Secure External Password Store) connections by @jgebal in <a href="https://github.com/utPLSQL/utPLSQL-maven-plugin/pull/82">#82</a></li>
+<li>Added support for skipping utPLSQL tests with <code>-DskipTests</code> and <code>-Dmaven.test.skip</code> by @jgebal in <a href="https://github.com/utPLSQL/utPLSQL-maven-plugin/pull/83">#83</a></li>
 </ul>
-<h2 id="bug-fixes">Bug fixes<a class="headerlink" href="#bug-fixes" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Fixed cursor comparison on Oracle 11.2 <a href="https://github.com/utPLSQL/utPLSQL/issues/947">#947</a> </li>
-<li>Fixed issue with retrieving suite data <a href="https://github.com/utPLSQL/utPLSQL/issues/977">#977</a> <a href="https://github.com/utPLSQL/utPLSQL/issues/974">#974</a> <a href="https://github.com/utPLSQL/utPLSQL/issues/978">#978</a></li>
-<li>Application context is now reset in session after test run <a href="https://github.com/utPLSQL/utPLSQL/issues/951">#951</a></li>
-</ul>
+<p><strong>Full Changelog</strong>: <a href="https://github.com/utPLSQL/utPLSQL-maven-plugin/compare/v3.2.0...v3.2.1">v3.2.0...v3.2.1</a></p>
+<p><a href="https://github.com/utPLSQL/utPLSQL-maven-plugin/releases/tag/v3.2.1">Download utPLSQL-maven-plugin v3.2.1 here</a></p>
 
 
 
@@ -1470,7 +1488,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="June 13, 2026 09:48:17 UTC">June 13, 2026 09:48:17</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="September 27, 2026 20:34:00 UTC">September 27, 2026 20:34:00</span>
   </span>
 
     
@@ -1480,34 +1498,11 @@
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="September 4, 2019 05:55:40 UTC">September 4, 2019 05:55:40</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="September 27, 2026 20:34:00 UTC">September 27, 2026 20:34:00</span>
   </span>
 
     
     
-    
-      
-  <span class="md-source-file__fact">
-    
-      
-  <span class="md-icon" title="Contributors">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
-  </span>
-  <span>GitHub</span>
-
-    
-    <nav>
-      
-        <a href="https://github.com/jgebal" class="md-author" title="@jgebal">
-          
-          <img src="https://avatars.githubusercontent.com/u/1398171?v=4&size=72" alt="jgebal">
-        </a>
-      
-      
-      
-    </nav>
-  </span>
-
     
   </aside>
 

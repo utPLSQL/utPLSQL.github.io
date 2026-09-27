@@ -229,11 +229,23 @@
          <lastmod>2026-09-27</lastmod>
     </url>
     <url>
-         <loc>https://www.utplsql.org/announcements/category/news.html</loc>
+         <loc>https://www.utplsql.org/announcements/utplsql-cli-and-utplsql-maven-plugin-v321-released.html</loc>
          <lastmod>2026-09-27</lastmod>
     </url>
     <url>
          <loc>https://www.utplsql.org/announcements/category/releases.html</loc>
+         <lastmod>2026-09-27</lastmod>
+    </url>
+    <url>
+         <loc>https://www.utplsql.org/announcements/category/utplsql-cli.html</loc>
+         <lastmod>2026-09-27</lastmod>
+    </url>
+    <url>
+         <loc>https://www.utplsql.org/announcements/category/utplsql-maven-plugin.html</loc>
+         <lastmod>2026-09-27</lastmod>
+    </url>
+    <url>
+         <loc>https://www.utplsql.org/announcements/category/news.html</loc>
          <lastmod>2026-09-27</lastmod>
     </url>
     <url>
@@ -246,14 +258,6 @@
     </url>
     <url>
          <loc>https://www.utplsql.org/announcements/category/website.html</loc>
-         <lastmod>2026-09-27</lastmod>
-    </url>
-    <url>
-         <loc>https://www.utplsql.org/announcements/category/utplsql-cli.html</loc>
-         <lastmod>2026-09-27</lastmod>
-    </url>
-    <url>
-         <loc>https://www.utplsql.org/announcements/category/utplsql-maven-plugin.html</loc>
          <lastmod>2026-09-27</lastmod>
     </url>
     <url>
