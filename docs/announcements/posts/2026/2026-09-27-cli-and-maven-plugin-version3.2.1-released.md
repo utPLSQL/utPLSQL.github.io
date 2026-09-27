@@ -10,7 +10,7 @@ categories:
 ---
 
 Both utPLSQL-cli and utPLSQL-maven-plugin v3.2.1 are now available, adding support for Oracle Wallet (Secure External Password Store) connections.
-
+<!-- more -->
 ## utPLSQL-cli v3.2.1
 
 ### What's Changed
