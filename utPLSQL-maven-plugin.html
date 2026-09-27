@@ -1174,50 +1174,33 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
+  <a href="#quick-start" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Usage
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Usage">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#skipping-tests" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Skipping Tests
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Skipping Tests">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#skipping-by-default" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Skipping by Default
+        Quick start
       
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#database-connection" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Configuration
+        Database connection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Database connection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#oracle-wallet-secure-external-password-store" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oracle Wallet (Secure External Password Store)
       
     </span>
   </a>
@@ -1230,10 +1213,104 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#selecting-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Selecting tests
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reporters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reporters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code coverage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Code coverage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#choosing-the-objects-to-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choosing the objects to report
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mapping-project-files-to-database-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mapping project files to database objects
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#skipping-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Skipping tests
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sample projects
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#comparison-with-utplsql-cli" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Comparison with utPLSQL CLI
+        Comparison with utPLSQL-cli
       
     </span>
   </a>
@@ -1439,398 +1516,614 @@
 
   <h1>utPLSQL-maven plugin</h1>
 
-<p>A maven plugin for running Unit Tests with utPLSQL v3+.</p>
+<p>A Maven plugin that runs <a href="https://www.utplsql.org/">utPLSQL</a> v3 unit tests in an Oracle database as part of the Maven
+<code>test</code> phase, and writes test results and code coverage reports that CI servers and tools such as SonarQube can read.</p>
+<p>For writing tests, reporters and code coverage, see the <a href="https://www.utplsql.org/utPLSQL/latest/">utPLSQL documentation</a>.</p>
 <h2 id="compatibility">Compatibility<a class="headerlink" href="#compatibility" title="Permanent link">&para;</a></h2>
-<p>This plugin is compatible with utPLSQL 3.1.0+.</p>
+<p>The plugin works with utPLSQL 3.1.0 or newer installed in the database.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Java SE Runtime Environment 17</li>
-<li>Maven Version 3.9.9+</li>
+<li>Java 17 or newer</li>
+<li>Maven 3.9.9 or newer</li>
 </ul>
-<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
-<h3 id="skipping-tests">Skipping Tests<a class="headerlink" href="#skipping-tests" title="Permanent link">&para;</a></h3>
-<p>To skip running the tests for a particular project, set the <strong>skipUtplsqlTests</strong> property to true.</p>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&lt;configuration&gt;</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">&lt;skipUtplsqlTests&gt;</span>true<span class="nt">&lt;/skipUtplsqlTests&gt;</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nt">&lt;/configuration&gt;</span>
+<h2 id="quick-start">Quick start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
+<p>Add the plugin to your <code>pom.xml</code> and provide the database connection:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&lt;properties&gt;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">&lt;dbUrl&gt;</span>jdbc:oracle:thin:@//localhost:1521/FREEPDB1<span class="nt">&lt;/dbUrl&gt;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&lt;dbUser&gt;</span>app<span class="nt">&lt;/dbUser&gt;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">&lt;dbPass&gt;</span>app_password<span class="nt">&lt;/dbPass&gt;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nt">&lt;/properties&gt;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="nt">&lt;build&gt;</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="nt">&lt;plugins&gt;</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">        </span><span class="nt">&lt;plugin&gt;</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">            </span><span class="nt">&lt;groupId&gt;</span>org.utplsql<span class="nt">&lt;/groupId&gt;</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">            </span><span class="nt">&lt;artifactId&gt;</span>utplsql-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">            </span><span class="nt">&lt;version&gt;</span>3.2.0<span class="nt">&lt;/version&gt;</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">            </span><span class="nt">&lt;executions&gt;</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">                </span><span class="nt">&lt;execution&gt;</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">                    </span><span class="nt">&lt;goals&gt;</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">                        </span><span class="nt">&lt;goal&gt;</span>test<span class="nt">&lt;/goal&gt;</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">                    </span><span class="nt">&lt;/goals&gt;</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">                </span><span class="nt">&lt;/execution&gt;</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">            </span><span class="nt">&lt;/executions&gt;</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">        </span><span class="nt">&lt;/plugin&gt;</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">    </span><span class="nt">&lt;/plugins&gt;</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="nt">&lt;/build&gt;</span>
 </span></code></pre></div>
-<p>You can also skip the tests via the command line by executing the following command:</p>
-<div class="language-text highlight"><pre><span></span><code>mvn install -DskipTests
-</code></pre></div>
-<h4 id="skipping-by-default">Skipping by Default<a class="headerlink" href="#skipping-by-default" title="Permanent link">&para;</a></h4>
-<p>If you want to skip tests by default but want the ability to re-enable tests from the command line, you need to go via a
-properties section in the pom:</p>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">&lt;configuration&gt;</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nt">&lt;skipUtplsqlTests&gt;</span>true<span class="nt">&lt;/skipUtplsqlTests&gt;</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nt">&lt;/configuration&gt;</span>
+<p>Then run:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>mvn<span class="w"> </span><span class="nb">test</span>
 </span></code></pre></div>
-<p>This will allow you to run with all tests disabled by default and to run them with this command:</p>
-<div class="language-text highlight"><pre><span></span><code>mvn install -DskipUtplsqlTests=false
-</code></pre></div>
-<h3 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h3>
-<p>Please refer to the following usage example for the parameters descriptions:</p>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">&lt;project</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">"http://maven.apache.org/POM/4.0.0"</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">         </span><span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">         </span><span class="na">xsi:schemaLocation=</span><span class="s">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span><span class="nt">&gt;</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="nt">&lt;groupId&gt;</span>org.my_org<span class="nt">&lt;/groupId&gt;</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="nt">&lt;artifactId&gt;</span>my-artifact-name<span class="nt">&lt;/artifactId&gt;</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="nt">&lt;version&gt;</span>1.0.0<span class="nt">&lt;/version&gt;</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="nt">&lt;properties&gt;</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">        </span><span class="cm">&lt;!-- URL of the connection to the database. --&gt;</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">        </span><span class="cm">&lt;!-- Can also be passed as execution parameters. --&gt;</span>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">        </span><span class="cm">&lt;!-- -DdbUrl="jdbc:oracle:thin:@127.0.0.1:1521:xe" --&gt;</span>
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">        </span><span class="nt">&lt;dbUrl&gt;</span>url_of_connection<span class="nt">&lt;/dbUrl&gt;</span>
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">        </span><span class="cm">&lt;!-- Database connection user. --&gt;</span>
-</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">        </span><span class="cm">&lt;!-- -DdbUser="user" --&gt;</span>
-</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">        </span><span class="nt">&lt;dbUser&gt;</span>user<span class="nt">&lt;/dbUser&gt;</span>
-</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">        </span><span class="cm">&lt;!-- Database connection password. --&gt;</span>
-</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">        </span><span class="cm">&lt;!-- -DdbPassword="password" --&gt;</span>
-</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">        </span><span class="nt">&lt;dbPass&gt;</span>password<span class="nt">&lt;/dbPass&gt;</span>
-</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">    </span><span class="nt">&lt;/properties&gt;</span>
-</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>
-</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">    </span><span class="nt">&lt;build&gt;</span>
-</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">        </span><span class="nt">&lt;plugins&gt;</span>
-</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">            </span><span class="nt">&lt;plugin&gt;</span>
-</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="w">                </span><span class="nt">&lt;groupId&gt;</span>org.utplsql<span class="nt">&lt;/groupId&gt;</span>
-</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="w">                </span><span class="nt">&lt;artifactId&gt;</span>utplsql-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
-</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="w">                </span><span class="nt">&lt;version&gt;</span>3.1.11<span class="nt">&lt;/version&gt;</span>
-</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="w">                </span><span class="nt">&lt;executions&gt;</span>
-</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="w">                    </span><span class="nt">&lt;execution&gt;</span>
-</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="w">                        </span><span class="nt">&lt;goals&gt;</span>
-</span><span id="__span-2-32"><a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="w">                            </span><span class="nt">&lt;goal&gt;</span>test<span class="nt">&lt;/goal&gt;</span>
-</span><span id="__span-2-33"><a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a><span class="w">                        </span><span class="nt">&lt;/goals&gt;</span>
-</span><span id="__span-2-34"><a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="w">                        </span><span class="nt">&lt;configuration&gt;</span>
-</span><span id="__span-2-35"><a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a><span class="w">                            </span><span class="cm">&lt;!-- REQUIRED PARAMETERS --&gt;</span>
-</span><span id="__span-2-36"><a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>
-</span><span id="__span-2-37"><a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a><span class="w">                            </span><span class="cm">&lt;!-- A list of tests suite paths. --&gt;</span>
-</span><span id="__span-2-38"><a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a>
-</span><span id="__span-2-39"><a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a><span class="w">                            </span><span class="cm">&lt;!-- The path(s) can be in one of the following formats: --&gt;</span>
-</span><span id="__span-2-40"><a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a><span class="w">                            </span><span class="cm">&lt;!--     schema[.package[.procedure]] --&gt;</span>
-</span><span id="__span-2-41"><a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a><span class="w">                            </span><span class="cm">&lt;!--     schema:suite[.suite[.suite][...]][.procedure] --&gt;</span>
-</span><span id="__span-2-42"><a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a><span class="w">                            </span><span class="cm">&lt;!-- Both formats can be mixed in the list. --&gt;</span>
-</span><span id="__span-2-43"><a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a><span class="w">                            </span><span class="cm">&lt;!-- If only schema is provided, then all suites --&gt;</span>
-</span><span id="__span-2-44"><a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a><span class="w">                            </span><span class="cm">&lt;!-- owned by that schema are executed. --&gt;</span>
-</span><span id="__span-2-45"><a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a><span class="w">                            </span><span class="nt">&lt;paths&gt;</span>
-</span><span id="__span-2-46"><a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a><span class="w">                                </span><span class="nt">&lt;path&gt;</span>schema_name<span class="nt">&lt;/path&gt;</span>
-</span><span id="__span-2-47"><a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a><span class="w">                            </span><span class="nt">&lt;/paths&gt;</span>
-</span><span id="__span-2-48"><a id="__codelineno-2-48" name="__codelineno-2-48" href="#__codelineno-2-48"></a>
-</span><span id="__span-2-49"><a id="__codelineno-2-49" name="__codelineno-2-49" href="#__codelineno-2-49"></a><span class="w">                            </span><span class="nt">&lt;sources&gt;</span>
-</span><span id="__span-2-50"><a id="__codelineno-2-50" name="__codelineno-2-50" href="#__codelineno-2-50"></a><span class="w">                                </span><span class="nt">&lt;source&gt;</span>
-</span><span id="__span-2-51"><a id="__codelineno-2-51" name="__codelineno-2-51" href="#__codelineno-2-51"></a><span class="w">                                    </span><span class="cm">&lt;!-- Path to project source files. --&gt;</span>
-</span><span id="__span-2-52"><a id="__codelineno-2-52" name="__codelineno-2-52" href="#__codelineno-2-52"></a><span class="w">                                    </span><span class="nt">&lt;directory&gt;</span>src/test/resources/scripts/sources<span class="nt">&lt;/directory&gt;</span>
-</span><span id="__span-2-53"><a id="__codelineno-2-53" name="__codelineno-2-53" href="#__codelineno-2-53"></a><span class="w">                                    </span><span class="cm">&lt;!-- File patterns to include. --&gt;</span>
-</span><span id="__span-2-54"><a id="__codelineno-2-54" name="__codelineno-2-54" href="#__codelineno-2-54"></a><span class="w">                                    </span><span class="nt">&lt;includes&gt;</span>
-</span><span id="__span-2-55"><a id="__codelineno-2-55" name="__codelineno-2-55" href="#__codelineno-2-55"></a><span class="w">                                        </span><span class="nt">&lt;include&gt;</span>**/*pkg<span class="nt">&lt;/include&gt;</span>
-</span><span id="__span-2-56"><a id="__codelineno-2-56" name="__codelineno-2-56" href="#__codelineno-2-56"></a><span class="w">                                        </span><span class="nt">&lt;include&gt;</span>**/*pkb<span class="nt">&lt;/include&gt;</span>
-</span><span id="__span-2-57"><a id="__codelineno-2-57" name="__codelineno-2-57" href="#__codelineno-2-57"></a><span class="w">                                    </span><span class="nt">&lt;/includes&gt;</span>
-</span><span id="__span-2-58"><a id="__codelineno-2-58" name="__codelineno-2-58" href="#__codelineno-2-58"></a><span class="w">                                </span><span class="nt">&lt;/source&gt;</span>
-</span><span id="__span-2-59"><a id="__codelineno-2-59" name="__codelineno-2-59" href="#__codelineno-2-59"></a><span class="w">                            </span><span class="nt">&lt;/sources&gt;</span>
-</span><span id="__span-2-60"><a id="__codelineno-2-60" name="__codelineno-2-60" href="#__codelineno-2-60"></a>
-</span><span id="__span-2-61"><a id="__codelineno-2-61" name="__codelineno-2-61" href="#__codelineno-2-61"></a><span class="w">                            </span><span class="nt">&lt;tests&gt;</span>
-</span><span id="__span-2-62"><a id="__codelineno-2-62" name="__codelineno-2-62" href="#__codelineno-2-62"></a><span class="w">                                </span><span class="nt">&lt;test&gt;</span>
-</span><span id="__span-2-63"><a id="__codelineno-2-63" name="__codelineno-2-63" href="#__codelineno-2-63"></a><span class="w">                                    </span><span class="cm">&lt;!-- Path to project test files. --&gt;</span>
-</span><span id="__span-2-64"><a id="__codelineno-2-64" name="__codelineno-2-64" href="#__codelineno-2-64"></a><span class="w">                                    </span><span class="nt">&lt;directory&gt;</span>src/test/resources/scripts/test<span class="nt">&lt;/directory&gt;</span>
-</span><span id="__span-2-65"><a id="__codelineno-2-65" name="__codelineno-2-65" href="#__codelineno-2-65"></a><span class="w">                                    </span><span class="cm">&lt;!-- File patterns to include. --&gt;</span>
-</span><span id="__span-2-66"><a id="__codelineno-2-66" name="__codelineno-2-66" href="#__codelineno-2-66"></a><span class="w">                                    </span><span class="nt">&lt;includes&gt;</span>
-</span><span id="__span-2-67"><a id="__codelineno-2-67" name="__codelineno-2-67" href="#__codelineno-2-67"></a><span class="w">                                        </span><span class="nt">&lt;include&gt;</span>**/*pkg<span class="nt">&lt;/include&gt;</span>
-</span><span id="__span-2-68"><a id="__codelineno-2-68" name="__codelineno-2-68" href="#__codelineno-2-68"></a><span class="w">                                        </span><span class="nt">&lt;include&gt;</span>**/*pkb<span class="nt">&lt;/include&gt;</span>
-</span><span id="__span-2-69"><a id="__codelineno-2-69" name="__codelineno-2-69" href="#__codelineno-2-69"></a><span class="w">                                    </span><span class="nt">&lt;/includes&gt;</span>
-</span><span id="__span-2-70"><a id="__codelineno-2-70" name="__codelineno-2-70" href="#__codelineno-2-70"></a><span class="w">                                </span><span class="nt">&lt;/test&gt;</span>
-</span><span id="__span-2-71"><a id="__codelineno-2-71" name="__codelineno-2-71" href="#__codelineno-2-71"></a><span class="w">                            </span><span class="nt">&lt;/tests&gt;</span>
-</span><span id="__span-2-72"><a id="__codelineno-2-72" name="__codelineno-2-72" href="#__codelineno-2-72"></a>
-</span><span id="__span-2-73"><a id="__codelineno-2-73" name="__codelineno-2-73" href="#__codelineno-2-73"></a><span class="w">                            </span><span class="cm">&lt;!-- OPTIONAL PARAMETERS --&gt;</span>
-</span><span id="__span-2-74"><a id="__codelineno-2-74" name="__codelineno-2-74" href="#__codelineno-2-74"></a>
-</span><span id="__span-2-75"><a id="__codelineno-2-75" name="__codelineno-2-75" href="#__codelineno-2-75"></a><span class="w">                            </span><span class="cm">&lt;!-- Continue in case of failure. --&gt;</span>
-</span><span id="__span-2-76"><a id="__codelineno-2-76" name="__codelineno-2-76" href="#__codelineno-2-76"></a><span class="w">                            </span><span class="cm">&lt;!-- Defaults to: ${maven.test.failure.ignore} --&gt;</span>
-</span><span id="__span-2-77"><a id="__codelineno-2-77" name="__codelineno-2-77" href="#__codelineno-2-77"></a><span class="w">                            </span><span class="nt">&lt;ignoreFailure&gt;</span>false<span class="nt">&lt;/ignoreFailure&gt;</span>
-</span><span id="__span-2-78"><a id="__codelineno-2-78" name="__codelineno-2-78" href="#__codelineno-2-78"></a>
-</span><span id="__span-2-79"><a id="__codelineno-2-79" name="__codelineno-2-79" href="#__codelineno-2-79"></a><span class="w">                            </span><span class="cm">&lt;!-- Skip the utPLSQL version compatibility check. --&gt;</span>
-</span><span id="__span-2-80"><a id="__codelineno-2-80" name="__codelineno-2-80" href="#__codelineno-2-80"></a><span class="w">                            </span><span class="cm">&lt;!-- Defaults to: false --&gt;</span>
-</span><span id="__span-2-81"><a id="__codelineno-2-81" name="__codelineno-2-81" href="#__codelineno-2-81"></a><span class="w">                            </span><span class="nt">&lt;skipCompatibilityCheck&gt;</span>false<span class="nt">&lt;/skipCompatibilityCheck&gt;</span>
-</span><span id="__span-2-82"><a id="__codelineno-2-82" name="__codelineno-2-82" href="#__codelineno-2-82"></a>
-</span><span id="__span-2-83"><a id="__codelineno-2-83" name="__codelineno-2-83" href="#__codelineno-2-83"></a><span class="w">                            </span><span class="cm">&lt;!-- Skip the tests --&gt;</span>
-</span><span id="__span-2-84"><a id="__codelineno-2-84" name="__codelineno-2-84" href="#__codelineno-2-84"></a><span class="w">                            </span><span class="cm">&lt;!-- Defaults to: false --&gt;</span>
-</span><span id="__span-2-85"><a id="__codelineno-2-85" name="__codelineno-2-85" href="#__codelineno-2-85"></a><span class="w">                            </span><span class="nt">&lt;skipUtplsqlTests&gt;</span>false<span class="nt">&lt;/skipUtplsqlTests&gt;</span>
-</span><span id="__span-2-86"><a id="__codelineno-2-86" name="__codelineno-2-86" href="#__codelineno-2-86"></a>
-</span><span id="__span-2-87"><a id="__codelineno-2-87" name="__codelineno-2-87" href="#__codelineno-2-87"></a><span class="w">                            </span><span class="cm">&lt;!-- Enables DBMS_OUTPUT --&gt;</span>
-</span><span id="__span-2-88"><a id="__codelineno-2-88" name="__codelineno-2-88" href="#__codelineno-2-88"></a><span class="w">                            </span><span class="cm">&lt;!-- Defaults to: false --&gt;</span>
-</span><span id="__span-2-89"><a id="__codelineno-2-89" name="__codelineno-2-89" href="#__codelineno-2-89"></a><span class="w">                            </span><span class="nt">&lt;dbmsOutput&gt;</span>false<span class="nt">&lt;/dbmsOutput&gt;</span>
-</span><span id="__span-2-90"><a id="__codelineno-2-90" name="__codelineno-2-90" href="#__codelineno-2-90"></a>
-</span><span id="__span-2-91"><a id="__codelineno-2-91" name="__codelineno-2-91" href="#__codelineno-2-91"></a><span class="w">                            </span><span class="cm">&lt;!-- Sets a timeout around Reporter creation and retries when not ready after a while. --&gt;</span>
-</span><span id="__span-2-92"><a id="__codelineno-2-92" name="__codelineno-2-92" href="#__codelineno-2-92"></a><span class="w">                            </span><span class="cm">&lt;!-- 0 = no timeout. --&gt;</span>
-</span><span id="__span-2-93"><a id="__codelineno-2-93" name="__codelineno-2-93" href="#__codelineno-2-93"></a><span class="w">                            </span><span class="nt">&lt;oraStuckTimeout&gt;</span>0<span class="nt">&lt;/oraStuckTimeout&gt;</span>
-</span><span id="__span-2-94"><a id="__codelineno-2-94" name="__codelineno-2-94" href="#__codelineno-2-94"></a>
-</span><span id="__span-2-95"><a id="__codelineno-2-95" name="__codelineno-2-95" href="#__codelineno-2-95"></a><span class="w">                            </span><span class="cm">&lt;!-- A list of tags to run. --&gt;</span>
-</span><span id="__span-2-96"><a id="__codelineno-2-96" name="__codelineno-2-96" href="#__codelineno-2-96"></a><span class="w">                            </span><span class="nt">&lt;tags&gt;</span>
-</span><span id="__span-2-97"><a id="__codelineno-2-97" name="__codelineno-2-97" href="#__codelineno-2-97"></a><span class="w">                                </span><span class="nt">&lt;tag&gt;</span>test_tag<span class="nt">&lt;/tag&gt;</span>
-</span><span id="__span-2-98"><a id="__codelineno-2-98" name="__codelineno-2-98" href="#__codelineno-2-98"></a><span class="w">                            </span><span class="nt">&lt;/tags&gt;</span>
-</span><span id="__span-2-99"><a id="__codelineno-2-99" name="__codelineno-2-99" href="#__codelineno-2-99"></a>
-</span><span id="__span-2-100"><a id="__codelineno-2-100" name="__codelineno-2-100" href="#__codelineno-2-100"></a><span class="w">                            </span><span class="cm">&lt;!-- Enables random order of test executions. --&gt;</span>
-</span><span id="__span-2-101"><a id="__codelineno-2-101" name="__codelineno-2-101" href="#__codelineno-2-101"></a><span class="w">                            </span><span class="nt">&lt;randomTestOrder&gt;</span>true<span class="nt">&lt;/randomTestOrder&gt;</span>
-</span><span id="__span-2-102"><a id="__codelineno-2-102" name="__codelineno-2-102" href="#__codelineno-2-102"></a><span class="w">                            </span><span class="cm">&lt;!-- Sets the seed to use for random test execution order. If set, it sets -random to true. --&gt;</span>
-</span><span id="__span-2-103"><a id="__codelineno-2-103" name="__codelineno-2-103" href="#__codelineno-2-103"></a><span class="w">                            </span><span class="nt">&lt;randomTestOrderSeed&gt;</span>5<span class="nt">&lt;/randomTestOrderSeed&gt;</span>
-</span><span id="__span-2-104"><a id="__codelineno-2-104" name="__codelineno-2-104" href="#__codelineno-2-104"></a>
-</span><span id="__span-2-105"><a id="__codelineno-2-105" name="__codelineno-2-105" href="#__codelineno-2-105"></a><span class="w">                            </span><span class="cm">&lt;!-- Comma-separated object list to include in the coverage report. --&gt;</span>
-</span><span id="__span-2-106"><a id="__codelineno-2-106" name="__codelineno-2-106" href="#__codelineno-2-106"></a><span class="w">                            </span><span class="cm">&lt;!-- Format: [schema.]package[,[schema.]package ...]. --&gt;</span>
-</span><span id="__span-2-107"><a id="__codelineno-2-107" name="__codelineno-2-107" href="#__codelineno-2-107"></a><span class="w">                            </span><span class="cm">&lt;!-- See coverage reporting options in framework documentation. --&gt;</span>
-</span><span id="__span-2-108"><a id="__codelineno-2-108" name="__codelineno-2-108" href="#__codelineno-2-108"></a><span class="w">                            </span><span class="nt">&lt;includeObject&gt;</span>app.test1,app.test2<span class="nt">&lt;/includeObject&gt;</span>
-</span><span id="__span-2-109"><a id="__codelineno-2-109" name="__codelineno-2-109" href="#__codelineno-2-109"></a>
-</span><span id="__span-2-110"><a id="__codelineno-2-110" name="__codelineno-2-110" href="#__codelineno-2-110"></a><span class="w">                            </span><span class="cm">&lt;!-- Comma-separated object list to exclude from the coverage report. --&gt;</span>
-</span><span id="__span-2-111"><a id="__codelineno-2-111" name="__codelineno-2-111" href="#__codelineno-2-111"></a><span class="w">                            </span><span class="cm">&lt;!-- Format: [schema.]package[,[schema.]package ...]. --&gt;</span>
-</span><span id="__span-2-112"><a id="__codelineno-2-112" name="__codelineno-2-112" href="#__codelineno-2-112"></a><span class="w">                            </span><span class="cm">&lt;!-- See coverage reporting options in framework documentation. --&gt;</span>
-</span><span id="__span-2-113"><a id="__codelineno-2-113" name="__codelineno-2-113" href="#__codelineno-2-113"></a><span class="w">                            </span><span class="nt">&lt;excludeObject&gt;</span>app.test1,app.test2<span class="nt">&lt;/excludeObject&gt;</span>
-</span><span id="__span-2-114"><a id="__codelineno-2-114" name="__codelineno-2-114" href="#__codelineno-2-114"></a>
-</span><span id="__span-2-115"><a id="__codelineno-2-115" name="__codelineno-2-115" href="#__codelineno-2-115"></a><span class="w">                            </span><span class="cm">&lt;!-- Regular expression to match against schema name to include in coverage --&gt;</span>
-</span><span id="__span-2-116"><a id="__codelineno-2-116" name="__codelineno-2-116" href="#__codelineno-2-116"></a><span class="w">                            </span><span class="nt">&lt;includeSchemaExpr&gt;</span>app.test1,app.test2<span class="nt">&lt;/includeSchemaExpr&gt;</span>
-</span><span id="__span-2-117"><a id="__codelineno-2-117" name="__codelineno-2-117" href="#__codelineno-2-117"></a>
-</span><span id="__span-2-118"><a id="__codelineno-2-118" name="__codelineno-2-118" href="#__codelineno-2-118"></a><span class="w">                            </span><span class="cm">&lt;!-- Regular expression to match against schema name to exclude in coverage --&gt;</span>
-</span><span id="__span-2-119"><a id="__codelineno-2-119" name="__codelineno-2-119" href="#__codelineno-2-119"></a><span class="w">                            </span><span class="nt">&lt;excludeSchemaExpr&gt;</span>app.test1,app.test2<span class="nt">&lt;/excludeSchemaExpr&gt;</span>
-</span><span id="__span-2-120"><a id="__codelineno-2-120" name="__codelineno-2-120" href="#__codelineno-2-120"></a>
-</span><span id="__span-2-121"><a id="__codelineno-2-121" name="__codelineno-2-121" href="#__codelineno-2-121"></a><span class="w">                            </span><span class="cm">&lt;!-- Regular expression to match against schema name to include in coverage --&gt;</span>
-</span><span id="__span-2-122"><a id="__codelineno-2-122" name="__codelineno-2-122" href="#__codelineno-2-122"></a><span class="w">                            </span><span class="nt">&lt;includeObjectExpr&gt;</span>app.test1,app.test2<span class="nt">&lt;/includeObjectExpr&gt;</span>
-</span><span id="__span-2-123"><a id="__codelineno-2-123" name="__codelineno-2-123" href="#__codelineno-2-123"></a>
-</span><span id="__span-2-124"><a id="__codelineno-2-124" name="__codelineno-2-124" href="#__codelineno-2-124"></a><span class="w">                            </span><span class="cm">&lt;!-- Regular expression to match against object name to exclude in coverage --&gt;</span>
-</span><span id="__span-2-125"><a id="__codelineno-2-125" name="__codelineno-2-125" href="#__codelineno-2-125"></a><span class="w">                            </span><span class="nt">&lt;excludeObjectExpr&gt;</span>app.test1,app.test2<span class="nt">&lt;/excludeObjectExpr&gt;</span>
-</span><span id="__span-2-126"><a id="__codelineno-2-126" name="__codelineno-2-126" href="#__codelineno-2-126"></a>
-</span><span id="__span-2-127"><a id="__codelineno-2-127" name="__codelineno-2-127" href="#__codelineno-2-127"></a><span class="w">                            </span><span class="cm">&lt;!-- List of reporters. --&gt;</span>
-</span><span id="__span-2-128"><a id="__codelineno-2-128" name="__codelineno-2-128" href="#__codelineno-2-128"></a><span class="w">                            </span><span class="cm">&lt;!-- You can pass the name of the reporter and/or the output file --&gt;</span>
-</span><span id="__span-2-129"><a id="__codelineno-2-129" name="__codelineno-2-129" href="#__codelineno-2-129"></a><span class="w">                            </span><span class="cm">&lt;!-- of the reporter and/or if the report is logged to the console. --&gt;</span>
-</span><span id="__span-2-130"><a id="__codelineno-2-130" name="__codelineno-2-130" href="#__codelineno-2-130"></a><span class="w">                            </span><span class="cm">&lt;!-- If you don't pass any reporter, UT_DOCUMENTATION_REPORTER will be used. --&gt;</span>
-</span><span id="__span-2-131"><a id="__codelineno-2-131" name="__codelineno-2-131" href="#__codelineno-2-131"></a><span class="w">                            </span><span class="cm">&lt;!-- This is a current list of the names of the reporters, --&gt;</span>
-</span><span id="__span-2-132"><a id="__codelineno-2-132" name="__codelineno-2-132" href="#__codelineno-2-132"></a><span class="w">                            </span><span class="cm">&lt;!-- see UtPLSQL documentation in order to check the final list: --&gt;</span>
-</span><span id="__span-2-133"><a id="__codelineno-2-133" name="__codelineno-2-133" href="#__codelineno-2-133"></a><span class="w">                            </span><span class="cm">&lt;!--     UT_DOCUMENTATION_REPORTER --&gt;</span>
-</span><span id="__span-2-134"><a id="__codelineno-2-134" name="__codelineno-2-134" href="#__codelineno-2-134"></a><span class="w">                            </span><span class="cm">&lt;!--     UT_COVERAGE_HTML_REPORTER --&gt;</span>
-</span><span id="__span-2-135"><a id="__codelineno-2-135" name="__codelineno-2-135" href="#__codelineno-2-135"></a><span class="w">                            </span><span class="cm">&lt;!--     UT_TEAMCITY_REPORTER --&gt;</span>
-</span><span id="__span-2-136"><a id="__codelineno-2-136" name="__codelineno-2-136" href="#__codelineno-2-136"></a><span class="w">                            </span><span class="cm">&lt;!--     UT_XUNIT_REPORTER --&gt;</span>
-</span><span id="__span-2-137"><a id="__codelineno-2-137" name="__codelineno-2-137" href="#__codelineno-2-137"></a><span class="w">                            </span><span class="cm">&lt;!--     UT_COVERAGE_SONAR_REPORTER --&gt;</span>
-</span><span id="__span-2-138"><a id="__codelineno-2-138" name="__codelineno-2-138" href="#__codelineno-2-138"></a><span class="w">                            </span><span class="cm">&lt;!--     UT_SONAR_TEST_REPORTER --&gt;</span>
-</span><span id="__span-2-139"><a id="__codelineno-2-139" name="__codelineno-2-139" href="#__codelineno-2-139"></a><span class="w">                            </span><span class="nt">&lt;reporters&gt;</span>
-</span><span id="__span-2-140"><a id="__codelineno-2-140" name="__codelineno-2-140" href="#__codelineno-2-140"></a><span class="w">                                </span><span class="nt">&lt;reporter&gt;</span>
-</span><span id="__span-2-141"><a id="__codelineno-2-141" name="__codelineno-2-141" href="#__codelineno-2-141"></a><span class="w">                                    </span><span class="nt">&lt;name&gt;</span>UT_COVERAGE_SONAR_REPORTER<span class="nt">&lt;/name&gt;</span>
-</span><span id="__span-2-142"><a id="__codelineno-2-142" name="__codelineno-2-142" href="#__codelineno-2-142"></a><span class="w">                                    </span><span class="cm">&lt;!-- The file output path. --&gt;</span>
-</span><span id="__span-2-143"><a id="__codelineno-2-143" name="__codelineno-2-143" href="#__codelineno-2-143"></a><span class="w">                                    </span><span class="nt">&lt;fileOutput&gt;</span>utplsql/coverage-sonar-reporter.xml<span class="nt">&lt;/fileOutput&gt;</span>
-</span><span id="__span-2-144"><a id="__codelineno-2-144" name="__codelineno-2-144" href="#__codelineno-2-144"></a><span class="w">                                    </span><span class="cm">&lt;!-- Indicates if should write to console. --&gt;</span>
-</span><span id="__span-2-145"><a id="__codelineno-2-145" name="__codelineno-2-145" href="#__codelineno-2-145"></a><span class="w">                                    </span><span class="nt">&lt;consoleOutput&gt;</span>true<span class="nt">&lt;/consoleOutput&gt;</span>
-</span><span id="__span-2-146"><a id="__codelineno-2-146" name="__codelineno-2-146" href="#__codelineno-2-146"></a><span class="w">                                </span><span class="nt">&lt;/reporter&gt;</span>
-</span><span id="__span-2-147"><a id="__codelineno-2-147" name="__codelineno-2-147" href="#__codelineno-2-147"></a><span class="w">                                </span><span class="nt">&lt;reporter&gt;</span>
-</span><span id="__span-2-148"><a id="__codelineno-2-148" name="__codelineno-2-148" href="#__codelineno-2-148"></a><span class="w">                                    </span><span class="nt">&lt;name&gt;</span>UT_SONAR_TEST_REPORTER<span class="nt">&lt;/name&gt;</span>
-</span><span id="__span-2-149"><a id="__codelineno-2-149" name="__codelineno-2-149" href="#__codelineno-2-149"></a><span class="w">                                    </span><span class="nt">&lt;fileOutput&gt;</span>utplsql/sonar-test-reporter.xml<span class="nt">&lt;/fileOutput&gt;</span>
-</span><span id="__span-2-150"><a id="__codelineno-2-150" name="__codelineno-2-150" href="#__codelineno-2-150"></a><span class="w">                                    </span><span class="nt">&lt;consoleOutput&gt;</span>false<span class="nt">&lt;/consoleOutput&gt;</span>
-</span><span id="__span-2-151"><a id="__codelineno-2-151" name="__codelineno-2-151" href="#__codelineno-2-151"></a><span class="w">                                </span><span class="nt">&lt;/reporter&gt;</span>
-</span><span id="__span-2-152"><a id="__codelineno-2-152" name="__codelineno-2-152" href="#__codelineno-2-152"></a><span class="w">                                </span><span class="nt">&lt;reporter&gt;</span>
-</span><span id="__span-2-153"><a id="__codelineno-2-153" name="__codelineno-2-153" href="#__codelineno-2-153"></a><span class="w">                                    </span><span class="nt">&lt;name&gt;</span>UT_TEAMCITY_REPORTER<span class="nt">&lt;/name&gt;</span>
-</span><span id="__span-2-154"><a id="__codelineno-2-154" name="__codelineno-2-154" href="#__codelineno-2-154"></a><span class="w">                                </span><span class="nt">&lt;/reporter&gt;</span>
-</span><span id="__span-2-155"><a id="__codelineno-2-155" name="__codelineno-2-155" href="#__codelineno-2-155"></a><span class="w">                            </span><span class="nt">&lt;/reporters&gt;</span>
-</span><span id="__span-2-156"><a id="__codelineno-2-156" name="__codelineno-2-156" href="#__codelineno-2-156"></a>
-</span><span id="__span-2-157"><a id="__codelineno-2-157" name="__codelineno-2-157" href="#__codelineno-2-157"></a><span class="w">                            </span><span class="cm">&lt;!-- Custom source code mapping options. --&gt;</span>
-</span><span id="__span-2-158"><a id="__codelineno-2-158" name="__codelineno-2-158" href="#__codelineno-2-158"></a><span class="w">                            </span><span class="cm">&lt;!-- See coverage reporting options in framework documentation. --&gt;</span>
-</span><span id="__span-2-159"><a id="__codelineno-2-159" name="__codelineno-2-159" href="#__codelineno-2-159"></a><span class="w">                            </span><span class="nt">&lt;sourcesOwner&gt;</span>code_owner<span class="nt">&lt;/sourcesOwner&gt;</span>
-</span><span id="__span-2-160"><a id="__codelineno-2-160" name="__codelineno-2-160" href="#__codelineno-2-160"></a><span class="w">                            </span><span class="nt">&lt;sourcesRegexExpression&gt;</span>.*/\w+/(\w+)/(\w+)\.\w{3}<span class="nt">&lt;/sourcesRegexExpression&gt;</span>
-</span><span id="__span-2-161"><a id="__codelineno-2-161" name="__codelineno-2-161" href="#__codelineno-2-161"></a><span class="w">                            </span><span class="nt">&lt;sourcesOwnerSubexpression&gt;</span>app<span class="nt">&lt;/sourcesOwnerSubexpression&gt;</span>
-</span><span id="__span-2-162"><a id="__codelineno-2-162" name="__codelineno-2-162" href="#__codelineno-2-162"></a><span class="w">                            </span><span class="nt">&lt;sourcesNameSubexpression&gt;</span>2<span class="nt">&lt;/sourcesNameSubexpression&gt;</span>
-</span><span id="__span-2-163"><a id="__codelineno-2-163" name="__codelineno-2-163" href="#__codelineno-2-163"></a><span class="w">                            </span><span class="nt">&lt;sourcesTypeSubexpression&gt;</span>1<span class="nt">&lt;/sourcesTypeSubexpression&gt;</span>
-</span><span id="__span-2-164"><a id="__codelineno-2-164" name="__codelineno-2-164" href="#__codelineno-2-164"></a><span class="w">                            </span><span class="nt">&lt;sourcesCustomTypeMapping&gt;</span>
-</span><span id="__span-2-165"><a id="__codelineno-2-165" name="__codelineno-2-165" href="#__codelineno-2-165"></a><span class="w">                                </span><span class="nt">&lt;customTypeMapping&gt;</span>
-</span><span id="__span-2-166"><a id="__codelineno-2-166" name="__codelineno-2-166" href="#__codelineno-2-166"></a><span class="w">                                    </span><span class="nt">&lt;type&gt;</span>package<span class="w"> </span>body<span class="nt">&lt;/type&gt;</span>
-</span><span id="__span-2-167"><a id="__codelineno-2-167" name="__codelineno-2-167" href="#__codelineno-2-167"></a><span class="w">                                    </span><span class="nt">&lt;customMapping&gt;</span>package_bodies<span class="nt">&lt;/customMapping&gt;</span>
-</span><span id="__span-2-168"><a id="__codelineno-2-168" name="__codelineno-2-168" href="#__codelineno-2-168"></a><span class="w">                                </span><span class="nt">&lt;/customTypeMapping&gt;</span>
-</span><span id="__span-2-169"><a id="__codelineno-2-169" name="__codelineno-2-169" href="#__codelineno-2-169"></a><span class="w">                            </span><span class="nt">&lt;/sourcesCustomTypeMapping&gt;</span>
-</span><span id="__span-2-170"><a id="__codelineno-2-170" name="__codelineno-2-170" href="#__codelineno-2-170"></a>
-</span><span id="__span-2-171"><a id="__codelineno-2-171" name="__codelineno-2-171" href="#__codelineno-2-171"></a><span class="w">                            </span><span class="cm">&lt;!-- Custom test code mapping options. --&gt;</span>
-</span><span id="__span-2-172"><a id="__codelineno-2-172" name="__codelineno-2-172" href="#__codelineno-2-172"></a><span class="w">                            </span><span class="cm">&lt;!-- See coverage reporting options in framework documentation. --&gt;</span>
-</span><span id="__span-2-173"><a id="__codelineno-2-173" name="__codelineno-2-173" href="#__codelineno-2-173"></a><span class="w">                            </span><span class="nt">&lt;testsOwner&gt;</span>tests_owner<span class="nt">&lt;/testsOwner&gt;</span>
-</span><span id="__span-2-174"><a id="__codelineno-2-174" name="__codelineno-2-174" href="#__codelineno-2-174"></a><span class="w">                            </span><span class="nt">&lt;testsRegexExpression&gt;</span>.*/\w+/(\w+)/(\w+)\.\w{3}<span class="nt">&lt;/testsRegexExpression&gt;</span>
-</span><span id="__span-2-175"><a id="__codelineno-2-175" name="__codelineno-2-175" href="#__codelineno-2-175"></a><span class="w">                            </span><span class="nt">&lt;testsOwnerSubexpression&gt;</span>test<span class="nt">&lt;/testsOwnerSubexpression&gt;</span>
-</span><span id="__span-2-176"><a id="__codelineno-2-176" name="__codelineno-2-176" href="#__codelineno-2-176"></a><span class="w">                            </span><span class="nt">&lt;testsNameSubexpression&gt;</span>2<span class="nt">&lt;/testsNameSubexpression&gt;</span>
-</span><span id="__span-2-177"><a id="__codelineno-2-177" name="__codelineno-2-177" href="#__codelineno-2-177"></a><span class="w">                            </span><span class="nt">&lt;testsTypeSubexpression&gt;</span>1<span class="nt">&lt;/testsTypeSubexpression&gt;</span>
-</span><span id="__span-2-178"><a id="__codelineno-2-178" name="__codelineno-2-178" href="#__codelineno-2-178"></a><span class="w">                            </span><span class="nt">&lt;testsCustomTypeMapping&gt;</span>
-</span><span id="__span-2-179"><a id="__codelineno-2-179" name="__codelineno-2-179" href="#__codelineno-2-179"></a><span class="w">                                </span><span class="nt">&lt;customTypeMapping&gt;</span>
-</span><span id="__span-2-180"><a id="__codelineno-2-180" name="__codelineno-2-180" href="#__codelineno-2-180"></a><span class="w">                                    </span><span class="nt">&lt;type&gt;</span>package<span class="w"> </span>body<span class="nt">&lt;/type&gt;</span>
-</span><span id="__span-2-181"><a id="__codelineno-2-181" name="__codelineno-2-181" href="#__codelineno-2-181"></a><span class="w">                                    </span><span class="nt">&lt;customMapping&gt;</span>package_bodies<span class="nt">&lt;/customMapping&gt;</span>
-</span><span id="__span-2-182"><a id="__codelineno-2-182" name="__codelineno-2-182" href="#__codelineno-2-182"></a><span class="w">                                </span><span class="nt">&lt;/customTypeMapping&gt;</span>
-</span><span id="__span-2-183"><a id="__codelineno-2-183" name="__codelineno-2-183" href="#__codelineno-2-183"></a><span class="w">                            </span><span class="nt">&lt;/testsCustomTypeMapping&gt;</span>
-</span><span id="__span-2-184"><a id="__codelineno-2-184" name="__codelineno-2-184" href="#__codelineno-2-184"></a><span class="w">                        </span><span class="nt">&lt;/configuration&gt;</span>
-</span><span id="__span-2-185"><a id="__codelineno-2-185" name="__codelineno-2-185" href="#__codelineno-2-185"></a><span class="w">                    </span><span class="nt">&lt;/execution&gt;</span>
-</span><span id="__span-2-186"><a id="__codelineno-2-186" name="__codelineno-2-186" href="#__codelineno-2-186"></a><span class="w">                </span><span class="nt">&lt;/executions&gt;</span>
-</span><span id="__span-2-187"><a id="__codelineno-2-187" name="__codelineno-2-187" href="#__codelineno-2-187"></a><span class="w">            </span><span class="nt">&lt;/plugin&gt;</span>
-</span><span id="__span-2-188"><a id="__codelineno-2-188" name="__codelineno-2-188" href="#__codelineno-2-188"></a><span class="w">        </span><span class="nt">&lt;/plugins&gt;</span>
-</span><span id="__span-2-189"><a id="__codelineno-2-189" name="__codelineno-2-189" href="#__codelineno-2-189"></a><span class="w">    </span><span class="nt">&lt;/build&gt;</span>
-</span><span id="__span-2-190"><a id="__codelineno-2-190" name="__codelineno-2-190" href="#__codelineno-2-190"></a><span class="nt">&lt;/project&gt;</span>
-</span></code></pre></div>
-<p>More project samples are available in the <code>src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT</code>
-directory:</p>
+<p>With no further configuration, the plugin:</p>
 <ul>
-<li><strong>simple-project:</strong> Minimalist test project with standard project directory structure.</li>
-<li><strong>regex-project:</strong> Overrides project directory structure and use additional parameters (sourcesRegexExpression,
-  testsRegexExpression, ...), to tell utPLSQL how project files should be mapped into database objects.</li>
-<li><strong>type-mapping-project:</strong> Example how to use regex and custom type parameters together.</li>
-<li><strong>owner-param-project:</strong> Demonstrates how to use sourcesOwner and testsOwner parameters.</li>
+<li>runs all test suites in the schema of the connected user,</li>
+<li>maps source files from <code>src/main/plsql</code> (<code>**/*.*</code>) and test files from <code>src/test/plsql</code> (<code>**/*.pkg</code>) to database
+  objects for coverage reporting,</li>
+<li>prints results to the console with <code>UT_DOCUMENTATION_REPORTER</code>,</li>
+<li>fails the build when any test fails or errors.</li>
 </ul>
-<h2 id="comparison-with-utplsql-cli">Comparison with utPLSQL CLI<a class="headerlink" href="#comparison-with-utplsql-cli" title="Permanent link">&para;</a></h2>
+<h2 id="database-connection">Database connection<a class="headerlink" href="#database-connection" title="Permanent link">&para;</a></h2>
+<p>The connection is configured with three properties. Each can be set in the <code>pom.xml</code> or passed on the command line:</p>
 <table>
 <thead>
 <tr>
-<th>CLI short parameter</th>
-<th>CLI long parameter</th>
-<th>Maven XML path</th>
+<th>Property</th>
+<th>Description</th>
+<th>Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>-c</td>
-<td>--color</td>
-<td></td>
+<td><code>dbUrl</code></td>
+<td>JDBC URL of the database</td>
+<td><code>-DdbUrl=jdbc:oracle:thin:@//host:1521/svc</code></td>
 </tr>
 <tr>
-<td></td>
-<td>--failure-exit-code</td>
-<td></td>
+<td><code>dbUser</code></td>
+<td>Database user; leave unset when using an <a href="#oracle-wallet-secure-external-password-store">Oracle Wallet</a></td>
+<td><code>-DdbUser=app</code></td>
 </tr>
 <tr>
-<td>-p</td>
-<td>--path</td>
-<td>paths.path</td>
-</tr>
-<tr>
-<td>-f</td>
-<td>--format</td>
-<td>reporters.reporter.name</td>
-</tr>
-<tr>
-<td>-o</td>
-<td></td>
-<td>reporters.reporter.fileOutput</td>
-</tr>
-<tr>
-<td>-s</td>
-<td></td>
-<td>reporters.reporter.consoleOutput</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>ignoreFailure</td>
-</tr>
-<tr>
-<td>-scc</td>
-<td>--skip-compatibility-check</td>
-<td>skipCompatibilityCheck</td>
-</tr>
-<tr>
-<td></td>
-<td>--tags</td>
-<td>tags.tag</td>
-</tr>
-<tr>
-<td>-D</td>
-<td>--dbms_output</td>
-<td>dbmsOutput</td>
-</tr>
-<tr>
-<td>-r</td>
-<td>--random-test-order</td>
-<td>randomTestOrder</td>
-</tr>
-<tr>
-<td>-seed</td>
-<td>--random-test-order-seed</td>
-<td>randomTestOrderSeed</td>
-</tr>
-<tr>
-<td>-exclude</td>
-<td></td>
-<td>excludeObject</td>
-</tr>
-<tr>
-<td>-include</td>
-<td></td>
-<td>includeObject</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>-source_path</td>
-<td></td>
-<td>sources.source.directory</td>
-</tr>
-<tr>
-<td>-owner</td>
-<td></td>
-<td>sourcesOwner</td>
-</tr>
-<tr>
-<td>-regex_expression</td>
-<td></td>
-<td>sourcesRegexExpression</td>
-</tr>
-<tr>
-<td>-type_mapping</td>
-<td></td>
-<td>list of testsCustomTypeMapping.customTypeMapping</td>
-</tr>
-<tr>
-<td>-owner_subexpression</td>
-<td></td>
-<td>sourcesOwnerSubexpression</td>
-</tr>
-<tr>
-<td>-type_subexpression</td>
-<td></td>
-<td>sourcesTypeSubexpression</td>
-</tr>
-<tr>
-<td>-name_subexpression</td>
-<td></td>
-<td>sourcesNameSubexpression</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>-test_path</td>
-<td></td>
-<td>tests.test.directory</td>
-</tr>
-<tr>
-<td>-owner</td>
-<td></td>
-<td>testsOwner</td>
-</tr>
-<tr>
-<td>-regex_expression</td>
-<td></td>
-<td>testsRegexExpression</td>
-</tr>
-<tr>
-<td>-type_mapping</td>
-<td></td>
-<td>list of testsCustomTypeMapping.customTypeMapping</td>
-</tr>
-<tr>
-<td>-owner_subexpression</td>
-<td></td>
-<td>testsOwnerSubexpression</td>
-</tr>
-<tr>
-<td>-type_subexpression</td>
-<td></td>
-<td>testsTypeSubexpression</td>
-</tr>
-<tr>
-<td>-name_subexpression</td>
-<td></td>
-<td>testsNameSubexpression</td>
+<td><code>dbPass</code></td>
+<td>Password of <code>dbUser</code></td>
+<td><code>-DdbPass=app_password</code></td>
 </tr>
 </tbody>
 </table>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>mvn<span class="w"> </span><span class="nb">test</span><span class="w"> </span>-DdbUrl<span class="o">=</span>jdbc:oracle:thin:@//localhost:1521/FREEPDB1<span class="w"> </span>-DdbUser<span class="o">=</span>app<span class="w"> </span>-DdbPass<span class="o">=</span>app_password
+</span></code></pre></div>
+<h3 id="oracle-wallet-secure-external-password-store">Oracle Wallet (Secure External Password Store)<a class="headerlink" href="#oracle-wallet-secure-external-password-store" title="Permanent link">&para;</a></h3>
+<p>To keep the database password out of the <code>pom.xml</code> and the command line, store the credentials in an Oracle Wallet,
+leave <code>dbUser</code> and <code>dbPass</code> unset, and point <code>dbUrl</code> to the TNS alias of the stored credential:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">&lt;properties&gt;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nt">&lt;dbUrl&gt;</span>jdbc:oracle:thin:@MYDATABASE<span class="nt">&lt;/dbUrl&gt;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nt">&lt;/properties&gt;</span>
+</span></code></pre></div>
+<p>Setup example:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># create an auto-login wallet with credentials for TNS alias MYDATABASE</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>orapki<span class="w"> </span>wallet<span class="w"> </span>create<span class="w"> </span>-wallet<span class="w"> </span><span class="nv">$HOME</span>/oracle/wallet<span class="w"> </span>-auto_login_local
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>mkstore<span class="w"> </span>-wrl<span class="w"> </span><span class="nv">$HOME</span>/oracle/wallet<span class="w"> </span>-createCredential<span class="w"> </span>MYDATABASE<span class="w"> </span>someusername
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="c1"># point the JDBC driver to the wallet</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"oracle.net.wallet_location=(SOURCE=(METHOD=FILE)(METHOD_DATA=(DIRECTORY=</span><span class="nv">$HOME</span><span class="s2">/oracle/wallet)))"</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span>&gt;<span class="w"> </span><span class="nv">$HOME</span>/oracle/network/admin/ojdbc.properties
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="c1"># tnsnames.ora with the MYDATABASE entry must be in the same directory</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="nb">export</span><span class="w"> </span><span class="nv">TNS_ADMIN</span><span class="o">=</span><span class="nv">$HOME</span>/oracle/network/admin
+</span></code></pre></div>
+<p>The JDBC driver looks for <code>tnsnames.ora</code> and <code>ojdbc.properties</code> in the directory given by, in order of precedence:</p>
+<ol>
+<li>the <code>TNS_ADMIN</code> parameter in the URL, e.g. <code>jdbc:oracle:thin:@MYDATABASE?TNS_ADMIN=/path/to/network/admin</code></li>
+<li>the Java system property <code>oracle.net.tns_admin</code>, e.g. <code>export MAVEN_OPTS="-Doracle.net.tns_admin=/path/to/network/admin"</code></li>
+<li>the <code>TNS_ADMIN</code> environment variable</li>
+</ol>
+<p>The TNS alias used in <code>dbUrl</code> must match the alias of the credential stored in the wallet.</p>
+<h2 id="selecting-tests">Selecting tests<a class="headerlink" href="#selecting-tests" title="Permanent link">&para;</a></h2>
+<p>By default, all suites in the schema of the connected user are run. Use <code>paths</code> to run specific schemas, suites,
+packages or procedures, and <code>tags</code> to run only tests with the given tags:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">&lt;configuration&gt;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="nt">&lt;paths&gt;</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">        </span><span class="nt">&lt;path&gt;</span>app<span class="nt">&lt;/path&gt;</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">        </span><span class="nt">&lt;path&gt;</span>app:com.my_org.my_project<span class="nt">&lt;/path&gt;</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="nt">&lt;/paths&gt;</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="nt">&lt;tags&gt;</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">        </span><span class="nt">&lt;tag&gt;</span>fast<span class="nt">&lt;/tag&gt;</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="nt">&lt;/tags&gt;</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="nt">&lt;/configuration&gt;</span>
+</span></code></pre></div>
+<p>A path has one of the formats <code>schema[.package[.procedure]]</code> or <code>schema:suite[.suite[.suite][...]][.procedure]</code>,
+and both formats can be mixed. See <a href="https://www.utplsql.org/utPLSQL/latest/userguide/running-unit-tests.html">Running tests</a>
+and <a href="https://www.utplsql.org/utPLSQL/latest/userguide/running-unit-tests.html#run-by-tags">Run by tags</a> in the utPLSQL
+documentation.</p>
+<p>To detect hidden dependencies between tests, run them in
+<a href="https://www.utplsql.org/utPLSQL/latest/userguide/running-unit-tests.html#random-order">random order</a> with
+<code>randomTestOrder</code>. Set <code>randomTestOrderSeed</code> to repeat a particular order.</p>
+<h2 id="reporters">Reporters<a class="headerlink" href="#reporters" title="Permanent link">&para;</a></h2>
+<p>Reporters decide the format of the results. Each reporter writes to a file, to the console, or both:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">&lt;configuration&gt;</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="nt">&lt;reporters&gt;</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">        </span><span class="nt">&lt;reporter&gt;</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">            </span><span class="nt">&lt;name&gt;</span>UT_DOCUMENTATION_REPORTER<span class="nt">&lt;/name&gt;</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">        </span><span class="nt">&lt;/reporter&gt;</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">        </span><span class="nt">&lt;reporter&gt;</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">            </span><span class="nt">&lt;name&gt;</span>UT_SONAR_TEST_REPORTER<span class="nt">&lt;/name&gt;</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">            </span><span class="nt">&lt;fileOutput&gt;</span>utplsql/sonar-test-report.xml<span class="nt">&lt;/fileOutput&gt;</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">        </span><span class="nt">&lt;/reporter&gt;</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">        </span><span class="nt">&lt;reporter&gt;</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">            </span><span class="nt">&lt;name&gt;</span>UT_COVERAGE_SONAR_REPORTER<span class="nt">&lt;/name&gt;</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">            </span><span class="nt">&lt;fileOutput&gt;</span>utplsql/coverage-sonar-report.xml<span class="nt">&lt;/fileOutput&gt;</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">            </span><span class="nt">&lt;consoleOutput&gt;</span>true<span class="nt">&lt;/consoleOutput&gt;</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">        </span><span class="nt">&lt;/reporter&gt;</span>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="w">    </span><span class="nt">&lt;/reporters&gt;</span>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="nt">&lt;/configuration&gt;</span>
+</span></code></pre></div>
+<ul>
+<li><code>name</code> is the name of a utPLSQL reporter (case-insensitive). Custom reporters installed in the database can be used
+  as well.</li>
+<li><code>fileOutput</code> is the report file. Relative paths are resolved against the build directory (<code>target</code> by default).</li>
+<li><code>consoleOutput</code> prints the report to the console. It defaults to <code>true</code> when no <code>fileOutput</code> is given, and to <code>false</code>
+  otherwise.</li>
+<li>Without any <code>reporters</code>, <code>UT_DOCUMENTATION_REPORTER</code> prints to the console.</li>
+</ul>
+<p>Reporters provided by utPLSQL (see <a href="https://www.utplsql.org/utPLSQL/latest/userguide/reporters.html">Reporters</a> for
+details and the reporters available in your version):</p>
+<table>
+<thead>
+<tr>
+<th>Reporter</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>UT_DOCUMENTATION_REPORTER</code></td>
+<td><a href="https://www.utplsql.org/utPLSQL/latest/userguide/reporters.html#documentation-reporter">Human-readable test results</a></td>
+</tr>
+<tr>
+<td><code>UT_JUNIT_REPORTER</code></td>
+<td><a href="https://www.utplsql.org/utPLSQL/latest/userguide/reporters.html#junit-reporter">JUnit XML</a></td>
+</tr>
+<tr>
+<td><code>UT_TFS_JUNIT_REPORTER</code></td>
+<td><a href="https://www.utplsql.org/utPLSQL/latest/userguide/reporters.html#tfs-vsts-reporter">JUnit XML for TFS / Azure DevOps</a></td>
+</tr>
+<tr>
+<td><code>UT_TEAMCITY_REPORTER</code></td>
+<td><a href="https://www.utplsql.org/utPLSQL/latest/userguide/reporters.html#teamcity-reporter">TeamCity service messages</a></td>
+</tr>
+<tr>
+<td><code>UT_SONAR_TEST_REPORTER</code></td>
+<td><a href="https://www.utplsql.org/utPLSQL/latest/userguide/reporters.html#sonar-test-reporter">SonarQube generic test execution</a></td>
+</tr>
+<tr>
+<td><code>UT_TAP_REPORTER</code></td>
+<td><a href="https://www.utplsql.org/utPLSQL/latest/userguide/reporters.html#tap-reporter">Test Anything Protocol</a></td>
+</tr>
+<tr>
+<td><code>UT_DEBUG_REPORTER</code></td>
+<td><a href="https://www.utplsql.org/utPLSQL/latest/userguide/reporters.html#debug-reporter">Diagnostic output of the test run</a></td>
+</tr>
+<tr>
+<td><code>UT_COVERAGE_HTML_REPORTER</code></td>
+<td><a href="https://www.utplsql.org/utPLSQL/latest/userguide/reporters.html#coverage-reporters">Code coverage as HTML</a></td>
+</tr>
+<tr>
+<td><code>UT_COVERAGE_SONAR_REPORTER</code></td>
+<td><a href="https://www.utplsql.org/utPLSQL/latest/userguide/reporters.html#coverage-reporters">Code coverage for SonarQube</a></td>
+</tr>
+<tr>
+<td><code>UT_COVERAGE_COBERTURA_REPORTER</code></td>
+<td><a href="https://www.utplsql.org/utPLSQL/latest/userguide/reporters.html#coverage-reporters">Code coverage in Cobertura format</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="code-coverage">Code coverage<a class="headerlink" href="#code-coverage" title="Permanent link">&para;</a></h2>
+<p>Code coverage is gathered whenever a coverage reporter is configured. How utPLSQL gathers and reports coverage is
+described in <a href="https://www.utplsql.org/utPLSQL/latest/userguide/coverage.html">Coverage</a>.</p>
+<h3 id="choosing-the-objects-to-report">Choosing the objects to report<a class="headerlink" href="#choosing-the-objects-to-report" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>includeObject</code></td>
+<td>Comma-separated list of objects to include, format <code>[schema.]object[,[schema.]object ...]</code></td>
+</tr>
+<tr>
+<td><code>excludeObject</code></td>
+<td>Comma-separated list of objects to exclude, same format as <code>includeObject</code></td>
+</tr>
+<tr>
+<td><code>includeSchemaExpr</code></td>
+<td>Regular expression for the names of schemas to include</td>
+</tr>
+<tr>
+<td><code>excludeSchemaExpr</code></td>
+<td>Regular expression for the names of schemas to exclude</td>
+</tr>
+<tr>
+<td><code>includeObjectExpr</code></td>
+<td>Regular expression for the names of objects to include</td>
+</tr>
+<tr>
+<td><code>excludeObjectExpr</code></td>
+<td>Regular expression for the names of objects to exclude</td>
+</tr>
+</tbody>
+</table>
+<p>The regular expression filters need a utPLSQL version that supports them. See
+<a href="https://www.utplsql.org/utPLSQL/latest/userguide/coverage.html#coverage-reporting-options">Coverage reporting options</a>.</p>
+<h3 id="mapping-project-files-to-database-objects">Mapping project files to database objects<a class="headerlink" href="#mapping-project-files-to-database-objects" title="Permanent link">&para;</a></h3>
+<p>For <a href="https://www.utplsql.org/utPLSQL/latest/userguide/coverage.html#project-based-coverage">project based coverage</a>,
+utPLSQL reports coverage per source file instead of per database object. The plugin passes the files found by
+<code>sources</code> and <code>tests</code> to utPLSQL, which maps each file to a database object by its path:</p>
+<ul>
+<li><code>sources</code> / <code>tests</code> select the files (<code>directory</code> and <code>includes</code>). They default to <code>src/main/plsql</code> with <code>**/*.*</code> and
+  <code>src/test/plsql</code> with <code>**/*.pkg</code>.</li>
+<li><code>sourcesOwner</code> / <code>testsOwner</code> set the schema owning the objects.</li>
+<li><code>sourcesRegexExpression</code>, <code>sourcesOwnerSubexpression</code>, <code>sourcesNameSubexpression</code> and <code>sourcesTypeSubexpression</code>
+  (and their <code>tests...</code> counterparts) describe how the owner, name and type are read from the file path.</li>
+<li><code>sourcesCustomTypeMapping</code> / <code>testsCustomTypeMapping</code> map directory names or file extensions to object types.</li>
+</ul>
+<h2 id="skipping-tests">Skipping tests<a class="headerlink" href="#skipping-tests" title="Permanent link">&para;</a></h2>
+<p>The utPLSQL tests are skipped together with other tests by Maven's standard <code>-DskipTests</code> or <code>-Dmaven.test.skip=true</code>:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>mvn<span class="w"> </span>install<span class="w"> </span>-DskipTests
+</span></code></pre></div>
+<p>To skip only the utPLSQL tests, set <code>skipUtplsqlTests</code> to <code>true</code> in the plugin configuration or on the command line:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>mvn<span class="w"> </span>install<span class="w"> </span>-DskipUtplsqlTests<span class="o">=</span><span class="nb">true</span>
+</span></code></pre></div>
+<p><code>skipUtplsqlTests</code> takes precedence over <code>skipTests</code> and <code>maven.test.skip</code>. To skip other tests but run the utPLSQL
+tests, set it to <code>false</code>:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>mvn<span class="w"> </span>install<span class="w"> </span>-DskipTests<span class="w"> </span>-DskipUtplsqlTests<span class="o">=</span><span class="nb">false</span>
+</span></code></pre></div>
+<p>To skip the tests by default and enable them only when needed, set the property in the <code>pom.xml</code>:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">&lt;properties&gt;</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="nt">&lt;skipUtplsqlTests&gt;</span>true<span class="nt">&lt;/skipUtplsqlTests&gt;</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="nt">&lt;/properties&gt;</span>
+</span></code></pre></div>
+<p>and override it on the command line:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>mvn<span class="w"> </span>install<span class="w"> </span>-DskipUtplsqlTests<span class="o">=</span><span class="nb">false</span>
+</span></code></pre></div>
+<p>To run all tests but not fail the build on test failures, set <code>ignoreFailure</code> to <code>true</code>, or pass Maven's standard
+<code>-Dmaven.test.failure.ignore=true</code>.</p>
+<h2 id="configuration-reference">Configuration reference<a class="headerlink" href="#configuration-reference" title="Permanent link">&para;</a></h2>
+<p>All parameters are optional:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nt">&lt;project</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">"http://maven.apache.org/POM/4.0.0"</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">         </span><span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">         </span><span class="na">xsi:schemaLocation=</span><span class="s">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span><span class="nt">&gt;</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">    </span><span class="nt">&lt;groupId&gt;</span>org.my_org<span class="nt">&lt;/groupId&gt;</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">    </span><span class="nt">&lt;artifactId&gt;</span>my-artifact-name<span class="nt">&lt;/artifactId&gt;</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">    </span><span class="nt">&lt;version&gt;</span>1.0.0<span class="nt">&lt;/version&gt;</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="w">    </span><span class="nt">&lt;properties&gt;</span>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="w">        </span><span class="cm">&lt;!-- JDBC URL of the database. Command line: -DdbUrl=... --&gt;</span>
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="w">        </span><span class="nt">&lt;dbUrl&gt;</span>jdbc:oracle:thin:@//localhost:1521/FREEPDB1<span class="nt">&lt;/dbUrl&gt;</span>
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="w">        </span><span class="cm">&lt;!-- Database user. Leave unset when using an Oracle Wallet. Command line: -DdbUser=... --&gt;</span>
+</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="w">        </span><span class="nt">&lt;dbUser&gt;</span>app<span class="nt">&lt;/dbUser&gt;</span>
+</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a><span class="w">        </span><span class="cm">&lt;!-- Password of dbUser. Command line: -DdbPass=... --&gt;</span>
+</span><span id="__span-12-16"><a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a><span class="w">        </span><span class="nt">&lt;dbPass&gt;</span>app_password<span class="nt">&lt;/dbPass&gt;</span>
+</span><span id="__span-12-17"><a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="w">    </span><span class="nt">&lt;/properties&gt;</span>
+</span><span id="__span-12-18"><a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>
+</span><span id="__span-12-19"><a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a><span class="w">    </span><span class="nt">&lt;build&gt;</span>
+</span><span id="__span-12-20"><a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a><span class="w">        </span><span class="nt">&lt;plugins&gt;</span>
+</span><span id="__span-12-21"><a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a><span class="w">            </span><span class="nt">&lt;plugin&gt;</span>
+</span><span id="__span-12-22"><a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a><span class="w">                </span><span class="nt">&lt;groupId&gt;</span>org.utplsql<span class="nt">&lt;/groupId&gt;</span>
+</span><span id="__span-12-23"><a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a><span class="w">                </span><span class="nt">&lt;artifactId&gt;</span>utplsql-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+</span><span id="__span-12-24"><a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a><span class="w">                </span><span class="nt">&lt;version&gt;</span>3.2.0<span class="nt">&lt;/version&gt;</span>
+</span><span id="__span-12-25"><a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a><span class="w">                </span><span class="nt">&lt;executions&gt;</span>
+</span><span id="__span-12-26"><a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a><span class="w">                    </span><span class="nt">&lt;execution&gt;</span>
+</span><span id="__span-12-27"><a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a><span class="w">                        </span><span class="nt">&lt;goals&gt;</span>
+</span><span id="__span-12-28"><a id="__codelineno-12-28" name="__codelineno-12-28" href="#__codelineno-12-28"></a><span class="w">                            </span><span class="nt">&lt;goal&gt;</span>test<span class="nt">&lt;/goal&gt;</span>
+</span><span id="__span-12-29"><a id="__codelineno-12-29" name="__codelineno-12-29" href="#__codelineno-12-29"></a><span class="w">                        </span><span class="nt">&lt;/goals&gt;</span>
+</span><span id="__span-12-30"><a id="__codelineno-12-30" name="__codelineno-12-30" href="#__codelineno-12-30"></a><span class="w">                        </span><span class="nt">&lt;configuration&gt;</span>
+</span><span id="__span-12-31"><a id="__codelineno-12-31" name="__codelineno-12-31" href="#__codelineno-12-31"></a><span class="w">                            </span><span class="cm">&lt;!-- Suites to run, in the format schema[.package[.procedure]] --&gt;</span>
+</span><span id="__span-12-32"><a id="__codelineno-12-32" name="__codelineno-12-32" href="#__codelineno-12-32"></a><span class="w">                            </span><span class="cm">&lt;!-- or schema:suite[.suite[.suite][...]][.procedure]. --&gt;</span>
+</span><span id="__span-12-33"><a id="__codelineno-12-33" name="__codelineno-12-33" href="#__codelineno-12-33"></a><span class="w">                            </span><span class="cm">&lt;!-- Default: all suites in the schema of the connected user. --&gt;</span>
+</span><span id="__span-12-34"><a id="__codelineno-12-34" name="__codelineno-12-34" href="#__codelineno-12-34"></a><span class="w">                            </span><span class="nt">&lt;paths&gt;</span>
+</span><span id="__span-12-35"><a id="__codelineno-12-35" name="__codelineno-12-35" href="#__codelineno-12-35"></a><span class="w">                                </span><span class="nt">&lt;path&gt;</span>app<span class="nt">&lt;/path&gt;</span>
+</span><span id="__span-12-36"><a id="__codelineno-12-36" name="__codelineno-12-36" href="#__codelineno-12-36"></a><span class="w">                            </span><span class="nt">&lt;/paths&gt;</span>
+</span><span id="__span-12-37"><a id="__codelineno-12-37" name="__codelineno-12-37" href="#__codelineno-12-37"></a>
+</span><span id="__span-12-38"><a id="__codelineno-12-38" name="__codelineno-12-38" href="#__codelineno-12-38"></a><span class="w">                            </span><span class="cm">&lt;!-- Run only tests with these tags. --&gt;</span>
+</span><span id="__span-12-39"><a id="__codelineno-12-39" name="__codelineno-12-39" href="#__codelineno-12-39"></a><span class="w">                            </span><span class="nt">&lt;tags&gt;</span>
+</span><span id="__span-12-40"><a id="__codelineno-12-40" name="__codelineno-12-40" href="#__codelineno-12-40"></a><span class="w">                                </span><span class="nt">&lt;tag&gt;</span>fast<span class="nt">&lt;/tag&gt;</span>
+</span><span id="__span-12-41"><a id="__codelineno-12-41" name="__codelineno-12-41" href="#__codelineno-12-41"></a><span class="w">                            </span><span class="nt">&lt;/tags&gt;</span>
+</span><span id="__span-12-42"><a id="__codelineno-12-42" name="__codelineno-12-42" href="#__codelineno-12-42"></a>
+</span><span id="__span-12-43"><a id="__codelineno-12-43" name="__codelineno-12-43" href="#__codelineno-12-43"></a><span class="w">                            </span><span class="cm">&lt;!-- Run tests in random order, optionally with a fixed seed. --&gt;</span>
+</span><span id="__span-12-44"><a id="__codelineno-12-44" name="__codelineno-12-44" href="#__codelineno-12-44"></a><span class="w">                            </span><span class="cm">&lt;!-- Setting randomTestOrderSeed also enables randomTestOrder. --&gt;</span>
+</span><span id="__span-12-45"><a id="__codelineno-12-45" name="__codelineno-12-45" href="#__codelineno-12-45"></a><span class="w">                            </span><span class="cm">&lt;!-- Default: false, no seed. --&gt;</span>
+</span><span id="__span-12-46"><a id="__codelineno-12-46" name="__codelineno-12-46" href="#__codelineno-12-46"></a><span class="w">                            </span><span class="nt">&lt;randomTestOrder&gt;</span>true<span class="nt">&lt;/randomTestOrder&gt;</span>
+</span><span id="__span-12-47"><a id="__codelineno-12-47" name="__codelineno-12-47" href="#__codelineno-12-47"></a><span class="w">                            </span><span class="nt">&lt;randomTestOrderSeed&gt;</span>5<span class="nt">&lt;/randomTestOrderSeed&gt;</span>
+</span><span id="__span-12-48"><a id="__codelineno-12-48" name="__codelineno-12-48" href="#__codelineno-12-48"></a>
+</span><span id="__span-12-49"><a id="__codelineno-12-49" name="__codelineno-12-49" href="#__codelineno-12-49"></a><span class="w">                            </span><span class="cm">&lt;!-- Do not fail the build when tests fail. --&gt;</span>
+</span><span id="__span-12-50"><a id="__codelineno-12-50" name="__codelineno-12-50" href="#__codelineno-12-50"></a><span class="w">                            </span><span class="cm">&lt;!-- Default: ${maven.test.failure.ignore} --&gt;</span>
+</span><span id="__span-12-51"><a id="__codelineno-12-51" name="__codelineno-12-51" href="#__codelineno-12-51"></a><span class="w">                            </span><span class="nt">&lt;ignoreFailure&gt;</span>false<span class="nt">&lt;/ignoreFailure&gt;</span>
+</span><span id="__span-12-52"><a id="__codelineno-12-52" name="__codelineno-12-52" href="#__codelineno-12-52"></a>
+</span><span id="__span-12-53"><a id="__codelineno-12-53" name="__codelineno-12-53" href="#__codelineno-12-53"></a><span class="w">                            </span><span class="cm">&lt;!-- Skip (true) or run (false) the tests, regardless of skipTests and maven.test.skip. --&gt;</span>
+</span><span id="__span-12-54"><a id="__codelineno-12-54" name="__codelineno-12-54" href="#__codelineno-12-54"></a><span class="w">                            </span><span class="cm">&lt;!-- Command line: -DskipUtplsqlTests=true --&gt;</span>
+</span><span id="__span-12-55"><a id="__codelineno-12-55" name="__codelineno-12-55" href="#__codelineno-12-55"></a><span class="w">                            </span><span class="cm">&lt;!-- Default: not set, the tests are skipped by -DskipTests or -Dmaven.test.skip=true --&gt;</span>
+</span><span id="__span-12-56"><a id="__codelineno-12-56" name="__codelineno-12-56" href="#__codelineno-12-56"></a><span class="w">                            </span><span class="cm">&lt;!-- &lt;skipUtplsqlTests&gt;true&lt;/skipUtplsqlTests&gt; --&gt;</span>
+</span><span id="__span-12-57"><a id="__codelineno-12-57" name="__codelineno-12-57" href="#__codelineno-12-57"></a>
+</span><span id="__span-12-58"><a id="__codelineno-12-58" name="__codelineno-12-58" href="#__codelineno-12-58"></a><span class="w">                            </span><span class="cm">&lt;!-- Skip the check of compatibility with the utPLSQL version in the database. --&gt;</span>
+</span><span id="__span-12-59"><a id="__codelineno-12-59" name="__codelineno-12-59" href="#__codelineno-12-59"></a><span class="w">                            </span><span class="cm">&lt;!-- Default: false --&gt;</span>
+</span><span id="__span-12-60"><a id="__codelineno-12-60" name="__codelineno-12-60" href="#__codelineno-12-60"></a><span class="w">                            </span><span class="nt">&lt;skipCompatibilityCheck&gt;</span>false<span class="nt">&lt;/skipCompatibilityCheck&gt;</span>
+</span><span id="__span-12-61"><a id="__codelineno-12-61" name="__codelineno-12-61" href="#__codelineno-12-61"></a>
+</span><span id="__span-12-62"><a id="__codelineno-12-62" name="__codelineno-12-62" href="#__codelineno-12-62"></a><span class="w">                            </span><span class="cm">&lt;!-- Print DBMS_OUTPUT of the tests. --&gt;</span>
+</span><span id="__span-12-63"><a id="__codelineno-12-63" name="__codelineno-12-63" href="#__codelineno-12-63"></a><span class="w">                            </span><span class="cm">&lt;!-- Default: false --&gt;</span>
+</span><span id="__span-12-64"><a id="__codelineno-12-64" name="__codelineno-12-64" href="#__codelineno-12-64"></a><span class="w">                            </span><span class="nt">&lt;dbmsOutput&gt;</span>false<span class="nt">&lt;/dbmsOutput&gt;</span>
+</span><span id="__span-12-65"><a id="__codelineno-12-65" name="__codelineno-12-65" href="#__codelineno-12-65"></a>
+</span><span id="__span-12-66"><a id="__codelineno-12-66" name="__codelineno-12-66" href="#__codelineno-12-66"></a><span class="w">                            </span><span class="cm">&lt;!-- Timeout in seconds around reporter creation, retrying when the database is not ready. --&gt;</span>
+</span><span id="__span-12-67"><a id="__codelineno-12-67" name="__codelineno-12-67" href="#__codelineno-12-67"></a><span class="w">                            </span><span class="cm">&lt;!-- Default: 0 (no timeout) --&gt;</span>
+</span><span id="__span-12-68"><a id="__codelineno-12-68" name="__codelineno-12-68" href="#__codelineno-12-68"></a><span class="w">                            </span><span class="nt">&lt;oraStuckTimeout&gt;</span>0<span class="nt">&lt;/oraStuckTimeout&gt;</span>
+</span><span id="__span-12-69"><a id="__codelineno-12-69" name="__codelineno-12-69" href="#__codelineno-12-69"></a>
+</span><span id="__span-12-70"><a id="__codelineno-12-70" name="__codelineno-12-70" href="#__codelineno-12-70"></a><span class="w">                            </span><span class="cm">&lt;!-- Reporters and their output. --&gt;</span>
+</span><span id="__span-12-71"><a id="__codelineno-12-71" name="__codelineno-12-71" href="#__codelineno-12-71"></a><span class="w">                            </span><span class="cm">&lt;!-- Default: UT_DOCUMENTATION_REPORTER to the console. --&gt;</span>
+</span><span id="__span-12-72"><a id="__codelineno-12-72" name="__codelineno-12-72" href="#__codelineno-12-72"></a><span class="w">                            </span><span class="nt">&lt;reporters&gt;</span>
+</span><span id="__span-12-73"><a id="__codelineno-12-73" name="__codelineno-12-73" href="#__codelineno-12-73"></a><span class="w">                                </span><span class="nt">&lt;reporter&gt;</span>
+</span><span id="__span-12-74"><a id="__codelineno-12-74" name="__codelineno-12-74" href="#__codelineno-12-74"></a><span class="w">                                    </span><span class="nt">&lt;name&gt;</span>UT_DOCUMENTATION_REPORTER<span class="nt">&lt;/name&gt;</span>
+</span><span id="__span-12-75"><a id="__codelineno-12-75" name="__codelineno-12-75" href="#__codelineno-12-75"></a><span class="w">                                </span><span class="nt">&lt;/reporter&gt;</span>
+</span><span id="__span-12-76"><a id="__codelineno-12-76" name="__codelineno-12-76" href="#__codelineno-12-76"></a><span class="w">                                </span><span class="nt">&lt;reporter&gt;</span>
+</span><span id="__span-12-77"><a id="__codelineno-12-77" name="__codelineno-12-77" href="#__codelineno-12-77"></a><span class="w">                                    </span><span class="nt">&lt;name&gt;</span>UT_SONAR_TEST_REPORTER<span class="nt">&lt;/name&gt;</span>
+</span><span id="__span-12-78"><a id="__codelineno-12-78" name="__codelineno-12-78" href="#__codelineno-12-78"></a><span class="w">                                    </span><span class="cm">&lt;!-- Relative paths are resolved against the build directory. --&gt;</span>
+</span><span id="__span-12-79"><a id="__codelineno-12-79" name="__codelineno-12-79" href="#__codelineno-12-79"></a><span class="w">                                    </span><span class="nt">&lt;fileOutput&gt;</span>utplsql/sonar-test-report.xml<span class="nt">&lt;/fileOutput&gt;</span>
+</span><span id="__span-12-80"><a id="__codelineno-12-80" name="__codelineno-12-80" href="#__codelineno-12-80"></a><span class="w">                                    </span><span class="cm">&lt;!-- Default: true without fileOutput, false with fileOutput. --&gt;</span>
+</span><span id="__span-12-81"><a id="__codelineno-12-81" name="__codelineno-12-81" href="#__codelineno-12-81"></a><span class="w">                                    </span><span class="nt">&lt;consoleOutput&gt;</span>false<span class="nt">&lt;/consoleOutput&gt;</span>
+</span><span id="__span-12-82"><a id="__codelineno-12-82" name="__codelineno-12-82" href="#__codelineno-12-82"></a><span class="w">                                </span><span class="nt">&lt;/reporter&gt;</span>
+</span><span id="__span-12-83"><a id="__codelineno-12-83" name="__codelineno-12-83" href="#__codelineno-12-83"></a><span class="w">                                </span><span class="nt">&lt;reporter&gt;</span>
+</span><span id="__span-12-84"><a id="__codelineno-12-84" name="__codelineno-12-84" href="#__codelineno-12-84"></a><span class="w">                                    </span><span class="nt">&lt;name&gt;</span>UT_COVERAGE_SONAR_REPORTER<span class="nt">&lt;/name&gt;</span>
+</span><span id="__span-12-85"><a id="__codelineno-12-85" name="__codelineno-12-85" href="#__codelineno-12-85"></a><span class="w">                                    </span><span class="nt">&lt;fileOutput&gt;</span>utplsql/coverage-sonar-report.xml<span class="nt">&lt;/fileOutput&gt;</span>
+</span><span id="__span-12-86"><a id="__codelineno-12-86" name="__codelineno-12-86" href="#__codelineno-12-86"></a><span class="w">                                </span><span class="nt">&lt;/reporter&gt;</span>
+</span><span id="__span-12-87"><a id="__codelineno-12-87" name="__codelineno-12-87" href="#__codelineno-12-87"></a><span class="w">                            </span><span class="nt">&lt;/reporters&gt;</span>
+</span><span id="__span-12-88"><a id="__codelineno-12-88" name="__codelineno-12-88" href="#__codelineno-12-88"></a>
+</span><span id="__span-12-89"><a id="__codelineno-12-89" name="__codelineno-12-89" href="#__codelineno-12-89"></a><span class="w">                            </span><span class="cm">&lt;!-- Objects to include in / exclude from the coverage report. --&gt;</span>
+</span><span id="__span-12-90"><a id="__codelineno-12-90" name="__codelineno-12-90" href="#__codelineno-12-90"></a><span class="w">                            </span><span class="cm">&lt;!-- Format: [schema.]object[,[schema.]object ...] --&gt;</span>
+</span><span id="__span-12-91"><a id="__codelineno-12-91" name="__codelineno-12-91" href="#__codelineno-12-91"></a><span class="w">                            </span><span class="nt">&lt;includeObject&gt;</span>app.pkg_orders,app.pkg_customers<span class="nt">&lt;/includeObject&gt;</span>
+</span><span id="__span-12-92"><a id="__codelineno-12-92" name="__codelineno-12-92" href="#__codelineno-12-92"></a><span class="w">                            </span><span class="nt">&lt;excludeObject&gt;</span>app.pkg_logging<span class="nt">&lt;/excludeObject&gt;</span>
+</span><span id="__span-12-93"><a id="__codelineno-12-93" name="__codelineno-12-93" href="#__codelineno-12-93"></a>
+</span><span id="__span-12-94"><a id="__codelineno-12-94" name="__codelineno-12-94" href="#__codelineno-12-94"></a><span class="w">                            </span><span class="cm">&lt;!-- Regular expressions for schema and object names to include in / exclude from --&gt;</span>
+</span><span id="__span-12-95"><a id="__codelineno-12-95" name="__codelineno-12-95" href="#__codelineno-12-95"></a><span class="w">                            </span><span class="cm">&lt;!-- the coverage report. --&gt;</span>
+</span><span id="__span-12-96"><a id="__codelineno-12-96" name="__codelineno-12-96" href="#__codelineno-12-96"></a><span class="w">                            </span><span class="nt">&lt;includeSchemaExpr&gt;</span>^APP$<span class="nt">&lt;/includeSchemaExpr&gt;</span>
+</span><span id="__span-12-97"><a id="__codelineno-12-97" name="__codelineno-12-97" href="#__codelineno-12-97"></a><span class="w">                            </span><span class="nt">&lt;excludeSchemaExpr&gt;</span>^APP_TEST$<span class="nt">&lt;/excludeSchemaExpr&gt;</span>
+</span><span id="__span-12-98"><a id="__codelineno-12-98" name="__codelineno-12-98" href="#__codelineno-12-98"></a><span class="w">                            </span><span class="nt">&lt;includeObjectExpr&gt;</span>^PKG_<span class="nt">&lt;/includeObjectExpr&gt;</span>
+</span><span id="__span-12-99"><a id="__codelineno-12-99" name="__codelineno-12-99" href="#__codelineno-12-99"></a><span class="w">                            </span><span class="nt">&lt;excludeObjectExpr&gt;</span>_TMP$<span class="nt">&lt;/excludeObjectExpr&gt;</span>
+</span><span id="__span-12-100"><a id="__codelineno-12-100" name="__codelineno-12-100" href="#__codelineno-12-100"></a>
+</span><span id="__span-12-101"><a id="__codelineno-12-101" name="__codelineno-12-101" href="#__codelineno-12-101"></a><span class="w">                            </span><span class="cm">&lt;!-- Source files, mapped to database objects for coverage reporting. --&gt;</span>
+</span><span id="__span-12-102"><a id="__codelineno-12-102" name="__codelineno-12-102" href="#__codelineno-12-102"></a><span class="w">                            </span><span class="cm">&lt;!-- Default: src/main/plsql, **/*.* --&gt;</span>
+</span><span id="__span-12-103"><a id="__codelineno-12-103" name="__codelineno-12-103" href="#__codelineno-12-103"></a><span class="w">                            </span><span class="nt">&lt;sources&gt;</span>
+</span><span id="__span-12-104"><a id="__codelineno-12-104" name="__codelineno-12-104" href="#__codelineno-12-104"></a><span class="w">                                </span><span class="nt">&lt;source&gt;</span>
+</span><span id="__span-12-105"><a id="__codelineno-12-105" name="__codelineno-12-105" href="#__codelineno-12-105"></a><span class="w">                                    </span><span class="nt">&lt;directory&gt;</span>src/main/plsql<span class="nt">&lt;/directory&gt;</span>
+</span><span id="__span-12-106"><a id="__codelineno-12-106" name="__codelineno-12-106" href="#__codelineno-12-106"></a><span class="w">                                    </span><span class="nt">&lt;includes&gt;</span>
+</span><span id="__span-12-107"><a id="__codelineno-12-107" name="__codelineno-12-107" href="#__codelineno-12-107"></a><span class="w">                                        </span><span class="nt">&lt;include&gt;</span>**/*.pks<span class="nt">&lt;/include&gt;</span>
+</span><span id="__span-12-108"><a id="__codelineno-12-108" name="__codelineno-12-108" href="#__codelineno-12-108"></a><span class="w">                                        </span><span class="nt">&lt;include&gt;</span>**/*.pkb<span class="nt">&lt;/include&gt;</span>
+</span><span id="__span-12-109"><a id="__codelineno-12-109" name="__codelineno-12-109" href="#__codelineno-12-109"></a><span class="w">                                    </span><span class="nt">&lt;/includes&gt;</span>
+</span><span id="__span-12-110"><a id="__codelineno-12-110" name="__codelineno-12-110" href="#__codelineno-12-110"></a><span class="w">                                </span><span class="nt">&lt;/source&gt;</span>
+</span><span id="__span-12-111"><a id="__codelineno-12-111" name="__codelineno-12-111" href="#__codelineno-12-111"></a><span class="w">                            </span><span class="nt">&lt;/sources&gt;</span>
+</span><span id="__span-12-112"><a id="__codelineno-12-112" name="__codelineno-12-112" href="#__codelineno-12-112"></a>
+</span><span id="__span-12-113"><a id="__codelineno-12-113" name="__codelineno-12-113" href="#__codelineno-12-113"></a><span class="w">                            </span><span class="cm">&lt;!-- How owner, type and name of the database object are read from a source file path, --&gt;</span>
+</span><span id="__span-12-114"><a id="__codelineno-12-114" name="__codelineno-12-114" href="#__codelineno-12-114"></a><span class="w">                            </span><span class="cm">&lt;!-- e.g. src/main/plsql/app/package_bodies/pkg_orders.pkb is package body APP.PKG_ORDERS. --&gt;</span>
+</span><span id="__span-12-115"><a id="__codelineno-12-115" name="__codelineno-12-115" href="#__codelineno-12-115"></a><span class="w">                            </span><span class="cm">&lt;!-- For one owner of all source files, set sourcesOwner instead of sourcesOwnerSubexpression. --&gt;</span>
+</span><span id="__span-12-116"><a id="__codelineno-12-116" name="__codelineno-12-116" href="#__codelineno-12-116"></a><span class="w">                            </span><span class="nt">&lt;sourcesRegexExpression&gt;</span>.*/(\w+)/(\w+)/(\w+)\.\w{3}<span class="nt">&lt;/sourcesRegexExpression&gt;</span>
+</span><span id="__span-12-117"><a id="__codelineno-12-117" name="__codelineno-12-117" href="#__codelineno-12-117"></a><span class="w">                            </span><span class="nt">&lt;sourcesOwnerSubexpression&gt;</span>1<span class="nt">&lt;/sourcesOwnerSubexpression&gt;</span>
+</span><span id="__span-12-118"><a id="__codelineno-12-118" name="__codelineno-12-118" href="#__codelineno-12-118"></a><span class="w">                            </span><span class="nt">&lt;sourcesTypeSubexpression&gt;</span>2<span class="nt">&lt;/sourcesTypeSubexpression&gt;</span>
+</span><span id="__span-12-119"><a id="__codelineno-12-119" name="__codelineno-12-119" href="#__codelineno-12-119"></a><span class="w">                            </span><span class="nt">&lt;sourcesNameSubexpression&gt;</span>3<span class="nt">&lt;/sourcesNameSubexpression&gt;</span>
+</span><span id="__span-12-120"><a id="__codelineno-12-120" name="__codelineno-12-120" href="#__codelineno-12-120"></a><span class="w">                            </span><span class="nt">&lt;sourcesCustomTypeMapping&gt;</span>
+</span><span id="__span-12-121"><a id="__codelineno-12-121" name="__codelineno-12-121" href="#__codelineno-12-121"></a><span class="w">                                </span><span class="nt">&lt;customTypeMapping&gt;</span>
+</span><span id="__span-12-122"><a id="__codelineno-12-122" name="__codelineno-12-122" href="#__codelineno-12-122"></a><span class="w">                                    </span><span class="nt">&lt;type&gt;</span>package<span class="w"> </span>body<span class="nt">&lt;/type&gt;</span>
+</span><span id="__span-12-123"><a id="__codelineno-12-123" name="__codelineno-12-123" href="#__codelineno-12-123"></a><span class="w">                                    </span><span class="nt">&lt;customMapping&gt;</span>package_bodies<span class="nt">&lt;/customMapping&gt;</span>
+</span><span id="__span-12-124"><a id="__codelineno-12-124" name="__codelineno-12-124" href="#__codelineno-12-124"></a><span class="w">                                </span><span class="nt">&lt;/customTypeMapping&gt;</span>
+</span><span id="__span-12-125"><a id="__codelineno-12-125" name="__codelineno-12-125" href="#__codelineno-12-125"></a><span class="w">                            </span><span class="nt">&lt;/sourcesCustomTypeMapping&gt;</span>
+</span><span id="__span-12-126"><a id="__codelineno-12-126" name="__codelineno-12-126" href="#__codelineno-12-126"></a>
+</span><span id="__span-12-127"><a id="__codelineno-12-127" name="__codelineno-12-127" href="#__codelineno-12-127"></a><span class="w">                            </span><span class="cm">&lt;!-- Test files, mapped the same way as source files. --&gt;</span>
+</span><span id="__span-12-128"><a id="__codelineno-12-128" name="__codelineno-12-128" href="#__codelineno-12-128"></a><span class="w">                            </span><span class="cm">&lt;!-- Default: src/test/plsql, **/*.pkg --&gt;</span>
+</span><span id="__span-12-129"><a id="__codelineno-12-129" name="__codelineno-12-129" href="#__codelineno-12-129"></a><span class="w">                            </span><span class="nt">&lt;tests&gt;</span>
+</span><span id="__span-12-130"><a id="__codelineno-12-130" name="__codelineno-12-130" href="#__codelineno-12-130"></a><span class="w">                                </span><span class="nt">&lt;test&gt;</span>
+</span><span id="__span-12-131"><a id="__codelineno-12-131" name="__codelineno-12-131" href="#__codelineno-12-131"></a><span class="w">                                    </span><span class="nt">&lt;directory&gt;</span>src/test/plsql<span class="nt">&lt;/directory&gt;</span>
+</span><span id="__span-12-132"><a id="__codelineno-12-132" name="__codelineno-12-132" href="#__codelineno-12-132"></a><span class="w">                                    </span><span class="nt">&lt;includes&gt;</span>
+</span><span id="__span-12-133"><a id="__codelineno-12-133" name="__codelineno-12-133" href="#__codelineno-12-133"></a><span class="w">                                        </span><span class="nt">&lt;include&gt;</span>**/*.pks<span class="nt">&lt;/include&gt;</span>
+</span><span id="__span-12-134"><a id="__codelineno-12-134" name="__codelineno-12-134" href="#__codelineno-12-134"></a><span class="w">                                        </span><span class="nt">&lt;include&gt;</span>**/*.pkb<span class="nt">&lt;/include&gt;</span>
+</span><span id="__span-12-135"><a id="__codelineno-12-135" name="__codelineno-12-135" href="#__codelineno-12-135"></a><span class="w">                                    </span><span class="nt">&lt;/includes&gt;</span>
+</span><span id="__span-12-136"><a id="__codelineno-12-136" name="__codelineno-12-136" href="#__codelineno-12-136"></a><span class="w">                                </span><span class="nt">&lt;/test&gt;</span>
+</span><span id="__span-12-137"><a id="__codelineno-12-137" name="__codelineno-12-137" href="#__codelineno-12-137"></a><span class="w">                            </span><span class="nt">&lt;/tests&gt;</span>
+</span><span id="__span-12-138"><a id="__codelineno-12-138" name="__codelineno-12-138" href="#__codelineno-12-138"></a>
+</span><span id="__span-12-139"><a id="__codelineno-12-139" name="__codelineno-12-139" href="#__codelineno-12-139"></a><span class="w">                            </span><span class="cm">&lt;!-- For one owner of all test files, set testsOwner instead of testsOwnerSubexpression. --&gt;</span>
+</span><span id="__span-12-140"><a id="__codelineno-12-140" name="__codelineno-12-140" href="#__codelineno-12-140"></a><span class="w">                            </span><span class="nt">&lt;testsRegexExpression&gt;</span>.*/(\w+)/(\w+)/(\w+)\.\w{3}<span class="nt">&lt;/testsRegexExpression&gt;</span>
+</span><span id="__span-12-141"><a id="__codelineno-12-141" name="__codelineno-12-141" href="#__codelineno-12-141"></a><span class="w">                            </span><span class="nt">&lt;testsOwnerSubexpression&gt;</span>1<span class="nt">&lt;/testsOwnerSubexpression&gt;</span>
+</span><span id="__span-12-142"><a id="__codelineno-12-142" name="__codelineno-12-142" href="#__codelineno-12-142"></a><span class="w">                            </span><span class="nt">&lt;testsTypeSubexpression&gt;</span>2<span class="nt">&lt;/testsTypeSubexpression&gt;</span>
+</span><span id="__span-12-143"><a id="__codelineno-12-143" name="__codelineno-12-143" href="#__codelineno-12-143"></a><span class="w">                            </span><span class="nt">&lt;testsNameSubexpression&gt;</span>3<span class="nt">&lt;/testsNameSubexpression&gt;</span>
+</span><span id="__span-12-144"><a id="__codelineno-12-144" name="__codelineno-12-144" href="#__codelineno-12-144"></a><span class="w">                            </span><span class="nt">&lt;testsCustomTypeMapping&gt;</span>
+</span><span id="__span-12-145"><a id="__codelineno-12-145" name="__codelineno-12-145" href="#__codelineno-12-145"></a><span class="w">                                </span><span class="nt">&lt;customTypeMapping&gt;</span>
+</span><span id="__span-12-146"><a id="__codelineno-12-146" name="__codelineno-12-146" href="#__codelineno-12-146"></a><span class="w">                                    </span><span class="nt">&lt;type&gt;</span>package<span class="w"> </span>body<span class="nt">&lt;/type&gt;</span>
+</span><span id="__span-12-147"><a id="__codelineno-12-147" name="__codelineno-12-147" href="#__codelineno-12-147"></a><span class="w">                                    </span><span class="nt">&lt;customMapping&gt;</span>package_bodies<span class="nt">&lt;/customMapping&gt;</span>
+</span><span id="__span-12-148"><a id="__codelineno-12-148" name="__codelineno-12-148" href="#__codelineno-12-148"></a><span class="w">                                </span><span class="nt">&lt;/customTypeMapping&gt;</span>
+</span><span id="__span-12-149"><a id="__codelineno-12-149" name="__codelineno-12-149" href="#__codelineno-12-149"></a><span class="w">                            </span><span class="nt">&lt;/testsCustomTypeMapping&gt;</span>
+</span><span id="__span-12-150"><a id="__codelineno-12-150" name="__codelineno-12-150" href="#__codelineno-12-150"></a><span class="w">                        </span><span class="nt">&lt;/configuration&gt;</span>
+</span><span id="__span-12-151"><a id="__codelineno-12-151" name="__codelineno-12-151" href="#__codelineno-12-151"></a><span class="w">                    </span><span class="nt">&lt;/execution&gt;</span>
+</span><span id="__span-12-152"><a id="__codelineno-12-152" name="__codelineno-12-152" href="#__codelineno-12-152"></a><span class="w">                </span><span class="nt">&lt;/executions&gt;</span>
+</span><span id="__span-12-153"><a id="__codelineno-12-153" name="__codelineno-12-153" href="#__codelineno-12-153"></a><span class="w">            </span><span class="nt">&lt;/plugin&gt;</span>
+</span><span id="__span-12-154"><a id="__codelineno-12-154" name="__codelineno-12-154" href="#__codelineno-12-154"></a><span class="w">        </span><span class="nt">&lt;/plugins&gt;</span>
+</span><span id="__span-12-155"><a id="__codelineno-12-155" name="__codelineno-12-155" href="#__codelineno-12-155"></a><span class="w">    </span><span class="nt">&lt;/build&gt;</span>
+</span><span id="__span-12-156"><a id="__codelineno-12-156" name="__codelineno-12-156" href="#__codelineno-12-156"></a><span class="nt">&lt;/project&gt;</span>
+</span></code></pre></div>
+<h2 id="sample-projects">Sample projects<a class="headerlink" href="#sample-projects" title="Permanent link">&para;</a></h2>
+<p>The plugin's integration tests double as examples, in
+<a href="../https:/raw.githubusercontent.com/utPLSQL/utPLSQL-maven-plugin/develop/src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT"><code>src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT</code></a>:</p>
+<ul>
+<li><a href="../https:/raw.githubusercontent.com/utPLSQL/utPLSQL-maven-plugin/develop/src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT/minimalist"><code>minimalist</code></a>: no plugin configuration,
+  only the connection.</li>
+<li><a href="../https:/raw.githubusercontent.com/utPLSQL/utPLSQL-maven-plugin/develop/src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT/simple"><code>simple</code></a>: standard project directory
+  structure with Sonar reporters.</li>
+<li><a href="../https:/raw.githubusercontent.com/utPLSQL/utPLSQL-maven-plugin/develop/src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT/regex"><code>regex</code></a>: custom directory structure, mapped
+  to database objects with <code>sourcesRegexExpression</code>, <code>testsRegexExpression</code> and related parameters.</li>
+<li><a href="../https:/raw.githubusercontent.com/utPLSQL/utPLSQL-maven-plugin/develop/src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT/type_mapping"><code>type_mapping</code></a>: regular expressions
+  combined with custom type mappings.</li>
+<li><a href="../https:/raw.githubusercontent.com/utPLSQL/utPLSQL-maven-plugin/develop/src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT/owner_param"><code>owner_param</code></a>: <code>sourcesOwner</code> and
+  <code>testsOwner</code>.</li>
+<li><a href="../https:/raw.githubusercontent.com/utPLSQL/utPLSQL-maven-plugin/develop/src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT/tags"><code>tags</code></a>: running tests by tag.</li>
+<li><a href="../https:/raw.githubusercontent.com/utPLSQL/utPLSQL-maven-plugin/develop/src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT/include_object"><code>include_object</code></a>,
+  <a href="../https:/raw.githubusercontent.com/utPLSQL/utPLSQL-maven-plugin/develop/src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT/exclude_object"><code>exclude_object</code></a>,
+  <a href="../https:/raw.githubusercontent.com/utPLSQL/utPLSQL-maven-plugin/develop/src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT/include_object_expr"><code>include_object_expr</code></a> and
+  <a href="../https:/raw.githubusercontent.com/utPLSQL/utPLSQL-maven-plugin/develop/src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT/exclude_object_expr"><code>exclude_object_expr</code></a>:
+  choosing the objects in the coverage report.</li>
+<li><a href="../https:/raw.githubusercontent.com/utPLSQL/utPLSQL-maven-plugin/develop/src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT/ora_stuck_timeout"><code>ora_stuck_timeout</code></a>:
+  <code>oraStuckTimeout</code>.</li>
+<li><a href="../https:/raw.githubusercontent.com/utPLSQL/utPLSQL-maven-plugin/develop/src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT/skip"><code>skip</code></a>: <code>skipUtplsqlTests</code>.</li>
+<li><a href="../https:/raw.githubusercontent.com/utPLSQL/utPLSQL-maven-plugin/develop/src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT/skip_tests"><code>skip_tests</code></a>,
+  <a href="../https:/raw.githubusercontent.com/utPLSQL/utPLSQL-maven-plugin/develop/src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT/maven_test_skip"><code>maven_test_skip</code></a> and
+  <a href="../https:/raw.githubusercontent.com/utPLSQL/utPLSQL-maven-plugin/develop/src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT/skip_tests_overridden_by_skip_utplsql_tests"><code>skip_tests_overridden_by_skip_utplsql_tests</code></a>:
+  skipping with <code>-DskipTests</code> and <code>-Dmaven.test.skip=true</code>, run with the system properties set in <code>UtPlsqlMojoIT</code>.</li>
+</ul>
+<h2 id="comparison-with-utplsql-cli">Comparison with utPLSQL-cli<a class="headerlink" href="#comparison-with-utplsql-cli" title="Permanent link">&para;</a></h2>
+<p><a href="https://github.com/utPLSQL/utPLSQL-cli">utPLSQL-cli</a> runs the same tests from the command line. The table maps its
+<a href="https://github.com/utPLSQL/utPLSQL-cli#run"><code>run</code> command options</a> to the plugin configuration:</p>
+<table>
+<thead>
+<tr>
+<th>utPLSQL-cli option</th>
+<th>Maven configuration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;ConnectionURL&gt;</code></td>
+<td><code>dbUrl</code>, <code>dbUser</code>, <code>dbPass</code></td>
+</tr>
+<tr>
+<td><code>-p</code>, <code>--path</code></td>
+<td><code>paths.path</code></td>
+</tr>
+<tr>
+<td><code>--tags</code></td>
+<td><code>tags.tag</code></td>
+</tr>
+<tr>
+<td><code>-f</code>, <code>--format</code></td>
+<td><code>reporters.reporter.name</code></td>
+</tr>
+<tr>
+<td><code>-o</code></td>
+<td><code>reporters.reporter.fileOutput</code></td>
+</tr>
+<tr>
+<td><code>-s</code></td>
+<td><code>reporters.reporter.consoleOutput</code></td>
+</tr>
+<tr>
+<td><code>-c</code>, <code>--color</code></td>
+<td>follows Maven's console color setting</td>
+</tr>
+<tr>
+<td><code>--failure-exit-code</code></td>
+<td>not available; use <code>ignoreFailure</code> to not fail the build</td>
+</tr>
+<tr>
+<td><code>-scc</code>, <code>--skip-compatibility-check</code></td>
+<td><code>skipCompatibilityCheck</code></td>
+</tr>
+<tr>
+<td><code>-D</code>, <code>--dbms_output</code></td>
+<td><code>dbmsOutput</code></td>
+</tr>
+<tr>
+<td><code>-r</code>, <code>--random-test-order</code></td>
+<td><code>randomTestOrder</code></td>
+</tr>
+<tr>
+<td><code>-seed</code>, <code>--random-test-order-seed</code></td>
+<td><code>randomTestOrderSeed</code></td>
+</tr>
+<tr>
+<td><code>--ora-stuck-timeout</code></td>
+<td><code>oraStuckTimeout</code></td>
+</tr>
+<tr>
+<td><code>-include</code></td>
+<td><code>includeObject</code></td>
+</tr>
+<tr>
+<td><code>-exclude</code></td>
+<td><code>excludeObject</code></td>
+</tr>
+<tr>
+<td>not available</td>
+<td><code>includeSchemaExpr</code>, <code>excludeSchemaExpr</code>, <code>includeObjectExpr</code>, <code>excludeObjectExpr</code></td>
+</tr>
+<tr>
+<td>not available</td>
+<td><code>skipUtplsqlTests</code></td>
+</tr>
+<tr>
+<td><code>--coverage-schemes</code></td>
+<td>not available</td>
+</tr>
+<tr>
+<td><code>-t</code>, <code>--timeout</code></td>
+<td>not available</td>
+</tr>
+<tr>
+<td><code>-source_path</code></td>
+<td><code>sources.source.directory</code></td>
+</tr>
+<tr>
+<td><code>-owner</code></td>
+<td><code>sourcesOwner</code></td>
+</tr>
+<tr>
+<td><code>-regex_expression</code></td>
+<td><code>sourcesRegexExpression</code></td>
+</tr>
+<tr>
+<td><code>-type_mapping</code></td>
+<td><code>sourcesCustomTypeMapping.customTypeMapping</code></td>
+</tr>
+<tr>
+<td><code>-owner_subexpression</code></td>
+<td><code>sourcesOwnerSubexpression</code></td>
+</tr>
+<tr>
+<td><code>-type_subexpression</code></td>
+<td><code>sourcesTypeSubexpression</code></td>
+</tr>
+<tr>
+<td><code>-name_subexpression</code></td>
+<td><code>sourcesNameSubexpression</code></td>
+</tr>
+<tr>
+<td><code>-test_path</code></td>
+<td><code>tests.test.directory</code></td>
+</tr>
+<tr>
+<td><code>-owner</code></td>
+<td><code>testsOwner</code></td>
+</tr>
+<tr>
+<td><code>-regex_expression</code></td>
+<td><code>testsRegexExpression</code></td>
+</tr>
+<tr>
+<td><code>-type_mapping</code></td>
+<td><code>testsCustomTypeMapping.customTypeMapping</code></td>
+</tr>
+<tr>
+<td><code>-owner_subexpression</code></td>
+<td><code>testsOwnerSubexpression</code></td>
+</tr>
+<tr>
+<td><code>-type_subexpression</code></td>
+<td><code>testsTypeSubexpression</code></td>
+</tr>
+<tr>
+<td><code>-name_subexpression</code></td>
+<td><code>testsNameSubexpression</code></td>
+</tr>
+</tbody>
+</table>
+<p>In utPLSQL-cli, <code>-owner</code>, <code>-regex_expression</code> and the other mapping options apply to the preceding <code>-source_path</code> or
+<code>-test_path</code>.</p>
 
 
 
