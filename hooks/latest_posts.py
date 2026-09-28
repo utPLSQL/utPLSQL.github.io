@@ -75,10 +75,12 @@ def _card(post, link):
     icon = next((ICONS[c] for c in categories if c in ICONS), DEFAULT_ICON)
     created = post.config.date.created
     date = f"{created:%B} {created.day}, {created.year}"
+    # Same pin badge as on the Announcements page (Material's `md-pin`)
+    pin = '<span class="md-pin"></span> · ' if post.config.pin else ""
     return (
         f"-   {icon}{{ .lg .middle }} __[{post.meta['title']}]({link})__\n\n"
         f"    ---\n\n"
-        f'    <span class="latest-posts__meta">{date} · {" · ".join(categories)}</span>\n\n'
+        f'    <span class="latest-posts__meta">{pin}{date} · {" · ".join(categories)}</span>\n\n'
         f"    {_summary(post)}\n\n"
         f'    <span class="latest-posts__more">Read more :octicons-arrow-right-24:</span>\n'
     )

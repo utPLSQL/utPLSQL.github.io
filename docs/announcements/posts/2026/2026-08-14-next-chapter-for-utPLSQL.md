@@ -5,6 +5,7 @@ date:
   created: 2026-08-12
 categories:
   - "news"
+pin: true
 ---
 
 ## Looking back

@@ -50,7 +50,7 @@ How it works:
 
 Controlling what is shown:
 
-- To keep a post on the home page, add `pin: true` to its front matter. It also stays at the top of the Announcements page. Remove the flag when it should drop off.
+- To keep a post on the home page, add `pin: true` to its front matter. Its card is shown first with the same pin badge as on the Announcements page, and the post also stays at the top of the Announcements page. Pinned posts count towards `COUNT`. Remove the flag when it should drop off.
 - To control the card text, add a `description:` to the post front matter.
 - The number of cards (`COUNT`), summary length (`SUMMARY_LENGTH`) and category icons (`ICONS`) are set at the top of [hooks/latest_posts.py](hooks/latest_posts.py). Icons use the [Material icon](https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/) shortcode syntax.
 
