@@ -14,7 +14,7 @@ Write and run tests directly in PL/SQL, integrate with your CI/CD pipeline, and 
 
 <!-- latest-posts -->
 
-[All announcements :octicons-arrow-right-24:](announcements/index.md)
+[All announcements :octicons-arrow-right-24:](announcements/index.md) · [:material-rss: RSS feed](/feed_rss_created.xml)
 
 ---
 

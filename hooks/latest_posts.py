@@ -11,7 +11,7 @@ Card text is, in order of preference:
   3. the list items (release notes), without author, PR and issue references.
 
 Posts without a `description:` also get the generated summary as their
-`<meta name="description">`.
+`<meta name="description">` and RSS feed item description.
 """
 import posixpath
 import re
@@ -51,6 +51,12 @@ REFERENCES = re.compile(
 
 
 def on_page_markdown(markdown, page, config, files):
+    # Set before the page is rendered, so the RSS plugin picks it up as well
+    if isinstance(page, Post) and not page.meta.get("description"):
+        summary = _summary(page)
+        if summary:
+            page.meta["description"] = re.sub(r"`|\*\*", "", summary)
+            page.meta["description_generated"] = True
     if PLACEHOLDER not in markdown:
         return markdown
     blog = config.plugins["material/blog"].blog
@@ -59,15 +65,6 @@ def on_page_markdown(markdown, page, config, files):
     cards = "\n".join(_card(post, posixpath.relpath(post.file.src_uri, base or ".")) for post in posts)
     html = f'<div class="grid cards latest-posts" markdown>\n\n{cards}\n</div>'
     return markdown.replace(PLACEHOLDER, html)
-
-
-# Runs after Markdown of all pages is processed, so the cards are not affected
-def on_page_context(context, page, config, nav):
-    if isinstance(page, Post) and not page.meta.get("description"):
-        summary = _summary(page)
-        if summary:
-            page.meta["description"] = re.sub(r"`|\*\*", "", summary)
-    return context
 
 
 def _card(post, link):
@@ -87,7 +84,8 @@ def _card(post, link):
 
 
 def _summary(post):
-    if post.meta.get("description"):
+    # A generated description is plain text - rebuild it, so cards keep code formatting
+    if post.meta.get("description") and not post.meta.get("description_generated"):
         return _truncate(_plain(post.meta["description"]))
     body = SETEXT_HEADING.sub("", post.markdown)
     first_item = LIST_ITEM.search(body)

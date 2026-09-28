@@ -75,6 +75,9 @@ extra:
       link: https://github.com/utPLSQL
     - icon: fontawesome/solid/envelope
       link: mailto:utPLSQL@utPLSQL.org
+    - icon: fontawesome/solid/rss
+      link: https://www.utplsql.org/feed_rss_created.xml
+      name: Announcements RSS feed
   consent:
     title: Cookie consent
     description: >- 
@@ -126,6 +129,16 @@ plugins:
       post_url_format: "{slug}"     # keeps URLs clean
       archive: false
       categories: true
+  - rss:
+      match_path: "announcements/posts/.*"
+      feed_title: "utPLSQL Announcements"
+      feed_description: "Releases and news from the utPLSQL project"
+      image: https://www.utplsql.org/assets/icon-transparent.png
+      date_from_meta:
+        as_creation: date.created
+        as_update: date.updated
+      categories:
+        - categories
 nav:
   - Home: index.md
   - Announcements:
