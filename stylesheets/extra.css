@@ -40,3 +40,9 @@
 [data-md-color-scheme="slate"] .latest-posts__more {
     color: var(--md-primary-fg-color);
 }
+
+/* Material's pin badge (md-pin) is a flex item on the Announcements page - align it inline here */
+.latest-posts__meta .md-pin {
+    display: inline-block;
+    vertical-align: middle;
+}
