@@ -8,8 +8,13 @@ Free, open-source, and inspired by the xUnit family (JUnit, NUnit, etc.).
 
 Write and run tests directly in PL/SQL, integrate with your CI/CD pipeline, and verify your code stability with every build.
 
-!!! tip "Latest News"
-    Stay up to date with releases and project updates on the [Announcements](announcements/index.md) page.
+---
+
+## Latest News
+
+<!-- latest-posts -->
+
+[All announcements :octicons-arrow-right-24:](announcements/index.md)
 
 ---
 
