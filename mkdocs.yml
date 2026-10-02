@@ -8,7 +8,7 @@ remote_branch: mkdocs_site
 remote_name: origin
 site_description: utPLSQL Ultimate Testing Framework for Oracle PL/SQL
 copyright: > 
-  Copyright &copy; 2016 - 2026 utPLSQL contributors.
+  Copyright &copy; 2016 - 2026 utPLSQL Project.
   utPLSQL is stewarded by utPLSQL Development Labs Ltd.
   <a href="#__consent">Change cookie settings</a>
 extra_css:
