@@ -39,3 +39,5 @@ Write and run tests directly in PL/SQL, integrate with your CI/CD pipeline, and 
 ## Community
 
 Have a question or idea? Start a [discussion on GitHub](https://github.com/orgs/utPLSQL/discussions) — it's the best place to ask for help, share feedback, or propose new features.
+
+utPLSQL is free and open source, built by its community and stewarded by [utPLSQL Development Labs Ltd](about.md#stewardship).

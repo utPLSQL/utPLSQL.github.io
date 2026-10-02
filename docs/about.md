@@ -23,6 +23,8 @@ using the object-oriented capabilities of the Oracle database to make it more al
 
 This had significant impact on the test code syntax and how the framework is used.
 
+In 2026, utPLSQL Development Labs Ltd was established to provide a sustainable legal and financial foundation for the project ([announcement](announcements/posts/2026/2026-09-25_incorporation_of_utPLSQL.md), [background](https://oraclethoughts.com/blog/2026/09/25/incorporation_of_utPLSQL/)).
+
 
 ### Major Contributors
 
@@ -55,12 +57,13 @@ Many thanks to [all contributors](https://github.com/utPLSQL/utPLSQL/graphs/cont
 
 ## Supporters
 
-The utPLSQL project is community-driven and is not commercially motivated. Nonetheless, donations and other contributions are always welcome, and are detailed below.
+utPLSQL is free and open source, built by its community. Sponsorships and other financial support are managed by utPLSQL Development Labs Ltd and fund dedicated maintenance and development of the project.
+
+Sponsorship does not provide ownership of utPLSQL or control over its direction.
 
 ### Active supporters
 
-There are currently no active supporters. If your company would like to support the project, please reach out on
-[GitHub Discussions](https://github.com/utPLSQL/utPLSQL/discussions).
+There are currently no active sponsors. If your company would like to support the project, comment on [this GitHub discussion](https://github.com/orgs/utPLSQL/discussions/22) or email [sponsors@utPLSQL.org](mailto:sponsors@utPLSQL.org).
 
 ### Past supporters
 
@@ -68,4 +71,12 @@ There are currently no active supporters. If your company would like to support 
 | Supporter                                                                                                                | Details                                                                |
 |--------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------|
 | [![supported_by_redgate](assets/supported_by_redgate_100.png)](https://www.red-gate.com/hub/events/open-source-projects) | In 2019, Redgate supported utPLSQL by sponsoring stickers and t-shirts | 
+
+## Contact
+
+For help with using utPLSQL, bug reports and feature ideas, please use [GitHub Discussions](https://github.com/orgs/utPLSQL/discussions).
+
+- **General questions** - email [utPLSQL@utPLSQL.org](mailto:utPLSQL@utPLSQL.org)
+- **Sponsorship and contracts** - email [sponsors@utPLSQL.org](mailto:sponsors@utPLSQL.org)
+- **Inquiries via social media** - [X](https://x.com/utPLSQL), [LinkedIn](https://www.linkedin.com/company/utplsql/), [Bluesky](https://bsky.app/profile/utplsql.org)
 

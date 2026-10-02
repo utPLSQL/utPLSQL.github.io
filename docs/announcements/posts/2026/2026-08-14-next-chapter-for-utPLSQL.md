@@ -69,6 +69,9 @@ Over the last decade, this project has been a significant part of my life as an 
 
 ## Sponsorship
 
+!!! info "Update - September 25, 2026"
+    utPLSQL Development Labs Ltd has been incorporated to steward the project. Sponsorships and other support arrangements are now handled by the company - contact [sponsors@utPLSQL.org](mailto:sponsors@utPLSQL.org). See [Incorporation of utPLSQL Development Labs Ltd](2026-09-25_incorporation_of_utPLSQL.md).
+
 I am currently working on opening utPLSQL for sponsorship, and I'll share the tiers and details in a follow-up post once everything is in place. 
 
 If you or your company would benefit from active development of utPLSQL and want to be notified when sponsorship opens then please:
