@@ -76,7 +76,7 @@ There are currently no active sponsors. If your company would like to support th
 
 For help with using utPLSQL, bug reports and feature ideas, please use [GitHub Discussions](https://github.com/orgs/utPLSQL/discussions).
 
-- **General questions** - email [info@utplsql.org](mailto:info@utplsql.org)
+- **General questions** - email [info@utPLSQL.org](mailto:info@utPLSQL.org)
 - **Sponsorship and contracts** - email [sponsors@utPLSQL.org](mailto:sponsors@utPLSQL.org)
 - **Inquiries via social media** - [X](https://x.com/utPLSQL), [LinkedIn](https://www.linkedin.com/company/utplsql/), [Bluesky](https://bsky.app/profile/utplsql.org)
 
