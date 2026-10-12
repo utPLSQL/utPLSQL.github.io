@@ -168,7 +168,8 @@ Each engagement is scoped and quoted on its own. Contact
 [sponsors@utPLSQL.org](mailto:sponsors@utPLSQL.org) describing what you need and
 we will tell you whether we can help and what it would take. Accepted engagements are agreed in writing and invoiced by utPLSQL Development Labs Ltd, payable by bank transfer.
 
-If what you need is a change in utPLSQL itself, mention it in the same message. Where it fits the direction of the project, we can agree a scope, a price and a delivery window. The result is designed and reviewed by the maintainers and released under Apache 2.0 like everything else, so you carry no fork and no maintenance burden afterwards.
+If what you need is a change in utPLSQL itself, mention it in the same message. Where it fits the direction of the project, we can agree a scope, a price and a delivery window.
+The result is designed and reviewed by the maintainers and released under Apache 2.0 like everything else, so you carry no fork and no maintenance burden afterwards.
 
 ---
 
