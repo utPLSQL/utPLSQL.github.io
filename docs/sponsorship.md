@@ -89,8 +89,6 @@ Everything an [individual supporter](#individual-supporters) gets (a sponsor bad
 - Company name and small logo on the utPLSQL organization profile on GitHub
 - Backlink to your website from both placements
 
-!!! info "GitHub Sponsors"
-Sponsorship is paid through [GitHub Sponsors](https://github.com/sponsors/utPLSQL), or directly by invoice: write to [sponsors@utPLSQL.org](mailto:sponsors@utPLSQL.org), and utPLSQL Development Labs Ltd issues an annual invoice of 6,000 EUR, paid by bank transfer.
 
 ### Organization Sponsor at 500 EUR / month
 
