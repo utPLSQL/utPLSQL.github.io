@@ -63,7 +63,7 @@ What you get is our gratitude and thanks for appreciation of the project. Your s
 !!! info "Individual supporters"
     Sponsorship is paid through [GitHub Sponsors](https://github.com/sponsors/utPLSQL).
 
----
+----
 
 ## Organization sponsors
 
@@ -73,6 +73,9 @@ Your company will be listed as a sponsor.
 
 Organization sponsorship is paid monthly through [GitHub Sponsors](https://github.com/sponsors/utPLSQL). The sponsoring organization gets recognition on our pages.
 If you need support or a maintenance commitment, see [Commercial support](#commercial-support).
+
+!!! info "Organization Sponsors"
+    Sponsorship is paid through [GitHub Sponsors](https://github.com/sponsors/utPLSQL), or directly by invoice: write to [sponsors@utPLSQL.org](mailto:sponsors@utPLSQL.org), and utPLSQL Development Labs Ltd issues an annual invoice of 6,000 EUR, paid by bank transfer.
 
 ### Organization Sponsor at 100 EUR / month
 
@@ -102,10 +105,6 @@ Everything an [individual supporter](#individual-supporters) gets (a sponsor bad
 - Announcement of your sponsorship on the utPLSQL [LinkedIn](https://www.linkedin.com/company/utplsql/), [X](https://x.com/utPLSQL) and [Bluesky](https://bsky.app/profile/utplsql.org) accounts
 - Quarterly written project update: what has shipped, what is in progress, and what is planned next
 
-!!! info "Organization Sponsors"
-    Sponsorship is paid through [GitHub Sponsors](https://github.com/sponsors/utPLSQL), or directly by invoice: write to [sponsors@utPLSQL.org](mailto:sponsors@utPLSQL.org), and utPLSQL Development Labs Ltd issues an annual invoice of 6,000 EUR, paid by bank transfer.
-
-
 ---
 
 ## Commercial support
@@ -124,6 +123,9 @@ Commercial support is not paid through GitHub Sponsors. It is contracted and inv
 2. We confirm availability (see the limits above) and agree scope and term with you.
 3. We send the agreement. Once it is accepted, the Ltd issues an annual invoice with its bank details.
 4. You pay by bank transfer, and the support period starts on receipt of payment.
+
+!!! info "Commercial support"
+    Sponsorship is paid through direct invoicing contact [sponsors@utPLSQL.org](mailto:sponsors@utPLSQL.org).
 
 ### Maintenance Support — 1,000 EUR / month
 
@@ -151,9 +153,6 @@ Both tiers are priced the same way: 500 EUR per month for the ongoing relationsh
 
 - Maintenance Support: 500 + (2 x 250) = 1,000 EUR / month
 - Extended Support: 500 + (8 x 250) = 2,500 EUR / month
-
-!!! info "Commercial support"
-    Sponsorship is paid through direct invoicing contact [sponsors@utPLSQL.org](mailto:sponsors@utPLSQL.org).
 
 ---
 
