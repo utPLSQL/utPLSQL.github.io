@@ -10,6 +10,7 @@ site_description: utPLSQL Ultimate Testing Framework for Oracle PL/SQL
 copyright: > 
   Copyright &copy; 2016 - 2026 utPLSQL Project.
   utPLSQL is stewarded by utPLSQL Development Labs Ltd.
+  <a href="https://www.utplsql.org/sponsors.html">Sponsor utPLSQL</a>.
   <a href="#__consent">Change cookie settings</a>
 extra_css:
   - assets/topbar.css
@@ -160,5 +161,8 @@ nav:
       - PL/SQL Developer plugin: utPLSQL-PLSQL-Developer.md
   - Downloads: downloads.md
   - Resources: resources.md
+  - Sponsorship:
+      - Our sponsors: sponsors.md
+      - Become a sponsor: sponsorship.md
   - About: about.md
   - Contributing: contributing.md

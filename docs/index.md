@@ -22,6 +22,7 @@ Write and run tests directly in PL/SQL, integrate with your CI/CD pipeline, and 
 
 - [Documentation](documentation.md) — installation, configuration, writing tests
 - [Downloads](downloads.md) — latest releases and changelogs
+- [Sponsorship](sponsors.md) — fund the maintenance and development of utPLSQL, or get commercial support
 
 ---
 
@@ -41,3 +42,12 @@ Write and run tests directly in PL/SQL, integrate with your CI/CD pipeline, and 
 Have a question or idea? Start a [discussion on GitHub](https://github.com/orgs/utPLSQL/discussions) — it's the best place to ask for help, share feedback, or propose new features.
 
 utPLSQL is free and open source, built by its community and stewarded by [utPLSQL Development Labs Ltd](about.md#stewardship).
+
+---
+
+## Sponsors
+
+utPLSQL is free and open source (Apache 2.0). [Sponsorship](sponsors.md) funds development of new features and tools, maintaining compatibility with new Oracle versions and platforms, documentation.
+
+<!-- sponsors-landing -->
+<!-- /sponsors-landing -->

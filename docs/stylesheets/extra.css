@@ -46,3 +46,74 @@
     display: inline-block;
     vertical-align: middle;
 }
+
+/* Sponsor logo grids (sponsors.md). Logo boxes have a 3:1 maximum aspect ratio: small 64 px high / max 192 px
+   wide, large 128 px high / max 384 px wide, clear space 16 / 32 px. A logo wider than its box is scaled down
+   to fit, keeping its aspect ratio (object-fit: contain). Past sponsors use the small box, grayscale and faded. */
+.sponsor-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .5rem 1rem;
+    margin: 1rem 0 1.5rem;
+}
+
+.sponsor-grid > p {
+    margin: 0;
+}
+
+.sponsor-grid a {
+    display: inline-block;
+}
+
+.sponsor-grid img {
+    display: block;
+    width: auto;
+    object-fit: contain;
+}
+
+.sponsor-grid--large a {
+    padding: 32px;
+}
+
+.sponsor-grid--large img {
+    height: 128px;
+    max-width: 384px;
+}
+
+.sponsor-grid--small a {
+    padding: 16px;
+}
+
+.sponsor-grid--small img {
+    height: 64px;
+    max-width: 192px;
+}
+
+.sponsor-grid--past a {
+    padding: 16px;
+}
+
+.sponsor-grid--past img {
+    height: 64px;
+    max-width: 192px;
+    filter: grayscale(100%);
+    opacity: .55;
+}
+
+.sponsor-grid--text {
+    gap: .25rem 1.5rem;
+}
+
+/* Sponsors who supply separate light and dark logos: add .logo-light / .logo-dark to the images */
+.logo-dark {
+    display: none !important;
+}
+
+[data-md-color-scheme="slate"] .logo-light {
+    display: none !important;
+}
+
+[data-md-color-scheme="slate"] .logo-dark {
+    display: block !important;
+}

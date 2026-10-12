@@ -55,23 +55,6 @@ Many thanks to [all contributors](https://github.com/utPLSQL/utPLSQL/graphs/cont
 | Paul Walker                                        |                  |
 
 
-## Supporters
-
-utPLSQL is free and open source, built by its community. Sponsorships and other financial support are managed by utPLSQL Development Labs Ltd and fund dedicated maintenance and development of the project.
-
-Sponsorship does not provide ownership of utPLSQL or control over its direction.
-
-### Active supporters
-
-There are currently no active sponsors. If your company would like to support the project, comment on [this GitHub discussion](https://github.com/orgs/utPLSQL/discussions/22) or email [sponsors@utPLSQL.org](mailto:sponsors@utPLSQL.org).
-
-### Past supporters
-
-
-| Supporter                                                                                                                | Details                                                                |
-|--------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------|
-| [![supported_by_redgate](assets/supported_by_redgate_100.png)](https://www.red-gate.com/hub/events/open-source-projects) | In 2019, Redgate supported utPLSQL by sponsoring stickers and t-shirts | 
-
 ## Contact
 
 For help with using utPLSQL, bug reports and feature ideas, please use [GitHub Discussions](https://github.com/orgs/utPLSQL/discussions).

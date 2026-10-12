@@ -112,3 +112,68 @@ Example commands to use are:
 - `mike deploy -p develop` - to deploy and push documentation for develop branch
 - `mike deploy -p -u v3.1.12 latest` - to deploy and push documentation for version v3.1.12 and update the `latest` alias to point to that version
 
+
+## Maintaining sponsors
+
+Public pages: `docs/sponsorship.md` (become a sponsor: tiers, routes, FAQ) and `docs/sponsors.md` (Our sponsors: the list).
+Permanent archive of sponsors: `SPONSORS.md` in the utPLSQL framework repository.
+
+### Onboarding a sponsor
+
+1. Receive logo and link. Accept SVG (preferred, with text converted to outlines), or a PNG with transparent background, tightly cropped, at least 256 px high or 768 px wide (2x the large box); 1152 x 384 px (3x) is ideal. Light/dark variants if needed. If only a lockup is supplied at the 64 px (small) size, ask for the wordmark or use the name as text.
+2. Store the logo in the `utPLSQL/.github` repository (the organization repository), in `.github/assets/sponsors/`, named `sponsor-<name>.png` or `sponsor-<name>.svg` (lowercase, hyphens; for light/dark variants `sponsor-<name>-light.svg` and `sponsor-<name>-dark.svg`). This follows the layout of the Material for MkDocs repository. All surfaces reference the file by its raw URL, `https://raw.githubusercontent.com/utPLSQL/.github/main/.github/assets/sponsors/sponsor-<name>.<ext>`. Do not hotlink the sponsor's own site.
+3. Add the entry to the matching grid in `docs/sponsors.md`. For 500 EUR and commercial sponsors also add it to the framework README, the organization profile README (`.github/profile/README.md`) and the landing page block in `docs/index.md` (marker `sponsors-landing`). 250 EUR sponsors: organization profile only.
+4. Add the name and start year to `SPONSORS.md`.
+5. 500 EUR and commercial sponsors: announce on LinkedIn, X and Bluesky.
+
+### Offboarding a sponsor
+
+1. At the end of the paid period plus 30 days, remove the logo from the framework README, the organization profile and the landing page.
+2. If the sponsor qualifies (3 months or a commercial agreement), move the entry to the Past sponsors grid in `docs/sponsors.md`. Otherwise delete it.
+3. Update `SPONSORS.md` (end year).
+
+Doing this by hand across four repositories drifts. Once there is a first paying sponsor, generate all blocks from one `sponsors.yml` (fields: name, url, logo, tier, start, end, status `current` or `past`) with a scheduled GitHub Action.
+
+### Sponsor lifecycle rules
+
+| State    | When                                                                                                                              | Where the sponsor appears                                                                                                                                              |
+|----------|-----------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Current  | from the first payment (GitHub Sponsors) or from receipt of the invoice payment (direct invoice) until the end of the paid period | per tier, see the recognition table in `docs/sponsorship.md`                                                                                                           |
+| Grace    | 30 days after the end of the paid period (failed card payments, late renewals)                                                    | unchanged                                                                                                                                                              |
+| Past     | after the grace period, only if the sponsor paid for at least 3 months, or had a commercial support agreement                     | `docs/sponsors.md` "Past sponsors" only, as a faded logo with no details. Removed from the GitHub organization profile, framework README and utplsql.org landing page. |
+| Lapsed   | after the grace period, sponsored for less than 3 months and no commercial agreement                                              | removed everywhere except the archive (`SPONSORS.md` in the utPLSQL  framework repository)                                                                                         |
+| Archive  | always                                                                                                                            | `SPONSORS.md`: name and year(s) only, kept permanently                                                                                                                 |
+
+Other rules:
+- A past sponsor is removed from the Past sponsors section on request, the same day. The archive entry is also removed if they ask.
+- Individuals are not listed on utplsql.org. GitHub shows public individual sponsors on the GitHub Sponsors page.
+- Release notes carry a link to `https://www.utplsql.org/sponsors.html`, never a list of names.
+- Commercial support never ends up in the recognition tiers by accident: someone who paid through GitHub gets recognition only, no support. Move them to a commercial agreement instead (see the channel separation in the sponsorship notes).
+- The user-facing wording of these rules is the FAQ "What happens when we stop sponsoring?" in `docs/sponsorship.md`. Change both together.
+
+### Presentation (`docs/sponsors.md`, styles in `docs/stylesheets/extra.css`)
+
+Every sponsor is a clickable logo (or a text link for 100 EUR sponsors) inside a grid. No tables. All organization tiers include a backlink to the sponsor's website: every logo and every name is a link to the URL supplied at onboarding, opened in a new tab with `rel="noopener sponsored"` (`sponsored` marks paid placements for search engines). In READMEs use a plain Markdown link.
+
+| Group              | Section on the page             | Grid class                         | Logo                                           |
+|--------------------|---------------------------------|------------------------------------|------------------------------------------------|
+| Commercial support | "Commercial support sponsors"   | `sponsor-grid sponsor-grid--large` | 128 px high, max 384 px wide (3:1), 32 px clear space |
+| 500 EUR            | "Organization sponsors", first  | `sponsor-grid sponsor-grid--large` | 128 px, as above |
+| 250 EUR            | "Organization sponsors", second | `sponsor-grid sponsor-grid--small` | 64 px high, max 192 px wide (3:1), 16 px clear space |
+| 100 EUR            | "Organization sponsors", last   | `sponsor-grid sponsor-grid--text`  | company name as a text link                    |
+| Past               | "Past sponsors"                 | `sponsor-grid sponsor-grid--past`  | 64 px high, max 192 px wide, grayscale, 55% opacity, logo only |
+
+Order inside a group: by start date, oldest first. Commercial support is listed above the recognition tiers.
+
+Entry format (one blank-line-separated item per sponsor; `markdown` attribute is required on the div):
+
+```html
+<div class="sponsor-grid sponsor-grid--large" markdown>
+[![Company name](https://raw.githubusercontent.com/utPLSQL/.github/main/.github/assets/sponsors/sponsor-company.svg)](https://company.example){ target=_blank rel="noopener sponsored" }
+</div>
+```
+
+For sponsors that supply separate light and dark logos, add two images with the classes `{ .logo-light }` and `{ .logo-dark }`.
+
+Put each group between its marker comments (`<!-- sponsors-commercial -->` ... `<!-- /sponsors-commercial -->`, `<!-- sponsors-organizations -->` ... `<!-- /sponsors-organizations -->`) and delete the "There are currently no ..." sentence when the first entry is added.
+
