@@ -4,6 +4,7 @@ The utPLSQL project team welcomes contributions from the community.
 
 - **Contribute code** — please read the [contributing guide](https://github.com/utPLSQL/utPLSQL/blob/develop/CONTRIBUTING.md) before submitting a pull request.
 - **Ask questions and share ideas** — use [GitHub Discussions](https://github.com/orgs/utPLSQL/discussions) for support, questions, and feature proposals.
+- **Support the project** — [sponsorship](sponsors.md) funds maintenance and development.
 - **Report bugs and issues** — open an issue in the relevant [GitHub repository](index.md#frameworks-and-tools).
 
 The source code for all utPLSQL projects is hosted on the [utPLSQL GitHub organisation](https://github.com/utPLSQL).

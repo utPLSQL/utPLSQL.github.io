@@ -22,6 +22,7 @@
     { label: 'Documentation', url: BASE + '/documentation.html' },
     { label: 'Downloads',     url: BASE + '/downloads.html' },
     { label: 'Resources',     url: BASE + '/resources.html' },
+    { label: 'Sponsorship',   url: BASE + '/sponsors.html' },
     { label: 'About',         url: BASE + '/about.html' },
     { label: 'Contributing',  url: BASE + '/contributing.html' },
   ];
