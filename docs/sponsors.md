@@ -29,7 +29,7 @@ Individuals who sponsor publicly are shown on the [utPLSQL GitHub Sponsors page]
 ## Past sponsors
 
 <div class="sponsor-grid sponsor-grid--past" markdown>
-[![Redgate](https://raw.githubusercontent.com/utPLSQL/.github/main/.github/assets/sponsors/sponsor-redgate.png)](https://www.red-gate.com/hub/events/open-source-projects)
+[![Redgate](https://raw.githubusercontent.com/utPLSQL/.github/main/.github/assets/sponsors/sponsor-redgate.png "Redgate")](https://www.red-gate.com/hub/events/open-source-projects){ target=_blank }
 </div>
 
 A complete list of all current and past sponsors is kept in [`SPONSORS.md`](https://github.com/utPLSQL/utPLSQL/blob/develop/SPONSORS.md) in the utPLSQL repository.

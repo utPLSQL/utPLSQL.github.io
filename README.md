@@ -153,7 +153,7 @@ Other rules:
 
 ### Presentation (`docs/sponsors.md`, styles in `docs/stylesheets/extra.css`)
 
-Every sponsor is a clickable logo (or a text link for 100 EUR sponsors) inside a grid. No tables. All organization tiers include a backlink to the sponsor's website: every logo and every name is a link to the URL supplied at onboarding, opened in a new tab with `rel="noopener sponsored"` (`sponsored` marks paid placements for search engines). In READMEs use a plain Markdown link.
+Every sponsor is a clickable logo (or a text link for 100 EUR sponsors) inside a grid. No tables. All organization tiers include a backlink to the sponsor's website: every logo (company name only as a tooltip via the standard Markdown image title, `![Alt text](image "Tooltip text")`, and as the alt text for accessibility; never printed next to the logo) and every 100 EUR name is a link to the URL supplied at onboarding, opened in a new tab with `rel="noopener sponsored"` (`sponsored` marks paid placements for search engines). In READMEs use a plain Markdown link.
 
 | Group              | Section on the page             | Grid class                         | Logo                                           |
 |--------------------|---------------------------------|------------------------------------|------------------------------------------------|
@@ -169,7 +169,7 @@ Entry format (one blank-line-separated item per sponsor; `markdown` attribute is
 
 ```html
 <div class="sponsor-grid sponsor-grid--large" markdown>
-[![Company name](https://raw.githubusercontent.com/utPLSQL/.github/main/.github/assets/sponsors/sponsor-company.svg)](https://company.example){ target=_blank rel="noopener sponsored" }
+[![Company name](https://raw.githubusercontent.com/utPLSQL/.github/main/.github/assets/sponsors/sponsor-company.svg "Company name")](https://company.example){ target=_blank rel="noopener sponsored" }
 </div>
 ```
 

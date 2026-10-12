@@ -88,8 +88,8 @@ Everything an [individual supporter](#individual-supporters) gets (a sponsor bad
 
 Everything an [individual supporter](#individual-supporters) gets (a sponsor badge on your GitHub profile and your name and avatar on the utPLSQL GitHub Sponsors page), plus:
 
-- Company name and small logo on the [sponsors page](sponsors.md) of utplsql.org
-- Company name and small logo on the utPLSQL organization profile on GitHub
+- Small logo on the [sponsors page](sponsors.md) of utplsql.org
+- Small logo on the utPLSQL organization profile on GitHub
 - Backlink to your website from both placements
 
 
@@ -97,10 +97,10 @@ Everything an [individual supporter](#individual-supporters) gets (a sponsor bad
 
 Everything an [individual supporter](#individual-supporters) gets (a sponsor badge on your GitHub profile and your name and avatar on the utPLSQL GitHub Sponsors page), plus:
 
-- Company name and large logo on the [sponsors page](sponsors.md) of utplsql.org
-- Company name and large logo on the utPLSQL organization profile on GitHub
-- Company name and large logo in the sponsors block of the utPLSQL framework README
-- Company name and large logo on the utplsql.org landing page
+- Large logo on the [sponsors page](sponsors.md) of utplsql.org
+- Large logo on the utPLSQL organization profile on GitHub
+- Large logo in the sponsors block of the utPLSQL framework README
+- Large logo on the utplsql.org landing page
 - Backlink to your website from every placement
 - Announcement of your sponsorship on the utPLSQL [LinkedIn](https://www.linkedin.com/company/utplsql/), [X](https://x.com/utPLSQL) and [Bluesky](https://bsky.app/profile/utplsql.org) accounts
 - Quarterly written project update: what has shipped, what is in progress, and what is planned next
@@ -137,7 +137,7 @@ Commercial support is not paid through GitHub Sponsors. It is contracted and inv
 - A named contact and a private communication channel
 - Advance notice of new features and changes coming into the next releases
 - Quarterly written project update: what has shipped, what is in progress, and what is planned next
-- Company name and large logo in the commercial sponsors block, listed above the recognition sponsors, on every surface where sponsors appear, with a backlink to your website
+- Large logo in the commercial sponsors block, listed above the recognition sponsors, on every surface where sponsors appear, with a backlink to your website
 
 ### Extended Support — 2,500 EUR / month
 
@@ -174,19 +174,20 @@ If what you need is a change in utPLSQL itself, mention it in the same message. 
 
 ## Recognition at a glance
 
-| Placement | 100 | 250 | 500 | Commercial support |
-| --- | --- | --- | --- | --- |
-| Name on the [sponsors page](sponsors.md) of utplsql.org | yes | yes | yes | yes |
-| Backlink to your website from every placement | yes | yes | yes | yes |
-| Logo on the [sponsors page](sponsors.md) of utplsql.org | - | small | large | large |
-| Logo on the utPLSQL GitHub organization profile | - | small | large | large |
-| Logo in the utPLSQL framework README | - | - | large | large |
-| Logo on the utplsql.org landing page | - | - | large | large |
-| Announcement on the utPLSQL social channels ([LinkedIn](https://www.linkedin.com/company/utplsql/), [X](https://x.com/utPLSQL), [Bluesky](https://bsky.app/profile/utplsql.org)) | - | - | yes | yes |
-| Quarterly written project update | - | - | yes | yes |
-| Listed in the commercial sponsors block, above recognition sponsors | - | - | - | yes |
+| Placement                                                                                                                                                                        | 100 | 250   | 500   | Commercial support |
+|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----|-------|-------|--------------------|
+| Company name as text on the [sponsors page](sponsors.md) of utplsql.org                                                                                                          | yes | -     | -     | -                  |
+| Backlink to your website from every placement                                                                                                                                    | yes | yes   | yes   | yes                |
+| Logo on the [sponsors page](sponsors.md) of utplsql.org                                                                                                                          | -   | small | large | large              |
+| Logo on the utPLSQL GitHub organization profile                                                                                                                                  | -   | small | large | large              |
+| Logo in the utPLSQL framework README                                                                                                                                             | -   | -     | large | large              |
+| Logo on the utplsql.org landing page                                                                                                                                             | -   | -     | large | large              |
+| Company name as logo tooltip                                                                                                                                                     | -   | yes   | yes   | yes                |
+| Announcement on the utPLSQL social channels ([LinkedIn](https://www.linkedin.com/company/utplsql/), [X](https://x.com/utPLSQL), [Bluesky](https://bsky.app/profile/utplsql.org)) | -   | -     | yes   | yes                |
+| Quarterly written project update                                                                                                                                                 | -   | -     | yes   | yes                |
+| Listed in the commercial sponsors block, above recognition sponsors                                                                                                              | -   | -     | -     | yes                |
 
-Small logos are displayed in a box of up to 64 pixels height and 192 pixels width, large logos in a box of up to 128 pixels height and 384 pixels width (3:1). A logo wider than its box is scaled down to fit, keeping its proportions. We ask
+Where a logo is shown, it links to your website, and your company name appears as a tooltip when hovering over the logo. The company name is not printed next to the logo. Small logos are displayed in a box of up to 64 pixels height and 192 pixels width, large logos in a box of up to 128 pixels height and 384 pixels width (3:1). A logo wider than its box is scaled down to fit, keeping its proportions. We ask
 for SVG, with separate light and dark variants where your logo needs them. If you can only supply a PNG, please send it at least 256 pixels high or 768 pixels wide, whichever limit the logo reaches first; larger is welcome.
 
 A complete list of all current and past sponsors is kept in [`SPONSORS.md`](https://github.com/utPLSQL/utPLSQL/blob/develop/SPONSORS.md) in the utPLSQL repository.
