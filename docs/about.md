@@ -57,8 +57,11 @@ For help with using utPLSQL, bug reports and feature ideas, please use [GitHub D
 - **General questions** - email [info@utPLSQL.org](mailto:info@utPLSQL.org)
 - **Inquiries via social media** - [X](https://x.com/utPLSQL), [LinkedIn](https://www.linkedin.com/company/utplsql/), [Bluesky](https://bsky.app/profile/utplsql.org)
 
-utPLSQL is free and open source, built by its maintainers and contributors. Its maintenance and development are funded by the organizations and individuals listed here. Thank you.
+---
+utPLSQL is free open-source software, built by its maintainers and contributors. Sustainable maintenance and development requires funding.
 
-**Want to be listed?**
+- Do you want to support the project?
+- Is your company looking for commercial support from the project? 
+
 [Become a sponsor](sponsorship.md){ .md-button .md-button--primary }
 
