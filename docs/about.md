@@ -25,34 +25,29 @@ This had significant impact on the test code syntax and how the framework is use
 
 In 2026, utPLSQL Development Labs Ltd was established to provide a sustainable legal and financial foundation for the project ([announcement](announcements/posts/2026/2026-09-25_incorporation_of_utPLSQL.md), [background](https://oraclethoughts.com/blog/2026/09/25/incorporation_of_utPLSQL/)).
 
+Gratitude to creators, contributors and maintainers of previous versions of the framework  
+- [Steven Feuerstein](https://www.linkedin.com/in/steven-feuerstein/) - Initial Author
+- [Chris Rimmer](https://www.linkedin.com/in/chrisrim/)
+- [Patrick Barel](https://www.linkedin.com/in/patrickbarel/)
+- [Paul Walker](https://www.linkedin.com/in/paul-walker-67b0226b/)
+- and others 
 
-### Major Contributors
+### Major Contributors 
 
-
-| Name                                                             | GitHub                                       | Comments                                                                                           |
-|-------------------------------------------------------------------|-----------------------------------------------|-----------------------------------------------------------------------------------------------------|
-| [Jacek Gebal](https://twitter.com/GebalJacek/)                   | [jgebal](https://github.com/jgebal)          | Project lead, admin, core PL/SQL framework, pipelines, expectations, reporters, annotations, cache | 
-| [Pavel Kaplya](https://twitter.com/Pazus)                        | [Pazus](https://github.com/Pazus)            | Core PL/SQL framework, design, annotations                                                         |
-| [Lukasz Wasylow](https://twitter.com/Baalowy)                    | [lwasylow](https://github.com/lwasylow/)     | Core PL/SQL framework, demo project                                                                |
-| [Samuel Nitsche](https://twitter.com/Der_Pesse)                  | [pesse](https://github.com/pesse/)           | utPLSQL-java-api, utPLSQL-cli                                                                      |
-| [Philipp Salvisberg](https://twitter.com/phsalvisberg)           |                                               | utPLSQL-SQLDeveloper-extension                                                                     |
-| [Simon Martinelli](https://www.linkedin.com/in/simonmartinelli/) |                                               | utPLSQL-PLSQL-Developer plugin, utPLSQL-cli                                                        |
-| [Vinicius Avellar](https://twitter.com/mrvmoreira)               | [viniciusam](https://github.com/viniciusam/) | utPLSQL-java-api, maven-plugin, utPLSQL-cli                                                        |
-| Robert Love                                                      | [rlove](https://github.com/rlove)            |                                                                                                     |
-| David Pyke                                                       | [Shoelace](https://github.com/Shoelace)      |                                                                                                     |
+| Name                                                                    | GitHub                                       | Comments                                                                                           |
+|-------------------------------------------------------------------------|----------------------------------------------|----------------------------------------------------------------------------------------------------|
+| [Jacek Gebal](https://www.linkedin.com/in/jacekgebal/)                  | [jgebal](https://github.com/jgebal)          | Project lead, admin, core PL/SQL framework, pipelines, expectations, reporters, annotations, cache | 
+| [Pavel Kaplya](https://www.linkedin.com/in/pavel-kaplya/)               | [Pazus](https://github.com/Pazus)            | Core PL/SQL framework, design, annotations, pipelines                                              |
+| [Lukasz Wasylow](https://www.linkedin.com/in/lukasz-wasylow-45a38120/)  | [lwasylow](https://github.com/lwasylow/)     | Core PL/SQL framework, demo project                                                                |
+| [Samuel Nitsche](https://www.linkedin.com/in/samuel-nitsche-457ba3158/) | [pesse](https://github.com/pesse/)           | utPLSQL-java-api, utPLSQL-cli                                                                      |
+| [Philipp Salvisberg](https://www.linkedin.com/in/philippsalvisberg/)    |                                              | utPLSQL-SQLDeveloper-extension                                                                     |
+| [Simon Martinelli](https://www.linkedin.com/in/simonmartinelli/)        |                                              | utPLSQL-PLSQL-Developer plugin, utPLSQL-cli                                                        |
+| [Vinicius Avellar](https://www.linkedin.com/in/amvinicius/)             | [viniciusam](https://github.com/viniciusam/) | utPLSQL-java-api, maven-plugin, utPLSQL-cli                                                        |
+| [Robert Love](https://www.linkedin.com/in/robjlove/)                    | [rlove](https://github.com/rlove)            |                                                                                                    |
+| [David Pyke](https://www.linkedin.com/in/davidpyke/)                    | [Shoelace](https://github.com/Shoelace)      |                                                                                                    |
 
 
 Many thanks to [all contributors](https://github.com/utPLSQL/utPLSQL/graphs/contributors) across utPLSQL projects.
-
-
-### Prior versions creators
-
-| Name                                               | Comments         |
-| -------------------------------------------------- | ---------------- |
-| [Steven Feuerstein](http://stevenfeuerstein.com/)  | Original Author  |
-| Chris Rimmer                                       |                  |
-| Patrick Barel                                      |                  |
-| Paul Walker                                        |                  |
 
 
 ## Contact
