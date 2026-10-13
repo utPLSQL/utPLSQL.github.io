@@ -6,7 +6,7 @@ description: "The organizations and individuals who fund the maintenance and dev
 
 utPLSQL is free and open source, built by its maintainers and contributors. Its maintenance and development are funded by the organizations and individuals listed here. Thank you.
 
-Sponsorship does not provide ownership of utPLSQL or control over its direction. Want to be listed?
+**Want to be listed?**
 
 [Become a sponsor](sponsorship.md){ .md-button .md-button--primary }
 
@@ -19,7 +19,7 @@ There are currently no commercial support sponsors.
 ## Organization sponsors
 
 <!-- sponsors-organizations -->
-There are currently no organization sponsors. If your company would like to support the project, see [Sponsorship](sponsorship.md) or email [sponsors@utPLSQL.org](mailto:sponsors@utPLSQL.org).
+There are currently no organization sponsors.
 <!-- /sponsors-organizations -->
 
 ## Individual supporters
