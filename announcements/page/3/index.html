@@ -1455,6 +1455,69 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2019-11-10 00:00:00+00:00">November 10, 2019</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../category/releases.html" class="md-meta__link">releases</a>, 
+              <a href="../../category/utplsql-core.html" class="md-meta__link">utplsql-core</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              1 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="changes-in-release-319"><a class="toclink" href="../../utplsql-v319-released.html">Changes in release 3.1.9</a></h2>
+<h3 id="new-features"><a class="toclink" href="../../utplsql-v319-released.html#new-features">New features</a></h3>
+<ul>
+<li>Added ability to define <a href="https://github.com/utPLSQL/utPLSQL/blob/v3.1.9/docs/userguide/annotations.md#context">nested contexts</a> within test suite <a href="https://github.com/utPLSQL/utPLSQL/issues/938">#938</a></li>
+<li>Added ability to <a href="https://github.com/utPLSQL/utPLSQL/blob/v3.1.9/docs/userguide/annotations.md#excluding-testssuites-by-tags">exclude tests/suites by tags</a> when invoking a test-run <a href="https://github.com/utPLSQL/utPLSQL/issues/1007">#1007</a> <a href="https://github.com/utPLSQL/utPLSQL/issues/983">#983</a></li>
+<li>Added new annotation <a href="https://github.com/utPLSQL/utPLSQL/blob/v3.1.9/docs/userguide/annotations.md#name"><code>--%name</code></a> to allow for providing custom name for contexts <a href="https://github.com/utPLSQL/utPLSQL/issues/1016">#1016</a></li>
+</ul>
+<h3 id="important-changes"><a class="toclink" href="../../utplsql-v319-released.html#important-changes">Important changes</a></h3>
+<p>The value of <code>--%context</code> annotation is no longer representing context <code>name</code>.
+This value is now context description (displayname).
+With this change, the <code>--%context</code> annotation is now aligned with <code>--%test</code> and <code>--%suite</code> annotation syntax.</p>
+<p>New annotation <code>--%name</code> was introduced to facilitate naming of contexts.</p>
+<h3 id="enhancements"><a class="toclink" href="../../utplsql-v319-released.html#enhancements">Enhancements</a></h3>
+<ul>
+<li>Improved documentation for running tests</li>
+<li>Improved documentation for tags <a href="https://github.com/utPLSQL/utPLSQL/issues/1003">#1003</a></li>
+<li>Improved documentation for annotations</li>
+</ul>
+<h3 id="bug-fixes"><a class="toclink" href="../../utplsql-v319-released.html#bug-fixes">Bug fixes</a></h3>
+<ul>
+<li>Fixed bug with bad stacktrace showing in failing/erroring test <a href="https://github.com/utPLSQL/utPLSQL/issues/1000">#1000</a></li>
+<li>Fixed issue with lack of validation for context name <a href="https://github.com/utPLSQL/utPLSQL/issues/966">#966</a></li>
+<li>Fixed problem with install script privilege check for installation with DDL trigger <a href="https://github.com/utPLSQL/utPLSQL/issues/992">#992</a></li>
+<li>Fixed issue with some common column names causing cursor comparison to fail <a href="https://github.com/utPLSQL/utPLSQL/issues/997">#997</a></li>
+<li>Fixed issue with invocation of standalone expectations on cursor <a href="https://github.com/utPLSQL/utPLSQL/issues/998">#998</a></li>
+</ul>
+<h3 id="internal-improvements"><a class="toclink" href="../../utplsql-v319-released.html#internal-improvements">Internal improvements</a></h3>
+<ul>
+<li>Fixed runability of utplsql self-tests <a href="https://github.com/utPLSQL/utPLSQL/issues/968">#968</a></li>
+</ul>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2019-09-04 00:00:00+00:00">September 4, 2019</time></li>
         
           <li class="md-meta__item">
@@ -1942,44 +2005,6 @@ yourself, <strong>please let us know!</strong></p>
 <h3 id="improvements"><a class="toclink" href="../../utplsql-v316-released.html#improvements">Improvements</a></h3>
 <ul>
 <li>Reduced number of information displaying about user defined type. We will now display only type name instead of full structure #866 </li>
-</ul>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2019-03-20 00:00:00+00:00">March 20, 2019</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/releases.html" class="md-meta__link">releases</a>, 
-              <a href="../../category/utplsql-core.html" class="md-meta__link">utplsql-core</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              1 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="bugfix-release-for-v314"><a class="toclink" href="../../utplsql-v315-released.html">Bugfix release for <code>v3.1.4</code></a></h2>
-<h3 id="bug-fixes"><a class="toclink" href="../../utplsql-v315-released.html#bug-fixes">Bug fixes</a></h3>
-<ul>
-<li>Fixed a bug in release <code>3.1.4</code> where <code>to_be_empty</code> matcher was failing due to privileges <a href="https://github.com/utPLSQL/utPLSQL/issues/864">#864</a></li>
 </ul>
     
     

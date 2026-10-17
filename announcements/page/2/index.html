@@ -1455,6 +1455,58 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2026-04-22 00:00:00+00:00">April 22, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../category/releases.html" class="md-meta__link">releases</a>, 
+              <a href="../../category/utplsql-core.html" class="md-meta__link">utplsql-core</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              1 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="utplsql-v3201-released"><a class="toclink" href="../../utplsql-v3201-released.html">utPLSQL v3.2.01 released</a></h2>
+<h3 id="important"><a class="toclink" href="../../utplsql-v3201-released.html#important">Important</a></h3>
+<ul>
+<li>Dropped support for Oracle Database versions older than 19c</li>
+</ul>
+<h3 id="new-features"><a class="toclink" href="../../utplsql-v3201-released.html#new-features">New features</a></h3>
+<ul>
+<li>Add TAP reporter by @WayneNani in <a href="https://github.com/utPLSQL/utPLSQL/pull/1305">#1305</a></li>
+</ul>
+<h3 id="enhancements-and-bug-fixes"><a class="toclink" href="../../utplsql-v3201-released.html#enhancements-and-bug-fixes">Enhancements and bug fixes</a></h3>
+<ul>
+<li>Added duplicate detection on cursor comparison using <code>join_by</code> by @lwasylow in <a href="https://github.com/utPLSQL/utPLSQL/pull/1295">#1295</a></li>
+<li>Fix code causing the object duration Oracle exception on oracle 23.26 by @lwasylow in <a href="https://github.com/utPLSQL/utPLSQL/pull/1310">#1310</a></li>
+<li>Packages with annotation-like comments are not test suites by @jgebal in <a href="https://github.com/utPLSQL/utPLSQL/pull/1313">#1313</a></li>
+<li>Performance improvements to annotation parsing by @lwasylow in <a href="https://github.com/utPLSQL/utPLSQL/pull/1319">#1312</a></li>
+<li>Updated documentation and copyright banners across source files @jgebal in <a href="https://github.com/utPLSQL/utPLSQL/pull/1319">#1319</a> </li>
+</ul>
+<hr />
+<p><a href="https://github.com/utPLSQL/utPLSQL/releases/tag/v3.2.01">Download utPLSQL release v3.2.01 here</a></p>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2024-02-19 00:00:00+00:00">February 19, 2024</time></li>
         
           <li class="md-meta__item">
@@ -1907,69 +1959,6 @@
 </ul>
 <h2 id="downloads"><a class="toclink" href="../../utplsql-v3110-released.html#downloads">Downloads</a></h2>
 <p>Download <code>v3.1.10</code> release version <a href="https://github.com/utPLSQL/utPLSQL/releases/tag/v3.1.10">here</a></p>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2019-11-10 00:00:00+00:00">November 10, 2019</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/releases.html" class="md-meta__link">releases</a>, 
-              <a href="../../category/utplsql-core.html" class="md-meta__link">utplsql-core</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              1 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="changes-in-release-319"><a class="toclink" href="../../utplsql-v319-released.html">Changes in release 3.1.9</a></h2>
-<h3 id="new-features"><a class="toclink" href="../../utplsql-v319-released.html#new-features">New features</a></h3>
-<ul>
-<li>Added ability to define <a href="https://github.com/utPLSQL/utPLSQL/blob/v3.1.9/docs/userguide/annotations.md#context">nested contexts</a> within test suite <a href="https://github.com/utPLSQL/utPLSQL/issues/938">#938</a></li>
-<li>Added ability to <a href="https://github.com/utPLSQL/utPLSQL/blob/v3.1.9/docs/userguide/annotations.md#excluding-testssuites-by-tags">exclude tests/suites by tags</a> when invoking a test-run <a href="https://github.com/utPLSQL/utPLSQL/issues/1007">#1007</a> <a href="https://github.com/utPLSQL/utPLSQL/issues/983">#983</a></li>
-<li>Added new annotation <a href="https://github.com/utPLSQL/utPLSQL/blob/v3.1.9/docs/userguide/annotations.md#name"><code>--%name</code></a> to allow for providing custom name for contexts <a href="https://github.com/utPLSQL/utPLSQL/issues/1016">#1016</a></li>
-</ul>
-<h3 id="important-changes"><a class="toclink" href="../../utplsql-v319-released.html#important-changes">Important changes</a></h3>
-<p>The value of <code>--%context</code> annotation is no longer representing context <code>name</code>.
-This value is now context description (displayname).
-With this change, the <code>--%context</code> annotation is now aligned with <code>--%test</code> and <code>--%suite</code> annotation syntax.</p>
-<p>New annotation <code>--%name</code> was introduced to facilitate naming of contexts.</p>
-<h3 id="enhancements"><a class="toclink" href="../../utplsql-v319-released.html#enhancements">Enhancements</a></h3>
-<ul>
-<li>Improved documentation for running tests</li>
-<li>Improved documentation for tags <a href="https://github.com/utPLSQL/utPLSQL/issues/1003">#1003</a></li>
-<li>Improved documentation for annotations</li>
-</ul>
-<h3 id="bug-fixes"><a class="toclink" href="../../utplsql-v319-released.html#bug-fixes">Bug fixes</a></h3>
-<ul>
-<li>Fixed bug with bad stacktrace showing in failing/erroring test <a href="https://github.com/utPLSQL/utPLSQL/issues/1000">#1000</a></li>
-<li>Fixed issue with lack of validation for context name <a href="https://github.com/utPLSQL/utPLSQL/issues/966">#966</a></li>
-<li>Fixed problem with install script privilege check for installation with DDL trigger <a href="https://github.com/utPLSQL/utPLSQL/issues/992">#992</a></li>
-<li>Fixed issue with some common column names causing cursor comparison to fail <a href="https://github.com/utPLSQL/utPLSQL/issues/997">#997</a></li>
-<li>Fixed issue with invocation of standalone expectations on cursor <a href="https://github.com/utPLSQL/utPLSQL/issues/998">#998</a></li>
-</ul>
-<h3 id="internal-improvements"><a class="toclink" href="../../utplsql-v319-released.html#internal-improvements">Internal improvements</a></h3>
-<ul>
-<li>Fixed runability of utplsql self-tests <a href="https://github.com/utPLSQL/utPLSQL/issues/968">#968</a></li>
-</ul>
     
     
   </div>
