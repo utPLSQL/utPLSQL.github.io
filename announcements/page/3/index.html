@@ -1460,6 +1460,44 @@
           <li class="md-meta__item">
             in
             
+              <a href="../../category/website.html" class="md-meta__link">website</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              1 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="new-resources-section"><a class="toclink" href="../../new-resources-section.html">New Resources section</a></h2>
+<p>We just added a new section to our website: <a href="/resources">Resources</a>.</p>
+<p>We will keep adding all kinds of examples, tutorials, videos, blog posts and other stuff related to
+utPLSQL to this page, but we might not know everything.  </p>
+<p>So please, if you find something related to utPLSQL which is publicly (without a paywall) available or if you created something
+yourself, <strong>please let us know!</strong></p>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2019-09-04 00:00:00+00:00">September 4, 2019</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
               <a href="../../category/releases.html" class="md-meta__link">releases</a>, 
               <a href="../../category/utplsql-core.html" class="md-meta__link">utplsql-core</a></li>
         
@@ -1942,80 +1980,6 @@
 <h3 id="bug-fixes"><a class="toclink" href="../../utplsql-v315-released.html#bug-fixes">Bug fixes</a></h3>
 <ul>
 <li>Fixed a bug in release <code>3.1.4</code> where <code>to_be_empty</code> matcher was failing due to privileges <a href="https://github.com/utPLSQL/utPLSQL/issues/864">#864</a></li>
-</ul>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2019-03-19 00:00:00+00:00">March 19, 2019</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/releases.html" class="md-meta__link">releases</a>, 
-              <a href="../../category/utplsql-core.html" class="md-meta__link">utplsql-core</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              1 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="changes-in-release-314"><a class="toclink" href="../../utplsql-v314-released.html">Changes in release 3.1.4</a></h2>
-<h3 id="new-features"><a class="toclink" href="../../utplsql-v314-released.html#new-features">New features</a></h3>
-<ul>
-<li>Added <code>to_contain</code> matcher for collections and cursors <a href="https://github.com/utPLSQL/utPLSQL/issues/79">#79</a></li>
-<li>Added <code>unordered_columns</code> (<code>uc</code>) option for cursor comparison to ignore the order of the columns <a href="https://github.com/utPLSQL/utPLSQL/issues/779">#779</a> </li>
-<li>Added <code>ut_debug_reporter</code> for debug logging <a href="https://github.com/utPLSQL/utPLSQL/issues/480">#480</a> </li>
-<li>Added <code>ut_realtime_reporter</code> for utPLSQL-SQLDeveloper extension <a href="https://github.com/utPLSQL/utPLSQL/issues/795">#795</a></li>
-</ul>
-<h3 id="enhancements"><a class="toclink" href="../../utplsql-v314-released.html#enhancements">Enhancements</a></h3>
-<ul>
-<li>Improved performance of cursor comparison <a href="https://github.com/utPLSQL/utPLSQL/issues/780">#780</a> </li>
-<li>Added support for installation on databases with block size &lt; 8KB <a href="https://github.com/utPLSQL/utPLSQL/issues/848">#848</a></li>
-<li>Added initial timeout to <code>ut_output_buffer</code> <a href="https://github.com/utPLSQL/utPLSQL/issues/840">#840</a></li>
-<li>Enhanced performance of <code>get_reporters_list</code> function <a href="https://github.com/utPLSQL/utPLSQL/issues/814">#814</a></li>
-<li>Moved calls of <code>dbms_lock.sleep</code> to <code>dbms_session</code> for newer DB versions <a href="https://github.com/utPLSQL/utPLSQL/issues/806">#806</a></li>
-<li>utPLSQL coverage will now work without re-install after DB-upgrade from 12.1 to 12.2 <a href="https://github.com/utPLSQL/utPLSQL/issues/803">#803</a> </li>
-</ul>
-<h3 id="bug-fixes"><a class="toclink" href="../../utplsql-v314-released.html#bug-fixes">Bug fixes</a></h3>
-<ul>
-<li>Fixed problem with REGEXP in annotation parsing with NLS CANADIAN FRENCH <a href="https://github.com/utPLSQL/utPLSQL/issues/844">#844</a></li>
-<li>Fixed issue with Rollback to savepoint failing on distributed transaction <a href="https://github.com/utPLSQL/utPLSQL/issues/839">#839</a></li>
-<li>Fixed reporting of differences when comparing collections scalar values <a href="https://github.com/utPLSQL/utPLSQL/issues/835">#835</a></li>
-<li>Fixed issue with test run failing due to too many transaction invalidators <a href="https://github.com/utPLSQL/utPLSQL/issues/834">#834</a></li>
-<li>Fixed randomly occurring error during cursor comparison <a href="https://github.com/utPLSQL/utPLSQL/issues/827">#827</a> </li>
-<li>utPLSQL install script will now support special characters in passwords <a href="https://github.com/utPLSQL/utPLSQL/issues/804">#804</a></li>
-</ul>
-<h3 id="documentation-improvements"><a class="toclink" href="../../utplsql-v314-released.html#documentation-improvements">Documentation improvements</a></h3>
-<ul>
-<li>Fixed documentation examples for context annotation <a href="https://github.com/utPLSQL/utPLSQL/issues/851">#851</a></li>
-<li>Added description on how to check version of utPLSQL <a href="https://github.com/utPLSQL/utPLSQL/issues/822">#822</a></li>
-</ul>
-<h3 id="internal-enhancements"><a class="toclink" href="../../utplsql-v314-released.html#internal-enhancements">Internal enhancements</a></h3>
-<ul>
-<li>Implemented Sonar analysis on DBA Views <a href="https://github.com/utPLSQL/utPLSQL/issues/850">#850</a></li>
-<li>Finished migration from old-tests <a href="https://github.com/utPLSQL/utPLSQL/issues/475">#475</a></li>
-<li>Fixed shell scripts to support multiple unix dialects (especially for macOS) <a href="https://github.com/utPLSQL/utPLSQL/issues/796">#796</a></li>
-<li>Added info on project support from Redgate <a href="https://github.com/utPLSQL/utPLSQL/issues/841">#841</a></li>
-<li>Added <code>code_of_conduct</code> <a href="https://github.com/utPLSQL/utPLSQL/issues/836">#836</a></li>
-<li>Added issue tempates <a href="https://github.com/utPLSQL/utPLSQL/issues/842">#842</a></li>
-<li>Added utPLSQL logo <a href="https://github.com/utPLSQL/utPLSQL/issues/845">#845</a> </li>
 </ul>
     
     
