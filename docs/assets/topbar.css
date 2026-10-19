@@ -14,7 +14,7 @@
 }
 
 #utplsql-topbar a {
-  color: rgba(255,255,255,0.72);
+  color: rgba(255,255,255,0.88);
   text-decoration: none;
   padding: 0 0.5rem;
   line-height: 2rem;
@@ -60,7 +60,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: rgba(255,255,255,0.72);
+  color: rgba(255,255,255,0.88);
   padding: 0 0.4rem;
   height: 2rem;
   display: flex;
@@ -128,7 +128,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: rgba(255,255,255,0.72);
+  color: rgba(255,255,255,0.88);
   padding: 0 0.4rem;
   height: 2rem;
   align-items: center;
