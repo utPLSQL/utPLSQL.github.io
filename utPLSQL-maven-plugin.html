@@ -26,7 +26,7 @@
         <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="feed_rss_updated.xml">
       
       <link rel="icon" href="assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -34,10 +34,10 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -1908,8 +1908,9 @@ in the utPLSQL documentation. The points that matter most in practice:</p>
 <li>The <code>*Expr</code> parameters are regular expressions, matched case-insensitively. They are matched against the schema
   name (<code>*SchemaExpr</code>) or the object name <strong>without</strong> the schema (<code>*ObjectExpr</code>). Use <code>^</code> and <code>$</code> to anchor them,
   otherwise any partial match counts (<code>APP</code> also matches <code>MY_APP_TEST</code>).</li>
-<li>If <code>includeSchemaExpr</code> or <code>includeObjectExpr</code> is set, utPLSQL ignores <code>includeObject</code>. All exclude parameters are
-  always applied and can be combined.</li>
+<li>If <code>includeSchemaExpr</code> or <code>includeObjectExpr</code> is set, utPLSQL ignores <code>includeObject</code>.</li>
+<li><code>excludeSchemaExpr</code> and <code>excludeObjectExpr</code> are both applied. If either of them is set, utPLSQL ignores <code>excludeObject</code>.
+  Include and exclude expressions can be combined.</li>
 <li>utPLSQL ignores all include/exclude filters when file mappings are in use, that is when the plugin finds files for
   <code>sources</code> (explicitly configured, or in the default <code>src/main/plsql</code> directory). See
   <a href="#mapping-project-files-to-database-objects">Mapping project files to database objects</a>. Use the filters when
@@ -2114,30 +2115,30 @@ tests, set it to <code>false</code>:</p>
 </span></code></pre></div>
 <h2 id="sample-projects">Sample projects<a class="headerlink" href="#sample-projects" title="Permanent link">&para;</a></h2>
 <p>The plugin's integration tests double as examples, in
-<a href="../https:/raw.githubusercontent.com/utPLSQL/utPLSQL-maven-plugin/develop/src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT"><code>src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT</code></a>:</p>
+<a href="https://raw.githubusercontent.com/utPLSQL/utPLSQL-maven-plugin/develop/src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT"><code>src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT</code></a>:</p>
 <ul>
-<li><a href="../https:/raw.githubusercontent.com/utPLSQL/utPLSQL-maven-plugin/develop/src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT/minimalist"><code>minimalist</code></a>: no plugin configuration,
+<li><a href="https://raw.githubusercontent.com/utPLSQL/utPLSQL-maven-plugin/develop/src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT/minimalist"><code>minimalist</code></a>: no plugin configuration,
   only the connection.</li>
-<li><a href="../https:/raw.githubusercontent.com/utPLSQL/utPLSQL-maven-plugin/develop/src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT/simple"><code>simple</code></a>: standard project directory
+<li><a href="https://raw.githubusercontent.com/utPLSQL/utPLSQL-maven-plugin/develop/src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT/simple"><code>simple</code></a>: standard project directory
   structure with Sonar reporters.</li>
-<li><a href="../https:/raw.githubusercontent.com/utPLSQL/utPLSQL-maven-plugin/develop/src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT/regex"><code>regex</code></a>: custom directory structure, mapped
+<li><a href="https://raw.githubusercontent.com/utPLSQL/utPLSQL-maven-plugin/develop/src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT/regex"><code>regex</code></a>: custom directory structure, mapped
   to database objects with <code>sourcesRegexExpression</code>, <code>testsRegexExpression</code> and related parameters.</li>
-<li><a href="../https:/raw.githubusercontent.com/utPLSQL/utPLSQL-maven-plugin/develop/src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT/type_mapping"><code>type_mapping</code></a>: regular expressions
+<li><a href="https://raw.githubusercontent.com/utPLSQL/utPLSQL-maven-plugin/develop/src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT/type_mapping"><code>type_mapping</code></a>: regular expressions
   combined with custom type mappings.</li>
-<li><a href="../https:/raw.githubusercontent.com/utPLSQL/utPLSQL-maven-plugin/develop/src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT/owner_param"><code>owner_param</code></a>: <code>sourcesOwner</code> and
+<li><a href="https://raw.githubusercontent.com/utPLSQL/utPLSQL-maven-plugin/develop/src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT/owner_param"><code>owner_param</code></a>: <code>sourcesOwner</code> and
   <code>testsOwner</code>.</li>
-<li><a href="../https:/raw.githubusercontent.com/utPLSQL/utPLSQL-maven-plugin/develop/src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT/tags"><code>tags</code></a>: running tests by tag.</li>
-<li><a href="../https:/raw.githubusercontent.com/utPLSQL/utPLSQL-maven-plugin/develop/src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT/include_object"><code>include_object</code></a>,
-  <a href="../https:/raw.githubusercontent.com/utPLSQL/utPLSQL-maven-plugin/develop/src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT/exclude_object"><code>exclude_object</code></a>,
-  <a href="../https:/raw.githubusercontent.com/utPLSQL/utPLSQL-maven-plugin/develop/src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT/include_object_expr"><code>include_object_expr</code></a> and
-  <a href="../https:/raw.githubusercontent.com/utPLSQL/utPLSQL-maven-plugin/develop/src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT/exclude_object_expr"><code>exclude_object_expr</code></a>:
+<li><a href="https://raw.githubusercontent.com/utPLSQL/utPLSQL-maven-plugin/develop/src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT/tags"><code>tags</code></a>: running tests by tag.</li>
+<li><a href="https://raw.githubusercontent.com/utPLSQL/utPLSQL-maven-plugin/develop/src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT/include_object"><code>include_object</code></a>,
+  <a href="https://raw.githubusercontent.com/utPLSQL/utPLSQL-maven-plugin/develop/src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT/exclude_object"><code>exclude_object</code></a>,
+  <a href="https://raw.githubusercontent.com/utPLSQL/utPLSQL-maven-plugin/develop/src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT/include_object_expr"><code>include_object_expr</code></a> and
+  <a href="https://raw.githubusercontent.com/utPLSQL/utPLSQL-maven-plugin/develop/src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT/exclude_object_expr"><code>exclude_object_expr</code></a>:
   choosing the objects in the coverage report.</li>
-<li><a href="../https:/raw.githubusercontent.com/utPLSQL/utPLSQL-maven-plugin/develop/src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT/ora_stuck_timeout"><code>ora_stuck_timeout</code></a>:
+<li><a href="https://raw.githubusercontent.com/utPLSQL/utPLSQL-maven-plugin/develop/src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT/ora_stuck_timeout"><code>ora_stuck_timeout</code></a>:
   <code>oraStuckTimeout</code>.</li>
-<li><a href="../https:/raw.githubusercontent.com/utPLSQL/utPLSQL-maven-plugin/develop/src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT/skip"><code>skip</code></a>: <code>skipUtplsqlTests</code>.</li>
-<li><a href="../https:/raw.githubusercontent.com/utPLSQL/utPLSQL-maven-plugin/develop/src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT/skip_tests"><code>skip_tests</code></a>,
-  <a href="../https:/raw.githubusercontent.com/utPLSQL/utPLSQL-maven-plugin/develop/src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT/maven_test_skip"><code>maven_test_skip</code></a> and
-  <a href="../https:/raw.githubusercontent.com/utPLSQL/utPLSQL-maven-plugin/develop/src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT/skip_tests_overridden_by_skip_utplsql_tests"><code>skip_tests_overridden_by_skip_utplsql_tests</code></a>:
+<li><a href="https://raw.githubusercontent.com/utPLSQL/utPLSQL-maven-plugin/develop/src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT/skip"><code>skip</code></a>: <code>skipUtplsqlTests</code>.</li>
+<li><a href="https://raw.githubusercontent.com/utPLSQL/utPLSQL-maven-plugin/develop/src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT/skip_tests"><code>skip_tests</code></a>,
+  <a href="https://raw.githubusercontent.com/utPLSQL/utPLSQL-maven-plugin/develop/src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT/maven_test_skip"><code>maven_test_skip</code></a> and
+  <a href="https://raw.githubusercontent.com/utPLSQL/utPLSQL-maven-plugin/develop/src/test/resources-its/org/utplsql/maven/plugin/UtPlsqlMojoIT/skip_tests_overridden_by_skip_utplsql_tests"><code>skip_tests_overridden_by_skip_utplsql_tests</code></a>:
   skipping with <code>-DskipTests</code> and <code>-Dmaven.test.skip=true</code>, run with the system properties set in <code>UtPlsqlMojoIT</code>.</li>
 </ul>
 <h2 id="comparison-with-utplsql-cli">Comparison with utPLSQL-cli<a class="headerlink" href="#comparison-with-utplsql-cli" title="Permanent link">&para;</a></h2>
@@ -2570,10 +2571,10 @@ tests, set it to <code>false</code>:</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.instant", "navigation.indexes", "navigation.tabs", "navigation.tracking", "navigation.expand", "navigation.top", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "content.code.select"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.instant", "navigation.indexes", "navigation.tabs", "navigation.tracking", "navigation.expand", "navigation.top", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "content.code.select"], "search": "assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
   </body>
